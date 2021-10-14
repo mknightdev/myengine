@@ -9,6 +9,8 @@ namespace myengine
 
 	struct Core
 	{
+		void start();
+		void stop();
 		static std::shared_ptr<Core> initialize();
 		std::shared_ptr<Entity> addEntity();
 

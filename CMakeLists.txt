@@ -14,6 +14,7 @@ add_library(myengine
 	src/myengine/Component.h
 	src/myengine/Keyboard.h
 	src/myengine/Environment.h
+	src/myengine/Environment.cpp
 )
 
 add_executable(game
