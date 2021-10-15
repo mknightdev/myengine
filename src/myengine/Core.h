@@ -20,5 +20,6 @@ namespace myengine
 			std::vector<std::shared_ptr<Entity>> entities;
 			std::shared_ptr<Environment> environment;
 			std::shared_ptr<Keyboard> keyboard;
+			std::weak_ptr<Core> self;
 	};
 }
