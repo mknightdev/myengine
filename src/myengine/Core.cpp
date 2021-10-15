@@ -29,6 +29,7 @@ namespace myengine
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->self = rtn;
+		rtn->setupWindow();
 		return rtn;
 	}
 
@@ -40,5 +41,13 @@ namespace myengine
 		entities.push_back(rtn);
 
 		return rtn;
+	}
+
+	void Core::setupWindow()
+	{
+		if (SDL_Init(SDL_INIT_VIDEO) < 0)
+		{
+			throw std::exception();
+		}
 	}
 }

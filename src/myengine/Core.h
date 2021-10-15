@@ -12,6 +12,14 @@ namespace myengine
 		void start();
 		void stop();
 		static std::shared_ptr<Core> initialize();
+
+		// Setup window
+		void setupWindow();
+
+		// Setup graphics
+		void setupGraphics();
+
+
 		std::shared_ptr<Entity> addEntity();
 
 		private:
