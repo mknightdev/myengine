@@ -1,7 +1,7 @@
+#include <SDL2/SDL.h>
+
 #include <memory>
 #include <vector>
-
-#include <SDL2/SDL.h>
 
 namespace myengine
 {
@@ -19,7 +19,7 @@ namespace myengine
 		void setupWindow();
 
 		// Setup graphics
-		//void setupGraphics();
+		void setupGraphics();
 
 
 		std::shared_ptr<Entity> addEntity();
