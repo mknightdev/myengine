@@ -1,6 +1,5 @@
 #include "Core.h"
 #include "Entity.h"
-#include <SDL2/SDL.h>
 
 namespace myengine
 {
@@ -49,5 +48,20 @@ namespace myengine
 		{
 			throw std::exception();
 		}
+
+		window = SDL_CreateWindow("My Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 	}
+
+	//void Core::setupGraphics()
+	//{
+	//	if (!SDL_GL_CreateContext(window))
+	//	{
+	//		throw std::exception();
+	//	}
+
+	//	if (glewInit() == GLEW_OK)
+	//	{
+	//		throw std::exception();
+	//	}
+	//}
 }

@@ -8,11 +8,13 @@ include_directories(
 
 if (MSVC)
 	include_directories(
-		contrib/msvc-windows-x86/SDL2/include  # For SDL.h
+		# contrib/msvc-windows-x86/SDL2/include  # For SDL.h
+		contrib/msvc-windows-x86/SDL2/include
 )
 
 link_directories(
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
 )
 else()
 endif()	

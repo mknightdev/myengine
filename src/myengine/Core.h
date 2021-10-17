@@ -1,6 +1,8 @@
 #include <memory>
 #include <vector>
 
+#include <SDL2/SDL.h>
+
 namespace myengine
 {
 	struct Entity;
@@ -17,7 +19,7 @@ namespace myengine
 		void setupWindow();
 
 		// Setup graphics
-		void setupGraphics();
+		//void setupGraphics();
 
 
 		std::shared_ptr<Entity> addEntity();
@@ -29,5 +31,6 @@ namespace myengine
 			std::shared_ptr<Environment> environment;
 			std::shared_ptr<Keyboard> keyboard;
 			std::weak_ptr<Core> self;
+			SDL_Window* window;
 	};
 }
