@@ -34,6 +34,7 @@ int main()
 	std::cout << "Component getEntity(): " << component->getEntity() << std::endl;
 
 	entity->addComponent<EngineStopper>();
+	entity->getComponent<EngineStopper>();
 
 	core->start();
 	//core->stop();

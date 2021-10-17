@@ -19,6 +19,24 @@ namespace myengine
 			components.push_back(rtn);
 			return rtn;
 		}
+		
+		template <typename T>
+		std::shared_ptr<T> getComponent()
+		{
+			for (size_t ci = 0; ci < components.size(); ci++)
+			{
+				// Check if the component matches the one we are trying to find
+				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(components.at(ci));
+
+				// If the component matches, return it 
+				if (rtn)
+				{
+					std::cout << "Component match!" << std::endl;
+					return rtn;
+				}
+			}
+			throw std::exception();	// Early exit
+		}
 
 		std::shared_ptr<Core> getCore();
 

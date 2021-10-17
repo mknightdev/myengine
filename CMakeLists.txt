@@ -8,13 +8,15 @@ include_directories(
 
 if (MSVC)
 	include_directories(
-		# contrib/msvc-windows-x86/SDL2/include  # For SDL.h
-		contrib/msvc-windows-x86/SDL2/include
+		# contrib/msvc-windows-x86/SDL2/include	# For SDL.h
+		contrib/msvc-windows-x64/SDL2/include
+		contrib/msvc-windows-x64/glew/include		# For glew.h
 )
 
 link_directories(
 	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
 	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
 )
 else()
 endif()	
@@ -36,6 +38,12 @@ add_library(myengine
 	src/myengine/Environment.h
 	src/myengine/Environment.cpp
 )
+
+if (MSVC)
+	target_link_libraries(myengine SDL2 glew32 opengl32)
+else()
+	target_link_libraries(myengine SDL2 GLU GLEW GL)
+endif()
 
 target_link_libraries(myengine SDL2)
 
