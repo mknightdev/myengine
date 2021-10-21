@@ -31,14 +31,8 @@ endif()
 
 add_library(myengine
 	src/myengine/Core.cpp
-	src/myengine/Core.h
-	src/myengine/myengine.h
 	src/myengine/Entity.cpp
-	src/myengine/Entity.h
-	src/myengine/Component.h
 	src/myengine/Component.cpp
-	src/myengine/Keyboard.h
-	src/myengine/Environment.h
 	src/myengine/Environment.cpp
 )
 
