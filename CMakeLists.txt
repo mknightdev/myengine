@@ -9,6 +9,7 @@ include_directories(
 if (MSVC)
 	include_directories(
 		# contrib/msvc-windows-x86/SDL2/include	# For SDL.h
+		# contrib/msvc-windows-x86/glew/include
 		contrib/msvc-windows-x64/SDL2/include
 		contrib/msvc-windows-x64/glew/include		# For glew.h
 )
