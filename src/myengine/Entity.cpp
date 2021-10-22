@@ -26,4 +26,12 @@ namespace myengine
 			components.at(ei)->tick();
 		}
 	}
+
+	void Entity::display()
+	{
+		for (size_t ei = 0; ei < components.size(); ++ei)
+		{
+			components.at(ei)->display();
+		}
+	}
 }

@@ -13,11 +13,17 @@ namespace myengine
 		running = true;
 		while (running)
 		{ 
+			environment->tick();
+
 			// Update world
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
 				entities.at(ei)->tick();
-				environment->tick();
+			}
+
+			for (size_t ei = 0; ei < entities.size(); ++ei)
+			{
+				entities.at(ei)->display();
 			}
 		}
 

@@ -17,6 +17,7 @@ namespace myengine
 
 			rtn->entity = self;
 			components.push_back(rtn);
+			rtn->onInitialize();	// Initialises the component
 			return rtn;
 		}
 		
@@ -46,5 +47,6 @@ namespace myengine
 			std::weak_ptr<Entity> self;
 			std::weak_ptr<Core> core;
 			void tick();
+			void display();
 	};
 }

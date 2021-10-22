@@ -36,6 +36,9 @@ int main()
 	entity->addComponent<EngineStopper>();
 	entity->getComponent<EngineStopper>();
 
+	entity->addComponent<TriangleRenderer>();
+	entity->getComponent<TriangleRenderer>();
+
 	core->start();
 	//core->stop();
 

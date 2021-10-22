@@ -38,6 +38,9 @@ add_library(myengine
 	src/myengine/Entity.h
 	src/myengine/Component.h
 	src/myengine/Environment.h
+	src/myengine/TriangleRenderer.cpp
+	src/myengine/TriangleRenderer.h
+	src/myengine/myengine.h
 )
 
 if (MSVC)

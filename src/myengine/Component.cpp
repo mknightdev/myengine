@@ -22,4 +22,19 @@ namespace myengine
 	{
 
 	}
+
+	void Component::display()
+	{
+		onDisplay();
+	}
+
+	void Component::onDisplay()
+	{
+
+	}
+
+	void Component::onInitialize()
+	{
+
+	}
 }
