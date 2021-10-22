@@ -19,7 +19,6 @@ link_directories(
 	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
 	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
 	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
-
 )
 else()
 endif()	
