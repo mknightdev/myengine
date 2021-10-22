@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "Entity.h"
+#include "Environment.h"
 
 #include <GL\glew.h>
 
@@ -7,6 +8,8 @@ namespace myengine
 {
 	void Core::start()
 	{
+		environment = Environment::create(self);
+
 		running = true;
 		while (running)
 		{ 
@@ -14,6 +17,7 @@ namespace myengine
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
 				entities.at(ei)->tick();
+				environment->tick();
 			}
 		}
 
