@@ -12,19 +12,19 @@ namespace myengine
 		void onDisplay();
 		void onTick();
 
-		// OpenGL Stuff
-		void add(glm::vec2 _value);
-		void add(glm::vec3 _value);
-		void add(glm::vec4 _value);
+		//// OpenGL Stuff
+		//void add(glm::vec2 _value);
+		//void add(glm::vec3 _value);
+		//void add(glm::vec4 _value);
 
-		GLuint getId();
+		//GLuint getId();
 
-		int getComponents();
+		//int getComponents();
 
-		private:
-			GLuint id;
-			std::vector<float> data;
-			bool dirty; // Trigger lazy uploading
-			int components;
+		//private:
+		//	GLuint id;
+		//	std::vector<float> data;
+		//	bool dirty; // Trigger lazy uploading
+		//	int components;
 	};
 }

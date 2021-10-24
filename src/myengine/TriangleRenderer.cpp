@@ -1,6 +1,9 @@
+#include <myrenderer\myrenderer.h>
 #include "TriangleRenderer.h"
 
 #include <iostream>
+
+using namespace myrenderer;
 
 namespace myengine
 {
@@ -9,6 +12,7 @@ namespace myengine
 		std::cout << "Triangle Initialised" << std::endl;
 
 		// Create OpenGL vertex buffer, vertex array and shader capable of drawing a triangle
+		
 	}
 
 	void TriangleRenderer::onDisplay()
@@ -19,5 +23,10 @@ namespace myengine
 	void TriangleRenderer::onTick()
 	{
 		std::cout << "Triangle Tick" << std::endl;
+	}
+
+	void add(glm::vec2 value)
+	{
+		std::cout << "test" << std::endl;
 	}
 }

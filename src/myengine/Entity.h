@@ -8,7 +8,7 @@ namespace myengine
 
 	struct Entity
 	{
-		std::shared_ptr<Component> addComponent();
+		//std::shared_ptr<Component> addComponent();
 
 		template <typename T>
 		std::shared_ptr<T> addComponent()
