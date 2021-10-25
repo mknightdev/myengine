@@ -9,7 +9,7 @@ namespace myengine
 	void Core::start()
 	{
 		environment = Environment::create(self);
-
+	
 		running = true;
 		while (running)
 		{ 
@@ -25,6 +25,8 @@ namespace myengine
 			{
 				entities.at(ei)->display();
 			}
+
+			SDL_GL_SwapWindow(window);
 		}
 
 		// Render world

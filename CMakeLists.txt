@@ -3,7 +3,7 @@ project(MYENGINE)
 
 include_directories(
 	src	# For myengine.h
-	contrib	# For glm.hpp
+	contrib	# For glm.hpp & bugl.h
 )
 
 if (MSVC)
@@ -42,19 +42,13 @@ add_library(myengine
 	src/myengine/myengine.h
 )
 
-if (MSVC)
-	target_link_libraries(myengine SDL2 glew32 opengl32)
-else()
-	target_link_libraries(myengine SDL2 GLU GLEW GL)
-endif()
-
 add_library(myrenderer
 	src/myrenderer/Model.cpp
 	src/myrenderer/Model.h
 	src/myrenderer/ShaderProgram.cpp
 	src/myrenderer/ShaderProgram.h
-	src/myrenderer/Texture.cpp
-	src/myrenderer/Texture.h
+	# src/myrenderer/Texture.cpp
+	# src/myrenderer/Texture.h
 	src/myrenderer/VertexArray.cpp
 	src/myrenderer/VertexArray.h
 	src/myrenderer/VertexBuffer.cpp
@@ -63,17 +57,24 @@ add_library(myrenderer
 )
 
 if (MSVC)
-	target_link_libraries(myrenderer glew32 opengl32)
+	target_link_libraries(myengine SDL2 glew32 opengl32)
 else()
-	target_link_libraries(myrenderer GLU GLEW GL)
+	target_link_libraries(myengine SDL2 GLU GLEW GL)
 endif()
-	
 
 target_link_libraries(myengine SDL2)
+
+if (MSVC)
+	target_link_libraries(myrenderer SDL2 glew32 opengl32)
+else()
+	target_link_libraries(myrenderer SDL2 GLU GLEW GL)
+endif()
+	
+target_link_libraries(myrenderer glew32 opengl32)
 
 add_executable(game
 	src/demo/main.cpp
 	src/demo/bob.cpp
 )
 
-target_link_libraries(game myengine)
+target_link_libraries(game myengine myrenderer)

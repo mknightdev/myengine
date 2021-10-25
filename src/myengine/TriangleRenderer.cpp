@@ -1,5 +1,6 @@
 #include <myrenderer\myrenderer.h>
 #include "TriangleRenderer.h"
+#include <SDL2\SDL.h>
 
 #include <iostream>
 
@@ -155,57 +156,42 @@ namespace myengine
 		// Draw 3 vertices (a triangle)
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
-		// Reset the state
 		glBindVertexArray(0);
 		glUseProgram(0);
 		*/
 
 		// Render Library Attempt
-		/* 
 		// Vertex Buffer
-		//std::shared_ptr<VertexBuffer> positionsVbo = std::make_shared<VertexBuffer>();
-		//id = positionsVbo->getId();
+		std::shared_ptr<VertexBuffer> positionsVbo = std::make_shared<VertexBuffer>();
+		positionsVbo->add(glm::vec3(0.0f, 0.5f, 0.0f));
+		positionsVbo->add(glm::vec3(-0.5f, -0.5f, 0.0f));
+		positionsVbo->add(glm::vec3(0.5f, -0.5f, 0.0f));
 
-		//positionsVbo->add(glm::vec3(0.0f, 0.5f, 0.0f));
-		//positionsVbo->add(glm::vec3(-0.5f, -0.5f, 0.0f));
-		//positionsVbo->add(glm::vec3(0.5f, -0.5f, 0.0f));
+		// Vertex Arrray
+		std::shared_ptr<VertexArray> vao = std::make_shared<VertexArray>();
+		vao->setBuffer(0, positionsVbo);
+		vaoId = vao->getId();
 
-		//// Vertex Arrray
-		//std::shared_ptr<VertexArray> vao = std::make_shared<VertexArray>();
-		//vao->setBuffer(0, positionsVbo);
+		// Shader Sources
+		// TODO: Pass through function, or read in from text file
+		const GLchar* vertexShaderSrc =
+			"attribute vec3 in_Position;            " \
+			"                                       " \
+			"void main()                            " \
+			"{                                      " \
+			" gl_Position = vec4(in_Position, 1.0); " \
+			"}                                      ";
 
-		//// Shader Sources
-		//// TODO: Pass through function, or read in from text file
-		//const GLchar* vertexShaderSrc =
-		//	"attribute vec3 in_Position;            " \
-		//	"                                       " \
-		//	"void main()                            " \
-		//	"{                                      " \
-		//	" gl_Position = vec4(in_Position, 1.0); " \
-		//	"}                                      ";
+		const GLchar* fragmentShaderSrc =
+			"void main()                       " \
+			"{                                 " \
+			" gl_FragColor = vec4(0, 0, 1, 1); " \
+			"}                                 ";
 
-		//const GLchar* fragmentShaderSrc =
-		//	"void main()                       " \
-		//	"{                                 " \
-		//	" gl_FragColor = vec4(0, 0, 1, 1); " \
-		//	"}                                 ";
-
-		//// Create Shader
-		//std::shared_ptr<ShaderProgram> triangleShader = std::make_shared<ShaderProgram>();
-		//triangleShader->CreateShader(vertexShaderSrc, fragmentShaderSrc);
-
-		//// Draw
-		//// Instruct opengl to use our shader program and vao
-		//glUseProgram(triangleShader->getId());
-		//glBindVertexArray(vao->getId());
-
-		//// Draw 3 vertices
-		//glDrawArrays(GL_TRIANGLES, 0, 3);
-
-		//// Reset the state
-		//glBindVertexArray(0);
-		//glUseProgram(0);
-		*/
+		// Create Shader
+		std::shared_ptr<ShaderProgram> triangleShader = std::make_shared<ShaderProgram>();
+		triangleShader->CreateShader(vertexShaderSrc, fragmentShaderSrc);
+		programId = triangleShader->getId();
 	}
 
 	void TriangleRenderer::onDisplay()
@@ -215,6 +201,20 @@ namespace myengine
 
 	void TriangleRenderer::onTick()
 	{
-		std::cout << "Triangle Tick" << std::endl;
+		// Draw
+		// Instruct opengl to use our shader program and vao
+		glUseProgram(programId);
+		glBindVertexArray(vaoId);
+
+		// Draw 3 vertices
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+
+		// Reset the state
+		glBindVertexArray(0);
+		glUseProgram(0);
+
+		glBindVertexArray(0);
+		glUseProgram(0);
 	}
+
 }

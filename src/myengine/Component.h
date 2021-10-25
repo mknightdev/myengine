@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <SDL2\SDL.h>
 
 namespace myengine
 {
@@ -21,6 +22,5 @@ namespace myengine
 			std::weak_ptr<Entity> entity;
 			void tick();
 			void display();
-
 	};
 }

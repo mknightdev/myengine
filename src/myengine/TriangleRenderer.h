@@ -16,10 +16,9 @@ namespace myengine
 
 		//int getComponents();
 
-		//private:
-		//	GLuint id;
-		//	std::vector<float> data;
-		//	bool dirty; // Trigger lazy uploading
-		//	int components;
+		private:
+			GLuint programId;
+			GLuint vaoId;
+			std::weak_ptr<Core> core;
 	};
 }
