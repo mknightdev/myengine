@@ -10,7 +10,7 @@ namespace myengine
 
 	std::shared_ptr<Entity> Component::getEntity()
 	{
-		return entity.lock();
+		return entity.lock();	// Makes weakptr into a shared
 	}
 
 	void Component::tick()

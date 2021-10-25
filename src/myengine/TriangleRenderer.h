@@ -12,11 +12,6 @@ namespace myengine
 		void onDisplay();
 		void onTick();
 
-		//// OpenGL Stuff
-		//void add(glm::vec2 _value);
-		//void add(glm::vec3 _value);
-		//void add(glm::vec4 _value);
-
 		//GLuint getId();
 
 		//int getComponents();

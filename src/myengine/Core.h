@@ -21,7 +21,6 @@ namespace myengine
 		// Setup graphics
 		void setupGraphics();
 
-
 		std::shared_ptr<Entity> addEntity();
 
 		private:
