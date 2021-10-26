@@ -1,6 +1,7 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Environment.h"
+#include "Transform.h"
 
 #include <GL/glew.h>
 
@@ -56,6 +57,10 @@ namespace myengine
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 		rtn->core = self;
 		rtn->self = rtn;
+
+		// Add transform component somwhere in here
+		rtn->addComponent<Transform>();
+
 		entities.push_back(rtn);
 
 		return rtn;

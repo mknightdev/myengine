@@ -40,6 +40,8 @@ add_library(myengine
 	src/myengine/TriangleRenderer.cpp
 	src/myengine/TriangleRenderer.h
 	src/myengine/myengine.h
+	src/myengine/Transform.cpp
+	src/myengine/Transform.h
 )
 
 add_library(myrenderer

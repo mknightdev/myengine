@@ -36,8 +36,8 @@ int main()
 	//std::cout << "Component getCore(): " << component->getCore() << std::endl;
 	//std::cout << "Component getEntity(): " << component->getEntity() << std::endl;
 
-	//entity->addComponent<EngineStopper>();
-	//entity->getComponent<EngineStopper>();
+	entity->addComponent<EngineStopper>();
+	entity->getComponent<EngineStopper>();
 
 	entity->addComponent<TriangleRenderer>();
 	entity->getComponent<TriangleRenderer>();
