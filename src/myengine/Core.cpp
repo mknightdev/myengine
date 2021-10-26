@@ -14,7 +14,17 @@ namespace myengine
 		running = true;
 		while (running)
 		{ 
+			SDL_Event event = { 0 };
+
 			// Do SDL event loop
+			while (SDL_PollEvent(&event))
+			{
+				if (event.type == SDL_QUIT)
+				{
+					running = false;
+				}
+			}
+
 			environment->tick();
 
 			// Update world
