@@ -69,8 +69,6 @@ if (MSVC)
 else()
 	target_link_libraries(myrenderer SDL2 GLU GLEW GL)
 endif()
-	
-target_link_libraries(myrenderer glew32 opengl32)
 
 add_executable(game
 	src/demo/main.cpp

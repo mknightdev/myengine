@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-#include <Windows.h>
-
 using namespace myengine;
 using namespace myrenderer;
 
@@ -16,7 +14,6 @@ struct EngineStopper : Component
 		count++;
 		if (count == 10)
 		{
-			Sleep(20000);
 			getCore()->stop();
 		}
 	}

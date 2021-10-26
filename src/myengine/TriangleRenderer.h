@@ -1,5 +1,7 @@
 #include "Component.h"
 
+#include <myrenderer/myrenderer.h>
+
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <vector>
@@ -17,8 +19,11 @@ namespace myengine
 		//int getComponents();
 
 		private:
-			GLuint programId;
-			GLuint vaoId;
+			//GLuint programId;
+			//GLuint vaoId;
 			std::weak_ptr<Core> core;
+			std::shared_ptr<myrenderer::ShaderProgram> triangleShader;
+			std::shared_ptr<myrenderer::VertexArray> vao;
+			std::shared_ptr<myrenderer::VertexBuffer> positionsVbo;
 	};
 }

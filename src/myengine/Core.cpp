@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "Environment.h"
 
-#include <GL\glew.h>
+#include <GL/glew.h>
 
 namespace myengine
 {
@@ -13,6 +13,7 @@ namespace myengine
 		running = true;
 		while (running)
 		{ 
+			// Do SDL event loop
 			environment->tick();
 
 			// Update world
@@ -20,6 +21,9 @@ namespace myengine
 			{
 				entities.at(ei)->tick();
 			}
+
+			// TODO: Move to before display
+			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
@@ -80,7 +84,5 @@ namespace myengine
 		}
 
 		glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-		SDL_GL_SwapWindow(window);
 	}	
 }
