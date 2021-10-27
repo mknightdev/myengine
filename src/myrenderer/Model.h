@@ -63,19 +63,6 @@ namespace myrenderer
 
 		void Draw(GLint modelLoc, GLint projectionLoc, glm::mat4 projection, size_t vao);
 
-		/// Enables the drawing of the model.
-		/// 
-		/// Requires model location, projection location, projection matrix and a vertex array object. 
-		/// @param modelLoc The model uniform location.
-		/// @param projectionLoc The projection uniform location. 
-		/// @param projection The projection matrix. 
-		/// @param vao The vertex array object. 
-		/// @returns void 
-		/// @attention This is the GLsizei vao version!
-		/// @see Draw(GLint modelLoc, GLint projectionLoc, glm::mat4 projection, size_t vao)
-
-		void Draw(GLint modelLoc, GLint projectionLoc, glm::mat4 projection, GLsizei vao);
-
 		/// Returns the current model object. 
 		/// 
 		/// Gets the 4x4 matrix of the current model object and returns it. 

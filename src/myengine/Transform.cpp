@@ -8,8 +8,6 @@ namespace myengine
 	void Transform::onInitialize()
 	{
 		std::cout << "Transform Initialized" << std::endl;
-
-		scale = glm::vec3(1, 1, 1);
 	}
 
 	void Transform::setPosition(glm::vec3 _position)
