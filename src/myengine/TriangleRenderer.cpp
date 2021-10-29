@@ -44,7 +44,7 @@ namespace myengine
 
 	void TriangleRenderer::onDisplay()
 	{
-		std::cout << "Triangle Display" << std::endl;
+		//std::cout << "Triangle Display" << std::endl;
 		// Draw
 		// Instruct opengl to use our shader program and vao
 		glUseProgram(triangleShader->getId());
@@ -60,7 +60,6 @@ namespace myengine
 
 	void TriangleRenderer::onTick()
 	{
-		std::cout << "Triangle Tick" << std::endl;
-
+		//std::cout << "Triangle Tick" << std::endl;
 	}
 }

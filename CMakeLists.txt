@@ -8,17 +8,17 @@ include_directories(
 
 if (MSVC)
 	include_directories(
-		# contrib/msvc-windows-x86/SDL2/include	# For SDL.h
-		# contrib/msvc-windows-x86/glew/include
-		contrib/msvc-windows-x64/SDL2/include
-		contrib/msvc-windows-x64/glew/include		# For glew.h
+		contrib/msvc-windows-x86/SDL2/include	# For SDL.h
+		contrib/msvc-windows-x86/glew/include
+		# contrib/msvc-windows-x64/SDL2/include
+		# contrib/msvc-windows-x64/glew/include		# For glew.h
 )
 
 link_directories(
-	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
-	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
 )
 else()
 endif()	
@@ -42,6 +42,8 @@ add_library(myengine
 	src/myengine/myengine.h
 	src/myengine/Transform.cpp
 	src/myengine/Transform.h
+	src/myengine/Keyboard.cpp
+	src/myengine/Keyboard.h
 )
 
 add_library(myrenderer

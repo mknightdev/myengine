@@ -6,6 +6,7 @@ namespace myengine
 	std::shared_ptr<Environment> Environment::create(std::weak_ptr<Core> _core)
 	{
 		std::shared_ptr<Environment> rtn = std::make_shared<Environment>();	// This becomes the instance
+		rtn->self = rtn;
 		rtn->core = _core;
 		return rtn;
 	}

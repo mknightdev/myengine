@@ -23,6 +23,8 @@ namespace myengine
 
 		std::shared_ptr<Entity> addEntity();
 
+		std::shared_ptr<Keyboard> getKeyboard();
+
 		private:
 			int dummy;
 			bool running;

@@ -2,14 +2,41 @@
 #include "Entity.h"
 #include "Environment.h"
 #include "Transform.h"
+#include "Keyboard.h"
 
 #include <GL/glew.h>
 
 namespace myengine
 {
+	void Core::setupWindow()
+	{
+		if (SDL_Init(SDL_INIT_VIDEO) < 0)
+		{
+			throw std::exception();
+		}
+
+		window = SDL_CreateWindow("My Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+	}
+
+	void Core::setupGraphics()
+	{
+		if (!SDL_GL_CreateContext(window))
+		{
+			throw std::exception();
+		}
+
+		if (glewInit() != GLEW_OK)
+		{
+			throw std::exception();
+		}
+
+		glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+	}
+
 	void Core::start()
 	{
 		environment = Environment::create(self);
+		keyboard = Keyboard::create(self);
 	
 		running = true;
 		while (running)
@@ -22,6 +49,23 @@ namespace myengine
 				if (event.type == SDL_QUIT)
 				{
 					running = false;
+				}
+				else if (event.type == SDL_KEYDOWN)
+				{
+					keyboard->keyCodes.push_back(event.key.keysym.sym);
+					if (keyboard->getKeyDown(event.key.keysym.sym))
+					{
+						std::cout << "Key pressed" << std::endl;
+					}
+
+				}
+				else if (event.type == SDL_KEYUP)
+				{
+					keyboard->removeKey(event.key.keysym.sym);
+					if (keyboard->getKeyUp(event.key.keysym.sym))
+					{
+						std::cout << "Key released" << std::endl;
+					}
 				}
 			}
 
@@ -68,7 +112,6 @@ namespace myengine
 		rtn->core = self;
 		rtn->self = rtn;
 
-		// Add transform component somwhere in here
 		rtn->addComponent<Transform>();
 
 		entities.push_back(rtn);
@@ -76,28 +119,11 @@ namespace myengine
 		return rtn;
 	}
 
-	void Core::setupWindow()
+	std::shared_ptr<Keyboard> Core::getKeyboard()
 	{
-		if (SDL_Init(SDL_INIT_VIDEO) < 0)
-		{
-			throw std::exception();
-		}
+		std::shared_ptr<Keyboard> rtn = std::make_shared<Keyboard>();
+		keyboard = rtn;
 
-		window = SDL_CreateWindow("My Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		return rtn;
 	}
-
-	void Core::setupGraphics()
-	{
-		if (!SDL_GL_CreateContext(window))
-		{
-			throw std::exception();
-		}
-
-		if (glewInit() != GLEW_OK)
-		{
-			throw std::exception();
-		}
-
-		glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-	}	
 }

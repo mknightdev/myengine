@@ -10,6 +10,7 @@ namespace myengine
 		float getDeltaTime();
 		virtual void onTick();
 
+
 		private:
 			friend struct myengine::Core;
 			float deltaTime;
