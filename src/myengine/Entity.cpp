@@ -34,4 +34,9 @@ namespace myengine
 			components.at(ei)->display();
 		}
 	}
+
+	std::shared_ptr<Transform> Entity::getTransform()
+	{
+		return transform.lock();
+	}
 }

@@ -8,6 +8,9 @@
 
 namespace myengine
 {
+	struct Keyboard;
+	struct Core;
+
 	struct TriangleRenderer : Component
 	{
 		void onInitialize();
@@ -18,7 +21,11 @@ namespace myengine
 
 		//int getComponents();
 
+		std::shared_ptr<Core> getCore();
+
+
 		private:
+			friend struct myengine::Core;
 			//GLuint programId;
 			//GLuint vaoId;
 			std::weak_ptr<Core> core;

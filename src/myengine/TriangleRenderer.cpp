@@ -1,6 +1,8 @@
 #include "TriangleRenderer.h"
-#include <SDL2/SDL.h>
+#include "Keyboard.h"
 
+#include <memory>
+#include <SDL2/SDL.h>
 #include <iostream>
 
 using namespace myrenderer;
@@ -61,5 +63,11 @@ namespace myengine
 	void TriangleRenderer::onTick()
 	{
 		//std::cout << "Triangle Tick" << std::endl;
+		
+		// Check for UP key press
+		if (getKeyboard()->getKeyDown(SDLK_UP))
+		{
+			// TODO: Add Transform set position here
+		}
 	}
 }

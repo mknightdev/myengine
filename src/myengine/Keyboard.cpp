@@ -17,7 +17,14 @@ namespace myengine
 
 	bool Keyboard::getKeyDown(int _keyCode)
 	{
-		return _keyCode;
+		for (size_t i = 0; i < keyCodes.size(); i++)
+		{
+			if (_keyCode == keyCodes.at(i))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	bool Keyboard::getKeyUp(int _keyCode)
@@ -27,7 +34,7 @@ namespace myengine
 
 	void Keyboard::removeKey(int _keyCode)
 	{
-		for (int i = 0; i < keyCodes.size(); i++)
+		for (size_t i = 0; i < keyCodes.size(); i++)
 		{
 			if (_keyCode == keyCodes.at(i))
 			{

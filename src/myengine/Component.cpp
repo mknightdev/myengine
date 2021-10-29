@@ -1,5 +1,6 @@
 #include "Component.h"
 #include "Entity.h"
+#include "Core.h"
 
 namespace myengine
 {
@@ -36,5 +37,10 @@ namespace myengine
 	void Component::onInitialize()
 	{
 
+	}
+
+	std::shared_ptr<Keyboard> Component::getKeyboard()
+	{
+		return getCore()->getKeyboard();
 	}
 }

@@ -7,11 +7,13 @@ namespace myengine
 {
 	struct Core;
 	struct Entity;
+	struct Keyboard;
 
 	struct Component
 	{
 		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Entity> getEntity();
+		std::shared_ptr<Keyboard> getKeyboard();
 		virtual void onTick();
 		virtual void onDisplay();
 		virtual void onInitialize();

@@ -53,16 +53,16 @@ namespace myengine
 				else if (event.type == SDL_KEYDOWN)
 				{
 					keyboard->keyCodes.push_back(event.key.keysym.sym);
-					if (keyboard->getKeyDown(event.key.keysym.sym))
+					//if (keyboard->getKeyDown(event.key.keysym.sym))
 					{
-						std::cout << "Key pressed" << std::endl;
+						std::cout << "Key pressed" << event.key.keysym.sym << std::endl;
 					}
 
 				}
 				else if (event.type == SDL_KEYUP)
 				{
 					keyboard->removeKey(event.key.keysym.sym);
-					if (keyboard->getKeyUp(event.key.keysym.sym))
+					//if (keyboard->getKeyUp(event.key.keysym.sym))
 					{
 						std::cout << "Key released" << std::endl;
 					}
@@ -111,8 +111,7 @@ namespace myengine
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 		rtn->core = self;
 		rtn->self = rtn;
-
-		rtn->addComponent<Transform>();
+		rtn->transform = rtn->addComponent<Transform>();	// Form of caching and is faster than getComponent<T>
 
 		entities.push_back(rtn);
 
@@ -121,9 +120,6 @@ namespace myengine
 
 	std::shared_ptr<Keyboard> Core::getKeyboard()
 	{
-		std::shared_ptr<Keyboard> rtn = std::make_shared<Keyboard>();
-		keyboard = rtn;
-
-		return rtn;
+		return keyboard;
 	}
 }
