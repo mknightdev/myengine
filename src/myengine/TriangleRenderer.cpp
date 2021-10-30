@@ -22,26 +22,10 @@ namespace myengine
 		// Vertex Arrray
 		vao = std::make_shared<VertexArray>();
 		vao->setBuffer(0, positionsVbo);
-
-		// Shader Sources
-		// TODO: Pass through function, or read in from text file
-		const GLchar* vertexShaderSrc =
-			"attribute vec3 in_Position;            " \
-			"                                       " \
-			"void main()                            " \
-			"{                                      " \
-			" gl_Position = vec4(in_Position, 1.0); " \
-			"}                                      ";
-
-		const GLchar* fragmentShaderSrc =
-			"void main()                       " \
-			"{                                 " \
-			" gl_FragColor = vec4(0, 0, 1, 1); " \
-			"}                                 ";
-
+	
 		// Create Shader
 		triangleShader = std::make_shared<ShaderProgram>();
-		triangleShader->CreateShader(vertexShaderSrc, fragmentShaderSrc);
+		triangleShader->CreateShader("../resources/shaders/vertexShader.txt", "../resources/shaders/fragmentShader.txt");
 	}
 
 	void TriangleRenderer::onDisplay()
