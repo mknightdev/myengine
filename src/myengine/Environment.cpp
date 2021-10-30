@@ -13,7 +13,8 @@ namespace myengine
 
 	float Environment::getDeltaTime()
 	{
-		return deltaTime;
+		float diff = currentTime - lastTime;
+		return deltaTime = diff / 1000.0f;
 	}
 
 	void Environment::tick()
@@ -23,6 +24,11 @@ namespace myengine
 
 	void Environment::onTick()
 	{
+		lastTime = SDL_GetTicks();
+	}
 
+	void Environment::setCurrentTime(float _currentTime)
+	{
+		currentTime = _currentTime;
 	}
 }
