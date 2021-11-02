@@ -26,6 +26,7 @@ namespace myengine
 
 		private:
 			friend struct myengine::Core;
+			float rot;
 			//GLuint programId;
 			//GLuint vaoId;
 			std::weak_ptr<Core> core;
