@@ -28,9 +28,6 @@ namespace myengine
 		// Create Shader
 		triangleShader = std::make_shared<ShaderProgram>();
 		triangleShader->CreateShader("../resources/shaders/vertexShader.txt", "../resources/shaders/fragmentShader.txt");
-
-		triangleModel = getTransform()->getModel();
-		std::cout << "Scale X: " << getTransform()->getScale().x << std::endl;
 	}
 
 	void TriangleRenderer::onDisplay()
@@ -44,13 +41,13 @@ namespace myengine
 		// Prepare perspective projection matrix
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
 
-		//triangleModel = glm::translate(triangleModel, glm::vec3(0, 0, -2.5f));
-		triangleModel = glm::rotate(triangleModel, glm::radians(rot), glm::vec3(0, 1, 0));
+		
+		triangleModel = glm::translate(triangleModel, glm::vec3(0, 0, 0));
+		//triangleModel = glm::rotate(triangleModel, glm::radians(rot), glm::vec3(0, 1, 0));
 
 		// Increase float angle so next frame triangle rotates further
-		rot += 0.1f;
+		//rot += 0.1f;
 
-		// Make sure the current program is bound
 		// Instruct opengl to use our shader program and vao
 		glUseProgram(triangleShader->getId());
 		glBindVertexArray(vao->getId());
@@ -71,18 +68,28 @@ namespace myengine
 
 	void TriangleRenderer::onTick()
 	{
-		//std::cout << "Triangle Tick" << std::endl;
-		
-		// Check for UP key press
 		if (getKeyboard()->getKeyDown(SDLK_UP))
 		{
-			std::cout << "Triangle: Arrow Key Pressed" << std::endl;
+			getTransform()->setPosition(glm::vec3(0, 0.01f, 0));
+		}
+		
+		if (getKeyboard()->getKeyDown(SDLK_DOWN))
+		{
+			getTransform()->setPosition(glm::vec3(0, -0.01f, 0));
+		}
 
-			getTransform()->setPosition(glm::vec3(0, 0.5f, 0));
+		if (getKeyboard()->getKeyDown(SDLK_LEFT))
+		{
+			getTransform()->setPosition(glm::vec3(-0.01f, 0, 0));
+		}
+
+		if (getKeyboard()->getKeyDown(SDLK_RIGHT))
+		{
+			getTransform()->setPosition(glm::vec3(0.01f, 0, 0));
 		}
 
 		// Gets latest transform
-		// Stops triangle from going really fast
+		// Note: Stops triangle from going really fast & Allows movement of the triangle
 		triangleModel = getTransform()->getModel();
 	}
 }

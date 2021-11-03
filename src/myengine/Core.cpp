@@ -85,10 +85,6 @@ namespace myengine
 				entities.at(ei)->display();
 			}
 
-			// End time
-			float currentTime = SDL_GetTicks();
-			environment->setCurrentTime(currentTime);
-
 			std::cout << "Delta: " << environment->getDeltaTime() << std::endl;
 
 			SDL_GL_SwapWindow(window);

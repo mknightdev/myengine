@@ -9,15 +9,15 @@ namespace myengine
 		static std::shared_ptr<Environment> create(std::weak_ptr<Core> _core);
 		float getDeltaTime();
 		virtual void onTick();
-		void setCurrentTime(float _currentTime);
 
 		private:
 			friend struct myengine::Core;
 			float deltaTime;
+			float lastTime;
+			float currentTime;
 			void tick();
 			std::weak_ptr<Environment> self;
 			std::weak_ptr<Core> core;
-			float lastTime;
-			float currentTime;
+
 	};
 }
