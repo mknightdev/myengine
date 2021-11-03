@@ -23,12 +23,9 @@ namespace myengine
 
 		std::shared_ptr<Core> getCore();
 
-
 		private:
 			friend struct myengine::Core;
 			float rot;
-			//GLuint programId;
-			//GLuint vaoId;
 			std::weak_ptr<Core> core;
 			std::shared_ptr<myrenderer::ShaderProgram> triangleShader;
 			std::shared_ptr<myrenderer::VertexArray> vao;

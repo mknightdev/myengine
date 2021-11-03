@@ -35,21 +35,35 @@ namespace myengine
 		//std::cout << "Triangle Display" << std::endl;
 
 		// Draw
+
+
+		GLint modelLoc = glGetUniformLocation(triangleShader->getId(), "u_Model");
+		GLint projectionLoc = glGetUniformLocation(triangleShader->getId(), "u_Projection");
+
+		// Prepare perspective projection matrix
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
+
+
+		// Prepare model matrix
+		glm::mat4 model(1.0f);
+		model = glm::translate(model, glm::vec3(0, 0, -2.5f));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0, 1, 0));
+
+		// Increase float angle so next frame triangle rotates further
+		rot += 0.1f;
+
+		// Make sure the current program is bound
 		// Instruct opengl to use our shader program and vao
 		glUseProgram(triangleShader->getId());
 		glBindVertexArray(vao->getId());
 
-		// Prepare the perspective projection matrix
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f),
-			(float)800 / (float)600, 0.1f, 100.0f);
-
-		// TODO:
-		// Look at 3DGP work and compare to get triangle moving
-		// Model Matrix
-
 		// Upload the model matrix
-		glUniformMatrix4fv(triangleShader->getId(), 1, GL_FALSE, glm::value_ptr(getEntity()->getTransform()->getModel()));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
+		// Upload the projection matrix
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+		// Draw Shape as Before
 		// Draw 3 vertices
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
@@ -67,9 +81,7 @@ namespace myengine
 		{
 			std::cout << "Triangle: Arrow Key Pressed" << std::endl;
 
-			// TODO: Add Transform set position here
-			getEntity()->getTransform()->setPosition(glm::vec3(0, 0.5f, 0));
-
+			
 
 		}
 	}
