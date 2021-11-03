@@ -10,7 +10,7 @@ namespace myengine
 	{
 		std::cout << "Transform Initialized" << std::endl;
 
-		position = glm::vec3(0, 0, 0);
+		position = glm::vec3(0, 0, -2.5f);
 		rotation = glm::vec3(0, 0, 0);
 		scale = glm::vec3(1, 1, 1);
 	}

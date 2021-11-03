@@ -30,5 +30,6 @@ namespace myengine
 			std::shared_ptr<myrenderer::ShaderProgram> triangleShader;
 			std::shared_ptr<myrenderer::VertexArray> vao;
 			std::shared_ptr<myrenderer::VertexBuffer> positionsVbo;
+			glm::mat4 triangleModel;
 	};
 }

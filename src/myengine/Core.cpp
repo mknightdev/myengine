@@ -128,4 +128,9 @@ namespace myengine
 	{
 		return keyboard;
 	}
+
+	std::shared_ptr<Environment> Core::getEnvironment()
+	{
+		return environment;
+	}
 }

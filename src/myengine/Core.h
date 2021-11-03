@@ -24,6 +24,7 @@ namespace myengine
 		std::shared_ptr<Entity> addEntity();
 
 		std::shared_ptr<Keyboard> getKeyboard();
+		std::shared_ptr<Environment> getEnvironment();
 
 		private:
 			int dummy;

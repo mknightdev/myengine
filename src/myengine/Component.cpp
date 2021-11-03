@@ -4,16 +4,6 @@
 
 namespace myengine
 {
-	std::shared_ptr<Core> Component::getCore()
-	{
-		return getEntity()->getCore();
-	}
-
-	std::shared_ptr<Entity> Component::getEntity()
-	{
-		return entity.lock();	// Makes weakptr into a shared
-	}
-
 	void Component::tick()
 	{
 		onTick();
@@ -39,8 +29,23 @@ namespace myengine
 
 	}
 
+	std::shared_ptr<Core> Component::getCore()
+	{
+		return getEntity()->getCore();
+	}
+
+	std::shared_ptr<Entity> Component::getEntity()
+	{
+		return entity.lock();	// Makes weakptr into a shared
+	}
+
 	std::shared_ptr<Keyboard> Component::getKeyboard()
 	{
 		return getCore()->getKeyboard();
+	}
+
+	std::shared_ptr<Transform> Component::getTransform()
+	{
+		return getEntity()->getTransform();
 	}
 }

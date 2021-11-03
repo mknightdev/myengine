@@ -8,12 +8,14 @@ namespace myengine
 	struct Core;
 	struct Entity;
 	struct Keyboard;
+	struct Transform;
 
 	struct Component
 	{
 		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Entity> getEntity();
 		std::shared_ptr<Keyboard> getKeyboard();
+		std::shared_ptr<Transform> getTransform();
 		virtual void onTick();
 		virtual void onDisplay();
 		virtual void onInitialize();
