@@ -76,7 +76,7 @@ endif()
 
 add_executable(game
 	src/demo/main.cpp
-	src/demo/bob.cpp
+	src/demo/pbr.cpp
 )
 
 target_link_libraries(game myengine myrenderer)

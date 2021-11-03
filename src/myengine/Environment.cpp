@@ -32,6 +32,6 @@ namespace myengine
 
 	void Environment::onTick()
 	{
-		lastTime = SDL_GetTicks();
+
 	}
 }

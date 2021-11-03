@@ -37,7 +37,7 @@ namespace myengine
 	{
 		environment = Environment::create(self);
 		keyboard = Keyboard::create(self);
-	
+
 		running = true;
 		while (running)
 		{ 
@@ -53,19 +53,10 @@ namespace myengine
 				else if (event.type == SDL_KEYDOWN)
 				{
 					keyboard->keyCodes.push_back(event.key.keysym.sym);
-					//if (keyboard->getKeyDown(event.key.keysym.sym))
-					{
-						std::cout << "Key pressed" << event.key.keysym.sym << std::endl;
-					}
-
 				}
 				else if (event.type == SDL_KEYUP)
 				{
 					keyboard->removeKey(event.key.keysym.sym);
-					//if (keyboard->getKeyUp(event.key.keysym.sym))
-					{
-						std::cout << "Key released" << std::endl;
-					}
 				}
 			}
 
