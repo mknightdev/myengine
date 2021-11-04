@@ -65,7 +65,7 @@ namespace myengine
 			// Update world
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
-				entities.at(ei)->tick();
+				entities.at(ei)->tick(environment->getDeltaTime());
 			}
 
 			// TODO: Move to before display

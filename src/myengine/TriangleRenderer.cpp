@@ -66,26 +66,26 @@ namespace myengine
 		glUseProgram(0);
 	}
 
-	void TriangleRenderer::onTick()
+	void TriangleRenderer::onTick(float _deltaTime)
 	{
 		if (getKeyboard()->getKeyDown(SDLK_UP))
 		{
-			getTransform()->setPosition(glm::vec3(0, 0.01f, 0));
+			getTransform()->setPosition(glm::vec3(0, 0.5f, 0) * _deltaTime);
 		}
 		
 		if (getKeyboard()->getKeyDown(SDLK_DOWN))
 		{
-			getTransform()->setPosition(glm::vec3(0, -0.01f, 0));
+			getTransform()->setPosition(glm::vec3(0, -0.5f, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_LEFT))
 		{
-			getTransform()->setPosition(glm::vec3(-0.01f, 0, 0));
+			getTransform()->setPosition(glm::vec3(-0.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_RIGHT))
 		{
-			getTransform()->setPosition(glm::vec3(0.01f, 0, 0));
+			getTransform()->setPosition(glm::vec3(0.5f, 0, 0) * _deltaTime);
 		}
 
 		// Gets latest transform

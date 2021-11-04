@@ -4,12 +4,12 @@
 
 namespace myengine
 {
-	void Component::tick()
+	void Component::tick(float _deltaTime)
 	{
-		onTick();
+		onTick(_deltaTime);
 	}
 
-	void Component::onTick()
+	void Component::onTick(float _deltaTime)
 	{
 
 	}

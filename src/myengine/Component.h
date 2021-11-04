@@ -16,7 +16,7 @@ namespace myengine
 		std::shared_ptr<Entity> getEntity();
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Transform> getTransform();
-		virtual void onTick();
+		virtual void onTick(float _deltaTime);
 		virtual void onDisplay();
 		virtual void onInitialize();
 
@@ -24,7 +24,7 @@ namespace myengine
 			friend struct myengine::Entity;
 			std::weak_ptr<Core> core;
 			std::weak_ptr<Entity> entity;
-			void tick();
+			void tick(float _deltaTime);
 			void display();
 	};
 }

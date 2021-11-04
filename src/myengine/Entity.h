@@ -50,7 +50,7 @@ namespace myengine
 			std::weak_ptr<Entity> self;
 			std::weak_ptr<Core> core;
 			std::weak_ptr<Transform> transform;
-			void tick();
+			void tick(float _deltaTime);
 			void display();
 	};
 }

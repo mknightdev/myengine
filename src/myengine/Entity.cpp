@@ -19,11 +19,11 @@ namespace myengine
 		return core.lock();	// .lock() converts the weak_ptr to a shared_ptr
 	}
 
-	void Entity::tick()
+	void Entity::tick(float _deltaTime)
 	{
 		for (size_t ei = 0; ei < components.size(); ++ei)
 		{
-			components.at(ei)->tick();
+			components.at(ei)->tick(_deltaTime);
 		}
 	}
 

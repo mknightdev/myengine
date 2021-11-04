@@ -15,7 +15,7 @@ namespace myengine
 	{
 		void onInitialize();
 		void onDisplay();
-		void onTick();
+		void onTick(float _deltaTime);
 
 		//GLuint getId();
 
