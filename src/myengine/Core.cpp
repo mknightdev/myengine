@@ -4,6 +4,7 @@
 #include "Transform.h"
 #include "Keyboard.h"
 
+#include <AL/al.h>
 #include <GL/glew.h>
 
 namespace myengine
@@ -32,6 +33,31 @@ namespace myengine
 
 		glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
 	}
+
+	//void Core::setupAudio()
+	//{
+	//	device = alcOpenDevice(NULL);
+
+	//	if (!device)
+	//	{
+	//		throw std::exception();
+	//	}
+
+	//	context = alcCreateContext(device, NULL);
+
+	//	if (!context)
+	//	{
+	//		alcCloseDevice(device);
+	//		throw std::exception();
+	//	}
+
+	//	if (!alcMakeContextCurrent(context))
+	//	{
+	//		alcDestroyContext(context);
+	//		alcCloseDevice(device);
+	//		throw std::exception();
+	//	}
+	//}
 
 	void Core::start()
 	{
@@ -96,6 +122,7 @@ namespace myengine
 		rtn->self = rtn;
 		rtn->setupWindow();
 		rtn->setupGraphics();
+		//rtn->setupAudio();
 		return rtn;
 	}
 
