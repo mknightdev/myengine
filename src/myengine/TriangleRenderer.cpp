@@ -63,27 +63,27 @@ namespace myengine
 	{
 		if (getKeyboard()->getKeyDown(SDLK_UP))
 		{
-			getTransform()->setPosition(glm::vec3(0, 0.5f, 0) * _deltaTime);
+			getTransform()->move(glm::vec3(0, 0.5f, 0) * _deltaTime);
 		}
 		
 		if (getKeyboard()->getKeyDown(SDLK_DOWN))
 		{
-			getTransform()->setPosition(glm::vec3(0, -0.5f, 0) * _deltaTime);
+			getTransform()->move(glm::vec3(0, -0.5f, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_LEFT))
 		{
-			getTransform()->setPosition(glm::vec3(-0.5f, 0, 0) * _deltaTime);
+			getTransform()->move(glm::vec3(-0.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_RIGHT))
 		{
-			getTransform()->setPosition(glm::vec3(0.5f, 0, 0) * _deltaTime);
+			getTransform()->move(glm::vec3(0.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_a))
 		{
-			getTransform()->setRotation(glm::vec3(0, 2, 0) * _deltaTime);
+			getTransform()->rotate(glm::vec3(0, 10, 0) * _deltaTime);
 		}
 	}
 }

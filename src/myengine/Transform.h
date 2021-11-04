@@ -14,6 +14,9 @@ namespace myengine
 		void setRotation(glm::vec3 _rotation);
 		void setScale(glm::vec3 _scale);
 
+		void move(glm::vec3 _moveValue);
+		void rotate(glm::vec3 _rotValue);
+
 		glm::vec3 getScale();
 
 		private:

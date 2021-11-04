@@ -17,17 +17,17 @@ namespace myengine
 
 	void Transform::setPosition(glm::vec3 _position)
 	{
-		position += _position;
+		position = _position;
 	}
 
 	void Transform::setRotation(glm::vec3 _rotation)
 	{
-		rotation += _rotation;
+		rotation = _rotation;
 	}
 
 	void Transform::setScale(glm::vec3 _scale)
 	{
-		scale += _scale;
+		scale = _scale;
 	}
 
 	glm::vec3 Transform::getScale()
@@ -45,5 +45,15 @@ namespace myengine
 		rtn = glm::scale(rtn, scale);
 
 		return rtn;
+	}
+
+	void Transform::move(glm::vec3 _moveValue)
+	{
+		position += _moveValue;
+	}
+
+	void Transform::rotate(glm::vec3 _rotValue)
+	{
+		rotation += _rotValue;
 	}
 }
