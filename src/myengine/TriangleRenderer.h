@@ -17,12 +17,6 @@ namespace myengine
 		void onDisplay();
 		void onTick(float _deltaTime);
 
-		//GLuint getId();
-
-		//int getComponents();
-
-		std::shared_ptr<Core> getCore();
-
 		private:
 			friend struct myengine::Core;
 			float rot;
@@ -30,6 +24,5 @@ namespace myengine
 			std::shared_ptr<myrenderer::ShaderProgram> triangleShader;
 			std::shared_ptr<myrenderer::VertexArray> vao;
 			std::shared_ptr<myrenderer::VertexBuffer> positionsVbo;
-			glm::mat4 triangleModel;
 	};
 }

@@ -41,19 +41,12 @@ namespace myengine
 		// Prepare perspective projection matrix
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
 
-		
-		triangleModel = glm::translate(triangleModel, glm::vec3(0, 0, 0));
-		//triangleModel = glm::rotate(triangleModel, glm::radians(rot), glm::vec3(0, 1, 0));
-
-		// Increase float angle so next frame triangle rotates further
-		//rot += 0.1f;
-
 		// Instruct opengl to use our shader program and vao
 		glUseProgram(triangleShader->getId());
 		glBindVertexArray(vao->getId());
 
 		// Upload the model matrix
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(triangleModel));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(getTransform()->getModel()));
 
 		// Upload the projection matrix
 		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
@@ -88,8 +81,9 @@ namespace myengine
 			getTransform()->setPosition(glm::vec3(0.5f, 0, 0) * _deltaTime);
 		}
 
-		// Gets latest transform
-		// Note: Stops triangle from going really fast & Allows movement of the triangle
-		triangleModel = getTransform()->getModel();
+		if (getKeyboard()->getKeyDown(SDLK_a))
+		{
+			getTransform()->setRotation(glm::vec3(0, 2, 0) * _deltaTime);
+		}
 	}
 }
