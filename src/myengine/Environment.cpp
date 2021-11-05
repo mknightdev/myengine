@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "Environment.h"
+#include <Windows.h>
 
 namespace myengine
 {
@@ -28,6 +29,13 @@ namespace myengine
 		float diff = currentTime - lastTime;
 		deltaTime = diff / 1000.0f;
 		lastTime = currentTime;
+
+		//currentTime = GetTickCount();
+
+
+		//float diff = currentTime - lastTime;
+		//deltaTime = diff / 1000.0f;
+		//lastTime = currentTime;
 	}
 
 }

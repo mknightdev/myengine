@@ -7,6 +7,7 @@ include_directories(
 )
 
 if (MSVC)
+	set (CMAKE_EXE_LINKER_FLAGS /SAFESEH:NO)
 	include_directories(
 		contrib/msvc-windows-x86/SDL2/include	# For SDL.h
 		contrib/msvc-windows-x86/glew/include
@@ -81,4 +82,4 @@ add_executable(game
 	src/demo/pbr.cpp
 )
 
-target_link_libraries(game myengine myrenderer)
+target_link_libraries(game myengine myrenderer) 
