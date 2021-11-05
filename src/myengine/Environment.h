@@ -8,7 +8,6 @@ namespace myengine
 	{
 		static std::shared_ptr<Environment> create(std::weak_ptr<Core> _core);
 		float getDeltaTime();
-		virtual void onTick();
 
 		private:
 			friend struct myengine::Core;

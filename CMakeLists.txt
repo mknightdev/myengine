@@ -8,17 +8,19 @@ include_directories(
 
 if (MSVC)
 	include_directories(
-		# contrib/msvc-windows-x86/SDL2/include	# For SDL.h
-		# contrib/msvc-windows-x86/glew/include
-		contrib/msvc-windows-x64/SDL2/include
-		contrib/msvc-windows-x64/glew/include		# For glew.h
+		contrib/msvc-windows-x86/SDL2/include	# For SDL.h
+		contrib/msvc-windows-x86/glew/include
+		contrib/msvc-windows-x86/OpenAL/include	# For AL/alc.h & AL/al.h
+		# contrib/msvc-windows-x64/SDL2/include
+		# contrib/msvc-windows-x64/glew/include	# For glew.h
 )
 
 link_directories(
-	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
-	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/OpenAL/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
 )
 else()
 endif()	
@@ -61,7 +63,7 @@ add_library(myrenderer
 )
 
 if (MSVC)
-	target_link_libraries(myengine SDL2 glew32 opengl32)
+	target_link_libraries(myengine SDL2 glew32 opengl32 openal32)
 else()
 	target_link_libraries(myengine SDL2 GLU GLEW GL)
 endif()
@@ -69,7 +71,7 @@ endif()
 target_link_libraries(myengine SDL2)
 
 if (MSVC)
-	target_link_libraries(myrenderer SDL2 glew32 opengl32)
+	target_link_libraries(myrenderer SDL2 glew32 opengl32 openal32)
 else()
 	target_link_libraries(myrenderer SDL2 GLU GLEW GL)
 endif()

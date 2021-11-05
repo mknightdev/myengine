@@ -19,19 +19,15 @@ namespace myengine
 
 	float Environment::getDeltaTime()
 	{
-		currentTime = SDL_GetTicks();
-		float diff = currentTime - lastTime;
-		lastTime = currentTime;
-		return deltaTime = diff / 1000.0f;
+		return deltaTime;
 	}
 
 	void Environment::tick()
 	{
-		onTick();
+		currentTime = SDL_GetTicks();
+		float diff = currentTime - lastTime;
+		deltaTime = diff / 1000.0f;
+		lastTime = currentTime;
 	}
 
-	void Environment::onTick()
-	{
-
-	}
 }

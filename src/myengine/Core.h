@@ -1,7 +1,6 @@
 #include <SDL2/SDL.h>
 #include <AL/alc.h>
 
-
 #include <memory>
 #include <vector>
 
@@ -24,7 +23,7 @@ namespace myengine
 		void setupGraphics();
 
 		// Setup audio
-		//void setupAudio();
+		void setupAudio();
 
 		std::shared_ptr<Entity> addEntity();
 
@@ -39,7 +38,7 @@ namespace myengine
 			std::shared_ptr<Keyboard> keyboard;
 			std::weak_ptr<Core> self;
 			SDL_Window* window;
-			//ALCdevice* device;
-			//ALCcontext* context;
+			ALCdevice* device;
+			ALCcontext* context;
 	};
 }

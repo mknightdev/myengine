@@ -34,30 +34,30 @@ namespace myengine
 		glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
 	}
 
-	//void Core::setupAudio()
-	//{
-	//	device = alcOpenDevice(NULL);
+	void Core::setupAudio()
+	{
+		device = alcOpenDevice(NULL);
 
-	//	if (!device)
-	//	{
-	//		throw std::exception();
-	//	}
+		if (!device)
+		{
+			throw std::exception();
+		}
 
-	//	context = alcCreateContext(device, NULL);
+		context = alcCreateContext(device, NULL);
 
-	//	if (!context)
-	//	{
-	//		alcCloseDevice(device);
-	//		throw std::exception();
-	//	}
+		if (!context)
+		{
+			alcCloseDevice(device);
+			throw std::exception();
+		}
 
-	//	if (!alcMakeContextCurrent(context))
-	//	{
-	//		alcDestroyContext(context);
-	//		alcCloseDevice(device);
-	//		throw std::exception();
-	//	}
-	//}
+		if (!alcMakeContextCurrent(context))
+		{
+			alcDestroyContext(context);
+			alcCloseDevice(device);
+			throw std::exception();
+		}
+	}
 
 	void Core::start()
 	{
@@ -88,6 +88,7 @@ namespace myengine
 
 			environment->tick();
 
+
 			// Update world
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
@@ -102,7 +103,7 @@ namespace myengine
 				entities.at(ei)->display();
 			}
 
-			std::cout << "Delta: " << environment->getDeltaTime() << std::endl;
+			//std::cout << "Delta: " << environment->getDeltaTime() << std::endl;
 
 			SDL_GL_SwapWindow(window);
 		}
