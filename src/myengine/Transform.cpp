@@ -38,11 +38,11 @@ namespace myengine
 	glm::mat4 Transform::getModel()
 	{
 		glm::mat4 rtn(1.0f);
+		rtn = glm::scale(rtn, scale);
 		rtn = glm::translate(rtn, position);
 		rtn = glm::rotate(rtn, rotation.x, glm::vec3(1, 0, 0));
 		rtn = glm::rotate(rtn, rotation.y, glm::vec3(0, 1, 0));
 		rtn = glm::rotate(rtn, rotation.z, glm::vec3(0, 0, 1));
-		rtn = glm::scale(rtn, scale);
 
 		return rtn;
 	}

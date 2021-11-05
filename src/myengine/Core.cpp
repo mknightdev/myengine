@@ -84,6 +84,13 @@ namespace myengine
 				{
 					keyboard->removeKey(event.key.keysym.sym);
 				}
+				
+				switch (event.key.keysym.sym)
+				{
+					case SDLK_ESCAPE: 
+						running = false;
+						break;
+				}
 			}
 
 			environment->tick();
@@ -106,6 +113,9 @@ namespace myengine
 			//std::cout << "Delta: " << environment->getDeltaTime() << std::endl;
 
 			SDL_GL_SwapWindow(window);
+
+			// 0 to disable, 1 to enable, -1 for adaptive vsync
+			SDL_GL_SetSwapInterval(0);
 		}
 
 		// Render world

@@ -17,6 +17,5 @@ namespace myengine
 			void tick();
 			std::weak_ptr<Environment> self;
 			std::weak_ptr<Core> core;
-
 	};
 }

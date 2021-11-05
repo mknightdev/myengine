@@ -83,7 +83,7 @@ namespace myengine
 
 		if (getKeyboard()->getKeyDown(SDLK_a))
 		{
-			getTransform()->rotate(glm::vec3(0, 10, 0) * _deltaTime);
+			getTransform()->rotate(glm::vec3(0, 0.5f, 0) * _deltaTime);
 		}
 	}
 }
