@@ -3,6 +3,7 @@
 #include "Environment.h"
 #include "Transform.h"
 #include "Keyboard.h"
+#include "Mouse.h"
 
 #include <AL/al.h>
 #include <GL/glew.h>
@@ -70,6 +71,7 @@ namespace myengine
 	{
 		environment = Environment::create(self);
 		keyboard = Keyboard::create(self);
+		mouse = Mouse::create(self);
 
 		running = true;
 		while (running)
@@ -82,6 +84,13 @@ namespace myengine
 				if (event.type == SDL_QUIT)
 				{
 					running = false;
+				}
+				else if (event.type == SDL_MOUSEMOTION)
+				{
+					// Keep track of mouse position
+					mouse->mousePosition = glm::vec2(event.motion.x, event.motion.y);
+
+					std::cout << "Mouse = (" << mouse->mousePosition.x << ", " << mouse->mousePosition.y << ")" << std::endl;
 				}
 				else if (event.type == SDL_KEYDOWN)
 				{
@@ -159,6 +168,11 @@ namespace myengine
 	std::shared_ptr<Keyboard> Core::getKeyboard()
 	{
 		return keyboard;
+	}
+
+	std::shared_ptr<Mouse> Core::getMouse()
+	{
+		return mouse;
 	}
 
 	std::shared_ptr<Environment> Core::getEnvironment()

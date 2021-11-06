@@ -2,6 +2,7 @@
 #include "Keyboard.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Mouse.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
@@ -150,6 +151,37 @@ namespace myengine
 		{
 			cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 		}
+
+		if (firstMouse)
+		{
+			lastX = getMouse()->getMousePosition().x;
+			lastY = getMouse()->getMousePosition().y;;
+			firstMouse = false;
+		}
+
+		float xoffset = getMouse()->getMousePosition().x; - lastX;
+		float yoffset = lastY - getMouse()->getMousePosition().y; // reversed since y-coordinates go from bottom to top
+		lastX = getMouse()->getMousePosition().x;
+		lastY = getMouse()->getMousePosition().y;
+
+		float sensitivity = 0.1f; // change this value to your liking
+		xoffset *= sensitivity;
+		yoffset *= sensitivity;
+
+		yaw += xoffset;
+		pitch += yoffset;
+
+		// make sure that when pitch is out of bounds, screen doesn't get flipped
+		if (pitch > 89.0f)
+			pitch = 89.0f;
+		if (pitch < -89.0f)
+			pitch = -89.0f;
+
+		glm::vec3 front;
+		front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+		front.y = sin(glm::radians(pitch));
+		front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+		cameraFront = glm::normalize(front);
 
 	}
 }

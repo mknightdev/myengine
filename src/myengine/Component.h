@@ -9,12 +9,14 @@ namespace myengine
 	struct Entity;
 	struct Keyboard;
 	struct Transform;
+	struct Mouse;
 
 	struct Component
 	{
 		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Entity> getEntity();
 		std::shared_ptr<Keyboard> getKeyboard();
+		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Transform> getTransform();
 		virtual void onTick(float _deltaTime);
 		virtual void onDisplay();

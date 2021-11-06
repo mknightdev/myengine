@@ -44,6 +44,11 @@ namespace myengine
 		return getCore()->getKeyboard();
 	}
 
+	std::shared_ptr<Mouse> Component::getMouse()
+	{
+		return getCore()->getMouse();
+	}
+
 	std::shared_ptr<Transform> Component::getTransform()
 	{
 		return getEntity()->getTransform();

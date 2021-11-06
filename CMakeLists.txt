@@ -50,6 +50,8 @@ add_library(myengine
 	src/myengine/Transform.h
 	src/myengine/Keyboard.cpp
 	src/myengine/Keyboard.h
+	src/myengine/Mouse.cpp
+	src/myengine/Mouse.h
 )
 
 add_library(myrenderer
