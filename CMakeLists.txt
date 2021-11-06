@@ -3,11 +3,12 @@ project(MYENGINE)
 
 include_directories(
 	src		# For myengine.h
-	contrib		# For glm.hpp & bugl.h
+	contrib		# For glm.hpp, bugl.h & stb_image.h
 )
 
 if (MSVC)
 	set (CMAKE_EXE_LINKER_FLAGS /SAFESEH:NO)
+
 	include_directories(
 		# contrib/msvc-windows-x86/SDL2/include	# For SDL.h
 		# contrib/msvc-windows-x86/glew/include
@@ -56,8 +57,8 @@ add_library(myrenderer
 	src/myrenderer/Model.h
 	src/myrenderer/ShaderProgram.cpp
 	src/myrenderer/ShaderProgram.h
-	# src/myrenderer/Texture.cpp
-	# src/myrenderer/Texture.h
+	src/myrenderer/Texture.cpp
+	src/myrenderer/Texture.h
 	src/myrenderer/VertexArray.cpp
 	src/myrenderer/VertexArray.h
 	src/myrenderer/VertexBuffer.cpp
