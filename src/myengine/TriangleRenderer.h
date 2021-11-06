@@ -17,6 +17,7 @@ namespace myengine
 		void onDisplay();
 		void onTick(float _deltaTime);
 
+
 		private:
 			friend struct myengine::Core;
 			float rot;
@@ -24,5 +25,9 @@ namespace myengine
 			std::shared_ptr<myrenderer::ShaderProgram> triangleShader;
 			std::shared_ptr<myrenderer::VertexArray> vao;
 			std::shared_ptr<myrenderer::VertexBuffer> positionsVbo;
+			std::shared_ptr<myrenderer::Texture> texture;
+
+			float deltaTime;
+			float prevTime;
 	};
 }
