@@ -16,7 +16,7 @@ namespace myengine
 			throw std::exception();
 		}
 
-		window = SDL_CreateWindow("My Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
+		window = SDL_CreateWindow("My Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280, 720, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 	}
 
 	void Core::setupGraphics()
@@ -30,6 +30,13 @@ namespace myengine
 		{
 			throw std::exception();
 		}
+
+		std::cout << "INFO: Using GLEW " << glewGetString(GLEW_VERSION) << std::endl;
+
+		std::cout << "INFO: OpenGL Vendor: " << glGetString(GL_VENDOR) << std::endl;
+		std::cout << "INFO: OpenGL Renderer: " << glGetString(GL_RENDERER) << std::endl;
+		std::cout << "INFO: OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
+		std::cout << "INFO: OpenGL Shading Language Version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << "\n" << std::endl;
 
 		glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
 	}

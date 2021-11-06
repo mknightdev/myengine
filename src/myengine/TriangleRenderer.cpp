@@ -39,7 +39,7 @@ namespace myengine
 		GLint projectionLoc = glGetUniformLocation(triangleShader->getId(), "u_Projection");
 
 		// Prepare perspective projection matrix
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
 
 		// Instruct opengl to use our shader program and vao
 		glUseProgram(triangleShader->getId());
