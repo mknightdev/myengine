@@ -17,6 +17,8 @@ namespace myengine
 		void onDisplay();
 		void onTick(float _deltaTime);
 
+		void TriangleRenderer::mouseUpdate();
+
 
 		private:
 			friend struct myengine::Core;
@@ -28,6 +30,6 @@ namespace myengine
 			std::shared_ptr<myrenderer::Texture> texture;
 
 			float deltaTime;
-			float prevTime;
+			unsigned int prevTime;
 	};
 }

@@ -56,8 +56,8 @@ namespace myengine
 		//glEnable(GL_DEPTH_TEST);
 
 		// !!! Temporary deltatime whilst I test things !!!
-		float currTime = SDL_GetTicks();
-		float diffTime = currTime - prevTime;
+		unsigned int currTime = SDL_GetTicks();
+		unsigned int diffTime = currTime - prevTime;
 		deltaTime = (diffTime / 1000.0f);
 		// Makes sure it has the latest prev time. Otherwise it will make things go faster and faster
 		prevTime = currTime;
@@ -152,19 +152,25 @@ namespace myengine
 			cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 		}
 
+		mouseUpdate();
+	}
+
+	void TriangleRenderer::mouseUpdate()
+	{
+		// Code from learnOpenGL - Camera
 		if (firstMouse)
 		{
 			lastX = getMouse()->getMousePosition().x;
-			lastY = getMouse()->getMousePosition().y;;
+			lastY = getMouse()->getMousePosition().y;
 			firstMouse = false;
 		}
 
-		float xoffset = getMouse()->getMousePosition().x; - lastX;
+		float xoffset = getMouse()->getMousePosition().x -lastX;
 		float yoffset = lastY - getMouse()->getMousePosition().y; // reversed since y-coordinates go from bottom to top
 		lastX = getMouse()->getMousePosition().x;
 		lastY = getMouse()->getMousePosition().y;
 
-		float sensitivity = 0.1f; // change this value to your liking
+		float sensitivity = 0.1f;; // change this value to your liking
 		xoffset *= sensitivity;
 		yoffset *= sensitivity;
 
@@ -182,6 +188,5 @@ namespace myengine
 		front.y = sin(glm::radians(pitch));
 		front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 		cameraFront = glm::normalize(front);
-
 	}
 }

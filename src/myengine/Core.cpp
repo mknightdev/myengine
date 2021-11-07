@@ -73,6 +73,8 @@ namespace myengine
 		keyboard = Keyboard::create(self);
 		mouse = Mouse::create(self);
 
+		SDL_CaptureMouse(SDL_TRUE);
+
 		running = true;
 		while (running)
 		{ 
@@ -90,7 +92,7 @@ namespace myengine
 					// Keep track of mouse position
 					mouse->mousePosition = glm::vec2(event.motion.x, event.motion.y);
 
-					std::cout << "Mouse = (" << mouse->mousePosition.x << ", " << mouse->mousePosition.y << ")" << std::endl;
+					//std::cout << "Mouse = (" << mouse->mousePosition.x << ", " << mouse->mousePosition.y << ")" << std::endl;
 				}
 				else if (event.type == SDL_KEYDOWN)
 				{
@@ -101,16 +103,15 @@ namespace myengine
 					keyboard->removeKey(event.key.keysym.sym);
 				}
 				
-				switch (event.key.keysym.sym)
-				{
-					case SDLK_ESCAPE: 
-						running = false;
-						break;
-				}
+				//switch (event.key.keysym.sym)
+				//{
+				//	case SDLK_ESCAPE: 
+				//		running = false;
+				//		break;
+				//}
 			}
 
 			environment->tick();
-
 
 			// Update world
 			for (size_t ei = 0; ei < entities.size(); ++ei)

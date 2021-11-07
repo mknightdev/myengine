@@ -33,7 +33,6 @@ namespace myengine
 		std::shared_ptr<Environment> getEnvironment();
 
 		private:
-			int dummy;
 			bool running;
 			std::vector<std::shared_ptr<Entity>> entities;
 			std::shared_ptr<Environment> environment;

@@ -15,5 +15,6 @@ namespace myengine
 		std::weak_ptr<Mouse> self;
 		std::weak_ptr<Core> core;
 		glm::vec2 mousePosition;
+		bool canUpdate;
 	};
 }
