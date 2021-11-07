@@ -1,0 +1,11 @@
+digraph "F:/Programming/Uni/myengine/src/myengine" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"]
+  dir_7d1166640f6dacc4d6d87ed0546d7026 [shape=box label="myrenderer" URL="dir_7d1166640f6dacc4d6d87ed0546d7026.html"];
+  dir_0ddde275324c43d8035a84ca42e35f4e [shape=box, label="myengine", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_0ddde275324c43d8035a84ca42e35f4e.html"];
+  }
+  dir_0ddde275324c43d8035a84ca42e35f4e->dir_7d1166640f6dacc4d6d87ed0546d7026 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000003.html"];
+}
