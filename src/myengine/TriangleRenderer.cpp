@@ -35,9 +35,19 @@ namespace myengine
 		positionsVbo->add(glm::vec3(-0.5f, -0.5f, 0.0f));
 		positionsVbo->add(glm::vec3(0.5f, -0.5f, 0.0f));
 
+		texturesVbo = std::make_shared<VertexBuffer>();
+
+		texturesVbo->add(glm::vec2(0.0f, 0.0f));
+		texturesVbo->add(glm::vec2(1.0f, 0.0f));
+		texturesVbo->add(glm::vec2(0.0f, -1.0f));
+		texturesVbo->add(glm::vec2(1.0f, -1.0f));
+		texturesVbo->add(glm::vec2(1.0f, 0.0f));
+		texturesVbo->add(glm::vec2(0.0f, -1.0f));
+
 		// Vertex Arrray
 		vao = std::make_shared<VertexArray>();
 		vao->setBuffer(0, positionsVbo);
+		vao->setBuffer(1, texturesVbo);
 	
 		int w = 0;
 		int h = 0;
@@ -69,6 +79,7 @@ namespace myengine
 
 		// Instruct opengl to use our shader program and vao
 		glUseProgram(triangleShader->getId());
+		glBindTexture(GL_TEXTURE_2D, texture->GetId());
 		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix
@@ -94,7 +105,6 @@ namespace myengine
 
 		// Draw 3 vertices
 		glDrawArrays(GL_TRIANGLES, 0, 3);
-
 		//glDisable(GL_DEPTH_TEST);
 
 		// Reset the state

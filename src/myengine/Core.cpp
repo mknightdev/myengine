@@ -74,6 +74,8 @@ namespace myengine
 		mouse = Mouse::create(self);
 
 		SDL_CaptureMouse(SDL_TRUE);
+		glEnable(GL_DEPTH_TEST);
+		//glEnable(GL_CULL_FACE);
 
 		running = true;
 		while (running)
@@ -85,6 +87,7 @@ namespace myengine
 			{
 				if (event.type == SDL_QUIT)
 				{
+					std::cout << "Quit program!" << std::endl;
 					running = false;
 				}
 				else if (event.type == SDL_MOUSEMOTION)
@@ -103,12 +106,15 @@ namespace myengine
 					keyboard->removeKey(event.key.keysym.sym);
 				}
 				
-				//switch (event.key.keysym.sym)
-				//{
-				//	case SDLK_ESCAPE: 
-				//		running = false;
-				//		break;
-				//}
+				switch (event.key.keysym.sym)
+				{
+					case SDLK_ESCAPE: 
+						std::cout << "Quit program with ESC!" << std::endl;
+						running = false;
+						SDL_DestroyWindow(window);
+						SDL_Quit();
+						break;
+				}
 			}
 
 			environment->tick();
@@ -125,6 +131,7 @@ namespace myengine
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
 				entities.at(ei)->display();
+				glDisable(GL_DEPTH_TEST);
 			}
 
 			//std::cout << "Delta: " << environment->getDeltaTime() << std::endl;
@@ -134,6 +141,7 @@ namespace myengine
 			// 0 to disable, 1 to enable, -1 for adaptive vsync
 			SDL_GL_SetSwapInterval(0);
 		}
+
 
 		// Render world
 		// Post-render world

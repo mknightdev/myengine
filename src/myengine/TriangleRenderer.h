@@ -4,7 +4,7 @@
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
-#include <vector>
+//#include <vector>
 
 namespace myengine
 {
@@ -27,6 +27,7 @@ namespace myengine
 			std::shared_ptr<myrenderer::ShaderProgram> triangleShader;
 			std::shared_ptr<myrenderer::VertexArray> vao;
 			std::shared_ptr<myrenderer::VertexBuffer> positionsVbo;
+			std::shared_ptr<myrenderer::VertexBuffer> texturesVbo;
 			std::shared_ptr<myrenderer::Texture> texture;
 
 			float deltaTime;
