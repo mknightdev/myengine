@@ -12,7 +12,7 @@ namespace myengine
 
 		// Initialise to zero
 		rtn->deltaTime = 0.0f;
-		rtn->lastTime = 0.0f;
+		//rtn->lastTime = 0.0f;
 		rtn->currentTime = 0.0f;
 
 		return rtn;

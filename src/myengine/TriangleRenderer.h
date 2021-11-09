@@ -8,7 +8,6 @@
 
 namespace myengine
 {
-	struct Keyboard;
 	struct Core;
 
 	struct TriangleRenderer : Component
