@@ -3,3 +3,4 @@
 #include "Component.h"
 #include "TriangleRenderer.h"
 #include "Transform.h"
+#include "ModelRenderer.h"

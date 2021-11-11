@@ -1,6 +1,5 @@
 #include "TriangleRenderer.h"
 #include "Keyboard.h"
-#include "Entity.h"
 #include "Transform.h"
 #include "Mouse.h"
 

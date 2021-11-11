@@ -9,10 +9,17 @@ using namespace myrenderer;
 int main()
 {
 	std::shared_ptr<Core> core = Core::initialize();
+
 	std::shared_ptr<Entity> entity = core->addEntity();
+	std::shared_ptr<Entity> modelEntity = core->addEntity();
+
+
+	modelEntity->addComponent<ModelRenderer>();
+	modelEntity->getComponent<ModelRenderer>();
 
 	entity->addComponent<TriangleRenderer>();
 	entity->getComponent<TriangleRenderer>();
+
 
 	core->start();
 

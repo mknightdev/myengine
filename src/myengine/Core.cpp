@@ -106,15 +106,15 @@ namespace myengine
 					keyboard->removeKey(event.key.keysym.sym);
 				}
 				
-				switch (event.key.keysym.sym)
-				{
-					case SDLK_ESCAPE: 
-						std::cout << "Quit program with ESC!" << std::endl;
-						running = false;
-						SDL_DestroyWindow(window);
-						SDL_Quit();
-						break;
-				}
+				//switch (event.key.keysym.sym)
+				//{
+				//	case SDLK_ESCAPE: 
+				//		std::cout << "Quit program with ESC!" << std::endl;
+				//		running = false;
+				//		SDL_DestroyWindow(window);
+				//		SDL_Quit();
+				//		break;
+				//}
 			}
 
 			environment->tick();
