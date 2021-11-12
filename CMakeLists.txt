@@ -10,21 +10,21 @@ if (MSVC)
 	set (CMAKE_EXE_LINKER_FLAGS /SAFESEH:NO)
 
 	include_directories(
-		# contrib/msvc-windows-x86/SDL2/include	# For SDL.h
-		# contrib/msvc-windows-x86/glew/include
-		# contrib/msvc-windows-x86/OpenAL/include	# For AL/alc.h & AL/al.h
-		contrib/msvc-windows-x64/SDL2/include
-		contrib/msvc-windows-x64/glew/include	# For glew.h
-		contrib/msvc-windows-x64/OpenAL/include
+		contrib/msvc-windows-x86/SDL2/include	# For SDL.h
+		contrib/msvc-windows-x86/glew/include
+		contrib/msvc-windows-x86/OpenAL/include	# For AL/alc.h & AL/al.h
+		# contrib/msvc-windows-x64/SDL2/include
+		# contrib/msvc-windows-x64/glew/include	# For glew.h
+		# contrib/msvc-windows-x64/OpenAL/include
 )
 
 link_directories(
-	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
-	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
-	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/OpenAL/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/OpenAL/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/OpenAL/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
+	# ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/OpenAL/lib
 )
 else()
 endif()	
@@ -52,6 +52,12 @@ add_library(myengine
 	src/myengine/Keyboard.h
 	src/myengine/Mouse.cpp
 	src/myengine/Mouse.h
+	src/myengine/ModelRenderer.cpp
+	src/myengine/ModelRenderer.h
+	src/myengine/AudioClip.cpp
+	src/myengine/AudioClip.h
+	src/myengine/SoundSource.cpp
+	src/myengine/SoundSource.h
 )
 
 add_library(myrenderer
@@ -71,7 +77,7 @@ add_library(myrenderer
 if (MSVC)
 	target_link_libraries(myengine SDL2 glew32 opengl32 openal32)
 else()
-	target_link_libraries(myengine SDL2 GLU GLEW GL)
+	target_link_libraries(myengine SDL2 GLU GLEW GL openal)
 endif()
 
 target_link_libraries(myengine SDL2)
@@ -79,7 +85,7 @@ target_link_libraries(myengine SDL2)
 if (MSVC)
 	target_link_libraries(myrenderer SDL2 glew32 opengl32 openal32)
 else()
-	target_link_libraries(myrenderer SDL2 GLU GLEW GL)
+	target_link_libraries(myrenderer SDL2 GLU GLEW GL openal)
 endif()
 
 add_executable(game

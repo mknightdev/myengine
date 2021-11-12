@@ -16,8 +16,7 @@ namespace myengine
 		void onDisplay();
 		void onTick(float _deltaTime);
 
-		void TriangleRenderer::mouseUpdate();
-
+		void mouseUpdate();
 
 		private:
 			friend struct myengine::Core;

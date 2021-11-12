@@ -125,7 +125,6 @@ namespace myengine
 				entities.at(ei)->tick(environment->getDeltaTime());
 			}
 
-			// TODO: Move to before display
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (size_t ei = 0; ei < entities.size(); ++ei)
@@ -149,6 +148,12 @@ namespace myengine
 
 	void Core::stop()
 	{
+		// Close after use
+		alcMakeContextCurrent(NULL);
+		alcDestroyContext(context);
+		alcCloseDevice(device);
+
+		// Stop the engine
 		running = false;
 	}
 
@@ -158,7 +163,7 @@ namespace myengine
 		rtn->self = rtn;
 		rtn->setupWindow();
 		rtn->setupGraphics();
-		//rtn->setupAudio();
+		rtn->setupAudio();
 		return rtn;
 	}
 

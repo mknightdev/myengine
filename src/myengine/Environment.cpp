@@ -1,6 +1,5 @@
 #include "Core.h"
 #include "Environment.h"
-#include <Windows.h>
 
 namespace myengine
 {
