@@ -11,10 +11,9 @@ namespace myengine
 		void loadOgg(const std::string& _fileName, std::vector<char>& _buffer, ALenum& _format, ALsizei& _freq);
 		ALuint GetId();
 
+		std::string ErrorCheck(ALCenum _error);
+
 	private:
-		ALenum format;
-		ALsizei freq;
 		ALuint id;
-		std::vector<char> bufferData;
 	};
 }
