@@ -58,6 +58,8 @@ add_library(myengine
 	src/myengine/AudioClip.h
 	src/myengine/SoundSource.cpp
 	src/myengine/SoundSource.h
+	src/myengine/Exception.cpp
+	src/myengine/Exception.h
 )
 
 add_library(myrenderer

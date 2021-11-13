@@ -2,6 +2,8 @@
 #include <vector>
 #include <iostream>
 
+#include "Exception.h"
+
 namespace myengine
 {
 	struct Core;
@@ -55,7 +57,8 @@ namespace myengine
 					return rtn;
 				}
 			}
-			throw std::exception();	// Early exit
+
+			throw Exception("Unable to get component");
 		}
 
 		/**

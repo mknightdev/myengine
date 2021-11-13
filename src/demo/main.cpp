@@ -22,6 +22,9 @@ int main()
 	entity->addComponent<SoundSource>();
 	entity->getComponent<SoundSource>()->PlaySound();
 
+	std::shared_ptr<Entity> entity2 = core->addEntity();
+	entity2->getComponent<SoundSource>();
+
 	core->start();
 
 	return 0;

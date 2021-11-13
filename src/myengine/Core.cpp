@@ -161,6 +161,7 @@ namespace myengine
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->self = rtn;
+
 		rtn->setupWindow();
 		rtn->setupGraphics();
 		rtn->setupAudio();
