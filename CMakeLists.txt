@@ -60,6 +60,8 @@ add_library(myengine
 	src/myengine/SoundSource.h
 	src/myengine/Exception.cpp
 	src/myengine/Exception.h
+	src/myengine/Resource.cpp
+	src/myengine/Resource.h
 )
 
 add_library(myrenderer

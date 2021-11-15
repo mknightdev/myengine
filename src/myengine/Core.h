@@ -10,6 +10,7 @@ namespace myengine
 	struct Environment;
 	struct Keyboard;
 	struct Mouse;
+	struct Resource;
 
 	/**
 	* \brief This is the brief description. 
@@ -102,12 +103,20 @@ namespace myengine
 		*/
 		std::shared_ptr<Environment> getEnvironment();
 
+		/**
+		* Gets and returns the resources.
+		*
+		* \return std::shared_ptr<Resources> resources
+		*/
+		std::shared_ptr<Resource> getResources();
+
 		private:
 			bool running;
 			std::vector<std::shared_ptr<Entity>> entities;
 			std::shared_ptr<Environment> environment;
 			std::shared_ptr<Keyboard> keyboard;
 			std::shared_ptr<Mouse> mouse;
+			std::shared_ptr<Resource> resources;
 			std::weak_ptr<Core> self;
 			SDL_Window* window;
 			ALCdevice* device;

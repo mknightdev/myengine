@@ -1,3 +1,5 @@
+#include "Resource.h"
+
 #include <AL/al.h>
 #include <AL/alc.h>
 #include <iostream>
@@ -5,8 +7,10 @@
 
 namespace myengine
 {
-	struct AudioClip
+	struct AudioClip : Resource
 	{
+		void onIntialize();
+		AudioClip() = default;
 		AudioClip(std::string _fileName);
 		void loadOgg(const std::string& _fileName, std::vector<char>& _buffer, ALenum& _format, ALsizei& _freq);
 		ALuint GetId();

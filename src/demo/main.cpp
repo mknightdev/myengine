@@ -20,10 +20,9 @@ int main()
 	entity->getComponent<TriangleRenderer>();
 
 	entity->addComponent<SoundSource>();
-	entity->getComponent<SoundSource>()->PlaySound();
+	//entity->getComponent<SoundSource>()->PlaySound();
 
-	std::shared_ptr<Entity> entity2 = core->addEntity();
-	entity2->getComponent<SoundSource>();
+	std::shared_ptr<AudioClip> s = core->getResources()->load<AudioClip>("Example");
 
 	core->start();
 

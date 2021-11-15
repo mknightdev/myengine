@@ -194,4 +194,9 @@ namespace myengine
 	{
 		return environment;
 	}
+
+	std::shared_ptr<Resource> Core::getResources()
+	{
+		return resources;
+	}
 }

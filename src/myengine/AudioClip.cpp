@@ -5,6 +5,11 @@
 
 namespace myengine
 {
+	void AudioClip::onIntialize()
+	{
+		std::cout << "test" << std::endl;
+	}
+
 	AudioClip::AudioClip(std::string _fileName)
 	{
 		ALenum format = 0;

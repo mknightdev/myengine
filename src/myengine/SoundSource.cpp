@@ -17,16 +17,6 @@ namespace myengine
 		}
 	}
 
-	void SoundSource::onDisplay()
-	{
-
-	}
-
-	void SoundSource::onTick(float _deltaTime)
-	{
-
-	}
-
 	void SoundSource::PlaySound()
 	{
 		ALCenum error;

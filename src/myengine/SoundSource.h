@@ -6,8 +6,6 @@ namespace myengine
 	struct SoundSource : Component
 	{
 		void onInitialize();
-		void onDisplay();
-		void onTick(float _deltaTime);
 
 		void PlaySound();
 
