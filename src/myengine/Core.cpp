@@ -38,8 +38,6 @@ namespace myengine
 		std::cout << "INFO: OpenGL Renderer: " << glGetString(GL_RENDERER) << std::endl;
 		std::cout << "INFO: OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
 		std::cout << "INFO: OpenGL Shading Language Version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << "\n" << std::endl;
-
-		glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
 	}
 
 	void Core::setupAudio()
@@ -74,12 +72,10 @@ namespace myengine
 		mouse = Mouse::create(self);
 
 		SDL_CaptureMouse(SDL_TRUE);
-		glEnable(GL_DEPTH_TEST);
-		//glEnable(GL_CULL_FACE);
 
 		running = true;
 		while (running)
-		{ 
+		{
 			SDL_Event event = { 0 };
 
 			// Do SDL event loop
@@ -125,10 +121,12 @@ namespace myengine
 				entities.at(ei)->tick(environment->getDeltaTime());
 			}
 
-			glClear(GL_COLOR_BUFFER_BIT);
+			glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
+				glEnable(GL_DEPTH_TEST);
 				entities.at(ei)->display();
 				glDisable(GL_DEPTH_TEST);
 			}

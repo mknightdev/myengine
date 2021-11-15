@@ -37,8 +37,6 @@ namespace myengine
 	private:
 		friend struct myengine::Core;
 		std::string path;
-		std::weak_ptr<Resource> self;
-		std::weak_ptr<Core> core;
 		std::vector<std::shared_ptr<Resource>> resources;
 	};
 }

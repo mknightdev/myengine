@@ -11,10 +11,10 @@ int main()
 	std::shared_ptr<Core> core = Core::initialize();
 
 	std::shared_ptr<Entity> entity = core->addEntity();
-	//std::shared_ptr<Entity> modelEntity = core->addEntity();
+	std::shared_ptr<Entity> modelEntity = core->addEntity();
 
-	//modelEntity->addComponent<ModelRenderer>();
-	//modelEntity->getComponent<ModelRenderer>();
+	modelEntity->addComponent<ModelRenderer>();
+	modelEntity->getComponent<ModelRenderer>();
 
 	entity->addComponent<TriangleRenderer>();
 	entity->getComponent<TriangleRenderer>();
@@ -22,7 +22,7 @@ int main()
 	entity->addComponent<SoundSource>();
 	//entity->getComponent<SoundSource>()->PlaySound();
 
-	std::shared_ptr<AudioClip> s = core->getResources()->load<AudioClip>("Example");
+	//std::shared_ptr<AudioClip> s = core->getResources()->load<AudioClip>("Example");
 
 	core->start();
 

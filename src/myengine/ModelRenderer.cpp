@@ -31,16 +31,17 @@ namespace myengine
 		int h = 0;
 
 		// Load model and texture
-		vao = std::make_shared<VertexArray>("../resources/models/croc/croc.obj");
-		texture = std::make_shared<Texture>("../resources/models/croc/croc_diffuse.png", w, h);
+		vao = std::make_shared<VertexArray>("../resources/models/curuthers/curuthers.obj");
+		texture = std::make_shared<Texture>("../resources/models/curuthers/Whiskers_diffuse.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<ShaderProgram>();
-		shader->CreateShader("../resources/shaders/noLightVert.txt", "../resources/shaders/noLightFrag.txt");
+		shader->CreateShader("../resources/shaders/vertAmbient.txt", "../resources/shaders/fragAmbient.txt");
 	}
 
 	void ModelRenderer::onDisplay()
 	{
+
 		// !!! Temporary deltatime whilst I test things !!!
 		unsigned int currTime = SDL_GetTicks();
 		unsigned int diffTime = currTime - prevTime;
