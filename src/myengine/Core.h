@@ -10,7 +10,7 @@ namespace myengine
 	struct Environment;
 	struct Keyboard;
 	struct Mouse;
-	struct Resource;
+	struct ResourceManager;
 
 	/**
 	* \brief This is the brief description. 
@@ -28,6 +28,8 @@ namespace myengine
 		* \warning If you don't call this function, the game engine won't work.
 		*/
 		static std::shared_ptr<Core> initialize();
+
+		void setupEngine();
 
 		/**
 		* \brief Initialises SDL Window.
@@ -108,7 +110,7 @@ namespace myengine
 		*
 		* \return std::shared_ptr<Resources> resources
 		*/
-		std::shared_ptr<Resource> getResources();
+		std::shared_ptr<ResourceManager> getResourceManager();
 
 		private:
 			bool running;
@@ -116,7 +118,7 @@ namespace myengine
 			std::shared_ptr<Environment> environment;
 			std::shared_ptr<Keyboard> keyboard;
 			std::shared_ptr<Mouse> mouse;
-			std::shared_ptr<Resource> resources;
+			std::shared_ptr<ResourceManager> resourceManager;
 			std::weak_ptr<Core> self;
 			SDL_Window* window;
 			ALCdevice* device;

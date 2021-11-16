@@ -22,7 +22,7 @@ int main()
 	entity->addComponent<SoundSource>();
 	//entity->getComponent<SoundSource>()->PlaySound();
 
-	//std::shared_ptr<AudioClip> s = core->getResources()->load<AudioClip>("Example");
+	std::shared_ptr<AudioClip> s = core->getResourceManager()->load<AudioClip>("doorbell");
 
 	core->start();
 

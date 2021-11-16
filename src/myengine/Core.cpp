@@ -4,6 +4,7 @@
 #include "Transform.h"
 #include "Keyboard.h"
 #include "Mouse.h"
+#include "ResourceManager.h"
 
 #include <AL/al.h>
 #include <GL/glew.h>
@@ -67,10 +68,6 @@ namespace myengine
 
 	void Core::start()
 	{
-		environment = Environment::create(self);
-		keyboard = Keyboard::create(self);
-		mouse = Mouse::create(self);
-
 		SDL_CaptureMouse(SDL_TRUE);
 
 		running = true;
@@ -160,10 +157,19 @@ namespace myengine
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->self = rtn;
 
+		rtn->setupEngine();
 		rtn->setupWindow();
 		rtn->setupGraphics();
 		rtn->setupAudio();
 		return rtn;
+	}
+
+	void Core::setupEngine()
+	{
+		environment = Environment::create(self);
+		keyboard = Keyboard::create(self);
+		mouse = Mouse::create(self);
+		resourceManager = ResourceManager::create(self);
 	}
 
 	std::shared_ptr<Entity> Core::addEntity()
@@ -193,8 +199,8 @@ namespace myengine
 		return environment;
 	}
 
-	std::shared_ptr<Resource> Core::getResources()
+	std::shared_ptr<ResourceManager> Core::getResourceManager()
 	{
-		return resources;
+		return resourceManager;
 	}
 }

@@ -62,6 +62,8 @@ add_library(myengine
 	src/myengine/Exception.h
 	src/myengine/Resource.cpp
 	src/myengine/Resource.h
+	src/myengine/ResourceManager.cpp
+	src/myengine/ResourceManager.h
 )
 
 add_library(myrenderer

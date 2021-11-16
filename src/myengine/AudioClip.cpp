@@ -5,7 +5,7 @@
 
 namespace myengine
 {
-	void AudioClip::onIntialize()
+	void AudioClip::onInitialize()
 	{
 		std::cout << "test" << std::endl;
 	}
