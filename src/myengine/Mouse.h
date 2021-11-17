@@ -1,5 +1,5 @@
 #include <memory>
-#include <glm/glm.hpp>
+#include "mymath.h"
 
 namespace myengine
 {
@@ -8,13 +8,13 @@ namespace myengine
 	struct Mouse
 	{
 		static std::shared_ptr<Mouse> create(std::weak_ptr<Core> _core);
-		glm::vec2 getMousePosition();
+		vec2 getMousePosition();
 
 	private:
 		friend struct myengine::Core;
 		std::weak_ptr<Mouse> self;
 		std::weak_ptr<Core> core;
-		glm::vec2 mousePosition;
+		vec2 mousePosition;
 		bool canUpdate;
 	};
 }

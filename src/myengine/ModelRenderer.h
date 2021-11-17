@@ -1,8 +1,6 @@
 #include "Component.h"
 
 #include <myrenderer/myrenderer.h>
-#include <GL/glew.h>
-#include <glm/glm.hpp>
 
 namespace myengine
 {

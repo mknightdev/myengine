@@ -2,10 +2,6 @@
 
 #include <myrenderer/myrenderer.h>
 
-#include <GL/glew.h>
-#include <glm/glm.hpp>
-//#include <vector>
-
 namespace myengine
 {
 	struct Core;

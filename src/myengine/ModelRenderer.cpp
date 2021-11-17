@@ -2,6 +2,7 @@
 #include "Transform.h"
 #include "Mouse.h"
 #include "Keyboard.h"
+#include "mymath.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
@@ -57,21 +58,21 @@ namespace myengine
 		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
+		mat4 projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
 
 		// Upload the model matrix
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(getTransform()->getModel()));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, value_ptr(getTransform()->getModel()));
 
 		// View
-		glm::mat4 view(1.0f);
+		mat4 view(1.0f);
 		const float radius = 10.0f;
 		float camX = sin(deltaTime() * radius);
 		float camZ = cos(deltaTime() * radius);
-		view = glm::lookAt(cameraPos2, cameraPos2 + cameraFront2, cameraUp2);
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		view = lookAt(cameraPos2, cameraPos2 + cameraFront2, cameraUp2);
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(view));
 
 		// Upload the projection matrix
-		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, value_ptr(projection));
 
 		// Draw 3 vertices
 		glDrawArrays(GL_TRIANGLES, 0, vao->getVertCount());
@@ -85,27 +86,27 @@ namespace myengine
 	{
 		if (getKeyboard()->getKeyDown(SDLK_t))
 		{
-			getTransform()->move(glm::vec3(0, 0.5f, 0) * _deltaTime);
+			getTransform()->Move(vec3(0, 0.5f, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_g))
 		{
-			getTransform()->move(glm::vec3(0, -0.5f, 0) * _deltaTime);
+			getTransform()->Move(vec3(0, -0.5f, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_f))
 		{
-			getTransform()->move(glm::vec3(-0.5f, 0, 0) * _deltaTime);
+			getTransform()->Move(vec3(-0.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_h))
 		{
-			getTransform()->move(glm::vec3(0.5f, 0, 0) * _deltaTime);
+			getTransform()->Move(vec3(0.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_r))
 		{
-			getTransform()->rotate(glm::vec3(0, 0.5f, 0) * _deltaTime);
+			getTransform()->Rotate(vec3(0, 0.5f, 0) * _deltaTime);
 		}
 
 
@@ -124,12 +125,12 @@ namespace myengine
 
 		if (getKeyboard()->getKeyDown(SDLK_a))
 		{
-			cameraPos2 -= glm::normalize(glm::cross(cameraFront2, cameraUp2)) * cameraSpeed;
+			cameraPos2 -= normalize(cross(cameraFront2, cameraUp2)) * cameraSpeed;
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_d))
 		{
-			cameraPos2 += glm::normalize(glm::cross(cameraFront2, cameraUp2)) * cameraSpeed;
+			cameraPos2 += normalize(cross(cameraFront2, cameraUp2)) * cameraSpeed;
 		}
 
 		mouseUpdate();
@@ -163,10 +164,10 @@ namespace myengine
 		if (pitch2 < -89.0f)
 			pitch2 = -89.0f;
 
-		glm::vec3 front;
-		front.x = cos(glm::radians(yaw2)) * cos(glm::radians(pitch2));
-		front.y = sin(glm::radians(pitch2));
-		front.z = sin(glm::radians(yaw2)) * cos(glm::radians(pitch2));
-		cameraFront2 = glm::normalize(front);
+		vec3 front;
+		front.x = cos(radians(yaw2)) * cos(radians(pitch2));
+		front.y = sin(radians(pitch2));
+		front.z = sin(radians(yaw2)) * cos(radians(pitch2));
+		cameraFront2 = normalize(front);
 	}
 }

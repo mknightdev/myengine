@@ -4,6 +4,7 @@
 #include "Mouse.h"
 #include "Core.h"
 #include "Environment.h"
+#include "mymath.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
@@ -11,15 +12,14 @@
 
 using namespace myrenderer;
 
-
 // TODO: move into own class
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 bool firstMouse = true;
-float yaw	= -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
-float pitch = 0.0f;
+float _yaw	= -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
+float _pitch = 0.0f;
 float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
 float fov	= 45.0f;
@@ -32,18 +32,18 @@ namespace myengine
 
 		// Vertex Buffer
 		positionsVbo = std::make_shared<VertexBuffer>();
-		positionsVbo->add(glm::vec3(0.0f, 0.5f, 0.0f));
-		positionsVbo->add(glm::vec3(-0.5f, -0.5f, 0.0f));
-		positionsVbo->add(glm::vec3(0.5f, -0.5f, 0.0f));
+		positionsVbo->add(vec3(0.0f, 0.5f, 0.0f));
+		positionsVbo->add(vec3(-0.5f, -0.5f, 0.0f));
+		positionsVbo->add(vec3(0.5f, -0.5f, 0.0f));
 
 		texturesVbo = std::make_shared<VertexBuffer>();
 
-		texturesVbo->add(glm::vec2(0.0f, 0.0f));
-		texturesVbo->add(glm::vec2(1.0f, 0.0f));
-		texturesVbo->add(glm::vec2(0.0f, -1.0f));
-		texturesVbo->add(glm::vec2(1.0f, -1.0f));
-		texturesVbo->add(glm::vec2(1.0f, 0.0f));
-		texturesVbo->add(glm::vec2(0.0f, -1.0f));
+		texturesVbo->add(vec2(0.0f, 0.0f));
+		texturesVbo->add(vec2(1.0f, 0.0f));
+		texturesVbo->add(vec2(0.0f, -1.0f));
+		texturesVbo->add(vec2(1.0f, -1.0f));
+		texturesVbo->add(vec2(1.0f, 0.0f));
+		texturesVbo->add(vec2(0.0f, -1.0f));
 
 		// Vertex Arrray
 		vao = std::make_shared<VertexArray>();
@@ -73,22 +73,22 @@ namespace myengine
 		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
+		mat4 projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
 
 		// Upload the model matrix
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(getTransform()->getModel()));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, value_ptr(getTransform()->getModel()));
 
 		// View
-		glm::mat4 view(1.0f);
+		mat4 view(1.0f);
 		const float radius = 10.0f;
 		float camX = sin(deltaTime() * radius);
 		float camZ = cos(deltaTime() * radius);
-		view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+		view = lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(view));
 
 		// Upload the projection matrix
-		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, value_ptr(projection));
 
 		// Draw 3 vertices
 		glDrawArrays(GL_TRIANGLES, 0, 3);
@@ -102,27 +102,27 @@ namespace myengine
 	{
 		if (getKeyboard()->getKeyDown(SDLK_UP))
 		{
-			getTransform()->move(glm::vec3(0, 0.5f, 0) * _deltaTime);
+			getTransform()->Move(vec3(0, 0.5f, 0) * _deltaTime);
 		}
 		
 		if (getKeyboard()->getKeyDown(SDLK_DOWN))
 		{
-			getTransform()->move(glm::vec3(0, -0.5f, 0) * _deltaTime);
+			getTransform()->Move(vec3(0, -0.5f, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_LEFT))
 		{
-			getTransform()->move(glm::vec3(-0.5f, 0, 0) * _deltaTime);
+			getTransform()->Move(vec3(-0.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_RIGHT))
 		{
-			getTransform()->move(glm::vec3(0.5f, 0, 0) * _deltaTime);
+			getTransform()->Move(vec3(0.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_r))
 		{
-			getTransform()->rotate(glm::vec3(0, 0.5f, 0) * _deltaTime);
+			getTransform()->Rotate(vec3(0, 0.5f, 0) * _deltaTime);
 		}
 
 		// Camera
@@ -140,12 +140,12 @@ namespace myengine
 
 		if (getKeyboard()->getKeyDown(SDLK_a))
 		{
-			cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+			cameraPos -= normalize(cross(cameraFront, cameraUp)) * cameraSpeed;
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_d))
 		{
-			cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+			cameraPos += normalize(cross(cameraFront, cameraUp)) * cameraSpeed;
 		}
 
 		mouseUpdate();
@@ -170,19 +170,19 @@ namespace myengine
 		xoffset *= sensitivity;
 		yoffset *= sensitivity;
 
-		yaw += xoffset;
-		pitch += yoffset;
+		_yaw += xoffset;
+		_pitch += yoffset;
 
 		// make sure that when pitch is out of bounds, screen doesn't get flipped
-		if (pitch > 89.0f)
-			pitch = 89.0f;
-		if (pitch < -89.0f)
-			pitch = -89.0f;
+		if (_pitch > 89.0f)
+			_pitch = 89.0f;
+		if (_pitch < -89.0f)
+			_pitch = -89.0f;
 
-		glm::vec3 front;
-		front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-		front.y = sin(glm::radians(pitch));
-		front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-		cameraFront = glm::normalize(front);
+		vec3 front;
+		front.x = cos(radians(_yaw)) * cos(radians(_pitch));
+		front.y = sin(radians(_pitch));
+		front.z = sin(radians(_yaw)) * cos(radians(_pitch));
+		cameraFront = normalize(front);
 	}
 }

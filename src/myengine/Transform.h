@@ -1,6 +1,5 @@
 #include "Component.h"
-
-#include <glm/glm.hpp>
+#include "mymath.h"
 
 namespace myengine
 {
@@ -8,20 +7,20 @@ namespace myengine
 	{
 		void onInitialize();
 
-		glm::mat4 getModel();
+		mat4 getModel();
 
-		void setPosition(glm::vec3 _position);
-		void setRotation(glm::vec3 _rotation);
-		void setScale(glm::vec3 _scale);
+		void setPosition(vec3 _position);
+		void setRotation(vec3 _rotation);
+		void setScale(vec3 _scale);
 
-		void move(glm::vec3 _moveValue);
-		void rotate(glm::vec3 _rotValue);
+		void Move(vec3 _moveValue);
+		void Rotate(vec3 _rotValue);
 
-		glm::vec3 getScale();
+		vec3 getScale();
 
 		private:
-			glm::vec3 position;
-			glm::vec3 rotation;
-			glm::vec3 scale;
+			vec3 m_position;
+			vec3 m_rotation;
+			vec3 m_scale;
 	};
 }

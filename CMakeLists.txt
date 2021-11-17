@@ -35,6 +35,8 @@ if (MSVC)
 endif()
 
 add_library(myengine
+	src/myengine/myengine.h
+	src/myengine/mymath.h
 	src/myengine/Core.cpp
 	src/myengine/Entity.cpp
 	src/myengine/Component.cpp
@@ -45,7 +47,6 @@ add_library(myengine
 	src/myengine/Environment.h
 	src/myengine/TriangleRenderer.cpp
 	src/myengine/TriangleRenderer.h
-	src/myengine/myengine.h
 	src/myengine/Transform.cpp
 	src/myengine/Transform.h
 	src/myengine/Keyboard.cpp
@@ -67,6 +68,7 @@ add_library(myengine
 )
 
 add_library(myrenderer
+	src/myrenderer/myrenderer.h
 	src/myrenderer/Model.cpp
 	src/myrenderer/Model.h
 	src/myrenderer/ShaderProgram.cpp
@@ -77,7 +79,6 @@ add_library(myrenderer
 	src/myrenderer/VertexArray.h
 	src/myrenderer/VertexBuffer.cpp
 	src/myrenderer/VertexBuffer.h
-	src/myrenderer/myrenderer.h
 )
 
 if (MSVC)

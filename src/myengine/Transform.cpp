@@ -1,59 +1,53 @@
 #include "Transform.h"
-#include <glm/glm.hpp>
-
-#include <iostream>
-#include <glm/ext.hpp>
 
 namespace myengine
 {
 	void Transform::onInitialize()
 	{
-		std::cout << "Transform Initialized" << std::endl;
-
-		position = glm::vec3(0, 0, -2.5f);
-		rotation = glm::vec3(0, 0, 0);
-		scale = glm::vec3(1, 1, 1);
+		m_position = vec3(0, 0, -2.5f);
+		m_rotation = vec3(0, 0, 0);
+		m_scale = vec3(1, 1, 1);
 	}
 
-	void Transform::setPosition(glm::vec3 _position)
+	void Transform::setPosition(vec3 _position)
 	{
-		position = _position;
+		m_position = _position;
 	}
 
-	void Transform::setRotation(glm::vec3 _rotation)
+	void Transform::setRotation(vec3 _rotation)
 	{
-		rotation = _rotation;
+		m_rotation = _rotation;
 	}
 
-	void Transform::setScale(glm::vec3 _scale)
+	void Transform::setScale(vec3 _scale)
 	{
-		scale = _scale;
+		m_scale = _scale;
 	}
 
-	glm::vec3 Transform::getScale()
+	vec3 Transform::getScale()
 	{
-		return scale;
+		return m_scale;
 	}
 
-	glm::mat4 Transform::getModel()
+	mat4 Transform::getModel()
 	{
-		glm::mat4 rtn(1.0f);
-		rtn = glm::scale(rtn, scale);
-		rtn = glm::translate(rtn, position);
-		rtn = glm::rotate(rtn, rotation.x, glm::vec3(1, 0, 0));
-		rtn = glm::rotate(rtn, rotation.y, glm::vec3(0, 1, 0));
-		rtn = glm::rotate(rtn, rotation.z, glm::vec3(0, 0, 1));
+		mat4 rtn(1.0f);
+		rtn = scale(rtn, m_scale);
+		rtn = translate(rtn, m_position);
+		rtn = rotate(rtn, m_rotation.x, vec3(1, 0, 0));
+		rtn = rotate(rtn, m_rotation.y, vec3(0, 1, 0));
+		rtn = rotate(rtn, m_rotation.z, vec3(0, 0, 1));
 
 		return rtn;
 	}
 
-	void Transform::move(glm::vec3 _moveValue)
+	void Transform::Move(vec3 _moveValue)
 	{
-		position += _moveValue;
+		m_position += _moveValue;
 	}
 
-	void Transform::rotate(glm::vec3 _rotValue)
+	void Transform::Rotate(vec3 _rotValue)
 	{
-		rotation += _rotValue;
+		m_rotation += _rotValue;
 	}
 }
