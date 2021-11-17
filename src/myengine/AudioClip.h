@@ -10,7 +10,6 @@ namespace myengine
 	struct AudioClip : Resource
 	{
 		void onInitialize();
-		AudioClip() = default;
 		AudioClip(std::string _fileName);
 		void loadOgg(const std::string& _fileName, std::vector<char>& _buffer, ALenum& _format, ALsizei& _freq);
 		ALuint GetId();

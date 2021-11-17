@@ -32,27 +32,14 @@ namespace myrenderer
 		/// @returns void
 		void CreateShader(const GLchar* vertSrc, const GLchar* fragSrc);
 
-
 		// Activate the shader
-		void use()
-		{
-			glUseProgram(programID);
-		}
+		void use();
 
-		void setVec3(const std::string& _name, const glm::vec3& _value) const
-		{
-			glUniform3fv(glGetUniformLocation(programID, _name.c_str()), 1, &_value[0]);
-		}
+		void setVec3(const std::string& _name, const glm::vec3& _value) const;
 
-		void setVec3(const std::string& _name, float _x, float _y, float _z) const
-		{
-			glUniform3f(glGetUniformLocation(programID, _name.c_str()), _x, _y, _z);
-		}
+		void setVec3(const std::string& _name, float _x, float _y, float _z) const;
 
-		void setFloat(const std::string& _name, float _value) const
-		{
-			glUniform1f(glGetUniformLocation(programID, _name.c_str()), _value);
-		}
+		void setFloat(const std::string& _name, float _value) const;
 
 	private:
 		GLuint programID;

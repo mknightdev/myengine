@@ -143,4 +143,24 @@ namespace myrenderer
 
 		return id;
 	}
+
+	void ShaderProgram::use()
+	{
+		glUseProgram(programID);
+	}
+
+	void ShaderProgram::setVec3(const std::string& _name, const glm::vec3& _value) const
+	{
+		glUniform3fv(glGetUniformLocation(programID, _name.c_str()), 1, &_value[0]);
+	}
+
+	void ShaderProgram::setVec3(const std::string& _name, float _x, float _y, float _z) const
+	{
+		glUniform3f(glGetUniformLocation(programID, _name.c_str()), _x, _y, _z);
+	}
+
+	void ShaderProgram::setFloat(const std::string& _name, float _value) const
+	{
+		glUniform1f(glGetUniformLocation(programID, _name.c_str()), _value);
+	}
 }
