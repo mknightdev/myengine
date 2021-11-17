@@ -2,6 +2,8 @@
 #include "Keyboard.h"
 #include "Transform.h"
 #include "Mouse.h"
+#include "Core.h"
+#include "Environment.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
@@ -60,17 +62,6 @@ namespace myengine
 
 	void TriangleRenderer::onDisplay()
 	{
-		//std::cout << "Triangle Display" << std::endl;
-
-		//glEnable(GL_DEPTH_TEST);
-
-		// !!! Temporary deltatime whilst I test things !!!
-		unsigned int currTime = SDL_GetTicks();
-		unsigned int diffTime = currTime - prevTime;
-		deltaTime = (diffTime / 1000.0f);
-		// Makes sure it has the latest prev time. Otherwise it will make things go faster and faster
-		prevTime = currTime;
-
 		// Draw
 		GLint modelLoc = glGetUniformLocation(triangleShader->getId(), "u_Model");
 		GLint projectionLoc = glGetUniformLocation(triangleShader->getId(), "u_Projection");
@@ -90,13 +81,10 @@ namespace myengine
 		// View
 		glm::mat4 view(1.0f);
 		const float radius = 10.0f;
-		float camX = sin(deltaTime * radius);
-		float camZ = cos(deltaTime * radius);
+		float camX = sin(deltaTime() * radius);
+		float camZ = cos(deltaTime() * radius);
 		view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
-		// 3DGP Rotate
-		//view = glm::rotate(view, glm::radians(rot), glm::vec3(0, 1, 0));
-		//view = glm::translate(view, glm::vec3(0, 0, 4));
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
 		// Upload the projection matrix
@@ -104,7 +92,6 @@ namespace myengine
 
 		// Draw 3 vertices
 		glDrawArrays(GL_TRIANGLES, 0, 3);
-		//glDisable(GL_DEPTH_TEST);
 
 		// Reset the state
 		glBindVertexArray(0);
@@ -139,7 +126,7 @@ namespace myengine
 		}
 
 		// Camera
-		const float cameraSpeed = 2.5f * deltaTime;
+		const float cameraSpeed = 2.5f * deltaTime();
 
 		if (getKeyboard()->getKeyDown(SDLK_w))
 		{

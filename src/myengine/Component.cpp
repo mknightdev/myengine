@@ -1,6 +1,7 @@
 #include "Component.h"
 #include "Entity.h"
 #include "Core.h"
+#include "Environment.h"
 
 namespace myengine
 {
@@ -52,5 +53,10 @@ namespace myengine
 	std::shared_ptr<Transform> Component::getTransform()
 	{
 		return getEntity()->getTransform();
+	}
+
+	float Component::deltaTime()
+	{
+		return getCore()->getEnvironment()->getDeltaTime();
 	}
 }

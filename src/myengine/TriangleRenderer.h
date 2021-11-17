@@ -27,8 +27,5 @@ namespace myengine
 			std::shared_ptr<myrenderer::VertexBuffer> positionsVbo;
 			std::shared_ptr<myrenderer::VertexBuffer> texturesVbo;
 			std::shared_ptr<myrenderer::Texture> texture;
-
-			float deltaTime;
-			unsigned int prevTime;
 	};
 }

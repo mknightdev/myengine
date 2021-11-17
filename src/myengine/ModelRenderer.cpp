@@ -41,14 +41,6 @@ namespace myengine
 
 	void ModelRenderer::onDisplay()
 	{
-
-		// !!! Temporary deltatime whilst I test things !!!
-		unsigned int currTime = SDL_GetTicks();
-		unsigned int diffTime = currTime - prevTime;
-		deltaTime = (diffTime / 1000.0f);
-		// Makes sure it has the latest prev time. Otherwise it will make things go faster and faster
-		prevTime = currTime;
-
 		// Draw
 		GLint modelLoc = glGetUniformLocation(shader->getId(), "u_Model");
 		GLint projectionLoc = glGetUniformLocation(shader->getId(), "u_Projection");
@@ -70,16 +62,11 @@ namespace myengine
 		// Upload the model matrix
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(getTransform()->getModel()));
 
-		//// 3DGP Rotate
-		//glm::mat4 view(1.0f);
-		////view = glm::rotate(view, glm::radians(rot), glm::vec3(0, 1, 0));
-		//view = glm::translate(view, glm::vec3(0, 0, 15));
-
 		// View
 		glm::mat4 view(1.0f);
 		const float radius = 10.0f;
-		float camX = sin(deltaTime * radius);
-		float camZ = cos(deltaTime * radius);
+		float camX = sin(deltaTime() * radius);
+		float camZ = cos(deltaTime() * radius);
 		view = glm::lookAt(cameraPos2, cameraPos2 + cameraFront2, cameraUp2);
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
@@ -88,7 +75,6 @@ namespace myengine
 
 		// Draw 3 vertices
 		glDrawArrays(GL_TRIANGLES, 0, vao->getVertCount());
-		//glDisable(GL_DEPTH_TEST);
 
 		// Reset the state
 		glBindVertexArray(0);
@@ -124,7 +110,7 @@ namespace myengine
 
 
 		// Camera
-		const float cameraSpeed = 2.5f * deltaTime;
+		const float cameraSpeed = 2.5f * deltaTime();
 
 		if (getKeyboard()->getKeyDown(SDLK_w))
 		{

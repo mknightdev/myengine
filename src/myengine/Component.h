@@ -18,6 +18,7 @@ namespace myengine
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Transform> getTransform();
+		float deltaTime();
 		virtual void onTick(float _deltaTime);
 		virtual void onDisplay();
 		virtual void onInitialize();
