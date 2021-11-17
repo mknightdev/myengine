@@ -36,7 +36,7 @@ namespace myengine
 
 		// Create Shader
 		shader = std::make_shared<ShaderProgram>();
-		shader->CreateShader("../resources/shaders/vertAmbient.txt", "../resources/shaders/fragAmbient.txt");
+		shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
 	}
 
 	void ModelRenderer::onDisplay()
@@ -59,7 +59,8 @@ namespace myengine
 		if (viewLoc == -1) { throw std::exception(); }
 
 		// Instruct opengl to use our shader program and vao
-		glUseProgram(shader->getId());
+		shader->use();
+		//glUseProgram(shader->getId());
 		glBindTexture(GL_TEXTURE_2D, texture->GetId());
 		glBindVertexArray(vao->getId());
 
