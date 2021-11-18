@@ -61,36 +61,33 @@ namespace myengine
 			throw Exception("Unable to get component");
 		}
 
-		/**
-		* Gets and returns the core of the engine.
-		*
-		* \return std::shared_ptr<Core> core
-		*/
-		std::shared_ptr<Core> getCore();
 
-		/**
-		* Gets and returns the transform created when adding an entity.
-		*
-		* \return std::shared_ptr<Transform> transform.
-		*/
+		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Transform> getTransform();
 
 		private:
 			friend struct myengine::Core;
-			std::vector<std::shared_ptr<Component>> components;
-			std::weak_ptr<Entity> self;
-			std::weak_ptr<Core> core;
-			std::weak_ptr<Transform> transform;
 
 			/**
-			* \brief Updating the entity.
-			* 
-			* The tick function within Entity iterates through its components and 
-			* calls the tick function to update themselves.
-			* 
-			* \param Passes through the deltatime calculated within the environment
-			* and passed through the tick functions. 
+			* Stores all components attached to entities.
 			*/
+			std::vector<std::shared_ptr<Component>> components;
+
+			/**
+			* Used for storing itself.
+			*/
+			std::weak_ptr<Entity> self;
+
+			/**
+			* Used for storing the core and navigating up the hierarchy.
+			*/
+			std::weak_ptr<Core> core;
+
+			/**
+			* Used for storing and updating the entities' transform.
+			*/
+			std::weak_ptr<Transform> transform;
+
 			void tick(float _deltaTime);
 			void display();
 	};

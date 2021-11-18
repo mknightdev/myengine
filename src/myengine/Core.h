@@ -21,107 +21,75 @@ namespace myengine
 	*/
 	struct Core
 	{
-		/**
-		* \brief Creates the core of the engine.
-		*
-		* The foundation of the game engine.
-		* \warning If you don't call this function, the game engine won't work.
-		*/
 		static std::shared_ptr<Core> initialize();
 
 		void setupEngine();
-
-		/**
-		* \brief Initialises SDL Window.
-		*
-		* Initialises and creates an SDL Window that is 1280x720.
-		*
-		* \attention Will throw an exception if the window fails to create.
-		*/
 		void setupWindow();
-
-		/**
-		* \brief Initialises OpenGL.
-		*
-		* Initialises OpenGL and creates an OpenGL context for the window created.
-		*
-		* \attention Will throw an exception if the context fails to create and/or glew fails to initialise.
-		*
-		*/
 		void setupGraphics();
-
-		/**
-		* \brief Initialises OpenAL soft.
-		*
-		* Sets the device and creates a context with the device.
-		*
-		* \attention Will throw an exception if the device fails, context fails,
-		* or it fails to make the current context.
-		*/
 		void setupAudio();
-
-		/**
-		* \brief Starts the engine.
-		* 
-		* Creates the needed utilities and then starts the main loop of the engine.
-		* It captures SDL poll events, including: SDL_Quit, SDL_MOUSEMOTION, SDL_KEYDOWN and SDL_KEYUP.
-		* 
-		* The environment->tick() function gets called to calculate deltatime. 
-		* Then updates the world and display of the game engine by calling the tick and display function within Entity.
-		*/
 		void start();
-
-		/**
-		* \brief Stops the engine.
-		* 
-		* Stops the engine by setting the running boolean to false.
-		*/
 		void stop();
 
-		/**
-		* Adds an entity to the game engine. Components can then be attached to these entities.
-		* Adds a transform component on creation. 
-		*/
 		std::shared_ptr<Entity> addEntity();
-
-		/**
-		* Gets and returns the keyboard created within the Core's initialisation.
-		* 
-		* \return std::shared_ptr<Keyboard> keyboard
-		*/
 		std::shared_ptr<Keyboard> getKeyboard();
-
-		/**
-		* Gets and returns the mouse created within the core's initialisation.
-		* 
-		* \return std::shared_ptr<Mouse> mouse
-		*/
 		std::shared_ptr<Mouse> getMouse();
-
-		/**
-		* Gets and returns the environment created within the core's initialize() function.
-		* 
-		* \return std::shared_ptr<Environment> environment
-		*/
 		std::shared_ptr<Environment> getEnvironment();
-
-		/**
-		* Gets and returns the resources.
-		*
-		* \return std::shared_ptr<Resources> resources
-		*/
 		std::shared_ptr<ResourceManager> getResourceManager();
 
 		private:
+
+			/**
+			* Can start or stop the engine depending on it's state. It gets set to true within the start() function,
+			* and set to false within the stop() function.
+			*/
 			bool running;
+
+			/**
+			* \brief Stores entities.
+			* 
+			* Each entity that is created gets stored within entities.
+			*/
 			std::vector<std::shared_ptr<Entity>> entities;
+
+			/**
+			* Used for storing and updating deltaTime and retreiving delta time.
+			*/
 			std::shared_ptr<Environment> environment;
+
+			/**
+			* Used for storing and determing if a key has been pressed and released.
+			*/
 			std::shared_ptr<Keyboard> keyboard;
+
+			/**
+			* Used for storing and getting the user's mouse position.
+			*/
 			std::shared_ptr<Mouse> mouse;
+
+			/**
+			* Used for storing and loading resources within the engine.
+			*/
 			std::shared_ptr<ResourceManager> resourceManager;
+
+			/**
+			* Used for storing itself, and granting other classes to retrieve other 
+			* components of the engine. 
+			*/
 			std::weak_ptr<Core> self;
+
+			/**
+			* The window created for SDL.
+			*/
 			SDL_Window* window;
+
+			/**
+			* The user's output device.
+			*/
 			ALCdevice* device;
+
+			/**
+			* The OpenAL soft context to link the device with.
+			*/
 			ALCcontext* context;
 	};
 }

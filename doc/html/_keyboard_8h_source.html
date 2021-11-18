@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: F:/Programming/Uni/myengine/src/myengine/Keyboard.h Source File</title>
+<title>My Engine: myengine/src/myengine/Keyboard.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0ddde275324c43d8035a84ca42e35f4e.html">myengine</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_585145b755e35755549ef202b6cdd2f4.html">myengine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,31 +79,33 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html">    8</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_keyboard.html">Keyboard</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">static</span> std::shared_ptr&lt;Keyboard&gt; <a class="code hl_function" href="structmyengine_1_1_keyboard.html#aa40ec20eb114d14a8a7f3259da761c3a">create</a>(std::weak_ptr&lt;Core&gt; _core);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="comment">//std::shared_ptr&lt;Core&gt; Keyboard::getCore();</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#a8ef176920f6e1d1ae035c3603e2e7f7b">   13</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#a8ef176920f6e1d1ae035c3603e2e7f7b">getKey</a>(<span class="keywordtype">int</span> _keyCode);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#aa62c37dc6ff320fe3aaa16939a1c5aa8">getKeyDown</a>(<span class="keywordtype">int</span> _keyCode);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#ad25f524b3621e15cf0530be91e67351f">getKeyUp</a>(<span class="keywordtype">int</span> _keyCode);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#a26300a89ab536d93ce5363361196028c">removeKey</a>(<span class="keywordtype">int</span> _keyCode);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#a38297a01af85f1a404c4f104eb90eceb">   20</a></span>            <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_core.html">myengine::Core</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#af75c7e844e95eeeea4ac6b5133cf0368">   21</a></span>            std::vector&lt;int&gt; <a class="code hl_variable" href="structmyengine_1_1_keyboard.html#af75c7e844e95eeeea4ac6b5133cf0368">keyCodes</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#a169408e8c2a64c915cbfeaefa8a556f1">   22</a></span>            std::weak_ptr&lt;Keyboard&gt; <span class="keyword">self</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#adb794b71153c7e1466773204d901fbde">   23</a></span>            std::weak_ptr&lt;Core&gt; <a class="code hl_variable" href="structmyengine_1_1_keyboard.html#adb794b71153c7e1466773204d901fbde">core</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    };</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
-<div class="ttc" id="anamespacemyengine_html"><div class="ttname"><a href="namespacemyengine.html">myengine</a></div><div class="ttdef"><b>Definition:</b> Component.cpp:6</div></div>
-<div class="ttc" id="astructmyengine_1_1_core_html"><div class="ttname"><a href="structmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdoc">This is the brief description.</div><div class="ttdef"><b>Definition:</b> Core.h:22</div></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#a8ef176920f6e1d1ae035c3603e2e7f7b">   12</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#a8ef176920f6e1d1ae035c3603e2e7f7b">getKey</a>(<span class="keywordtype">int</span> _keyCode);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#aa62c37dc6ff320fe3aaa16939a1c5aa8">getKeyDown</a>(<span class="keywordtype">int</span> _keyCode);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#ad25f524b3621e15cf0530be91e67351f">getKeyUp</a>(<span class="keywordtype">int</span> _keyCode);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_keyboard.html#a26300a89ab536d93ce5363361196028c">removeKey</a>(<span class="keywordtype">int</span> _keyCode);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#a38297a01af85f1a404c4f104eb90eceb">   19</a></span>            <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_core.html">myengine::Core</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#af75c7e844e95eeeea4ac6b5133cf0368">   24</a></span>            std::vector&lt;int&gt; <a class="code hl_variable" href="structmyengine_1_1_keyboard.html#af75c7e844e95eeeea4ac6b5133cf0368">keyCodes</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#a169408e8c2a64c915cbfeaefa8a556f1">   29</a></span>            std::weak_ptr&lt;Keyboard&gt; <span class="keyword">self</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structmyengine_1_1_keyboard.html#adb794b71153c7e1466773204d901fbde">   34</a></span>            std::weak_ptr&lt;Core&gt; <a class="code hl_variable" href="structmyengine_1_1_keyboard.html#adb794b71153c7e1466773204d901fbde">core</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="ttc" id="anamespacemyengine_html"><div class="ttname"><a href="namespacemyengine.html">myengine</a></div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:7</div></div>
+<div class="ttc" id="astructmyengine_1_1_core_html"><div class="ttname"><a href="structmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdoc">This is the brief description.</div><div class="ttdef"><b>Definition:</b> Core.h:23</div></div>
 <div class="ttc" id="astructmyengine_1_1_keyboard_html"><div class="ttname"><a href="structmyengine_1_1_keyboard.html">myengine::Keyboard</a></div><div class="ttdef"><b>Definition:</b> Keyboard.h:9</div></div>
-<div class="ttc" id="astructmyengine_1_1_keyboard_html_a26300a89ab536d93ce5363361196028c"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#a26300a89ab536d93ce5363361196028c">myengine::Keyboard::removeKey</a></div><div class="ttdeci">void removeKey(int _keyCode)</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:35</div></div>
+<div class="ttc" id="astructmyengine_1_1_keyboard_html_a26300a89ab536d93ce5363361196028c"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#a26300a89ab536d93ce5363361196028c">myengine::Keyboard::removeKey</a></div><div class="ttdeci">void removeKey(int _keyCode)</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:49</div></div>
 <div class="ttc" id="astructmyengine_1_1_keyboard_html_a8ef176920f6e1d1ae035c3603e2e7f7b"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#a8ef176920f6e1d1ae035c3603e2e7f7b">myengine::Keyboard::getKey</a></div><div class="ttdeci">bool getKey(int _keyCode)</div></div>
-<div class="ttc" id="astructmyengine_1_1_keyboard_html_aa40ec20eb114d14a8a7f3259da761c3a"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#aa40ec20eb114d14a8a7f3259da761c3a">myengine::Keyboard::create</a></div><div class="ttdeci">static std::shared_ptr&lt; Keyboard &gt; create(std::weak_ptr&lt; Core &gt; _core)</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:5</div></div>
-<div class="ttc" id="astructmyengine_1_1_keyboard_html_aa62c37dc6ff320fe3aaa16939a1c5aa8"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#aa62c37dc6ff320fe3aaa16939a1c5aa8">myengine::Keyboard::getKeyDown</a></div><div class="ttdeci">bool getKeyDown(int _keyCode)</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:18</div></div>
-<div class="ttc" id="astructmyengine_1_1_keyboard_html_ad25f524b3621e15cf0530be91e67351f"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#ad25f524b3621e15cf0530be91e67351f">myengine::Keyboard::getKeyUp</a></div><div class="ttdeci">bool getKeyUp(int _keyCode)</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:30</div></div>
-<div class="ttc" id="astructmyengine_1_1_keyboard_html_adb794b71153c7e1466773204d901fbde"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#adb794b71153c7e1466773204d901fbde">myengine::Keyboard::core</a></div><div class="ttdeci">std::weak_ptr&lt; Core &gt; core</div><div class="ttdef"><b>Definition:</b> Keyboard.h:23</div></div>
-<div class="ttc" id="astructmyengine_1_1_keyboard_html_af75c7e844e95eeeea4ac6b5133cf0368"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#af75c7e844e95eeeea4ac6b5133cf0368">myengine::Keyboard::keyCodes</a></div><div class="ttdeci">std::vector&lt; int &gt; keyCodes</div><div class="ttdef"><b>Definition:</b> Keyboard.h:21</div></div>
+<div class="ttc" id="astructmyengine_1_1_keyboard_html_aa40ec20eb114d14a8a7f3259da761c3a"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#aa40ec20eb114d14a8a7f3259da761c3a">myengine::Keyboard::create</a></div><div class="ttdeci">static std::shared_ptr&lt; Keyboard &gt; create(std::weak_ptr&lt; Core &gt; _core)</div><div class="ttdoc">Creates the keyboard.</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:12</div></div>
+<div class="ttc" id="astructmyengine_1_1_keyboard_html_aa62c37dc6ff320fe3aaa16939a1c5aa8"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#aa62c37dc6ff320fe3aaa16939a1c5aa8">myengine::Keyboard::getKeyDown</a></div><div class="ttdeci">bool getKeyDown(int _keyCode)</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:32</div></div>
+<div class="ttc" id="astructmyengine_1_1_keyboard_html_ad25f524b3621e15cf0530be91e67351f"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#ad25f524b3621e15cf0530be91e67351f">myengine::Keyboard::getKeyUp</a></div><div class="ttdeci">bool getKeyUp(int _keyCode)</div><div class="ttdef"><b>Definition:</b> Keyboard.cpp:44</div></div>
+<div class="ttc" id="astructmyengine_1_1_keyboard_html_adb794b71153c7e1466773204d901fbde"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#adb794b71153c7e1466773204d901fbde">myengine::Keyboard::core</a></div><div class="ttdeci">std::weak_ptr&lt; Core &gt; core</div><div class="ttdef"><b>Definition:</b> Keyboard.h:34</div></div>
+<div class="ttc" id="astructmyengine_1_1_keyboard_html_af75c7e844e95eeeea4ac6b5133cf0368"><div class="ttname"><a href="structmyengine_1_1_keyboard.html#af75c7e844e95eeeea4ac6b5133cf0368">myengine::Keyboard::keyCodes</a></div><div class="ttdeci">std::vector&lt; int &gt; keyCodes</div><div class="ttdef"><b>Definition:</b> Keyboard.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

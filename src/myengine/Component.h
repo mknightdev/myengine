@@ -23,11 +23,21 @@ namespace myengine
 		virtual void onDisplay();
 		virtual void onInitialize();
 
-		private:
-			friend struct myengine::Entity;
-			std::weak_ptr<Core> core;
-			std::weak_ptr<Entity> entity;
-			void tick(float _deltaTime);
-			void display();
+	private:
+		friend struct myengine::Entity;
+
+		/**
+		* Used for storing the core and navigating up the hierarchy.
+		*/
+		std::weak_ptr<Core> core;
+
+		/**
+		* Used for storing the entity it is attached to and navigating
+		* up the hierarchy.
+		*/
+		std::weak_ptr<Entity> entity;
+
+		void tick(float _deltaTime);
+		void display();
 	};
 }

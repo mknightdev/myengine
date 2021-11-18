@@ -4,7 +4,7 @@ digraph "myengine::Keyboard::create"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="myengine::Keyboard\l::create",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="myengine::Keyboard\l::create",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Creates the keyboard."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="myengine::Core::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f",tooltip="Starts the engine."];
+  Node2 [label="myengine::Core::setupEngine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_core.html#a0de07d096a6c50a27b851bf7603dfa4d",tooltip="Sets up the engine."];
 }

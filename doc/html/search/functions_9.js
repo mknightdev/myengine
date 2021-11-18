@@ -1,14 +1,7 @@
 var searchData=
 [
-  ['setbuffer_0',['setBuffer',['../structmyrenderer_1_1_vertex_array.html#a550972a5fd2dd934463373042ff3213f',1,'myrenderer::VertexArray']]],
-  ['setposition_1',['setPosition',['../structmyengine_1_1_transform.html#ad644d18a02077de3bd3025ae8b7fa58e',1,'myengine::Transform']]],
-  ['setposition_2',['SetPosition',['../structmyrenderer_1_1_model.html#a4df6768fdc5c550535dac1e8bc15ddb5',1,'myrenderer::Model']]],
-  ['setrotation_3',['setRotation',['../structmyengine_1_1_transform.html#a973c4797febf9d1316066c4414bfe95d',1,'myengine::Transform']]],
-  ['setscale_4',['setScale',['../structmyengine_1_1_transform.html#a4cf20c8bfd6bd3de4730301c303edda8',1,'myengine::Transform']]],
-  ['setscale_5',['SetScale',['../structmyrenderer_1_1_model.html#a3dcb24806463914181bace1814d828e5',1,'myrenderer::Model']]],
-  ['setupaudio_6',['setupAudio',['../structmyengine_1_1_core.html#a6681b43b74bad09d8f1c3873f269d683',1,'myengine::Core']]],
-  ['setupgraphics_7',['setupGraphics',['../structmyengine_1_1_core.html#adb232743249b5e8b5a7088af36034ff3',1,'myengine::Core']]],
-  ['setupwindow_8',['setupWindow',['../structmyengine_1_1_core.html#af4cc9a845101aee02c864a86b47ceaf1',1,'myengine::Core']]],
-  ['start_9',['start',['../structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f',1,'myengine::Core']]],
-  ['stop_10',['stop',['../structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965',1,'myengine::Core']]]
+  ['ondisplay_0',['onDisplay',['../structmyengine_1_1_component.html#a01950f2661cfe671eca0907590276a81',1,'myengine::Component::onDisplay()'],['../structmyengine_1_1_model_renderer.html#a2dab68b27698175ed5deff280184aeba',1,'myengine::ModelRenderer::onDisplay()'],['../structmyengine_1_1_triangle_renderer.html#a6cb4252e76b0c719d3819cc5b6ca86a8',1,'myengine::TriangleRenderer::onDisplay()']]],
+  ['oninitialise_1',['onInitialise',['../structmyengine_1_1_resource.html#a703a63f0b638da078ab63e8b61c4c669',1,'myengine::Resource']]],
+  ['oninitialize_2',['onInitialize',['../structmyengine_1_1_audio_clip.html#af538f580741bc39b9ede49ae23546c45',1,'myengine::AudioClip::onInitialize()'],['../structmyengine_1_1_component.html#a10f0b3e4830b14595616f74975083108',1,'myengine::Component::onInitialize()'],['../structmyengine_1_1_model_renderer.html#af2af0e770a911d7f035be882b8a33c11',1,'myengine::ModelRenderer::onInitialize()'],['../structmyengine_1_1_sound_source.html#ab82a6b009d8564e933901c69dad0ca66',1,'myengine::SoundSource::onInitialize()'],['../structmyengine_1_1_transform.html#a44bdd3859213e937d628cc39e5c58e5c',1,'myengine::Transform::onInitialize()'],['../structmyengine_1_1_triangle_renderer.html#a0919716627b438f65f358feaeeb8027b',1,'myengine::TriangleRenderer::onInitialize()']]],
+  ['ontick_3',['onTick',['../structmyengine_1_1_component.html#a718ea40d1168a32bde09df3ad28474d3',1,'myengine::Component::onTick()'],['../structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689',1,'myengine::ModelRenderer::onTick()'],['../structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce',1,'myengine::TriangleRenderer::onTick()']]]
 ];

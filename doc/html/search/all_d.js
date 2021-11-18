@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['pbr_2ecpp_0',['pbr.cpp',['../pbr_8cpp.html',1,'']]],
-  ['pitch_1',['pitch',['../_triangle_renderer_8cpp.html#a282e7d4378d4a18a805b8980295ac86c',1,'TriangleRenderer.cpp']]],
-  ['position_2',['position',['../structmyengine_1_1_transform.html#adf6627bfe2788bea1e3f6dcc0d56f8a3',1,'myengine::Transform']]],
-  ['positionsvbo_3',['positionsVbo',['../structmyengine_1_1_triangle_renderer.html#af48de2bd46a401c0ae632f88375c9c6c',1,'myengine::TriangleRenderer']]],
-  ['prevtime_4',['prevTime',['../structmyengine_1_1_triangle_renderer.html#ae0534fa6faf0df81c71d89577d02a781',1,'myengine::TriangleRenderer']]],
-  ['programid_5',['programID',['../structmyrenderer_1_1_shader_program.html#a4120ed996a6e62632ccf5a2a97a36df4',1,'myrenderer::ShaderProgram']]]
+  ['ondisplay_0',['onDisplay',['../structmyengine_1_1_component.html#a01950f2661cfe671eca0907590276a81',1,'myengine::Component::onDisplay()'],['../structmyengine_1_1_model_renderer.html#a2dab68b27698175ed5deff280184aeba',1,'myengine::ModelRenderer::onDisplay()'],['../structmyengine_1_1_triangle_renderer.html#a6cb4252e76b0c719d3819cc5b6ca86a8',1,'myengine::TriangleRenderer::onDisplay()']]],
+  ['oninitialise_1',['onInitialise',['../structmyengine_1_1_resource.html#a703a63f0b638da078ab63e8b61c4c669',1,'myengine::Resource']]],
+  ['oninitialize_2',['onInitialize',['../structmyengine_1_1_audio_clip.html#af538f580741bc39b9ede49ae23546c45',1,'myengine::AudioClip::onInitialize()'],['../structmyengine_1_1_component.html#a10f0b3e4830b14595616f74975083108',1,'myengine::Component::onInitialize()'],['../structmyengine_1_1_model_renderer.html#af2af0e770a911d7f035be882b8a33c11',1,'myengine::ModelRenderer::onInitialize()'],['../structmyengine_1_1_sound_source.html#ab82a6b009d8564e933901c69dad0ca66',1,'myengine::SoundSource::onInitialize()'],['../structmyengine_1_1_transform.html#a44bdd3859213e937d628cc39e5c58e5c',1,'myengine::Transform::onInitialize()'],['../structmyengine_1_1_triangle_renderer.html#a0919716627b438f65f358feaeeb8027b',1,'myengine::TriangleRenderer::onInitialize()']]],
+  ['ontick_3',['onTick',['../structmyengine_1_1_component.html#a718ea40d1168a32bde09df3ad28474d3',1,'myengine::Component::onTick()'],['../structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689',1,'myengine::ModelRenderer::onTick()'],['../structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce',1,'myengine::TriangleRenderer::onTick()']]]
 ];

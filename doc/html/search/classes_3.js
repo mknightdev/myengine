@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['model_0',['Model',['../structmyrenderer_1_1_model.html',1,'myrenderer']]],
-  ['mouse_1',['Mouse',['../structmyengine_1_1_mouse.html',1,'myengine']]]
+  ['keyboard_0',['Keyboard',['../structmyengine_1_1_keyboard.html',1,'myengine']]]
 ];

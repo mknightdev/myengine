@@ -96,8 +96,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">tick</a> (float _deltaTime)</td></tr>
+<tr class="memdesc:aab2ab90c99210d74da41e50eb2c5fc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updating the entity.  <a href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">More...</a><br /></td></tr>
 <tr class="separator:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a314cad9c9602f79c668048ec7e544d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#a314cad9c9602f79c668048ec7e544d44">display</a> ()</td></tr>
+<tr class="memdesc:a314cad9c9602f79c668048ec7e544d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws OpenGL each loop.  <a href="structmyengine_1_1_entity.html#a314cad9c9602f79c668048ec7e544d44">More...</a><br /></td></tr>
 <tr class="separator:a314cad9c9602f79c668048ec7e544d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -170,6 +172,9 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Draws OpenGL each loop. </p>
+<p >Calls each display function within the entities in the game engine and updates the OpenGL drawing. </p>
 
 </div>
 </div>
@@ -267,6 +272,15 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Updating the entity. </p>
+<p >The tick function within <a class="el" href="structmyengine_1_1_entity.html">Entity</a> iterates through its components and calls the tick function to update themselves.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_deltaTime</td><td>Passes through the delta time calculated within the environment and passed through the tick functions. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
@@ -312,6 +326,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Stores all components attached to entities. </p>
 
 </div>
 </div>
@@ -334,6 +349,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Used for storing the core and navigating up the hierarchy. </p>
 
 </div>
 </div>
@@ -356,6 +372,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Used for storing itself. </p>
 
 </div>
 </div>
@@ -378,12 +395,13 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Used for storing and updating the entities' transform. </p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>F:/Programming/Uni/myengine/src/myengine/<a class="el" href="_entity_8h_source.html">Entity.h</a></li>
-<li>F:/Programming/Uni/myengine/src/myengine/<a class="el" href="_entity_8cpp.html">Entity.cpp</a></li>
+<li>myengine/src/myengine/<a class="el" href="_entity_8h_source.html">Entity.h</a></li>
+<li>myengine/src/myengine/<a class="el" href="_entity_8cpp.html">Entity.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

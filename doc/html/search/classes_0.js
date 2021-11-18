@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['component_0',['Component',['../structmyengine_1_1_component.html',1,'myengine']]],
-  ['core_1',['Core',['../structmyengine_1_1_core.html',1,'myengine']]]
+  ['audioclip_0',['AudioClip',['../structmyengine_1_1_audio_clip.html',1,'myengine']]]
 ];

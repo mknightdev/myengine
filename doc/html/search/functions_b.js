@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vertexarray_0',['VertexArray',['../structmyrenderer_1_1_vertex_array.html#a22875e53bec3d7de92849ffc855840fe',1,'myrenderer::VertexArray::VertexArray()'],['../structmyrenderer_1_1_vertex_array.html#a46bce470d491ae98b90747b2ccb00155',1,'myrenderer::VertexArray::VertexArray(std::string path)']]],
-  ['vertexbuffer_1',['VertexBuffer',['../structmyrenderer_1_1_vertex_buffer.html#a2c3b1c712fe0e7788018d7b5e0ce6f10',1,'myrenderer::VertexBuffer']]]
+  ['removekey_0',['removeKey',['../structmyengine_1_1_keyboard.html#a26300a89ab536d93ce5363361196028c',1,'myengine::Keyboard']]],
+  ['rotate_1',['Rotate',['../structmyengine_1_1_transform.html#a8a08716db3da2afba27db30083a3b9e1',1,'myengine::Transform']]]
 ];

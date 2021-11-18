@@ -15,6 +15,10 @@ namespace myengine
 		const char* what();
 
 	private:
+
+		/**
+		* Used for showing the explanation of the error.
+		*/
 		std::string message;
 	};
 }

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: F:/Programming/Uni/myengine/src/myengine/TriangleRenderer.cpp File Reference</title>
+<title>My Engine: myengine/src/myengine/TriangleRenderer.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0ddde275324c43d8035a84ca42e35f4e.html">myengine</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_585145b755e35755549ef202b6cdd2f4.html">myengine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,16 +74,18 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_triangle_renderer_8h_source.html">TriangleRenderer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_keyboard_8h_source.html">Keyboard.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_entity_8h_source.html">Entity.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_transform_8h_source.html">Transform.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_mouse_8h_source.html">Mouse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_core_8h_source.html">Core.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_environment_8h_source.html">Environment.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mymath_8h_source.html">mymath.h</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;SDL2/SDL.h&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TriangleRenderer.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="_triangle_renderer_8cpp__incl.png" border="0" usemap="#a_f_1_2_programming_2_uni_2myengine_2src_2myengine_2_triangle_renderer_8cpp" alt=""/></div>
+<div class="center"><img src="_triangle_renderer_8cpp__incl.png" border="0" usemap="#amyengine_2src_2myengine_2_triangle_renderer_8cpp" alt=""/></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -101,10 +103,10 @@ Variables</h2></td></tr>
 <tr class="separator:a36d5c153de5e9cf5a0efb0e7d9986683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac21731ba101e28334c34543121caa841"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_triangle_renderer_8cpp.html#ac21731ba101e28334c34543121caa841">firstMouse</a> = true</td></tr>
 <tr class="separator:ac21731ba101e28334c34543121caa841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7efc219781df4a1e281cb5d348b7fbf9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_triangle_renderer_8cpp.html#a7efc219781df4a1e281cb5d348b7fbf9">yaw</a> = -90.0f</td></tr>
-<tr class="separator:a7efc219781df4a1e281cb5d348b7fbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a282e7d4378d4a18a805b8980295ac86c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_triangle_renderer_8cpp.html#a282e7d4378d4a18a805b8980295ac86c">pitch</a> = 0.0f</td></tr>
-<tr class="separator:a282e7d4378d4a18a805b8980295ac86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e1b600c2c6094f6ec8935cac83526f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_triangle_renderer_8cpp.html#ae9e1b600c2c6094f6ec8935cac83526f">_yaw</a> = -90.0f</td></tr>
+<tr class="separator:ae9e1b600c2c6094f6ec8935cac83526f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c77dac43bf39901f778628f0eb56a3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_triangle_renderer_8cpp.html#af1c77dac43bf39901f778628f0eb56a3">_pitch</a> = 0.0f</td></tr>
+<tr class="separator:af1c77dac43bf39901f778628f0eb56a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4664c5d930c290e6f82141a070cbea46"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_triangle_renderer_8cpp.html#a4664c5d930c290e6f82141a070cbea46">lastX</a> = 800.0f / 2.0</td></tr>
 <tr class="separator:a4664c5d930c290e6f82141a070cbea46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d5b8dfd025caf1c0ed043132515f587"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_triangle_renderer_8cpp.html#a9d5b8dfd025caf1c0ed043132515f587">lastY</a> = 600.0 / 2.0</td></tr>
@@ -113,6 +115,34 @@ Variables</h2></td></tr>
 <tr class="separator:abfd94a01fc71278021802ca0d1e25e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="af1c77dac43bf39901f778628f0eb56a3" name="af1c77dac43bf39901f778628f0eb56a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c77dac43bf39901f778628f0eb56a3">&#9670;&nbsp;</a></span>_pitch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float _pitch = 0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9e1b600c2c6094f6ec8935cac83526f" name="ae9e1b600c2c6094f6ec8935cac83526f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e1b600c2c6094f6ec8935cac83526f">&#9670;&nbsp;</a></span>_yaw</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float _yaw = -90.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8cfa8e18baf093b4aa4f589daf057024" name="a8cfa8e18baf093b4aa4f589daf057024"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cfa8e18baf093b4aa4f589daf057024">&#9670;&nbsp;</a></span>cameraFront</h2>
 
@@ -205,34 +235,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">float lastY = 600.0 / 2.0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a282e7d4378d4a18a805b8980295ac86c" name="a282e7d4378d4a18a805b8980295ac86c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a282e7d4378d4a18a805b8980295ac86c">&#9670;&nbsp;</a></span>pitch</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float pitch = 0.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7efc219781df4a1e281cb5d348b7fbf9" name="a7efc219781df4a1e281cb5d348b7fbf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7efc219781df4a1e281cb5d348b7fbf9">&#9670;&nbsp;</a></span>yaw</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float yaw = -90.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">

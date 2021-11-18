@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stb_5fimage_5fimplementation_0',['STB_IMAGE_IMPLEMENTATION',['../_texture_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78',1,'Texture.cpp']]]
+  ['glm_5fforce_5fctor_5finit_0',['GLM_FORCE_CTOR_INIT',['../mymath_8h.html#ac627c73454e4c96daef4a3fa6b2408fc',1,'mymath.h']]]
 ];
