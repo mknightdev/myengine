@@ -33,7 +33,7 @@ namespace myengine
 		error = alGetError();
 		if (error != AL_NO_ERROR)
 		{
-			std::cout << "Error in GenBuffers: " << ErrorCheck(error) << std::endl;
+			std::cout << "Exception in GenBuffers: " << ExceptionCheck(error) << std::endl;
 		}
 
 		loadOgg(_fileName + ".ogg", bufferData, format, freq);
@@ -42,7 +42,7 @@ namespace myengine
 		error = alGetError();
 		if (error != AL_NO_ERROR)
 		{
-			std::cout << "Error in BufferData: " << ErrorCheck(error) << std::endl;
+			std::cout << "Exception in BufferData: " << ExceptionCheck(error) << std::endl;
 		}
 	}
 

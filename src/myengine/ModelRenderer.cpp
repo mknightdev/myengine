@@ -22,6 +22,8 @@ float lastX2 = 800.0f / 2.0;
 float lastY2 = 600.0 / 2.0;
 float fov2 = 45.0f;
 
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
 namespace myengine
 {
 	void ModelRenderer::onInitialize()
@@ -32,12 +34,69 @@ namespace myengine
 		int h = 0;
 
 		// Load model and texture
-		vao = std::make_shared<VertexArray>("../resources/models/curuthers/curuthers.obj");
-		texture = std::make_shared<Texture>("../resources/models/curuthers/Whiskers_diffuse.png", w, h);
+		vao = std::make_shared<VertexArray>("../resources/models/croc/croc.obj");
+		texture = std::make_shared<Texture>("../resources/models/croc/croc_diffuse.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<ShaderProgram>();
-		shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
+		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
+		shader->CreateShader("../resources/shaders/noLightVert.txt", "../resources/shaders/noLightFrag.txt");
+
+		/*****************************
+		*
+		*	LIGHT CUBE
+		*
+		******************************/
+
+		// Vertex Buffer
+		positionsVbo = std::make_shared<VertexBuffer>();
+		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, -0.5f));
+		positionsVbo->add(vec3(-0.5f, 0.5f, -0.5f));
+		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
+
+		positionsVbo->add(vec3(-0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, 0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, 0.5f, 0.5f));
+
+		positionsVbo->add(vec3(-0.5f, 0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, 0.5f, -0.5f));
+		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(-0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, 0.5f, 0.5f));
+
+		positionsVbo->add(vec3(0.5f, 0.5f, 0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, 0.5f));
+
+		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, -0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
+
+		positionsVbo->add(vec3(-0.5f, 0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, -0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, 0.5f));
+		positionsVbo->add(vec3(0.5f, 0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, 0.5f, 0.5f));
+		positionsVbo->add(vec3(-0.5f, 0.5f, -0.5f));
+
+		lightVao = std::make_shared<VertexArray>();
+		lightVao->setBuffer(0, positionsVbo);
+
+		lightShader = std::make_shared<ShaderProgram>();
+		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
 	}
 
 	void ModelRenderer::onDisplay()
@@ -76,6 +135,26 @@ namespace myengine
 
 		// Draw 3 vertices
 		glDrawArrays(GL_TRIANGLES, 0, vao->getVertCount());
+
+		/*****************************
+		*
+		*	LIGHT CUBE
+		*
+		******************************/
+
+		lightShader->use();
+		glBindVertexArray(lightVao->getId());
+		
+		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "projection"), 1, GL_FALSE, value_ptr(projection));
+		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "view"), 1, GL_FALSE, value_ptr(view));
+
+		mat4 lightModel = mat4(1.0f);
+		lightModel = translate(lightModel, lightPos);
+		lightModel = scale(lightModel, vec3(0.2f));
+		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "model"), 1, GL_FALSE, value_ptr(lightModel));
+
+		glBindVertexArray(lightVao->getId());
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		// Reset the state
 		glBindVertexArray(0);
