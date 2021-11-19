@@ -165,12 +165,12 @@ namespace myengine
 	{
 		if (getKeyboard()->getKeyDown(SDLK_t))
 		{
-			getTransform()->Move(vec3(0, 0.5f, 0) * _deltaTime);
+			getTransform()->Move(vec3(0, 0, 0.5f) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_g))
 		{
-			getTransform()->Move(vec3(0, -0.5f, 0) * _deltaTime);
+			getTransform()->Move(vec3(0, 0, -0.5f) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_f))
@@ -185,7 +185,12 @@ namespace myengine
 
 		if (getKeyboard()->getKeyDown(SDLK_r))
 		{
-			getTransform()->Rotate(vec3(0, 0.5f, 0) * _deltaTime);
+			getTransform()->Rotate(vec3(0, 1, 0) * _deltaTime);
+		}
+
+		if (getKeyboard()->getKeyDown(SDLK_y))
+		{
+			getTransform()->Rotate(vec3(0, -1, 0) * _deltaTime);
 		}
 
 

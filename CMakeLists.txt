@@ -7,7 +7,7 @@ include_directories(
 )
 
 if (MSVC)
-	set (CMAKE_EXE_LINKER_FLAGS /SAFESEH:NO)
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SAFESEH:NO")
 
 	include_directories(
 		contrib/msvc-windows-x86/SDL2/include	# For SDL.h

@@ -13,6 +13,7 @@ namespace myengine
 		void setRotation(vec3 _rotation);
 		void setScale(vec3 _scale);
 
+		void Move(float _moveValue);
 		void Move(vec3 _moveValue);
 		void Rotate(vec3 _rotValue);
 

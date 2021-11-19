@@ -41,9 +41,18 @@ namespace myengine
 		return rtn;
 	}
 
+	void Transform::Move(float _moveValue)
+	{
+		mat4 model = getModel();
+		vec3 fwd = vec3(model * vec4(0, 0, 1, 0));
+		m_position += fwd * _moveValue;
+	}
+
 	void Transform::Move(vec3 _moveValue)
 	{
-		m_position += _moveValue;
+		mat4 model = getModel();
+		vec3 fwd = vec3(model * vec4(_moveValue, 0));
+		m_position += fwd;
 	}
 
 	void Transform::Rotate(vec3 _rotValue)
