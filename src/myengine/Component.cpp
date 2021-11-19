@@ -12,7 +12,7 @@ namespace myengine
 	/**
 	* Calls the onTick() function on all derived classes.
 	* 
-	* \param Passses through _deltaTime to the derived classes.
+	* \param _deltaTime Passses through delta time to the derived classes.
 	*/
 	void Component::tick(float _deltaTime)
 	{

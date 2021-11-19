@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: myengine/src/myengine/Component.h Source File</title>
+<title>My Project: src/myengine/Component.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Engine
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -62,19 +62,19 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_585145b755e35755549ef202b6cdd2f4.html">myengine</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0ddde275324c43d8035a84ca42e35f4e.html">myengine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Component.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_component_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyengine.html">myengine</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>myengine</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">struct </span>Core;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">struct </span>Entity;</div>
@@ -90,12 +90,12 @@ $(function() {
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        std::shared_ptr&lt;Mouse&gt; <a class="code hl_function" href="structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4">getMouse</a>();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        std::shared_ptr&lt;Transform&gt; <a class="code hl_function" href="structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260">getTransform</a>();</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">float</span> <a class="code hl_function" href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">deltaTime</a>();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_component.html#a718ea40d1168a32bde09df3ad28474d3">onTick</a>(<span class="keywordtype">float</span> _deltaTime);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_component.html#a01950f2661cfe671eca0907590276a81">onDisplay</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_component.html#a10f0b3e4830b14595616f74975083108">onInitialize</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onTick(<span class="keywordtype">float</span> _deltaTime);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDisplay();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onInitialize();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structmyengine_1_1_component.html#a6fe843906a90e8087472d461e6bc7783">   27</a></span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_entity.html">myengine::Entity</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_entity.html">myengine::Entity</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structmyengine_1_1_component.html#ac135ad3bd05cb1cf40839140b19ffd79">   32</a></span>        std::weak_ptr&lt;Core&gt; <a class="code hl_variable" href="structmyengine_1_1_component.html#ac135ad3bd05cb1cf40839140b19ffd79">core</a>;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
@@ -105,17 +105,13 @@ $(function() {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_component.html#a48b2efd03b0f0c4240b55cce283142de">display</a>();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
-<div class="ttc" id="anamespacemyengine_html"><div class="ttname"><a href="namespacemyengine.html">myengine</a></div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:7</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html"><div class="ttname"><a href="structmyengine_1_1_component.html">myengine::Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:15</div></div>
-<div class="ttc" id="astructmyengine_1_1_component_html_a01950f2661cfe671eca0907590276a81"><div class="ttname"><a href="structmyengine_1_1_component.html#a01950f2661cfe671eca0907590276a81">myengine::Component::onDisplay</a></div><div class="ttdeci">virtual void onDisplay()</div><div class="ttdef"><b>Definition:</b> Component.cpp:9</div></div>
-<div class="ttc" id="astructmyengine_1_1_component_html_a10f0b3e4830b14595616f74975083108"><div class="ttname"><a href="structmyengine_1_1_component.html#a10f0b3e4830b14595616f74975083108">myengine::Component::onInitialize</a></div><div class="ttdeci">virtual void onInitialize()</div><div class="ttdef"><b>Definition:</b> Component.cpp:10</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_a2b5712d1253884531aee523c1d277260"><div class="ttname"><a href="structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260">myengine::Component::getTransform</a></div><div class="ttdeci">std::shared_ptr&lt; Transform &gt; getTransform()</div><div class="ttdoc">Returns the Transform.</div><div class="ttdef"><b>Definition:</b> Component.cpp:75</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_a2b80c2d91dac8f429f6b6f6305d7c5be"><div class="ttname"><a href="structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be">myengine::Component::getCore</a></div><div class="ttdeci">std::shared_ptr&lt; Core &gt; getCore()</div><div class="ttdoc">Returns the Core.</div><div class="ttdef"><b>Definition:</b> Component.cpp:35</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_a48b2efd03b0f0c4240b55cce283142de"><div class="ttname"><a href="structmyengine_1_1_component.html#a48b2efd03b0f0c4240b55cce283142de">myengine::Component::display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> Component.cpp:25</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_a4e0612b358101d355cfdc455712c5136"><div class="ttname"><a href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">myengine::Component::deltaTime</a></div><div class="ttdeci">float deltaTime()</div><div class="ttdoc">Returns the deltaTime.</div><div class="ttdef"><b>Definition:</b> Component.cpp:85</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_a607bccd4bd015839eb796875adc9884b"><div class="ttname"><a href="structmyengine_1_1_component.html#a607bccd4bd015839eb796875adc9884b">myengine::Component::entity</a></div><div class="ttdeci">std::weak_ptr&lt; Entity &gt; entity</div><div class="ttdef"><b>Definition:</b> Component.h:38</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_a6e32e07622ba5c510af149403b2176a4"><div class="ttname"><a href="structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4">myengine::Component::getMouse</a></div><div class="ttdeci">std::shared_ptr&lt; Mouse &gt; getMouse()</div><div class="ttdoc">Returns the Mouse.</div><div class="ttdef"><b>Definition:</b> Component.cpp:65</div></div>
-<div class="ttc" id="astructmyengine_1_1_component_html_a718ea40d1168a32bde09df3ad28474d3"><div class="ttname"><a href="structmyengine_1_1_component.html#a718ea40d1168a32bde09df3ad28474d3">myengine::Component::onTick</a></div><div class="ttdeci">virtual void onTick(float _deltaTime)</div><div class="ttdef"><b>Definition:</b> Component.cpp:8</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_a86618ca85aca087c0efa99970b5e095a"><div class="ttname"><a href="structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a">myengine::Component::getKeyboard</a></div><div class="ttdeci">std::shared_ptr&lt; Keyboard &gt; getKeyboard()</div><div class="ttdoc">Returns the Keyboard.</div><div class="ttdef"><b>Definition:</b> Component.cpp:55</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_ac135ad3bd05cb1cf40839140b19ffd79"><div class="ttname"><a href="structmyengine_1_1_component.html#ac135ad3bd05cb1cf40839140b19ffd79">myengine::Component::core</a></div><div class="ttdeci">std::weak_ptr&lt; Core &gt; core</div><div class="ttdef"><b>Definition:</b> Component.h:32</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html_ae877e53480db24995163c358faebb688"><div class="ttname"><a href="structmyengine_1_1_component.html#ae877e53480db24995163c358faebb688">myengine::Component::tick</a></div><div class="ttdeci">void tick(float _deltaTime)</div><div class="ttdef"><b>Definition:</b> Component.cpp:17</div></div>

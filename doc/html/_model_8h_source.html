@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: myengine/src/myrenderer/Model.h Source File</title>
+<title>My Project: src/myrenderer/Model.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Engine
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -62,21 +62,21 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_38354cbc05e1c3d7e065b4ece99fa2cf.html">myrenderer</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d1166640f6dacc4d6d87ed0546d7026.html">myrenderer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Model.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_model_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;glm/ext.hpp&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyrenderer.html">myrenderer</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>myrenderer</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">struct </span>VertexArray;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
@@ -97,29 +97,21 @@ $(function() {
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        glm::mat4 <a class="code hl_function" href="structmyrenderer_1_1_model.html#a031d49c9b28eb4850aa92498741232ab">GetModel</a>();</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_model.html#ac1e19aa9998a7d43ad7997f950783c66">   72</a></span>        glm::mat4 <a class="code hl_variable" href="structmyrenderer_1_1_model.html#ac1e19aa9998a7d43ad7997f950783c66">model</a>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_model.html#a0e7c20fae05c64f95e29898807027b5f">   73</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_model.html#a0e7c20fae05c64f95e29898807027b5f">translateX</a> = 0;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_model.html#a4704c59c38a31e18b74526079152f45e">   74</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_model.html#a4704c59c38a31e18b74526079152f45e">translateY</a> = 0;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_model.html#af393f0dd073f8fb8012771226abe824a">   75</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_model.html#af393f0dd073f8fb8012771226abe824a">translateZ</a> = 0;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_model.html#ac5ca762d2051b57242dd7030cf9c633e">   76</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_model.html#ac5ca762d2051b57242dd7030cf9c633e">scaleX</a> = 0;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_model.html#ad87dccccf52b641eb063a713f95c90e7">   77</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_model.html#ad87dccccf52b641eb063a713f95c90e7">scaleY</a> = 0;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_model.html#abeaa664bf23a558e02639e4c33ea6827">   78</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_model.html#abeaa664bf23a558e02639e4c33ea6827">scaleZ</a> = 0;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        glm::mat4 model;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordtype">int</span> translateX = 0;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordtype">int</span> translateY = 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordtype">int</span> translateZ = 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordtype">int</span> scaleX = 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordtype">int</span> scaleY = 0;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordtype">int</span> scaleZ = 0;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    };</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
-<div class="ttc" id="anamespacemyrenderer_html"><div class="ttname"><a href="namespacemyrenderer.html">myrenderer</a></div><div class="ttdef"><b>Definition:</b> Model.cpp:4</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_model_html"><div class="ttname"><a href="structmyrenderer_1_1_model.html">myrenderer::Model</a></div><div class="ttdef"><b>Definition:</b> Model.h:17</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_model_html_a031d49c9b28eb4850aa92498741232ab"><div class="ttname"><a href="structmyrenderer_1_1_model.html#a031d49c9b28eb4850aa92498741232ab">myrenderer::Model::GetModel</a></div><div class="ttdeci">glm::mat4 GetModel()</div><div class="ttdef"><b>Definition:</b> Model.cpp:43</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_model_html_a0e7c20fae05c64f95e29898807027b5f"><div class="ttname"><a href="structmyrenderer_1_1_model.html#a0e7c20fae05c64f95e29898807027b5f">myrenderer::Model::translateX</a></div><div class="ttdeci">int translateX</div><div class="ttdef"><b>Definition:</b> Model.h:73</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_model_html_a2fa584d6d561c6b242a89d5a91f129dd"><div class="ttname"><a href="structmyrenderer_1_1_model.html#a2fa584d6d561c6b242a89d5a91f129dd">myrenderer::Model::Draw</a></div><div class="ttdeci">void Draw(GLint modelLoc, GLint projectionLoc, glm::mat4 projection, size_t vao)</div><div class="ttdef"><b>Definition:</b> Model.cpp:31</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_model_html_a3dcb24806463914181bace1814d828e5"><div class="ttname"><a href="structmyrenderer_1_1_model.html#a3dcb24806463914181bace1814d828e5">myrenderer::Model::SetScale</a></div><div class="ttdeci">void SetScale(int x, int y, int z)</div><div class="ttdef"><b>Definition:</b> Model.cpp:22</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_model_html_a4704c59c38a31e18b74526079152f45e"><div class="ttname"><a href="structmyrenderer_1_1_model.html#a4704c59c38a31e18b74526079152f45e">myrenderer::Model::translateY</a></div><div class="ttdeci">int translateY</div><div class="ttdef"><b>Definition:</b> Model.h:74</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_model_html_a4df6768fdc5c550535dac1e8bc15ddb5"><div class="ttname"><a href="structmyrenderer_1_1_model.html#a4df6768fdc5c550535dac1e8bc15ddb5">myrenderer::Model::SetPosition</a></div><div class="ttdeci">void SetPosition(int x, int y, int z)</div><div class="ttdef"><b>Definition:</b> Model.cpp:13</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_model_html_abeaa664bf23a558e02639e4c33ea6827"><div class="ttname"><a href="structmyrenderer_1_1_model.html#abeaa664bf23a558e02639e4c33ea6827">myrenderer::Model::scaleZ</a></div><div class="ttdeci">int scaleZ</div><div class="ttdef"><b>Definition:</b> Model.h:78</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_model_html_abfab89f000df297408aab4af2dccd9b7"><div class="ttname"><a href="structmyrenderer_1_1_model.html#abfab89f000df297408aab4af2dccd9b7">myrenderer::Model::Bind</a></div><div class="ttdeci">void Bind(GLuint textureId, GLuint vaoId)</div><div class="ttdef"><b>Definition:</b> Model.cpp:6</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_model_html_ac1e19aa9998a7d43ad7997f950783c66"><div class="ttname"><a href="structmyrenderer_1_1_model.html#ac1e19aa9998a7d43ad7997f950783c66">myrenderer::Model::model</a></div><div class="ttdeci">glm::mat4 model</div><div class="ttdef"><b>Definition:</b> Model.h:72</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_model_html_ac5ca762d2051b57242dd7030cf9c633e"><div class="ttname"><a href="structmyrenderer_1_1_model.html#ac5ca762d2051b57242dd7030cf9c633e">myrenderer::Model::scaleX</a></div><div class="ttdeci">int scaleX</div><div class="ttdef"><b>Definition:</b> Model.h:76</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_model_html_ad87dccccf52b641eb063a713f95c90e7"><div class="ttname"><a href="structmyrenderer_1_1_model.html#ad87dccccf52b641eb063a713f95c90e7">myrenderer::Model::scaleY</a></div><div class="ttdeci">int scaleY</div><div class="ttdef"><b>Definition:</b> Model.h:77</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_model_html_af393f0dd073f8fb8012771226abe824a"><div class="ttname"><a href="structmyrenderer_1_1_model.html#af393f0dd073f8fb8012771226abe824a">myrenderer::Model::translateZ</a></div><div class="ttdeci">int translateZ</div><div class="ttdef"><b>Definition:</b> Model.h:75</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

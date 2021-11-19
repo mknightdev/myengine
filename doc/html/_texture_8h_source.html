@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: myengine/src/myrenderer/Texture.h Source File</title>
+<title>My Project: src/myrenderer/Texture.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Engine
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -62,17 +62,17 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_38354cbc05e1c3d7e065b4ece99fa2cf.html">myrenderer</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d1166640f6dacc4d6d87ed0546d7026.html">myrenderer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Texture.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_texture_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyrenderer.html">myrenderer</a></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span>myrenderer</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_texture.html">    9</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyrenderer_1_1_texture.html">Texture</a></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
@@ -85,18 +85,13 @@ $(function() {
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        GLuint <a class="code hl_function" href="structmyrenderer_1_1_texture.html#af4579aee69eea8ad808e53e6f89d69ce">GetId</a>();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_texture.html#a14ae393cbb555a08c9c222d10e81d94f">   40</a></span>        GLuint <a class="code hl_variable" href="structmyrenderer_1_1_texture.html#a14ae393cbb555a08c9c222d10e81d94f">id</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_texture.html#a5608bf947d7a7f001572e14836a2b75e">   41</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_texture.html#a5608bf947d7a7f001572e14836a2b75e">width</a> = 0;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_texture.html#a486462c43a51e7ab66ffecb3441327a2">   42</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="structmyrenderer_1_1_texture.html#a486462c43a51e7ab66ffecb3441327a2">height</a> = 0;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_texture.html#a2b5e6cb39dcd945bb98968caa5a093da">   43</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structmyrenderer_1_1_texture.html#a2b5e6cb39dcd945bb98968caa5a093da">data</a> = NULL;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        GLuint id;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">int</span> width = 0;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">int</span> height = 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data = NULL;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    };</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
-<div class="ttc" id="anamespacemyrenderer_html"><div class="ttname"><a href="namespacemyrenderer.html">myrenderer</a></div><div class="ttdef"><b>Definition:</b> Model.cpp:4</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_texture_html"><div class="ttname"><a href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a></div><div class="ttdef"><b>Definition:</b> Texture.h:10</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_texture_html_a14ae393cbb555a08c9c222d10e81d94f"><div class="ttname"><a href="structmyrenderer_1_1_texture.html#a14ae393cbb555a08c9c222d10e81d94f">myrenderer::Texture::id</a></div><div class="ttdeci">GLuint id</div><div class="ttdef"><b>Definition:</b> Texture.h:40</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_texture_html_a2b5e6cb39dcd945bb98968caa5a093da"><div class="ttname"><a href="structmyrenderer_1_1_texture.html#a2b5e6cb39dcd945bb98968caa5a093da">myrenderer::Texture::data</a></div><div class="ttdeci">unsigned char * data</div><div class="ttdef"><b>Definition:</b> Texture.h:43</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_texture_html_a486462c43a51e7ab66ffecb3441327a2"><div class="ttname"><a href="structmyrenderer_1_1_texture.html#a486462c43a51e7ab66ffecb3441327a2">myrenderer::Texture::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> Texture.h:42</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_texture_html_a5608bf947d7a7f001572e14836a2b75e"><div class="ttname"><a href="structmyrenderer_1_1_texture.html#a5608bf947d7a7f001572e14836a2b75e">myrenderer::Texture::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> Texture.h:41</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_texture_html_abb0e6ae0d00974e9f1c0cace21c3028e"><div class="ttname"><a href="structmyrenderer_1_1_texture.html#abb0e6ae0d00974e9f1c0cace21c3028e">myrenderer::Texture::Texture</a></div><div class="ttdeci">Texture(unsigned char *image, int x, int y)</div><div class="ttdef"><b>Definition:</b> Texture.cpp:11</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_texture_html_af4579aee69eea8ad808e53e6f89d69ce"><div class="ttname"><a href="structmyrenderer_1_1_texture.html#af4579aee69eea8ad808e53e6f89d69ce">myrenderer::Texture::GetId</a></div><div class="ttdeci">GLuint GetId()</div><div class="ttdef"><b>Definition:</b> Texture.cpp:70</div></div>
 </div><!-- fragment --></div><!-- contents -->

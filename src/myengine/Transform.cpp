@@ -2,6 +2,11 @@
 
 namespace myengine
 {
+	/**
+	* \brief Initialises the Transform.
+	*
+	* Sets the initial values of m_position, m_rotation and m_scale.
+	*/
 	void Transform::onInitialize()
 	{
 		m_position = vec3(0, 0, -2.5f);

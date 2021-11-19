@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: myengine/src/myrenderer/ShaderProgram.h Source File</title>
+<title>My Project: src/myrenderer/ShaderProgram.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Engine
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -62,20 +62,20 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_38354cbc05e1c3d7e065b4ece99fa2cf.html">myrenderer</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d1166640f6dacc4d6d87ed0546d7026.html">myrenderer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">ShaderProgram.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_shader_program_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyrenderer.html">myrenderer</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>myrenderer</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespacemyrenderer.html#aa422f1ca0d256fb90f9ed8107b9a9873">   11</a></span>    <span class="keyword">const</span> GLsizei <a class="code hl_variable" href="namespacemyrenderer.html#aa422f1ca0d256fb90f9ed8107b9a9873">LOG_LENGTH</a> = 512;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">const</span> GLsizei LOG_LENGTH = 512;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_shader_program.html">   13</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyrenderer_1_1_shader_program.html">ShaderProgram</a></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
@@ -87,26 +87,20 @@ $(function() {
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyrenderer_1_1_shader_program.html#aefe331a02c5bf3f068d32c5ecaaeec22">CreateShader</a>(<span class="keyword">const</span> GLchar* vertSrc, <span class="keyword">const</span> GLchar* fragSrc);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="comment">// Activate the shader</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyrenderer_1_1_shader_program.html#a50333aebe4e49cf6daf327b7b83aabaf">use</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">void</span> use();</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyrenderer_1_1_shader_program.html#ac501805e664a935e5f8df0d0970f4500">setVec3</a>(<span class="keyword">const</span> std::string&amp; _name, <span class="keyword">const</span> glm::vec3&amp; _value) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> setVec3(<span class="keyword">const</span> std::string&amp; _name, <span class="keyword">const</span> glm::vec3&amp; _value) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyrenderer_1_1_shader_program.html#ac501805e664a935e5f8df0d0970f4500">setVec3</a>(<span class="keyword">const</span> std::string&amp; _name, <span class="keywordtype">float</span> _x, <span class="keywordtype">float</span> _y, <span class="keywordtype">float</span> _z) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> setVec3(<span class="keyword">const</span> std::string&amp; _name, <span class="keywordtype">float</span> _x, <span class="keywordtype">float</span> _y, <span class="keywordtype">float</span> _z) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyrenderer_1_1_shader_program.html#a03eacb01e034de31b0260ee0a70bff1c">setFloat</a>(<span class="keyword">const</span> std::string&amp; _name, <span class="keywordtype">float</span> _value) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> setFloat(<span class="keyword">const</span> std::string&amp; _name, <span class="keywordtype">float</span> _value) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_shader_program.html#a4120ed996a6e62632ccf5a2a97a36df4">   45</a></span>        GLuint <a class="code hl_variable" href="structmyrenderer_1_1_shader_program.html#a4120ed996a6e62632ccf5a2a97a36df4">programID</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        GLuint programID;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
-<div class="ttc" id="anamespacemyrenderer_html"><div class="ttname"><a href="namespacemyrenderer.html">myrenderer</a></div><div class="ttdef"><b>Definition:</b> Model.cpp:4</div></div>
-<div class="ttc" id="anamespacemyrenderer_html_aa422f1ca0d256fb90f9ed8107b9a9873"><div class="ttname"><a href="namespacemyrenderer.html#aa422f1ca0d256fb90f9ed8107b9a9873">myrenderer::LOG_LENGTH</a></div><div class="ttdeci">const GLsizei LOG_LENGTH</div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:11</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_shader_program_html"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html">myrenderer::ShaderProgram</a></div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:14</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_shader_program_html_a03eacb01e034de31b0260ee0a70bff1c"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html#a03eacb01e034de31b0260ee0a70bff1c">myrenderer::ShaderProgram::setFloat</a></div><div class="ttdeci">void setFloat(const std::string &amp;_name, float _value) const</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:162</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_shader_program_html_a0bd1d867c9fccacb67aace31477476cb"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html#a0bd1d867c9fccacb67aace31477476cb">myrenderer::ShaderProgram::GetSource</a></div><div class="ttdeci">GLuint GetSource(const GLchar *source, GLuint type)</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:111</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_shader_program_html_a4120ed996a6e62632ccf5a2a97a36df4"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html#a4120ed996a6e62632ccf5a2a97a36df4">myrenderer::ShaderProgram::programID</a></div><div class="ttdeci">GLuint programID</div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:45</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_shader_program_html_a50333aebe4e49cf6daf327b7b83aabaf"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html#a50333aebe4e49cf6daf327b7b83aabaf">myrenderer::ShaderProgram::use</a></div><div class="ttdeci">void use()</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:147</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_shader_program_html_ac501805e664a935e5f8df0d0970f4500"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html#ac501805e664a935e5f8df0d0970f4500">myrenderer::ShaderProgram::setVec3</a></div><div class="ttdeci">void setVec3(const std::string &amp;_name, const glm::vec3 &amp;_value) const</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:152</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_shader_program_html_adaaf86e1320431ca3e5310324ce6cdd6"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html#adaaf86e1320431ca3e5310324ce6cdd6">myrenderer::ShaderProgram::getId</a></div><div class="ttdeci">GLuint getId()</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:11</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_shader_program_html_aefe331a02c5bf3f068d32c5ecaaeec22"><div class="ttname"><a href="structmyrenderer_1_1_shader_program.html#aefe331a02c5bf3f068d32c5ecaaeec22">myrenderer::ShaderProgram::CreateShader</a></div><div class="ttdeci">void CreateShader(const GLchar *vertSrc, const GLchar *fragSrc)</div><div class="ttdef"><b>Definition:</b> ShaderProgram.cpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->

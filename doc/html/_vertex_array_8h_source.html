@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: myengine/src/myrenderer/VertexArray.h Source File</title>
+<title>My Project: src/myrenderer/VertexArray.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Engine
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -62,20 +62,20 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_38354cbc05e1c3d7e065b4ece99fa2cf.html">myrenderer</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7d1166640f6dacc4d6d87ed0546d7026.html">myrenderer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">VertexArray.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_vertex_array_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyrenderer.html">myrenderer</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>myrenderer</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">struct </span>VertexBuffer; <span class="comment">// Forward declare </span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
@@ -92,22 +92,17 @@ $(function() {
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="structmyrenderer_1_1_vertex_array.html#a4406b0691eba433cbc11222f897992e4">getVertCount</a>();</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_vertex_array.html#af9d6d846ffab0e1ab596a94c05e05d6b">   52</a></span>        GLuint <a class="code hl_variable" href="structmyrenderer_1_1_vertex_array.html#af9d6d846ffab0e1ab596a94c05e05d6b">id</a>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_vertex_array.html#a9f16fa37fbafd6cc25d5478d6d7080ae">   53</a></span>        std::vector&lt;std::shared_ptr&lt;VertexBuffer&gt;&gt; <a class="code hl_variable" href="structmyrenderer_1_1_vertex_array.html#a9f16fa37fbafd6cc25d5478d6d7080ae">buffers</a>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_vertex_array.html#a6605b9644a224422f7eaa2998c0b6c74">   54</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="structmyrenderer_1_1_vertex_array.html#a6605b9644a224422f7eaa2998c0b6c74">dirty</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structmyrenderer_1_1_vertex_array.html#a393821f51485a43d65944f2ecddbca91">   55</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structmyrenderer_1_1_vertex_array.html#a393821f51485a43d65944f2ecddbca91">vertCount</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        GLuint id;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        std::vector&lt;std::shared_ptr&lt;VertexBuffer&gt;&gt; buffers;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">bool</span> dirty;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">size_t</span> vertCount;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    };</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
-<div class="ttc" id="anamespacemyrenderer_html"><div class="ttname"><a href="namespacemyrenderer.html">myrenderer</a></div><div class="ttdef"><b>Definition:</b> Model.cpp:4</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_vertex_array_html"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html">myrenderer::VertexArray</a></div><div class="ttdef"><b>Definition:</b> VertexArray.h:16</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_a22875e53bec3d7de92849ffc855840fe"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#a22875e53bec3d7de92849ffc855840fe">myrenderer::VertexArray::VertexArray</a></div><div class="ttdeci">VertexArray()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:16</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_a36273ab60a627ddb1492099e2ea26c2c"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#a36273ab60a627ddb1492099e2ea26c2c">myrenderer::VertexArray::getId</a></div><div class="ttdeci">GLuint getId()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:44</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_a393821f51485a43d65944f2ecddbca91"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#a393821f51485a43d65944f2ecddbca91">myrenderer::VertexArray::vertCount</a></div><div class="ttdeci">size_t vertCount</div><div class="ttdef"><b>Definition:</b> VertexArray.h:55</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_a4406b0691eba433cbc11222f897992e4"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#a4406b0691eba433cbc11222f897992e4">myrenderer::VertexArray::getVertCount</a></div><div class="ttdeci">size_t getVertCount()</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:34</div></div>
 <div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_a550972a5fd2dd934463373042ff3213f"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#a550972a5fd2dd934463373042ff3213f">myrenderer::VertexArray::setBuffer</a></div><div class="ttdeci">void setBuffer(int location, std::shared_ptr&lt; VertexBuffer &gt; buffer)</div><div class="ttdef"><b>Definition:</b> VertexArray.cpp:39</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_a6605b9644a224422f7eaa2998c0b6c74"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#a6605b9644a224422f7eaa2998c0b6c74">myrenderer::VertexArray::dirty</a></div><div class="ttdeci">bool dirty</div><div class="ttdef"><b>Definition:</b> VertexArray.h:54</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_a9f16fa37fbafd6cc25d5478d6d7080ae"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#a9f16fa37fbafd6cc25d5478d6d7080ae">myrenderer::VertexArray::buffers</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; VertexBuffer &gt; &gt; buffers</div><div class="ttdef"><b>Definition:</b> VertexArray.h:53</div></div>
-<div class="ttc" id="astructmyrenderer_1_1_vertex_array_html_af9d6d846ffab0e1ab596a94c05e05d6b"><div class="ttname"><a href="structmyrenderer_1_1_vertex_array.html#af9d6d846ffab0e1ab596a94c05e05d6b">myrenderer::VertexArray::id</a></div><div class="ttdeci">GLuint id</div><div class="ttdef"><b>Definition:</b> VertexArray.h:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

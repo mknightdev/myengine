@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Engine: myengine/src/myengine/AudioClip.h Source File</title>
+<title>My Project: src/myengine/AudioClip.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Engine
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -62,25 +62,25 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3f9a28c4bb5e30d2c4f4a68f72d156fa.html">myengine</a></li><li class="navelem"><a class="el" href="dir_eff0bfe15335107cdfaa4252eecec1cb.html">src</a></li><li class="navelem"><a class="el" href="dir_585145b755e35755549ef202b6cdd2f4.html">myengine</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0ddde275324c43d8035a84ca42e35f4e.html">myengine</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">AudioClip.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_audio_clip_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_resource_8h.html">Resource.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;Resource.h&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;AL/al.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;AL/alc.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemyengine.html">myengine</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>myengine</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structmyengine_1_1_audio_clip.html">   10</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_audio_clip.html">AudioClip</a> : <a class="code hl_struct" href="structmyengine_1_1_resource.html">Resource</a></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_audio_clip.html#af538f580741bc39b9ede49ae23546c45">onInitialize</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">void</span> onInitialize();</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_function" href="structmyengine_1_1_audio_clip.html#a6eb1bd1974bbc93c8559e8f56a31446b">AudioClip</a>(std::string _fileName);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_audio_clip.html#a7489100a477a9adb62c8d47e271067b4">loadOgg</a>(<span class="keyword">const</span> std::string&amp; _fileName, std::vector&lt;char&gt;&amp; _buffer, ALenum&amp; _format, ALsizei&amp; _freq);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        ALuint <a class="code hl_function" href="structmyengine_1_1_audio_clip.html#a610b54df59c755bbb7a4e2f5723da8a8">GetId</a>();</div>
@@ -91,15 +91,12 @@ $(function() {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structmyengine_1_1_audio_clip.html#a7a9851eaf8076392d7f3b1ef3502c503">   23</a></span>        ALuint <a class="code hl_variable" href="structmyengine_1_1_audio_clip.html#a7a9851eaf8076392d7f3b1ef3502c503">id</a>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    };</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
-<div class="ttc" id="a_resource_8h_html"><div class="ttname"><a href="_resource_8h.html">Resource.h</a></div></div>
-<div class="ttc" id="anamespacemyengine_html"><div class="ttname"><a href="namespacemyengine.html">myengine</a></div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:7</div></div>
 <div class="ttc" id="astructmyengine_1_1_audio_clip_html"><div class="ttname"><a href="structmyengine_1_1_audio_clip.html">myengine::AudioClip</a></div><div class="ttdef"><b>Definition:</b> AudioClip.h:11</div></div>
 <div class="ttc" id="astructmyengine_1_1_audio_clip_html_a610b54df59c755bbb7a4e2f5723da8a8"><div class="ttname"><a href="structmyengine_1_1_audio_clip.html#a610b54df59c755bbb7a4e2f5723da8a8">myengine::AudioClip::GetId</a></div><div class="ttdeci">ALuint GetId()</div><div class="ttdoc">Returns the AudioClip's ID.</div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:98</div></div>
 <div class="ttc" id="astructmyengine_1_1_audio_clip_html_a6eb1bd1974bbc93c8559e8f56a31446b"><div class="ttname"><a href="structmyengine_1_1_audio_clip.html#a6eb1bd1974bbc93c8559e8f56a31446b">myengine::AudioClip::AudioClip</a></div><div class="ttdeci">AudioClip(std::string _fileName)</div><div class="ttdoc">Initialises the AudioClip.</div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:22</div></div>
 <div class="ttc" id="astructmyengine_1_1_audio_clip_html_a7489100a477a9adb62c8d47e271067b4"><div class="ttname"><a href="structmyengine_1_1_audio_clip.html#a7489100a477a9adb62c8d47e271067b4">myengine::AudioClip::loadOgg</a></div><div class="ttdeci">void loadOgg(const std::string &amp;_fileName, std::vector&lt; char &gt; &amp;_buffer, ALenum &amp;_format, ALsizei &amp;_freq)</div><div class="ttdoc">Loads an .ogg audio file.</div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:59</div></div>
 <div class="ttc" id="astructmyengine_1_1_audio_clip_html_a7a9851eaf8076392d7f3b1ef3502c503"><div class="ttname"><a href="structmyengine_1_1_audio_clip.html#a7a9851eaf8076392d7f3b1ef3502c503">myengine::AudioClip::id</a></div><div class="ttdeci">ALuint id</div><div class="ttdef"><b>Definition:</b> AudioClip.h:23</div></div>
 <div class="ttc" id="astructmyengine_1_1_audio_clip_html_a7d5a018889b5aef7a93a72ff6578d933"><div class="ttname"><a href="structmyengine_1_1_audio_clip.html#a7d5a018889b5aef7a93a72ff6578d933">myengine::AudioClip::ExceptionCheck</a></div><div class="ttdeci">std::string ExceptionCheck(ALCenum _error)</div><div class="ttdoc">OpenAL Soft exception checking.</div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:109</div></div>
-<div class="ttc" id="astructmyengine_1_1_audio_clip_html_af538f580741bc39b9ede49ae23546c45"><div class="ttname"><a href="structmyengine_1_1_audio_clip.html#af538f580741bc39b9ede49ae23546c45">myengine::AudioClip::onInitialize</a></div><div class="ttdeci">void onInitialize()</div><div class="ttdef"><b>Definition:</b> AudioClip.cpp:8</div></div>
 <div class="ttc" id="astructmyengine_1_1_resource_html"><div class="ttname"><a href="structmyengine_1_1_resource.html">myengine::Resource</a></div><div class="ttdef"><b>Definition:</b> Resource.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
