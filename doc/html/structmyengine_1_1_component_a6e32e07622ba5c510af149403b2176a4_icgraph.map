@@ -1,0 +1,7 @@
+<map id="myengine::Component::getMouse" name="myengine::Component::getMouse">
+<area shape="rect" id="node1" title="Returns the Mouse." alt="" coords="467,39,619,80"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_model_renderer.html#a853e29bd0aa9b73004ab46f105fcef20" title="Update mouse position." alt="" coords="241,5,414,47"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_triangle_renderer.html#a3ac2c021a5a1b280a7ef84056049b45a" title="Update mouse position." alt="" coords="236,71,419,112"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="10,5,183,47"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce" title="The position of the triangle." alt="" coords="5,71,188,112"/>
+</map>

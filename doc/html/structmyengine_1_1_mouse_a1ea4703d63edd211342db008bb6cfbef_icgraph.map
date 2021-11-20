@@ -1,0 +1,4 @@
+<map id="myengine::Mouse::create" name="myengine::Mouse::create">
+<area shape="rect" id="node1" title="Creates the mouse." alt="" coords="247,5,416,32"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_core.html#a0de07d096a6c50a27b851bf7603dfa4d" title="Sets up the engine." alt="" coords="5,5,199,32"/>
+</map>

@@ -1,16 +1,20 @@
 var searchData=
 [
-  ['self_0',['self',['../structmyengine_1_1_core.html#ac267d935fde8226d4fe892ee900e6b39',1,'myengine::Core::self()'],['../structmyengine_1_1_entity.html#a2a632e186f0b9a5a8e73bdaf2e6e5016',1,'myengine::Entity::self()'],['../structmyengine_1_1_environment.html#ae140d337fe5345d46fa3909cb1261623',1,'myengine::Environment::self()'],['../structmyengine_1_1_keyboard.html#a169408e8c2a64c915cbfeaefa8a556f1',1,'myengine::Keyboard::self()']]],
+  ['self_0',['self',['../structmyengine_1_1_core.html#ac267d935fde8226d4fe892ee900e6b39',1,'myengine::Core::self()'],['../structmyengine_1_1_entity.html#a2a632e186f0b9a5a8e73bdaf2e6e5016',1,'myengine::Entity::self()'],['../structmyengine_1_1_environment.html#ae140d337fe5345d46fa3909cb1261623',1,'myengine::Environment::self()'],['../structmyengine_1_1_keyboard.html#a169408e8c2a64c915cbfeaefa8a556f1',1,'myengine::Keyboard::self()'],['../structmyengine_1_1_mouse.html#a08e03c5b8f44e70f6c74d9c4f0201d0c',1,'myengine::Mouse::self()'],['../structmyengine_1_1_resource_manager.html#a4366aa390eed756b5eb98fd80d2edb41',1,'myengine::ResourceManager::self()']]],
   ['setbuffer_1',['setBuffer',['../structmyrenderer_1_1_vertex_array.html#a550972a5fd2dd934463373042ff3213f',1,'myrenderer::VertexArray']]],
   ['setposition_2',['SetPosition',['../structmyrenderer_1_1_model.html#a4df6768fdc5c550535dac1e8bc15ddb5',1,'myrenderer::Model']]],
-  ['setscale_3',['SetScale',['../structmyrenderer_1_1_model.html#a3dcb24806463914181bace1814d828e5',1,'myrenderer::Model']]],
-  ['setupaudio_4',['setupAudio',['../structmyengine_1_1_core.html#a6681b43b74bad09d8f1c3873f269d683',1,'myengine::Core']]],
-  ['setupengine_5',['setupEngine',['../structmyengine_1_1_core.html#a0de07d096a6c50a27b851bf7603dfa4d',1,'myengine::Core']]],
-  ['setupgraphics_6',['setupGraphics',['../structmyengine_1_1_core.html#adb232743249b5e8b5a7088af36034ff3',1,'myengine::Core']]],
-  ['setupwindow_7',['setupWindow',['../structmyengine_1_1_core.html#af4cc9a845101aee02c864a86b47ceaf1',1,'myengine::Core']]],
-  ['shaderprogram_8',['ShaderProgram',['../structmyrenderer_1_1_shader_program.html',1,'myrenderer']]],
-  ['soundsource_9',['SoundSource',['../structmyengine_1_1_sound_source.html',1,'myengine']]],
-  ['srcid_10',['srcID',['../structmyengine_1_1_sound_source.html#a3ced97ad59a312bed0bf093571fd54f2',1,'myengine::SoundSource']]],
-  ['start_11',['start',['../structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f',1,'myengine::Core']]],
-  ['stop_12',['stop',['../structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965',1,'myengine::Core']]]
+  ['setposition_3',['setPosition',['../structmyengine_1_1_transform.html#aa24a959503912c076237c3e5da45eaf6',1,'myengine::Transform']]],
+  ['setrotation_4',['setRotation',['../structmyengine_1_1_transform.html#a5a0616d4b2fbfaf3c5b1b6cdd960d5f1',1,'myengine::Transform']]],
+  ['setscale_5',['SetScale',['../structmyrenderer_1_1_model.html#a3dcb24806463914181bace1814d828e5',1,'myrenderer::Model']]],
+  ['setscale_6',['setScale',['../structmyengine_1_1_transform.html#af8fef6625978cbaab5e0e99a38c9bd2c',1,'myengine::Transform']]],
+  ['setupaudio_7',['setupAudio',['../structmyengine_1_1_core.html#a6681b43b74bad09d8f1c3873f269d683',1,'myengine::Core']]],
+  ['setupengine_8',['setupEngine',['../structmyengine_1_1_core.html#a0de07d096a6c50a27b851bf7603dfa4d',1,'myengine::Core']]],
+  ['setupgraphics_9',['setupGraphics',['../structmyengine_1_1_core.html#adb232743249b5e8b5a7088af36034ff3',1,'myengine::Core']]],
+  ['setupwindow_10',['setupWindow',['../structmyengine_1_1_core.html#af4cc9a845101aee02c864a86b47ceaf1',1,'myengine::Core']]],
+  ['shader_11',['shader',['../structmyengine_1_1_model_renderer.html#aa552729c2222f61a357db0957ab36020',1,'myengine::ModelRenderer']]],
+  ['shaderprogram_12',['ShaderProgram',['../structmyrenderer_1_1_shader_program.html',1,'myrenderer']]],
+  ['soundsource_13',['SoundSource',['../structmyengine_1_1_sound_source.html',1,'myengine']]],
+  ['srcid_14',['srcID',['../structmyengine_1_1_sound_source.html#a3ced97ad59a312bed0bf093571fd54f2',1,'myengine::SoundSource']]],
+  ['start_15',['start',['../structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f',1,'myengine::Core']]],
+  ['stop_16',['stop',['../structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965',1,'myengine::Core']]]
 ];

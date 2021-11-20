@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['resourcemanager_0',['resourceManager',['../structmyengine_1_1_core.html#aa7005ccb6d5f4827a8d94a2b7790f5b4',1,'myengine::Core']]],
-  ['running_1',['running',['../structmyengine_1_1_core.html#aa1034f698d15e4115272c7d8f7fa73ae',1,'myengine::Core']]]
+  ['path_0',['path',['../structmyengine_1_1_resource.html#a63bce52f320e2a5115414a72730c7754',1,'myengine::Resource']]],
+  ['positionsvbo_1',['positionsVbo',['../structmyengine_1_1_model_renderer.html#a07918228aba46fa436b27926c7fc45d2',1,'myengine::ModelRenderer']]]
 ];

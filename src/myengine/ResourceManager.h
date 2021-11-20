@@ -11,6 +11,14 @@ namespace myengine
 	{
 		static std::shared_ptr<ResourceManager> create(std::weak_ptr<Core> _core);
 
+		/**
+		* \brief Loads a resource.
+		* 
+		* Loads a resource and checks if one is already cached. If it is, 
+		* we return the cached one. If it is not, we create and store the new one and then return it.
+		* 
+		* \return The loaded resource.
+		*/
 		template <typename T>
 		std::shared_ptr<T> load(const std::string& _path)
 		{
@@ -37,8 +45,23 @@ namespace myengine
 
 	private:
 		friend struct myengine::Core;
+
+		/** 
+		* Stores itself and is used for granting access to other classes.
+		*/
 		std::weak_ptr<ResourceManager> self;
+		
+		/**
+		* Stores the core and is used for navigating up the hierarchy.
+		*/
 		std::weak_ptr<Core> core;
+
+		/**
+		* \brief Stores all resources.
+		* 
+		* Each time a new resource is loaded, it gets cached to here to be loaded from,
+		* rather than creating a new one each time.
+		*/
 		std::vector<std::shared_ptr<Resource>> resources;
 	};
 }

@@ -1,0 +1,5 @@
+<map id="myengine::Component::deltaTime" name="myengine::Component::deltaTime">
+<area shape="rect" id="node1" title="Returns the deltaTime." alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="205,5,357,47"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="405,5,557,47"/>
+</map>

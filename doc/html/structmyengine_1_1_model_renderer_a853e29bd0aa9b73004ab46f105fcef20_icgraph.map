@@ -1,0 +1,4 @@
+<map id="myengine::ModelRenderer::mouseUpdate" name="myengine::ModelRenderer::mouseUpdate">
+<area shape="rect" id="node1" title="Update mouse position." alt="" coords="227,5,400,47"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="5,5,179,47"/>
+</map>

@@ -26,6 +26,16 @@ glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 namespace myengine
 {
+	/**
+	* \brief Initialises the model. 
+	* 
+	* Loads the model and texture, alongside the shaders to be used with it.
+	* 
+	* \see myrenderer::VertexArray
+	* \see myrenderer::VertexBuffer
+	* \see myrenderer::ShaderProgram
+	* \see myrenderer::Texture
+	*/
 	void ModelRenderer::onInitialize()
 	{
 		std::cout << "Model Renderer Initialised" << std::endl;
@@ -99,6 +109,14 @@ namespace myengine
 		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
 	}
 
+	/**
+	* \brief Draws the model. 
+	* 
+	* Updates and draws the model loaded.
+	* 
+	* \warning Can throw several exceptions if it can find the model, projection,
+	* or view locations.
+	*/
 	void ModelRenderer::onDisplay()
 	{
 		// Draw
@@ -161,6 +179,15 @@ namespace myengine
 		glUseProgram(0);
 	}
 
+	/**
+	* \brief The position of the model. 
+	* 
+	* Moves and updates the position of the model.
+	* 
+	* \param _deltaTime passed through from Core and is used to multiply the updated position with.
+	* \warning Multiplying without _deltaTime may result in some expected behaviours.
+	* \see Transform
+	*/
 	void ModelRenderer::onTick(float _deltaTime)
 	{
 		if (getKeyboard()->getKeyDown(SDLK_t))
@@ -220,6 +247,11 @@ namespace myengine
 		mouseUpdate();
 	}
 
+	/**
+	* \brief Update mouse position
+	* 
+	* Updates the mouse position to move the camera.
+	*/
 	void ModelRenderer::mouseUpdate()
 	{
 		// Code from learnOpenGL - Camera

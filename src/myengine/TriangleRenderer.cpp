@@ -26,6 +26,16 @@ float fov	= 45.0f;
 
 namespace myengine
 {
+	/**
+	* \brief Initialises the triangle.
+	*
+	* Creates the triangle and texture, alongside the shaders to be used with it.
+	*
+	* \see myrenderer::VertexArray
+	* \see myrenderer::VertexBuffer
+	* \see myrenderer::ShaderProgram
+	* \see myrenderer::Texture
+	*/
 	void TriangleRenderer::onInitialize()
 	{
 		std::cout << "Triangle Initialised" << std::endl;
@@ -60,6 +70,14 @@ namespace myengine
 		triangleShader->CreateShader("../resources/shaders/noLightVert.txt", "../resources/shaders/noLightFrag.txt");
 	}
 
+	/**
+	* \brief Draws the triangle.
+	*
+	* Updates and draws the triangle created.
+	*
+	* \warning Can throw several exceptions if it can find the model, projection,
+	* or view locations.
+	*/
 	void TriangleRenderer::onDisplay()
 	{
 		// Draw
@@ -98,6 +116,15 @@ namespace myengine
 		glUseProgram(0);
 	}
 
+	/**
+	* \brief The position of the triangle.
+	*
+	* Moves and updates the position of the triangle.
+	*
+	* \param _deltaTime passed through from Core and is used to multiply the updated position with.
+	* \warning Multiplying without _deltaTime may result in some expected behaviours.
+	* \see Transform
+	*/
 	void TriangleRenderer::onTick(float _deltaTime)
 	{
 		if (getKeyboard()->getKeyDown(SDLK_UP))
@@ -151,6 +178,11 @@ namespace myengine
 		mouseUpdate();
 	}
 
+	/**
+	* \brief Update mouse position
+	*
+	* Updates the mouse position to move the camera.
+	*/
 	void TriangleRenderer::mouseUpdate()
 	{
 		// Code from learnOpenGL - Camera
