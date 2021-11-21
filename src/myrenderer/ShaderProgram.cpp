@@ -163,4 +163,9 @@ namespace myrenderer
 	{
 		glUniform1f(glGetUniformLocation(programID, _name.c_str()), _value);
 	}
+
+	void ShaderProgram::setInt(const std::string& _name, int _value) const
+	{
+		glUniform1i(glGetUniformLocation(programID, _name.c_str()), _value);
+	}
 }

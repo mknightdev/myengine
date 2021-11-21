@@ -41,6 +41,7 @@ namespace myrenderer
 
 		void setFloat(const std::string& _name, float _value) const;
 
+		void setInt(const std::string& _name, int _value) const;
 	private:
 		GLuint programID;
 	};

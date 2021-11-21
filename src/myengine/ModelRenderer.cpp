@@ -54,6 +54,9 @@ namespace myengine
 		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
 		shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
 
+		shader->use();
+		shader->setInt("material.diffuse", 0);
+
 		/*****************************
 		*
 		*	LIGHT CUBE
@@ -109,6 +112,9 @@ namespace myengine
 
 		lightShader = std::make_shared<ShaderProgram>();
 		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
+
+		//shader->use();
+		//shader->setInt("material.diffuse", 0);
 	}
 
 	/**
@@ -123,9 +129,7 @@ namespace myengine
 	{
 		// Instruct opengl to use our shader program and vao
 		shader->use();
-		glBindTexture(GL_TEXTURE_2D, texture->GetId());
-		glBindVertexArray(vao->getId());
-
+	
 		// Set uniforms
 		GLint modelLoc = glGetUniformLocation(shader->getId(), "model");
 		GLint projectionLoc = glGetUniformLocation(shader->getId(), "projection");
@@ -138,23 +142,23 @@ namespace myengine
 		shader->setVec3("light.position", lightPos);
 		shader->setVec3("viewPos", cameraPos2);
 
-		// Emerald Material
-		shader->setVec3("material.ambient", 0.24725f, 0.1995f, 0.0745f);
-		shader->setVec3("material.diffuse", 0.75164, 0.60648f, 0.22648f);
-		shader->setVec3("material.specular", 0.628281, 0.555802f, 0.366065f);
-		shader->setFloat("material.shininess", 0.4f);
+		shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+		shader->setFloat("material.shininess", 64.0f);
 
 		// Light
 		vec3 lightColour;
-		lightColour.x = 0.0f;
+		lightColour.x = 1.0f;
 		lightColour.y = 1.0f;
-		lightColour.z = 0.0f;
+		lightColour.z = 1.0f;
 		vec3 diffuseColour = lightColour * vec3(0.5f);
 		vec3 ambientColour = lightColour * vec3(0.2f);
 
 		shader->setVec3("light.ambient", ambientColour);
 		shader->setVec3("light.diffuse", diffuseColour);
 		shader->setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+
+		glBindTexture(GL_TEXTURE_2D, texture->GetId());
+		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix
 		mat4 projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
