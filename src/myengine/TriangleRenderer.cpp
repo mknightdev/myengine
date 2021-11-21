@@ -122,7 +122,7 @@ namespace myengine
 	* Moves and updates the position of the triangle.
 	*
 	* \param _deltaTime passed through from Core and is used to multiply the updated position with.
-	* \warning Multiplying without _deltaTime may result in some expected behaviours.
+	* \warning Multiplying without _deltaTime may result in some unexpected behaviours.
 	* \see Transform
 	*/
 	void TriangleRenderer::onTick(float _deltaTime)

@@ -44,13 +44,15 @@ namespace myengine
 		int h = 0;
 
 		// Load model and texture
-		vao = std::make_shared<VertexArray>("../resources/models/croc/croc.obj");
-		texture = std::make_shared<Texture>("../resources/models/croc/croc_diffuse.png", w, h);
+		vao = std::make_shared<VertexArray>("../resources/models/skeleton/skeleton.obj");
+		texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<ShaderProgram>();
 		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
-		shader->CreateShader("../resources/shaders/noLightVert.txt", "../resources/shaders/noLightFrag.txt");
+		//shader->CreateShader("../resources/shaders/diffuseVert.txt", "../resources/shaders/diffuseFrag.txt");
+		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
+		shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
 
 		/*****************************
 		*
@@ -119,20 +121,35 @@ namespace myengine
 	*/
 	void ModelRenderer::onDisplay()
 	{
-		// Draw
-		GLint modelLoc = glGetUniformLocation(shader->getId(), "u_Model");
-		GLint projectionLoc = glGetUniformLocation(shader->getId(), "u_Projection");
-		GLint viewLoc = glGetUniformLocation(shader->getId(), "u_View");
+		// Instruct opengl to use our shader program and vao
+		shader->use();
+		glBindTexture(GL_TEXTURE_2D, texture->GetId());
+		glBindVertexArray(vao->getId());
+
+		// Set uniforms
+		GLint modelLoc = glGetUniformLocation(shader->getId(), "model");
+		GLint projectionLoc = glGetUniformLocation(shader->getId(), "projection");
+		GLint viewLoc = glGetUniformLocation(shader->getId(), "view");
 
 		if (modelLoc == -1) { throw std::exception(); }
 		if (projectionLoc == -1) { throw std::exception(); }
 		if (viewLoc == -1) { throw std::exception(); }
 
-		// Instruct opengl to use our shader program and vao
-		shader->use();
-		//glUseProgram(shader->getId());
-		glBindTexture(GL_TEXTURE_2D, texture->GetId());
-		glBindVertexArray(vao->getId());
+		glUniform3f(glGetUniformLocation(shader->getId(), "lightColour"), 1.0f, 1.0f, 0.0f);
+		shader->setVec3("light.position", lightPos);
+		shader->setVec3("viewPos", cameraPos2);
+
+		// Emerald Material
+		shader->setVec3("material.ambient", 0.24725f, 0.1995f, 0.0745f);
+		shader->setVec3("material.diffuse", 0.75164, 0.60648f, 0.22648f);
+		shader->setVec3("material.specular", 0.628281, 0.555802f, 0.366065f);
+		shader->setFloat("material.shininess", 0.4f);
+
+		// Light
+		shader->setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
+		shader->setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
+		shader->setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+
 
 		// Prepare perspective projection matrix
 		mat4 projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
@@ -185,7 +202,7 @@ namespace myengine
 	* Moves and updates the position of the model.
 	* 
 	* \param _deltaTime passed through from Core and is used to multiply the updated position with.
-	* \warning Multiplying without _deltaTime may result in some expected behaviours.
+	* \warning Multiplying without _deltaTime may result in some unexpected behaviours.
 	* \see Transform
 	*/
 	void ModelRenderer::onTick(float _deltaTime)

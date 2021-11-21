@@ -16,8 +16,8 @@ int main()
 	modelEntity->addComponent<ModelRenderer>();
 	modelEntity->getComponent<ModelRenderer>();
 
-	entity->addComponent<TriangleRenderer>();
-	entity->getComponent<TriangleRenderer>();
+	//entity->addComponent<TriangleRenderer>();
+	//entity->getComponent<TriangleRenderer>();
 
 	entity->addComponent<SoundSource>();
 	//entity->getComponent<SoundSource>()->PlaySound();
