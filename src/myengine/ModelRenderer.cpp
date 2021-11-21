@@ -135,7 +135,6 @@ namespace myengine
 		if (projectionLoc == -1) { throw std::exception(); }
 		if (viewLoc == -1) { throw std::exception(); }
 
-		glUniform3f(glGetUniformLocation(shader->getId(), "lightColour"), 1.0f, 1.0f, 0.0f);
 		shader->setVec3("light.position", lightPos);
 		shader->setVec3("viewPos", cameraPos2);
 
@@ -146,10 +145,16 @@ namespace myengine
 		shader->setFloat("material.shininess", 0.4f);
 
 		// Light
-		shader->setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-		shader->setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
-		shader->setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+		vec3 lightColour;
+		lightColour.x = 0.0f;
+		lightColour.y = 1.0f;
+		lightColour.z = 0.0f;
+		vec3 diffuseColour = lightColour * vec3(0.5f);
+		vec3 ambientColour = lightColour * vec3(0.2f);
 
+		shader->setVec3("light.ambient", ambientColour);
+		shader->setVec3("light.diffuse", diffuseColour);
+		shader->setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
 		// Prepare perspective projection matrix
 		mat4 projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
@@ -180,6 +185,9 @@ namespace myengine
 		lightShader->use();
 		glBindVertexArray(lightVao->getId());
 		
+		// Set the cube's colour to match the colour of the light emitting
+		lightShader->setVec3("lightCubeColour", lightColour);
+
 		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "projection"), 1, GL_FALSE, value_ptr(projection));
 		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "view"), 1, GL_FALSE, value_ptr(view));
 
