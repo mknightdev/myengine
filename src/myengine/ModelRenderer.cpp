@@ -52,7 +52,8 @@ namespace myengine
 		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
 		//shader->CreateShader("../resources/shaders/diffuseVert.txt", "../resources/shaders/diffuseFrag.txt");
 		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
-		shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
+		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
+		shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
 
 		shader->use();
 		shader->setInt("material.diffuse", 0);
@@ -139,11 +140,50 @@ namespace myengine
 		if (projectionLoc == -1) { throw std::exception(); }
 		if (viewLoc == -1) { throw std::exception(); }
 
-		shader->setVec3("light.position", lightPos);
+		//shader->setVec3("light.position", lightPos);
 		shader->setVec3("viewPos", cameraPos2);
 
 		shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
 		shader->setFloat("material.shininess", 64.0f);
+
+		        // directional light
+        shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
+        shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+        shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
+        shader->setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+        // point light 1
+        shader->setVec3("pointLights[0].position", pointLightPositions[0]);
+        shader->setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
+        shader->setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
+        shader->setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
+        shader->setFloat("pointLights[0].constant", 1.0f);
+        shader->setFloat("pointLights[0].linear", 0.09);
+        shader->setFloat("pointLights[0].quadratic", 0.032);
+        // point light 2
+        shader->setVec3("pointLights[1].position", pointLightPositions[1]);
+        shader->setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
+        shader->setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
+        shader->setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
+        shader->setFloat("pointLights[1].constant", 1.0f);
+        shader->setFloat("pointLights[1].linear", 0.09);
+        shader->setFloat("pointLights[1].quadratic", 0.032);
+        // point light 3
+        shader->setVec3("pointLights[2].position", pointLightPositions[2]);
+        shader->setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
+        shader->setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
+        shader->setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
+        shader->setFloat("pointLights[2].constant", 1.0f);
+        shader->setFloat("pointLights[2].linear", 0.09);
+        shader->setFloat("pointLights[2].quadratic", 0.032);
+        // point light 4
+        shader->setVec3("pointLights[3].position", pointLightPositions[3]);
+        shader->setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
+        shader->setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
+        shader->setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
+        shader->setFloat("pointLights[3].constant", 1.0f);
+        shader->setFloat("pointLights[3].linear", 0.09);
+        shader->setFloat("pointLights[3].quadratic", 0.032);
+
 
 		// Light
 		vec3 lightColour;
@@ -195,13 +235,14 @@ namespace myengine
 		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "projection"), 1, GL_FALSE, value_ptr(projection));
 		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "view"), 1, GL_FALSE, value_ptr(view));
 
-		mat4 lightModel = mat4(1.0f);
-		lightModel = translate(lightModel, lightPos);
-		lightModel = scale(lightModel, vec3(0.2f));
-		glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "model"), 1, GL_FALSE, value_ptr(lightModel));
-
-		glBindVertexArray(lightVao->getId());
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		for (unsigned int i = 0; i < 4; i++)
+		{
+			mat4 lightModel = mat4(1.0f);
+			lightModel = translate(lightModel, pointLightPositions[i]);
+			lightModel = scale(lightModel, vec3(0.2f));
+			glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "model"), 1, GL_FALSE, value_ptr(lightModel));
+			glDrawArrays(GL_TRIANGLES, 0, 36);
+		}
 
 		// Reset the state
 		glBindVertexArray(0);
