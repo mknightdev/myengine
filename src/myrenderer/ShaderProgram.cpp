@@ -1,4 +1,5 @@
 #include "ShaderProgram.h"
+#include "myengine/Exception.h"
 
 #include <iostream>
 #include <vector>
@@ -152,20 +153,35 @@ namespace myrenderer
 	void ShaderProgram::setVec3(const std::string& _name, const glm::vec3& _value) const
 	{
 		glUniform3fv(glGetUniformLocation(programID, _name.c_str()), 1, &_value[0]);
+
+		if (glGetUniformLocation(programID, _name.c_str()) == -1) { throw myengine::Exception("ShaderProgram::setVec3, vec3: Uniform location is -1"); }
 	}
 
 	void ShaderProgram::setVec3(const std::string& _name, float _x, float _y, float _z) const
 	{
 		glUniform3f(glGetUniformLocation(programID, _name.c_str()), _x, _y, _z);
+
+		if (glGetUniformLocation(programID, _name.c_str()) == -1) { throw myengine::Exception("ShaderProgram::setVec3, float: Uniform location is -1"); }
 	}
 
 	void ShaderProgram::setFloat(const std::string& _name, float _value) const
 	{
 		glUniform1f(glGetUniformLocation(programID, _name.c_str()), _value);
+
+		if (glGetUniformLocation(programID, _name.c_str()) == -1) { throw myengine::Exception("ShaderProgram::setFloat: Uniform location is -1"); }
 	}
 
 	void ShaderProgram::setInt(const std::string& _name, int _value) const
 	{
 		glUniform1i(glGetUniformLocation(programID, _name.c_str()), _value);
+
+		if (glGetUniformLocation(programID, _name.c_str()) == -1) { throw myengine::Exception("ShaderProgram::setInt: Uniform location is -1"); }
+	}
+
+	void ShaderProgram::setMat4(const std::string& _name, const glm::mat4& _mat) const
+	{
+		glUniformMatrix4fv(glGetUniformLocation(programID, _name.c_str()), 1, GL_FALSE, &_mat[0][0]);
+
+		if (glGetUniformLocation(programID, _name.c_str()) == -1) { throw myengine::Exception("ShaderProgram::setMat4: Uniform location is -1"); }
 	}
 }

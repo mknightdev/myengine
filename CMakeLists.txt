@@ -10,21 +10,21 @@ if (MSVC)
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SAFESEH:NO")
 
 	include_directories(
-		#contrib/msvc-windows-x86/SDL2/include	# For SDL.h
-		#contrib/msvc-windows-x86/glew/include
-		#contrib/msvc-windows-x86/OpenAL/include	# For AL/alc.h & AL/al.h
-		contrib/msvc-windows-x64/SDL2/include
-		contrib/msvc-windows-x64/glew/include	# For glew.h
-		contrib/msvc-windows-x64/OpenAL/include
+		contrib/msvc-windows-x86/SDL2/include	# For SDL.h
+		contrib/msvc-windows-x86/glew/include
+		contrib/msvc-windows-x86/OpenAL/include	# For AL/alc.h & AL/al.h
+		#contrib/msvc-windows-x64/SDL2/include
+		#contrib/msvc-windows-x64/glew/include	# For glew.h
+		#contrib/msvc-windows-x64/OpenAL/include
 )
 
 link_directories(
-	#${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
-	#${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
-	#${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/OpenAL/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
-	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/OpenAL/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
+	${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/OpenAL/lib
+	#${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/SDL2/lib
+	#${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/glew/lib
+	#${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x64/OpenAL/lib
 )
 else()
 endif()	
@@ -65,6 +65,10 @@ add_library(myengine
 	src/myengine/Resource.h
 	src/myengine/ResourceManager.cpp
 	src/myengine/ResourceManager.h
+	src/myengine/Collider.h
+	src/myengine/Collider.cpp
+	src/myengine/SphereCollider.h
+	src/myengine/SphereCollider.cpp
 )
 
 add_library(myrenderer

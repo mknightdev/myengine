@@ -57,6 +57,7 @@ namespace myengine
 
 		shader->use();
 		shader->setInt("material.diffuse", 0);
+		//shader->setInt("diffuse", 0);
 
 		/*****************************
 		*
@@ -113,9 +114,6 @@ namespace myengine
 
 		lightShader = std::make_shared<ShaderProgram>();
 		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
-
-		//shader->use();
-		//shader->setInt("material.diffuse", 0);
 	}
 
 	/**
@@ -128,9 +126,8 @@ namespace myengine
 	*/
 	void ModelRenderer::onDisplay()
 	{
-		// Instruct opengl to use our shader program and vao
+
 		shader->use();
-	
 		// Set uniforms
 		GLint modelLoc = glGetUniformLocation(shader->getId(), "model");
 		GLint projectionLoc = glGetUniformLocation(shader->getId(), "projection");
@@ -146,7 +143,7 @@ namespace myengine
 		shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
 		shader->setFloat("material.shininess", 64.0f);
 
-		        // directional light
+		// directional light
         shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
         shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
         shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
@@ -184,7 +181,6 @@ namespace myengine
         shader->setFloat("pointLights[3].linear", 0.09);
         shader->setFloat("pointLights[3].quadratic", 0.032);
 
-
 		// Light
 		vec3 lightColour;
 		lightColour.x = 1.0f;
@@ -193,10 +189,15 @@ namespace myengine
 		vec3 diffuseColour = lightColour * vec3(0.5f);
 		vec3 ambientColour = lightColour * vec3(0.2f);
 
-		shader->setVec3("light.ambient", ambientColour);
-		shader->setVec3("light.diffuse", diffuseColour);
-		shader->setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+		//shader->setVec3("light.ambient", ambientColour);
+		//shader->setVec3("light.diffuse", diffuseColour);
+		//shader->setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
+		// world transformation
+		//glm::mat4 model = glm::mat4(1.0f);
+		//shader->setMat4("model", model);
+
+		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture->GetId());
 		glBindVertexArray(vao->getId());
 

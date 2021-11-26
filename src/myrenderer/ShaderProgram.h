@@ -42,6 +42,9 @@ namespace myrenderer
 		void setFloat(const std::string& _name, float _value) const;
 
 		void setInt(const std::string& _name, int _value) const;
+
+		void setMat4(const std::string& name, const glm::mat4& mat) const;
+
 	private:
 		GLuint programID;
 	};

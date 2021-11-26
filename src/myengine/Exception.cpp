@@ -17,6 +17,6 @@ namespace myengine
 	*/
 	Exception::Exception(std::string _message)
 	{
-		std::cout << "Myengine Exception: " << _message << std::endl;
+		std::cout << "EXCEPTION::" << _message << std::endl;
 	}
 }

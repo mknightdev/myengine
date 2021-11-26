@@ -19,9 +19,9 @@ namespace myengine
 		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Transform> getTransform();
 		float deltaTime();
-		virtual void onTick(float _deltaTime);
-		virtual void onDisplay();
 		virtual void onInitialize();
+		virtual void onDisplay();
+		virtual void onTick(float _deltaTime);
 
 	private:
 		friend struct myengine::Entity;
@@ -37,7 +37,7 @@ namespace myengine
 		*/
 		std::weak_ptr<Entity> entity;
 
-		void tick(float _deltaTime);
 		void display();
+		void tick(float _deltaTime);
 	};
 }

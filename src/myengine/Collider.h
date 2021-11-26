@@ -1,0 +1,7 @@
+namespace myengine
+{
+	struct Collider
+	{
+
+	};
+}
