@@ -126,7 +126,6 @@ namespace myengine
 	*/
 	void ModelRenderer::onDisplay()
 	{
-
 		shader->use();
 		// Set uniforms
 		GLint modelLoc = glGetUniformLocation(shader->getId(), "model");
@@ -143,11 +142,6 @@ namespace myengine
 		shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
 		shader->setFloat("material.shininess", 64.0f);
 
-		// directional light
-        shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-        shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
-        shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
-        shader->setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
         // point light 1
         shader->setVec3("pointLights[0].position", pointLightPositions[0]);
         shader->setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
@@ -189,9 +183,9 @@ namespace myengine
 		vec3 diffuseColour = lightColour * vec3(0.5f);
 		vec3 ambientColour = lightColour * vec3(0.2f);
 
-		//shader->setVec3("light.ambient", ambientColour);
-		//shader->setVec3("light.diffuse", diffuseColour);
-		//shader->setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+		//shader->setVec3("pointLight.ambient", ambientColour);
+		//shader->setVec3("pointLight.diffuse", diffuseColour);
+		//shader->setVec3("pointLight.specular", 1.0f, 1.0f, 1.0f);
 
 		// world transformation
 		//glm::mat4 model = glm::mat4(1.0f);
