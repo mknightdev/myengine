@@ -142,6 +142,12 @@ namespace myengine
 		shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
 		shader->setFloat("material.shininess", 64.0f);
 
+		// directional light
+		shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
+		shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+		shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
+		shader->setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+
         // point light 1
         shader->setVec3("pointLights[0].position", pointLightPositions[0]);
         shader->setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
