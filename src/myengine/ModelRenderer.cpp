@@ -44,8 +44,15 @@ namespace myengine
 		int h = 0;
 
 		// Load model and texture
-		vao = std::make_shared<VertexArray>("../resources/models/skeleton/skeleton.obj");
-		texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
+		//vao = std::make_shared<VertexArray>("../resources/models/skeleton/skeleton.obj");
+		//texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
+
+		vao = std::make_shared<VertexArray>("../resources/models/rock/rock.obj");
+		albedoMap = std::make_shared<Texture>("../resources/models/rock/rock_albedo.png", w, h);
+		normalMap = std::make_shared<Texture>("../resources/models/rock/rock_normal_ogl.png", w, h);
+		metallicMap = std::make_shared<Texture>("../resources/models/rock/rock_metallic.png", w, h);
+		roughnessMap = std::make_shared<Texture>("../resources/models/rock/rock_roughness.png", w, h);
+		aoMap = std::make_shared<Texture>("../resources/models/rock/rock_ao.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<ShaderProgram>();
@@ -54,15 +61,23 @@ namespace myengine
 		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
 		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
 		//shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
-		shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
+		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
+		shader->CreateShader("../resources/shaders/pbrTexVert.txt", "../resources/shaders/pbrTexFrag.txt");
 
 		shader->use();
+		shader->setInt("albedoMap", 0);
+		shader->setInt("normalMap", 1);
+		shader->setInt("metallicMap", 2);
+		shader->setInt("roughnessMap", 3);
+		shader->setInt("aoMap", 4);
+
+
 		//shader->setInt("material.diffuse", 0);
 		//shader->setInt("diffuse", 0);
-		shader->setVec3("albedo", 0.5f, 0.0f, 0.0f);
-		shader->setFloat("ao", 1.0f);
-		shader->setFloat("metallic", 0.0f);
-		shader->setFloat("roughness", 0.0f);
+		//shader->setVec3("albedo", 0.5f, 0.0f, 0.0f);
+		//shader->setFloat("ao", 1.0f);
+		//shader->setFloat("metallic", 0.0f);
+		//shader->setFloat("roughness", 0.0f);
 
 		/*****************************
 		*
@@ -203,7 +218,15 @@ namespace myengine
 		//shader->setMat4("model", model);
 
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, texture->GetId());
+		glBindTexture(GL_TEXTURE_2D, albedoMap->GetId());
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, normalMap->GetId());
+		glActiveTexture(GL_TEXTURE2);
+		glBindTexture(GL_TEXTURE_2D, metallicMap->GetId());
+		glActiveTexture(GL_TEXTURE3);
+		glBindTexture(GL_TEXTURE_2D, roughnessMap->GetId());
+		glActiveTexture(GL_TEXTURE4);
+		glBindTexture(GL_TEXTURE_2D, aoMap->GetId());
 		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix

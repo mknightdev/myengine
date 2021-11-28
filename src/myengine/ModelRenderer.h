@@ -74,7 +74,12 @@ namespace myengine
 		* 
 		* Stores texture and gets used to bind with the VAO when drawing it.
 		*/
-		std::shared_ptr<myrenderer::Texture> texture;
+		std::shared_ptr<myrenderer::Texture> albedoMap;
+		std::shared_ptr<myrenderer::Texture> normalMap;
+		std::shared_ptr<myrenderer::Texture> metallicMap;
+		std::shared_ptr<myrenderer::Texture> roughnessMap;
+		std::shared_ptr<myrenderer::Texture> aoMap;
+
 
 		glm::vec3 pointLightPositions[4] = {
 			glm::vec3(0.7f,  0.2f,  2.0f),
