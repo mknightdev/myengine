@@ -6,6 +6,7 @@ uniform sampler2D normalMap;
 uniform sampler2D metallicMap;
 uniform sampler2D roughnessMap;
 uniform sampler2D aoMap;
+uniform sampler2D emissiveMap;
 
 in vec3 v_WorldPos;
 in vec3 v_Normal;
@@ -82,6 +83,7 @@ void main()
 	float metallic = texture(metallicMap, v_TexCoord).r;
 	float roughness = texture(roughnessMap, v_TexCoord).r;
 	float ao = texture(aoMap, v_TexCoord).r;
+	vec3 emissive = pow(texture(emissiveMap, v_TexCoord).rgb, vec3(2.2));
 
 	vec3 N = getNormalFromMap();
 	//vec3 N = normalize(v_Normal);
@@ -138,5 +140,6 @@ void main()
 	// Gamma correct
 	colour = pow(colour, vec3(1.0/2.2));
 
-	FragColour = vec4(colour, 1.0);
+	FragColour = vec4(emissive + colour, 1.0);
+	//FragColour = vec4(colour, 1.0);
 }

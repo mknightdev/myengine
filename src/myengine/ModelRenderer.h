@@ -79,6 +79,7 @@ namespace myengine
 		std::shared_ptr<myrenderer::Texture> metallicMap;
 		std::shared_ptr<myrenderer::Texture> roughnessMap;
 		std::shared_ptr<myrenderer::Texture> aoMap;
+		std::shared_ptr<myrenderer::Texture> emissiveMap;
 
 
 		glm::vec3 pointLightPositions[4] = {

@@ -47,12 +47,13 @@ namespace myengine
 		//vao = std::make_shared<VertexArray>("../resources/models/skeleton/skeleton.obj");
 		//texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
 
-		vao = std::make_shared<VertexArray>("../resources/models/rock/rock.obj");
-		albedoMap = std::make_shared<Texture>("../resources/models/rock/rock_albedo.png", w, h);
-		normalMap = std::make_shared<Texture>("../resources/models/rock/rock_normal_ogl.png", w, h);
-		metallicMap = std::make_shared<Texture>("../resources/models/rock/rock_metallic.png", w, h);
-		roughnessMap = std::make_shared<Texture>("../resources/models/rock/rock_roughness.png", w, h);
-		aoMap = std::make_shared<Texture>("../resources/models/rock/rock_ao.png", w, h);
+		vao = std::make_shared<VertexArray>("../resources/models/grenade/grenade.obj");
+		albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
+		normalMap = std::make_shared<Texture>("../resources/models/grenade/grenade_norma.png", w, h);
+		metallicMap = std::make_shared<Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
+		roughnessMap = std::make_shared<Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
+		aoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
+		emissiveMap = std::make_shared < Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<ShaderProgram>();
@@ -70,6 +71,7 @@ namespace myengine
 		shader->setInt("metallicMap", 2);
 		shader->setInt("roughnessMap", 3);
 		shader->setInt("aoMap", 4);
+		shader->setInt("emissiveMap", 5);
 
 
 		//shader->setInt("material.diffuse", 0);
@@ -227,6 +229,8 @@ namespace myengine
 		glBindTexture(GL_TEXTURE_2D, roughnessMap->GetId());
 		glActiveTexture(GL_TEXTURE4);
 		glBindTexture(GL_TEXTURE_2D, aoMap->GetId());
+		glActiveTexture(GL_TEXTURE5);
+		glBindTexture(GL_TEXTURE_2D, emissiveMap->GetId());
 		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix
@@ -323,6 +327,17 @@ namespace myengine
 		if (getKeyboard()->getKeyDown(SDLK_y))
 		{
 			getTransform()->Rotate(vec3(0, -1, 0) * _deltaTime);
+		}
+
+		// Move downwards
+		if (getKeyboard()->getKeyDown(SDLK_LSHIFT))
+		{
+			getTransform()->Move(vec3(0, 0.5f, 0) * _deltaTime);
+		}
+
+		if (getKeyboard()->getKeyDown(SDLK_LCTRL))
+		{
+			getTransform()->Move(vec3(0, -0.5f, 0) * _deltaTime);
 		}
 
 
