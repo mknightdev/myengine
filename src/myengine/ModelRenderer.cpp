@@ -329,12 +329,13 @@ namespace myengine
 			getTransform()->Rotate(vec3(0, -1, 0) * _deltaTime);
 		}
 
-		// Move downwards
+		// Move upwards
 		if (getKeyboard()->getKeyDown(SDLK_LSHIFT))
 		{
 			getTransform()->Move(vec3(0, 0.5f, 0) * _deltaTime);
 		}
 
+		// Move downwards
 		if (getKeyboard()->getKeyDown(SDLK_LCTRL))
 		{
 			getTransform()->Move(vec3(0, -0.5f, 0) * _deltaTime);

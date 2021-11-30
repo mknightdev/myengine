@@ -6,13 +6,19 @@
 
 namespace myengine
 {
-	class Exception : public std::exception
+	struct Exception : public std::exception
 	{
 	public:
-		Exception(std::string _message);
-		~Exception() = default;
+		Exception(const std::string _message) : message(_message) {};
 
-		const char* what();
+		virtual ~Exception() throw() {};
+
+		//const char* what();
+
+		virtual const char* what() const throw()
+		{
+			return message.c_str();
+		}
 
 	private:
 
