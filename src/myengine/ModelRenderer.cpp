@@ -49,7 +49,7 @@ namespace myengine
 
 		vao = std::make_shared<VertexArray>("../resources/models/grenade/grenade.obj");
 		albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
-		normalMap = std::make_shared<Texture>("../resources/models/grenade/grenade_norma.png", w, h);
+		normalMap = std::make_shared<Texture>("../resources/models/grenade/grenade_normal.png", w, h);
 		metallicMap = std::make_shared<Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
 		roughnessMap = std::make_shared<Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
 		aoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
