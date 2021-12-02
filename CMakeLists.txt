@@ -69,6 +69,8 @@ add_library(myengine
 	src/myengine/Collider.cpp
 	src/myengine/SphereCollider.h
 	src/myengine/SphereCollider.cpp
+	src/myengine/Camera.h
+	src/myengine/Camera.cpp
 )
 
 add_library(myrenderer

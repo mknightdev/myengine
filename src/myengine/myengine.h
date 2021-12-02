@@ -7,3 +7,4 @@
 #include "SoundSource.h"
 #include "Exception.h"
 #include "ResourceManager.h"
+#include "Camera.h"

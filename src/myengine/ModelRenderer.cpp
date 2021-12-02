@@ -18,8 +18,8 @@ glm::vec3 cameraUp2 = glm::vec3(0.0f, 1.0f, 0.0f);
 bool firstMouse2 = true;
 float yaw2 = -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
 float pitch2 = 0.0f;
-float lastX2 = 800.0f / 2.0;
-float lastY2 = 600.0 / 2.0;
+float lastX2 = 1280.0f / 2.0;
+float lastY2 = 720.0f / 2.0;
 float fov2 = 45.0f;
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
@@ -366,6 +366,13 @@ namespace myengine
 		}
 
 		mouseUpdate();
+
+		// TODO:
+		/*
+			1) Get camera
+				a) Go through entity
+			2) Set new positions of camera after moving it
+		*/
 	}
 
 	/**
