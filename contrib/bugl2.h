@@ -94,7 +94,8 @@ void splitString(const std::string& input, char splitter,
 }
 
 template <typename T>
-GLuint loadModel(const std::string& path, size_t *vertexCount,
+size_t loadModel(const std::string& path,
+  GLuint *positionsId, GLuint *tcsId, GLuint *normalsId,
   std::string& currentLine)
 {
   std::vector<glm::vec3> positions;
@@ -102,6 +103,10 @@ GLuint loadModel(const std::string& path, size_t *vertexCount,
   std::vector<glm::vec3> normals;
   std::vector<glm::vec2> lmcs;
   std::vector<Face> faces;
+
+  *positionsId = 0;
+  *tcsId = 0;
+  *normalsId = 0;
 
   std::ifstream file(path.c_str());
 
@@ -192,14 +197,6 @@ GLuint loadModel(const std::string& path, size_t *vertexCount,
   }
 
   GLuint vboId = 0;
-  GLuint vaoId = 0;
-
-  glGenVertexArrays(1, &vaoId);
-
-  if(!vaoId)
-  {
-    throw std::exception();
-  }
 
   if(positions.size() < 1)
   {
@@ -207,7 +204,7 @@ GLuint loadModel(const std::string& path, size_t *vertexCount,
     throw std::exception();
   }
 
-  *vertexCount = faces.size() * 3;
+  size_t rtn = faces.size() * 3;
 
   {
     std::vector<float> b;
@@ -232,13 +229,7 @@ GLuint loadModel(const std::string& path, size_t *vertexCount,
     glBufferData(GL_ARRAY_BUFFER, sizeof(b.at(0)) * b.size(), &b.at(0),
       GL_STATIC_DRAW);
 
-    glBindVertexArray(vaoId);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
-    glEnableVertexAttribArray(0);
-    glBindVertexArray(0);
-
-    // TODO
-    //glDeleteBuffers(1, &vboId);
+    *positionsId = vboId;
   }
 
   if(tcs.size() > 0)
@@ -265,13 +256,7 @@ GLuint loadModel(const std::string& path, size_t *vertexCount,
     glBufferData(GL_ARRAY_BUFFER, sizeof(b.at(0)) * b.size(), &b.at(0),
       GL_STATIC_DRAW);
 
-    glBindVertexArray(vaoId);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void *)0);
-    glEnableVertexAttribArray(1);
-    glBindVertexArray(0);
-
-    // TODO
-    //glDeleteBuffers(1, &vboId);
+    *tcsId = vboId;
   }
 
   if(normals.size() > 0)
@@ -298,13 +283,7 @@ GLuint loadModel(const std::string& path, size_t *vertexCount,
     glBufferData(GL_ARRAY_BUFFER, sizeof(b.at(0)) * b.size(), &b.at(0),
       GL_STATIC_DRAW);
 
-    glBindVertexArray(vaoId);
-    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
-    glEnableVertexAttribArray(2);
-    glBindVertexArray(0);
-
-    // TODO
-    //glDeleteBuffers(1, &vboId);
+    *normalsId = vboId;
   }
 
   if(lmcs.size() > 0)
@@ -312,25 +291,25 @@ GLuint loadModel(const std::string& path, size_t *vertexCount,
     // TODO
   }
 
-  return vaoId;
+  return rtn;
 }
 
 template <typename T>
-GLuint loadModel(const std::string& path, size_t *vertexCount)
+size_t loadModel(const std::string& path,
+  GLuint *positionsId, GLuint *tcsId, GLuint *normalsId)
 {
   std::string currentLine = path;
 
   try
   {
-    return loadModel<int>(path, vertexCount, currentLine);
+    return loadModel<int>(path, positionsId, tcsId, normalsId, currentLine);
   }
   catch(std::exception& e)
   {
     std::cout << "Failed to parse model data [" + currentLine + "]"
       << std::endl;
 
-    throw std::exception();
-    //throw Exception("Failed to parse model data [" + currentLine + "]");
+    throw std::runtime_error("Failed to parse model data [" + currentLine + "]");
   }
 }
 

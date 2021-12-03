@@ -233,6 +233,7 @@ namespace myengine
 		rtn->self = rtn;
 		rtn->transform = rtn->addComponent<Transform>();	// Form of caching and is faster than getComponent<T>
 
+
 		entities.push_back(rtn);
 
 		return rtn;

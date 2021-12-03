@@ -8,3 +8,4 @@
 #include "Exception.h"
 #include "ResourceManager.h"
 #include "Camera.h"
+#include "MeshRenderer.h"

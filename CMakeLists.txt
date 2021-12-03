@@ -38,39 +38,42 @@ add_library(myengine
 	src/myengine/myengine.h
 	src/myengine/mymath.h
 	src/myengine/Core.cpp
-	src/myengine/Entity.cpp
-	src/myengine/Component.cpp
-	src/myengine/Environment.cpp
 	src/myengine/Core.h
-	src/myengine/Entity.h
-	src/myengine/Component.h
+	src/myengine/Environment.cpp
 	src/myengine/Environment.h
-	src/myengine/TriangleRenderer.cpp
-	src/myengine/TriangleRenderer.h
-	src/myengine/Transform.cpp
-	src/myengine/Transform.h
+	src/myengine/Entity.cpp
+	src/myengine/Entity.h
 	src/myengine/Keyboard.cpp
 	src/myengine/Keyboard.h
 	src/myengine/Mouse.cpp
 	src/myengine/Mouse.h
-	src/myengine/ModelRenderer.cpp
-	src/myengine/ModelRenderer.h
 	src/myengine/AudioClip.cpp
 	src/myengine/AudioClip.h
-	src/myengine/SoundSource.cpp
-	src/myengine/SoundSource.h
 	src/myengine/Exception.cpp
 	src/myengine/Exception.h
 	src/myengine/Resource.cpp
 	src/myengine/Resource.h
 	src/myengine/ResourceManager.cpp
 	src/myengine/ResourceManager.h
-	src/myengine/Collider.h
-	src/myengine/Collider.cpp
-	src/myengine/SphereCollider.h
-	src/myengine/SphereCollider.cpp
-	src/myengine/Camera.h
 	src/myengine/Camera.cpp
+	src/myengine/Camera.h
+
+	src/myengine/Component.cpp
+	src/myengine/Component.h
+	src/myengine/Collider.cpp
+	src/myengine/Collider.h
+	src/myengine/MeshRenderer.cpp
+	src/myengine/MeshRenderer.h
+	src/myengine/SoundSource.cpp
+	src/myengine/SoundSource.h
+	src/myengine/SphereCollider.cpp
+	src/myengine/SphereCollider.h
+	src/myengine/Transform.cpp
+	src/myengine/Transform.h
+	src/myengine/TriangleRenderer.cpp
+	src/myengine/TriangleRenderer.h
+	src/myengine/ModelRenderer.cpp
+	src/myengine/ModelRenderer.h
 )
 
 add_library(myrenderer

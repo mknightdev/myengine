@@ -1,13 +1,28 @@
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 
-#include <bugl.h>
+#include <bugl2.h>
 
 namespace myrenderer
 {
 	VertexArray::VertexArray(std::string path)
 	{
-		id = buLoadModel(path, &vertCount);
+		vertCount = buLoadModel(path, &positionsVbo, &texCoordVbo, &normalsVbo);
+
+		glGenVertexArrays(1, &id);
+		if (!id) throw std::exception();
+		glBindVertexArray(id);
+		glBindBuffer(GL_ARRAY_BUFFER, positionsVbo);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, texCoordVbo);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
+		glEnableVertexAttribArray(1);
+		glBindBuffer(GL_ARRAY_BUFFER, normalsVbo);
+		glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+		glEnableVertexAttribArray(2);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
 
 		// We don't want to trigger getId(), which will erase ... 
 		dirty = false;
@@ -29,6 +44,15 @@ namespace myrenderer
 		you end up uploading no data to the graphics card. */
 		dirty = true;
 		buffers.resize(20);
+	}
+
+	VertexArray::~VertexArray()
+	{
+		// Clean up
+		glDeleteVertexArrays(1, &id);
+		glDeleteBuffers(1, &positionsVbo);
+		glDeleteBuffers(1, &texCoordVbo);
+		glDeleteBuffers(1, &normalsVbo);
 	}
 
 	size_t VertexArray::getVertCount()

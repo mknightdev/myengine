@@ -29,6 +29,8 @@ namespace myrenderer
 		/// @see VertexArray()
 		VertexArray(std::string path);
 
+		~VertexArray();
+
 		/// Sets the buffer. 
 		/// 
 		/// A function to set the buffer of the vertex array object with the integer location and 
@@ -50,6 +52,9 @@ namespace myrenderer
 		size_t getVertCount();
 	private:
 		GLuint id;
+		GLuint positionsVbo;
+		GLuint texCoordVbo;
+		GLuint normalsVbo;
 		std::vector<std::shared_ptr<VertexBuffer>> buffers;
 		bool dirty;
 		size_t vertCount;
