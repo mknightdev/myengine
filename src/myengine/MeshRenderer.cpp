@@ -3,6 +3,7 @@
 #include "Mouse.h"
 #include "Keyboard.h"
 #include "mymath.h"
+#include "Mesh.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
@@ -416,5 +417,13 @@ namespace myengine
 	void MeshRenderer::setMesh(std::string _path)
 	{
 		vao = std::make_shared<VertexArray>(_path);
+	}
+
+	void MeshRenderer::setMesh(std::shared_ptr<Mesh> _mesh)
+	{
+		vao = _mesh->vao;
+
+		// Meshrender storing a mesh, not the vao
+		// whereever vao use _mesh->vao
 	}
 }

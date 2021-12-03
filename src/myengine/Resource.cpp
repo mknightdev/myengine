@@ -7,7 +7,7 @@ namespace myengine
 	/**
 	* Initialises the reosurce.
 	*/
-	void Resource::onInitialise()
+	void Resource::onInitialize()
 	{
 		std::cout << "Resource initialised" << std::endl;
 	}

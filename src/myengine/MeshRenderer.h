@@ -4,6 +4,8 @@
 
 namespace myengine
 {
+	struct Mesh;
+
 	struct MeshRenderer : Component
 	{
 		void onInitialize();
@@ -12,6 +14,7 @@ namespace myengine
 
 		
 		void setMesh(std::string _path);
+		void setMesh(std::shared_ptr<Mesh> _mesh);
 
 	private:
 		friend struct myengine::Core;

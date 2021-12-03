@@ -35,6 +35,8 @@ if (MSVC)
 endif()
 
 add_library(myengine
+	
+	# Engine Stuff
 	src/myengine/myengine.h
 	src/myengine/mymath.h
 	src/myengine/Core.cpp
@@ -51,13 +53,10 @@ add_library(myengine
 	src/myengine/AudioClip.h
 	src/myengine/Exception.cpp
 	src/myengine/Exception.h
-	src/myengine/Resource.cpp
-	src/myengine/Resource.h
-	src/myengine/ResourceManager.cpp
-	src/myengine/ResourceManager.h
 	src/myengine/Camera.cpp
 	src/myengine/Camera.h
 
+	# Components
 	src/myengine/Component.cpp
 	src/myengine/Component.h
 	src/myengine/Collider.cpp
@@ -74,6 +73,14 @@ add_library(myengine
 	src/myengine/TriangleRenderer.h
 	src/myengine/ModelRenderer.cpp
 	src/myengine/ModelRenderer.h
+
+	# Resources
+	src/myengine/Resource.cpp
+	src/myengine/Resource.h
+	src/myengine/ResourceManager.cpp
+	src/myengine/ResourceManager.h
+	src/myengine/Mesh.cpp
+	src/myengine/Mesh.h
 )
 
 add_library(myrenderer

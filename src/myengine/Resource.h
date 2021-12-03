@@ -8,7 +8,8 @@ namespace myengine
 
 	struct Resource
 	{
-		virtual void onInitialise();
+		virtual void onInitialize();
+		// Get path 
 
 	private:
 		friend struct myengine::ResourceManager;
