@@ -11,4 +11,9 @@ namespace myengine
 	{
 		std::cout << "Resource initialised" << std::endl;
 	}
+
+	std::string Resource::GetPath()
+	{
+		return path;
+	}
 }

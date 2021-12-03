@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <memory>
 #include <vector>
@@ -9,7 +11,9 @@ namespace myengine
 	struct Resource
 	{
 		virtual void onInitialize();
+
 		// Get path 
+		std::string GetPath();
 
 	private:
 		friend struct myengine::ResourceManager;

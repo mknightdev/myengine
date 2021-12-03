@@ -5,6 +5,7 @@
 namespace myengine
 {
 	struct Mesh;
+	struct Texture;
 
 	struct MeshRenderer : Component
 	{
@@ -13,8 +14,8 @@ namespace myengine
 		void onTick(float _deltaTime);
 
 		
-		void setMesh(std::string _path);
 		void setMesh(std::shared_ptr<Mesh> _mesh);
+		void setTexture(std::shared_ptr<Texture> _texture);
 
 	private:
 		friend struct myengine::Core;

@@ -4,12 +4,11 @@
 #include "Keyboard.h"
 #include "mymath.h"
 #include "Mesh.h"
+#include "Texture.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
 #include <iostream>
-
-using namespace myrenderer;
 
 // TODO: move into own class
 glm::vec3 cameraPos3 = glm::vec3(0.0f, 0.0f, 3.0f);
@@ -47,15 +46,15 @@ namespace myengine
 		//texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
 
 
-		albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
-		normalMap = std::make_shared<Texture>("../resources/models/grenade/grenade_normal.png", w, h);
-		metallicMap = std::make_shared<Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
-		roughnessMap = std::make_shared<Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
-		aoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
-		emissiveMap = std::make_shared < Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
+		//albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
+		normalMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_normal.png", w, h);
+		metallicMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
+		roughnessMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
+		aoMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
+		emissiveMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
 
 		// Create Shader
-		shader = std::make_shared<ShaderProgram>();
+		shader = std::make_shared<myrenderer::ShaderProgram>();
 		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
 		//shader->CreateShader("../resources/shaders/diffuseVert.txt", "../resources/shaders/diffuseFrag.txt");
 		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
@@ -87,7 +86,7 @@ namespace myengine
 		******************************/
 
 		// Vertex Buffer
-		positionsVbo = std::make_shared<VertexBuffer>();
+		positionsVbo = std::make_shared<myrenderer::VertexBuffer>();
 		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
 		positionsVbo->add(vec3(0.5f, -0.5f, -0.5f));
 		positionsVbo->add(vec3(0.5f, 0.5f, -0.5f));
@@ -130,10 +129,10 @@ namespace myengine
 		positionsVbo->add(vec3(-0.5f, 0.5f, 0.5f));
 		positionsVbo->add(vec3(-0.5f, 0.5f, -0.5f));
 
-		lightVao = std::make_shared<VertexArray>();
+		lightVao = std::make_shared<myrenderer::VertexArray>();
 		lightVao->setBuffer(0, positionsVbo);
 
-		lightShader = std::make_shared<ShaderProgram>();
+		lightShader = std::make_shared<myrenderer::ShaderProgram>();
 		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
 	}
 
@@ -414,16 +413,17 @@ namespace myengine
 		cameraFront3 = normalize(front);
 	}
 
-	void MeshRenderer::setMesh(std::string _path)
-	{
-		vao = std::make_shared<VertexArray>(_path);
-	}
-
 	void MeshRenderer::setMesh(std::shared_ptr<Mesh> _mesh)
 	{
 		vao = _mesh->vao;
 
 		// Meshrender storing a mesh, not the vao
 		// whereever vao use _mesh->vao
+	}
+
+	void MeshRenderer::setTexture(std::shared_ptr<Texture> _texture)
+	{
+		int w, h = 0;
+		albedoMap = _texture->texture;
 	}
 }

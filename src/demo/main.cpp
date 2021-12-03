@@ -4,7 +4,6 @@
 #include <iostream>
 
 using namespace myengine;
-using namespace myrenderer;
 
 int main()
 {
@@ -12,8 +11,11 @@ int main()
 
 	std::shared_ptr<Entity> entity = core->addEntity();
 	std::shared_ptr<MeshRenderer> mr = entity->addComponent<MeshRenderer>();
-	mr->setMesh("../resources/models/grenade/grenade.obj");
+	//mr->setMesh("../resources/models/grenade/grenade.obj");
 	mr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
+	// texture
+	mr->setTexture(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
+	// shader
 
 	//std::shared_ptr<Entity> modelEntity = core->addEntity();
 	//modelEntity->addComponent<ModelRenderer>();
