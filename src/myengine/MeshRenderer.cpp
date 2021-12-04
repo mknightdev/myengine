@@ -47,11 +47,11 @@ namespace myengine
 
 
 		//albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
-		normalMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_normal.png", w, h);
-		metallicMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
-		roughnessMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
-		aoMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
-		emissiveMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
+		normalMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_normal.png", w, h);
+		metallicMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_metallic.png", w, h);
+		roughnessMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_roughness.png", w, h);
+		aoMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_mixed_ao.png", w, h);
+		emissiveMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_emissive.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<myrenderer::ShaderProgram>();
@@ -61,7 +61,7 @@ namespace myengine
 		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
 		//shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
 		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
-		shader->CreateShader("../resources/shaders/pbrTexVert.txt", "../resources/shaders/pbrTexFrag.txt");
+		shader->CreateShader("resources/shaders/pbrTexVert.txt", "resources/shaders/pbrTexFrag.txt");
 
 		shader->use();
 		shader->setInt("albedoMap", 0);
@@ -133,7 +133,7 @@ namespace myengine
 		lightVao->setBuffer(0, positionsVbo);
 
 		lightShader = std::make_shared<myrenderer::ShaderProgram>();
-		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
+		lightShader->CreateShader("resources/shaders/lightCubeVert.txt", "resources/shaders/lightCubeFrag.txt");
 	}
 
 	/**

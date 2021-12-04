@@ -12,9 +12,9 @@ int main()
 	std::shared_ptr<Entity> entity = core->addEntity();
 	std::shared_ptr<MeshRenderer> mr = entity->addComponent<MeshRenderer>();
 	//mr->setMesh("../resources/models/grenade/grenade.obj");
-	mr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
+	mr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/grenade/grenade"));
 	// texture
-	mr->setTexture(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
+	mr->setTexture(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_albedo"));
 	// shader
 
 	//std::shared_ptr<Entity> modelEntity = core->addEntity();
