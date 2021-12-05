@@ -14,6 +14,7 @@ namespace myengine
 		void mouseUpdate();
 
 		void renderCube();
+		void renderQuad();
 
 	private:
 		friend struct myengine::Core;
@@ -33,6 +34,9 @@ namespace myengine
 
 		std::shared_ptr<myrenderer::ShaderProgram> cubemapShader;
 		std::shared_ptr<myrenderer::ShaderProgram> backgroundShader;
+		std::shared_ptr<myrenderer::ShaderProgram> irradianceShader;
+		std::shared_ptr<myrenderer::ShaderProgram> prefilterShader;
+		std::shared_ptr<myrenderer::ShaderProgram> brdfShader;
 
 		/**
 		* \brief Shader to create and use.
@@ -91,6 +95,9 @@ namespace myengine
 		mat4 captureProjection;
 		mat4 projection;
 		unsigned int envCubeMap;
+		unsigned int irradianceMap;
+		unsigned int prefilterMap;
+		unsigned int brdfLUTTexture;
 
 		mat4 captureViews[6] =
 		{
