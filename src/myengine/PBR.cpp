@@ -50,6 +50,8 @@ namespace myengine
 		//vao = std::make_shared<VertexArray>("../resources/models/skeleton/skeleton.obj");
 		//texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
 
+		// GRENADE
+		//--------
 		vao = std::make_shared<VertexArray>("../resources/models/grenade/grenade.obj");
 		albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
 		normalMap = std::make_shared<Texture>("../resources/models/grenade/grenade_normal.png", w, h);
@@ -97,7 +99,8 @@ namespace myengine
 		shader->setInt("aoMap", 7);
 		shader->setInt("emissiveMap", 8);
 
-		// Setup framebuffer
+		// SETUP FRAMEBUFFER
+		//------------------
 		unsigned int captureFBO;
 		unsigned int captureRBO;
 		glGenFramebuffers(1, &captureFBO);
@@ -108,12 +111,12 @@ namespace myengine
 		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 512, 512);
 		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, captureRBO);
 
-		// Load HDR environment map
+		// LOAD HDR ENVIRONMENT MAP
 		//-------------------------
 		stbi_set_flip_vertically_on_load(true);
 		int width, height, nrComponents;
-		float* data = stbi_loadf("../resources/shaders/pbr/WinterForest_Env.hdr", &width, &height, &nrComponents, 0);
 		unsigned int hdrTexture;
+		float* data = stbi_loadf("../resources/shaders/pbr/Newport_Loft_Ref.hdr", &width, &height, &nrComponents, 0);
 		if (data)
 		{
 			glGenTextures(1, &hdrTexture);
@@ -134,7 +137,8 @@ namespace myengine
 			std::cout << "Failed to load HDR image" << std::endl;
 		}
 
-		// Setup cubemap to render to and attach to framebuffer
+		// SETUP CUBEMAP TO RENDER TO AND ATTACH TO FRAMEBUFFER
+		//-----------------------------------------------------
 		glGenTextures(1, &envCubeMap);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, envCubeMap);
 		for (unsigned int i = 0; i < 6; ++i)
@@ -147,10 +151,12 @@ namespace myengine
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-		// Setup projection for capturing data onto the 6 cubemap face directions---
-		captureProjection = perspective(radians(90.0f), 1.0f, 0.1f, 10.0f);
+		// SETUP PROJECTION MATRIX FOR CAPTURING DATA ONTO THE 6 CUBEMAP FACE DIRECTIONS
+		//------------------------------------------------------------------------------
+		mat4 captureProjection = perspective(radians(90.0f), 1.0f, 0.1f, 10.0f);
 
-		// PBR convert HDR equirectangular environment map to cubemap equivalent 
+		// CONVERT HDR EQUIRECTANGULAR ENVIRONMENT MAP TO CUBEMAP ENVIRONMENT
+		//-------------------------------------------------------------------
 		cubemapShader->use();
 		cubemapShader->setInt("equirectangularMap", 0);
 		cubemapShader->setMat4("projection", captureProjection);
@@ -169,11 +175,13 @@ namespace myengine
 		}
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		// Generate mipmaps
+		// LET OPENGL GENERATE MIPMAPS FROM FIRST MIP FACE
+		//------------------------------------------------
 		glBindTexture(GL_TEXTURE_CUBE_MAP, envCubeMap);
 		glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
 
-		// Create an irradiance cubemap, and re-scale capture FBO to irradiance scale 
+		// IRRADIANCE MAP
+		//---------------
 		glGenTextures(1, &irradianceMap);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, irradianceMap);
 		for (unsigned int i = 0; i < 6; ++i)
@@ -190,7 +198,8 @@ namespace myengine
 		glBindRenderbuffer(GL_RENDERBUFFER, captureRBO);
 		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 32, 32);
 
-		// Solve diffuse integral by convolution to create an irradiance (cube)map
+		// SOLVE DIFFUSE INTEGRAL BY CONVOLUTION TO CREATE AN IRRADIANCE CUBEMAP
+		//----------------------------------------------------------------------
 		irradianceShader->use();
 		irradianceShader->setInt("environmentMap", 0);
 		irradianceShader->setMat4("projection", captureProjection);
@@ -209,7 +218,8 @@ namespace myengine
 		}
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		// Prefilter 
+		// PREFILTER
+		//----------
 		glGenTextures(1, &prefilterMap);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, prefilterMap);
 		for (unsigned int i = 0; i < 6; ++i)
@@ -221,9 +231,11 @@ namespace myengine
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); // be sure to set minification filter to mip_linear 
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		// generate mipmaps for the cubemap so OpenGL automatically allocates the required memory.
+		
+		// generate mipmaps for the cubemap 
+		glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
 
-
+		// PBR: SIMLUTATION 
 		prefilterShader->use();
 		prefilterShader->setInt("environmentMap", 0);
 		prefilterShader->setMat4("projection", captureProjection);
@@ -255,6 +267,7 @@ namespace myengine
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 		// BRDF
+		//-----
 		glGenTextures(1, &brdfLUTTexture);
 
 		// pre-allocate enough memory for the LUT texture.
@@ -280,7 +293,7 @@ namespace myengine
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 		// initialise static shader uniforms before rendering
-		projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
+		mat4 projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
 		shader->use();
 		shader->setMat4("projection", projection);
 		backgroundShader->use();
@@ -416,15 +429,13 @@ namespace myengine
 		// Upload the model matrix
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, value_ptr(getTransform()->getModel()));
 
+
 		// View
 		mat4 view(1.0f);
 		const float radius = 10.0f;
 		float camX = sin(deltaTime() * radius);
 		float camZ = cos(deltaTime() * radius);
 		view = lookAt(cameraPos2, cameraPos2 + cameraFront2, cameraUp2);
-
-		glActiveTexture(GL_TEXTURE6);
-		glBindTexture(GL_TEXTURE_CUBE_MAP, irradianceMap);
 
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(view));
 
@@ -707,6 +718,101 @@ namespace myengine
 		glBindVertexArray(quadVAO);
 		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 		glBindVertexArray(0);
+	}
+
+	unsigned int sphereVAO = 0;
+	unsigned int indexCount;
+	void PBR::renderSphere()
+	{
+		if (sphereVAO == 0)
+		{
+			glGenVertexArrays(1, &sphereVAO);
+
+			unsigned int vbo, ebo;
+			glGenBuffers(1, &vbo);
+			glGenBuffers(1, &ebo);
+
+			std::vector<glm::vec3> positions;
+			std::vector<glm::vec2> uv;
+			std::vector<glm::vec3> normals;
+			std::vector<unsigned int> indices;
+
+			const unsigned int X_SEGMENTS = 64;
+			const unsigned int Y_SEGMENTS = 64;
+			const float PI = 3.14159265359;
+			for (unsigned int x = 0; x <= X_SEGMENTS; ++x)
+			{
+				for (unsigned int y = 0; y <= Y_SEGMENTS; ++y)
+				{
+					float xSegment = (float)x / (float)X_SEGMENTS;
+					float ySegment = (float)y / (float)Y_SEGMENTS;
+					float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+					float yPos = std::cos(ySegment * PI);
+					float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+
+					positions.push_back(glm::vec3(xPos, yPos, zPos));
+					uv.push_back(glm::vec2(xSegment, ySegment));
+					normals.push_back(glm::vec3(xPos, yPos, zPos));
+				}
+			}
+
+			bool oddRow = false;
+			for (unsigned int y = 0; y < Y_SEGMENTS; ++y)
+			{
+				if (!oddRow) // even rows: y == 0, y == 2; and so on
+				{
+					for (unsigned int x = 0; x <= X_SEGMENTS; ++x)
+					{
+						indices.push_back(y * (X_SEGMENTS + 1) + x);
+						indices.push_back((y + 1) * (X_SEGMENTS + 1) + x);
+					}
+				}
+				else
+				{
+					for (int x = X_SEGMENTS; x >= 0; --x)
+					{
+						indices.push_back((y + 1) * (X_SEGMENTS + 1) + x);
+						indices.push_back(y * (X_SEGMENTS + 1) + x);
+					}
+				}
+				oddRow = !oddRow;
+			}
+			indexCount = indices.size();
+
+			std::vector<float> data;
+			for (unsigned int i = 0; i < positions.size(); ++i)
+			{
+				data.push_back(positions[i].x);
+				data.push_back(positions[i].y);
+				data.push_back(positions[i].z);
+				if (normals.size() > 0)
+				{
+					data.push_back(normals[i].x);
+					data.push_back(normals[i].y);
+					data.push_back(normals[i].z);
+				}
+				if (uv.size() > 0)
+				{
+					data.push_back(uv[i].x);
+					data.push_back(uv[i].y);
+				}
+			}
+			glBindVertexArray(sphereVAO);
+			glBindBuffer(GL_ARRAY_BUFFER, vbo);
+			glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(float), &data[0], GL_STATIC_DRAW);
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+			glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
+			unsigned int stride = (3 + 2 + 3) * sizeof(float);
+			glEnableVertexAttribArray(0);
+			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void*)0);
+			glEnableVertexAttribArray(1);
+			glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, (void*)(3 * sizeof(float)));
+			glEnableVertexAttribArray(2);
+			glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void*)(6 * sizeof(float)));
+		}
+
+		glBindVertexArray(sphereVAO);
+		glDrawElements(GL_TRIANGLE_STRIP, indexCount, GL_UNSIGNED_INT, 0);
 	}
 }
 

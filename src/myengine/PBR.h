@@ -15,6 +15,7 @@ namespace myengine
 
 		void renderCube();
 		void renderQuad();
+		void renderSphere();
 
 	private:
 		friend struct myengine::Core;
@@ -92,12 +93,11 @@ namespace myengine
 		std::shared_ptr<myrenderer::Texture> emissiveMap;
 
 		// PBR
-		mat4 captureProjection;
-		mat4 projection;
 		unsigned int envCubeMap;
 		unsigned int irradianceMap;
 		unsigned int prefilterMap;
 		unsigned int brdfLUTTexture;
+	
 
 		mat4 captureViews[6] =
 		{
