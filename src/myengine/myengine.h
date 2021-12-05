@@ -3,7 +3,6 @@
 #include "Component.h"
 #include "TriangleRenderer.h"
 #include "Transform.h"
-#include "ModelRenderer.h"
 #include "SoundSource.h"
 #include "Exception.h"
 #include "ResourceManager.h"
@@ -11,3 +10,4 @@
 #include "MeshRenderer.h"
 #include "Mesh.h"
 #include "Texture.h"
+#include "PBR.h"

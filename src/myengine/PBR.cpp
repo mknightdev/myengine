@@ -1,4 +1,4 @@
-#include "ModelRenderer.h"
+#include "PBR.h"
 #include "Transform.h"
 #include "Mouse.h"
 #include "Keyboard.h"
@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "stb_image.h"
+#include "GL\glew.h"
 
 using namespace myrenderer;
 
@@ -29,16 +30,16 @@ glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 namespace myengine
 {
 	/**
-	* \brief Initialises the model. 
-	* 
+	* \brief Initialises the model.
+	*
 	* Loads the model and texture, alongside the shaders to be used with it.
-	* 
+	*
 	* \see myrenderer::VertexArray
 	* \see myrenderer::VertexBuffer
 	* \see myrenderer::ShaderProgram
 	* \see myrenderer::Texture
 	*/
-	void ModelRenderer::onInitialize()
+	void PBR::onInitialize()
 	{
 		std::cout << "Model Renderer Initialised" << std::endl;
 
@@ -67,6 +68,15 @@ namespace myengine
 		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
 		shader->CreateShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
 
+		cubemapShader = std::make_shared<ShaderProgram>();
+		cubemapShader->CreateShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/equirectangular_to_cubemapFrag.txt");
+
+		backgroundShader = std::make_shared<ShaderProgram>();
+		backgroundShader->CreateShader("../resources/shaders/pbr/backgroundVert.txt", "../resources/shaders/pbr/backgroundFrag.txt");
+
+		backgroundShader->use();
+		backgroundShader->setInt("environmentMap", 0);
+
 		shader->use();
 		shader->setInt("albedoMap", 0);
 		shader->setInt("normalMap", 1);
@@ -74,6 +84,89 @@ namespace myengine
 		shader->setInt("roughnessMap", 3);
 		shader->setInt("aoMap", 4);
 		shader->setInt("emissiveMap", 5);
+
+		// Setup framebuffer
+		unsigned int captureFBO;
+		unsigned int captureRBO;
+		glGenFramebuffers(1, &captureFBO);
+		glGenRenderbuffers(1, &captureRBO);
+
+		glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+		glBindRenderbuffer(GL_RENDERBUFFER, captureRBO);
+		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 512, 512);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, captureRBO);
+
+		// Load HDR environment map
+		//-------------------------
+		stbi_set_flip_vertically_on_load(true);
+		int width, height, nrComponents;
+		float* data = stbi_loadf("../resources/shaders/pbr/Factory_Catwalk_Env.hdr", &width, &height, &nrComponents, 0);
+		unsigned int hdrTexture;
+		if (data)
+		{
+			glGenTextures(1, &hdrTexture);
+			glBindTexture(GL_TEXTURE_2D, hdrTexture);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, width, height, 0, GL_RGB, GL_FLOAT, data);
+
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+			stbi_image_free(data);
+
+			std::cout << "Image loaded" << std::endl;
+		}
+		else
+		{
+			std::cout << "Failed to load HDR image" << std::endl;
+		}
+
+		// Setup cubemap to render to and attach to framebuffer
+		envCubeMap;
+		glGenTextures(1, &envCubeMap);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, envCubeMap);
+		for (unsigned int i = 0; i < 6; ++i)
+		{
+			glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB16F, 512, 512, 0, GL_RGB, GL_FLOAT, nullptr);
+		}
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		// Setup projection for capturing data onto the 6 cubemap face directions---
+		captureProjection = perspective(radians(90.0f), 1.0f, 0.1f, 10.0f);
+
+		// PBR convert HDR equirectangular environment map to cubemap equivalent 
+		cubemapShader->use();
+		cubemapShader->setInt("equirectangularMap", 0);
+		cubemapShader->setMat4("projection", captureProjection);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, hdrTexture);
+
+		glViewport(0, 0, 512, 512);	// don't forget to configure the viewport to capture dimensions
+		glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+		for (unsigned int i = 0; i < 6; ++i)
+		{
+			cubemapShader->setMat4("view", captureViews[i]);
+			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, envCubeMap, 0);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+			renderCube();
+		}
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+		// initialise static shader uniforms before rendering
+		projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
+		shader->use();
+		shader->setMat4("projection", projection);
+		backgroundShader->use();
+		backgroundShader->setMat4("projection", projection);
+
+		// before rendering, configure the viewport to the original framebuffer's screen dimensions
+		glViewport(0, 0, 1280, 720);
 
 		//shader->setInt("material.diffuse", 0);
 		//shader->setInt("diffuse", 0);
@@ -137,17 +230,19 @@ namespace myengine
 
 		lightShader = std::make_shared<ShaderProgram>();
 		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
+
+		glDepthFunc(GL_LEQUAL);
 	}
 
 	/**
-	* \brief Draws the model. 
-	* 
+	* \brief Draws the model.
+	*
 	* Updates and draws the model loaded.
-	* 
+	*
 	* \warning Can throw several exceptions if it can find the model, projection,
 	* or view locations.
 	*/
-	void ModelRenderer::onDisplay()
+	void PBR::onDisplay()
 	{
 		shader->use();
 		// Set uniforms
@@ -159,50 +254,7 @@ namespace myengine
 		if (projectionLoc == -1) { throw std::exception(); }
 		if (viewLoc == -1) { throw std::exception(); }
 
-		//shader->setVec3("light.position", lightPos);
 		shader->setVec3("camPos", cameraPos2);
-
-		//shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-		//shader->setFloat("material.shininess", 64.0f);
-
-		//// directional light
-		//shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-		//shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
-		//shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
-		//shader->setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
-
-  //      // point light 1
-  //      shader->setVec3("pointLights[0].position", pointLightPositions[0]);
-  //      shader->setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[0].constant", 1.0f);
-  //      shader->setFloat("pointLights[0].linear", 0.09);
-  //      shader->setFloat("pointLights[0].quadratic", 0.032);
-  //      // point light 2
-  //      shader->setVec3("pointLights[1].position", pointLightPositions[1]);
-  //      shader->setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[1].constant", 1.0f);
-  //      shader->setFloat("pointLights[1].linear", 0.09);
-  //      shader->setFloat("pointLights[1].quadratic", 0.032);
-  //      // point light 3
-  //      shader->setVec3("pointLights[2].position", pointLightPositions[2]);
-  //      shader->setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[2].constant", 1.0f);
-  //      shader->setFloat("pointLights[2].linear", 0.09);
-  //      shader->setFloat("pointLights[2].quadratic", 0.032);
-  //      // point light 4
-  //      shader->setVec3("pointLights[3].position", pointLightPositions[3]);
-  //      shader->setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[3].constant", 1.0f);
-  //      shader->setFloat("pointLights[3].linear", 0.09);
-  //      shader->setFloat("pointLights[3].quadratic", 0.032);
 
 		// Light
 		vec3 lightColour;
@@ -211,14 +263,6 @@ namespace myengine
 		lightColour.z = 1.0f;
 		vec3 diffuseColour = lightColour * vec3(0.5f);
 		vec3 ambientColour = lightColour * vec3(0.2f);
-
-		//shader->setVec3("pointLight.ambient", ambientColour);
-		//shader->setVec3("pointLight.diffuse", diffuseColour);
-		//shader->setVec3("pointLight.specular", 1.0f, 1.0f, 1.0f);
-
-		// world transformation
-		//glm::mat4 model = glm::mat4(1.0f);
-		//shader->setMat4("model", model);
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, albedoMap->GetId());
@@ -262,7 +306,7 @@ namespace myengine
 
 		lightShader->use();
 		glBindVertexArray(lightVao->getId());
-		
+
 		// Set the cube's colour to match the colour of the light emitting
 		lightShader->setVec3("lightCubeColour", lightColour);
 
@@ -284,21 +328,28 @@ namespace myengine
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 
+		// Skybox
+		backgroundShader->use();
+		backgroundShader->setMat4("view", view);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, envCubeMap);
+		renderCube();
+
 		// Reset the state
 		glBindVertexArray(0);
 		glUseProgram(0);
 	}
 
 	/**
-	* \brief The position of the model. 
-	* 
+	* \brief The position of the model.
+	*
 	* Moves and updates the position of the model.
-	* 
+	*
 	* \param _deltaTime passed through from Core and is used to multiply the updated position with.
 	* \warning Multiplying without _deltaTime may result in some unexpected behaviours.
 	* \see Transform
 	*/
-	void ModelRenderer::onTick(float _deltaTime)
+	void PBR::onTick(float _deltaTime)
 	{
 		if (getKeyboard()->getKeyDown(SDLK_t))
 		{
@@ -378,10 +429,10 @@ namespace myengine
 
 	/**
 	* \brief Update mouse position
-	* 
+	*
 	* Updates the mouse position to move the camera.
 	*/
-	void ModelRenderer::mouseUpdate()
+	void PBR::mouseUpdate()
 	{
 		// Code from learnOpenGL - Camera
 		if (firstMouse2)
@@ -414,5 +465,80 @@ namespace myengine
 		front.y = sin(radians(pitch2));
 		front.z = sin(radians(yaw2)) * cos(radians(pitch2));
 		cameraFront2 = normalize(front);
+	}
+
+	// renderCube() renders a 1x1 3D cube in NDC.
+	// -------------------------------------------------
+	unsigned int cubeVAO = 0;
+	unsigned int cubeVBO = 0;
+	void PBR::renderCube()
+	{
+		// initialize (if necessary)
+		if (cubeVAO == 0)
+		{
+			float vertices[] = {
+				// back face
+				-1.0f, -1.0f, -1.0f,  0.0f,  0.0f, -1.0f, 0.0f, 0.0f, // bottom-left
+				 1.0f,  1.0f, -1.0f,  0.0f,  0.0f, -1.0f, 1.0f, 1.0f, // top-right
+				 1.0f, -1.0f, -1.0f,  0.0f,  0.0f, -1.0f, 1.0f, 0.0f, // bottom-right         
+				 1.0f,  1.0f, -1.0f,  0.0f,  0.0f, -1.0f, 1.0f, 1.0f, // top-right
+				-1.0f, -1.0f, -1.0f,  0.0f,  0.0f, -1.0f, 0.0f, 0.0f, // bottom-left
+				-1.0f,  1.0f, -1.0f,  0.0f,  0.0f, -1.0f, 0.0f, 1.0f, // top-left
+				// front face
+				-1.0f, -1.0f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f, 0.0f, // bottom-left
+				 1.0f, -1.0f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f, 0.0f, // bottom-right
+				 1.0f,  1.0f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f, 1.0f, // top-right
+				 1.0f,  1.0f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f, 1.0f, // top-right
+				-1.0f,  1.0f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f, 1.0f, // top-left
+				-1.0f, -1.0f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f, 0.0f, // bottom-left
+				// left face
+				-1.0f,  1.0f,  1.0f, -1.0f,  0.0f,  0.0f, 1.0f, 0.0f, // top-right
+				-1.0f,  1.0f, -1.0f, -1.0f,  0.0f,  0.0f, 1.0f, 1.0f, // top-left
+				-1.0f, -1.0f, -1.0f, -1.0f,  0.0f,  0.0f, 0.0f, 1.0f, // bottom-left
+				-1.0f, -1.0f, -1.0f, -1.0f,  0.0f,  0.0f, 0.0f, 1.0f, // bottom-left
+				-1.0f, -1.0f,  1.0f, -1.0f,  0.0f,  0.0f, 0.0f, 0.0f, // bottom-right
+				-1.0f,  1.0f,  1.0f, -1.0f,  0.0f,  0.0f, 1.0f, 0.0f, // top-right
+				// right face
+				 1.0f,  1.0f,  1.0f,  1.0f,  0.0f,  0.0f, 1.0f, 0.0f, // top-left
+				 1.0f, -1.0f, -1.0f,  1.0f,  0.0f,  0.0f, 0.0f, 1.0f, // bottom-right
+				 1.0f,  1.0f, -1.0f,  1.0f,  0.0f,  0.0f, 1.0f, 1.0f, // top-right         
+				 1.0f, -1.0f, -1.0f,  1.0f,  0.0f,  0.0f, 0.0f, 1.0f, // bottom-right
+				 1.0f,  1.0f,  1.0f,  1.0f,  0.0f,  0.0f, 1.0f, 0.0f, // top-left
+				 1.0f, -1.0f,  1.0f,  1.0f,  0.0f,  0.0f, 0.0f, 0.0f, // bottom-left     
+				// bottom face
+				-1.0f, -1.0f, -1.0f,  0.0f, -1.0f,  0.0f, 0.0f, 1.0f, // top-right
+				 1.0f, -1.0f, -1.0f,  0.0f, -1.0f,  0.0f, 1.0f, 1.0f, // top-left
+				 1.0f, -1.0f,  1.0f,  0.0f, -1.0f,  0.0f, 1.0f, 0.0f, // bottom-left
+				 1.0f, -1.0f,  1.0f,  0.0f, -1.0f,  0.0f, 1.0f, 0.0f, // bottom-left
+				-1.0f, -1.0f,  1.0f,  0.0f, -1.0f,  0.0f, 0.0f, 0.0f, // bottom-right
+				-1.0f, -1.0f, -1.0f,  0.0f, -1.0f,  0.0f, 0.0f, 1.0f, // top-right
+				// top face
+				-1.0f,  1.0f, -1.0f,  0.0f,  1.0f,  0.0f, 0.0f, 1.0f, // top-left
+				 1.0f,  1.0f , 1.0f,  0.0f,  1.0f,  0.0f, 1.0f, 0.0f, // bottom-right
+				 1.0f,  1.0f, -1.0f,  0.0f,  1.0f,  0.0f, 1.0f, 1.0f, // top-right     
+				 1.0f,  1.0f,  1.0f,  0.0f,  1.0f,  0.0f, 1.0f, 0.0f, // bottom-right
+				-1.0f,  1.0f, -1.0f,  0.0f,  1.0f,  0.0f, 0.0f, 1.0f, // top-left
+				-1.0f,  1.0f,  1.0f,  0.0f,  1.0f,  0.0f, 0.0f, 0.0f  // bottom-left        
+			};
+			glGenVertexArrays(1, &cubeVAO);
+			glGenBuffers(1, &cubeVBO);
+			// fill buffer
+			glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
+			glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+			// link vertex attributes
+			glBindVertexArray(cubeVAO);
+			glEnableVertexAttribArray(0);
+			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+			glEnableVertexAttribArray(1);
+			glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+			glEnableVertexAttribArray(2);
+			glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			glBindVertexArray(0);
+		}
+		// render Cube
+		glBindVertexArray(cubeVAO);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
 	}
 }

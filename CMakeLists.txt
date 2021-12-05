@@ -83,6 +83,10 @@ add_library(myengine
 	src/myengine/Mesh.h
 	src/myengine/Texture.cpp
 	src/myengine/Texture.h
+
+	# GCP
+	src/myengine/PBR.cpp
+	src/myengine/PBR.h
 )
 
 add_library(myrenderer
@@ -115,7 +119,6 @@ endif()
 
 add_executable(game
 	src/demo/main.cpp
-	src/demo/pbr.cpp
 )
 
 target_link_libraries(game myengine myrenderer) 
