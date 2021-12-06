@@ -143,6 +143,11 @@ namespace myengine
 				else if (event.type == SDL_KEYDOWN)
 				{
 					keyboard->keyCodes.push_back(event.key.keysym.sym);
+
+					if (event.key.keysym.sym == SDLK_ESCAPE)
+					{
+						running = false;
+					}
 				}
 				else if (event.type == SDL_KEYUP)
 				{
