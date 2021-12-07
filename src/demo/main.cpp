@@ -17,8 +17,8 @@ int main()
 	//// shader
 	//mr->setShader("../resources/shaders/pbrTexVert.txt", "../resources/shaders/pbrTexFrag.txt");
 
-	// ENTITY & COMPONENTS
-	//====================
+	//// ENTITY & COMPONENTS
+	////====================
 	std::shared_ptr<Entity> pbrEntity = core->addEntity();
 	std::shared_ptr<PBR> pbr = pbrEntity->addComponent<PBR>();
 

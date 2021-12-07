@@ -1,12 +1,12 @@
 #version 410
 
-in vec3 a_Position;
-in vec2 a_TexCoord;
-in vec3 a_Normal;	
+layout (location = 0) in vec3 a_Position;
+layout (location = 1) in vec2 a_TexCoord;
+layout (location = 2) in vec3 a_Normal;	
 
-out vec3 v_WorldPos;													 
-out vec3 v_Normal;		
+out vec3 v_WorldPos;	
 out vec2 v_TexCoord;
+out vec3 v_Normal;		
 
 uniform mat4 model;														 
 uniform mat4 view;			

@@ -9,8 +9,8 @@ uniform sampler2D aoMap;
 uniform sampler2D emissiveMap;
 
 in vec3 v_WorldPos;
-in vec3 v_Normal;
 in vec2 v_TexCoord;
+in vec3 v_Normal;
 
 // IBL
 uniform samplerCube irradianceMap;
