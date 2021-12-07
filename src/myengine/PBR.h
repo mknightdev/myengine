@@ -33,6 +33,10 @@ namespace myengine
 		// Load shader functions
 		void setShader(const GLchar* _vert, const GLchar* _frag);
 		void setCubemapShader(const GLchar* _vert, const GLchar* _frag);
+		void setIrradianceShader(const GLchar* _vert, const GLchar* _frag);
+		void setPrefilterShader(const GLchar* _vert, const GLchar* _frag);
+		void setBRDFShader(const GLchar* _vert, const GLchar* _frag);
+		void setBackgroundShader(const GLchar* _vert, const GLchar* _frag);
 
 	private:
 		friend struct myengine::Core;
