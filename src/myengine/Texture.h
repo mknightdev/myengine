@@ -4,6 +4,7 @@
 namespace myengine
 {
 	struct MeshRenderer;
+	struct PBR;
 
 	struct Texture : Resource
 	{
@@ -11,6 +12,7 @@ namespace myengine
 
 	private:
 		friend struct myengine::MeshRenderer;
+		friend struct myengine::PBR;
 		std::shared_ptr<myrenderer::Texture> texture;
 	};
 }

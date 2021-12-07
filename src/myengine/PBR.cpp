@@ -3,6 +3,8 @@
 #include "Mouse.h"
 #include "Keyboard.h"
 #include "mymath.h"
+#include "Mesh.h"
+#include "Texture.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
@@ -10,8 +12,6 @@
 
 #include "stb_image.h"
 #include "GL\glew.h"
-
-using namespace myrenderer;
 
 // TODO: move into own class
 glm::vec3 cameraPos2 = glm::vec3(0.0f, 0.0f, 3.0f);
@@ -41,7 +41,7 @@ namespace myengine
 	*/
 	void PBR::onInitialize()
 	{
-		std::cout << "Model Renderer Initialised" << std::endl;
+		std::cout << "PBR Initialised" << std::endl;
 
 		int w = 0;
 		int h = 0;
@@ -52,57 +52,55 @@ namespace myengine
 
 		// GRENADE
 		//--------
-		vao = std::make_shared<VertexArray>("../resources/models/grenade/grenade.obj");
-		albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
-		normalMap = std::make_shared<Texture>("../resources/models/grenade/grenade_normal.png", w, h);
-		metallicMap = std::make_shared<Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
-		roughnessMap = std::make_shared<Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
-		aoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
-		emissiveMap = std::make_shared < Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
+		//vao = std::make_shared<myrenderer::VertexArray>("../resources/models/grenade/grenade.obj");
+		//albedoMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
+		normalMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_normal.png", w, h);
+		metallicMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
+		roughnessMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
+		aoMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
+		emissiveMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
 
 		// Create Shader
-		shader = std::make_shared<ShaderProgram>();
+		//shader = std::make_shared<myrenderer::ShaderProgram>();
 		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
 		//shader->CreateShader("../resources/shaders/diffuseVert.txt", "../resources/shaders/diffuseFrag.txt");
 		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
 		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
 		//shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
 		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
-		shader->CreateShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+		//shader->CreateShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
 
-		cubemapShader = std::make_shared<ShaderProgram>();
+		//shader->use();
+		//shader->setInt("irradianceMap", 0);
+		//shader->setInt("prefilterMap", 1);
+		//shader->setInt("brdfLUT", 2);
+		//shader->setInt("albedoMap", 3);
+		//shader->setInt("normalMap", 4);
+		//shader->setInt("metallicMap", 5);
+		//shader->setInt("roughnessMap", 6);
+		//shader->setInt("aoMap", 7);
+		//shader->setInt("emissiveMap", 8);
+
+		cubemapShader = std::make_shared<myrenderer::ShaderProgram>();
 		cubemapShader->CreateShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/equirectangular_to_cubemapFrag.txt");
 
-		irradianceShader = std::make_shared<ShaderProgram>();
+		irradianceShader = std::make_shared<myrenderer::ShaderProgram>();
 		irradianceShader->CreateShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/irradianceFrag.txt");
 
-		prefilterShader = std::make_shared <ShaderProgram>();
+		prefilterShader = std::make_shared <myrenderer::ShaderProgram>();
 		prefilterShader->CreateShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/prefilterFrag.txt");
 
-		brdfShader = std::make_shared<ShaderProgram>();
+		brdfShader = std::make_shared<myrenderer::ShaderProgram>();
 		brdfShader->CreateShader("../resources/shaders/pbr/brdfVert.txt", "../resources/shaders/pbr/brdfFrag.txt");
 
-		backgroundShader = std::make_shared<ShaderProgram>();
+		backgroundShader = std::make_shared<myrenderer::ShaderProgram>();
 		backgroundShader->CreateShader("../resources/shaders/pbr/backgroundVert.txt", "../resources/shaders/pbr/backgroundFrag.txt");
 
 		backgroundShader->use();
 		backgroundShader->setInt("environmentMap", 0);
 
-		shader->use();
-		shader->setInt("irradianceMap", 0);
-		shader->setInt("prefilterMap", 1);
-		shader->setInt("brdfLUT", 2);
-		shader->setInt("albedoMap", 3);
-		shader->setInt("normalMap", 4);
-		shader->setInt("metallicMap", 5);
-		shader->setInt("roughnessMap", 6);
-		shader->setInt("aoMap", 7);
-		shader->setInt("emissiveMap", 8);
-
 		// SETUP FRAMEBUFFER
 		//------------------
-		unsigned int captureFBO;
-		unsigned int captureRBO;
 		glGenFramebuffers(1, &captureFBO);
 		glGenRenderbuffers(1, &captureRBO);
 
@@ -115,7 +113,6 @@ namespace myengine
 		//-------------------------
 		stbi_set_flip_vertically_on_load(true);
 		int width, height, nrComponents;
-		unsigned int hdrTexture;
 		float* data = stbi_loadf("../resources/shaders/pbr/Newport_Loft_Ref.hdr", &width, &height, &nrComponents, 0);
 		if (data)
 		{
@@ -153,10 +150,10 @@ namespace myengine
 
 		// SETUP PROJECTION MATRIX FOR CAPTURING DATA ONTO THE 6 CUBEMAP FACE DIRECTIONS
 		//------------------------------------------------------------------------------
-		mat4 captureProjection = perspective(radians(90.0f), 1.0f, 0.1f, 10.0f);
+		captureProjection = perspective(radians(90.0f), 1.0f, 0.1f, 10.0f);
 
-		// CONVERT HDR EQUIRECTANGULAR ENVIRONMENT MAP TO CUBEMAP ENVIRONMENT
-		//-------------------------------------------------------------------
+		//// CONVERT HDR EQUIRECTANGULAR ENVIRONMENT MAP TO CUBEMAP ENVIRONMENT
+		////-------------------------------------------------------------------
 		cubemapShader->use();
 		cubemapShader->setInt("equirectangularMap", 0);
 		cubemapShader->setMat4("projection", captureProjection);
@@ -293,9 +290,9 @@ namespace myengine
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 		// initialise static shader uniforms before rendering
-		mat4 projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
-		shader->use();
-		shader->setMat4("projection", projection);
+		projection = perspective(radians(45.0f), (float)1280 / (float)720, 0.1f, 100.0f);
+		//shader->use();
+		//shader->setMat4("projection", projection);
 		backgroundShader->use();
 		backgroundShader->setMat4("projection", projection);
 
@@ -316,7 +313,7 @@ namespace myengine
 		******************************/
 
 		// Vertex Buffer
-		positionsVbo = std::make_shared<VertexBuffer>();
+		positionsVbo = std::make_shared<myrenderer::VertexBuffer>();
 		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
 		positionsVbo->add(vec3(0.5f, -0.5f, -0.5f));
 		positionsVbo->add(vec3(0.5f, 0.5f, -0.5f));
@@ -359,10 +356,10 @@ namespace myengine
 		positionsVbo->add(vec3(-0.5f, 0.5f, 0.5f));
 		positionsVbo->add(vec3(-0.5f, 0.5f, -0.5f));
 
-		lightVao = std::make_shared<VertexArray>();
+		lightVao = std::make_shared<myrenderer::VertexArray>();
 		lightVao->setBuffer(0, positionsVbo);
 
-		lightShader = std::make_shared<ShaderProgram>();
+		lightShader = std::make_shared<myrenderer::ShaderProgram>();
 		lightShader->CreateShader("../resources/shaders/lightCubeVert.txt", "../resources/shaders/lightCubeFrag.txt");
 
 		glDepthFunc(GL_LEQUAL);
@@ -814,6 +811,122 @@ namespace myengine
 		glBindVertexArray(sphereVAO);
 		glDrawElements(GL_TRIANGLE_STRIP, indexCount, GL_UNSIGNED_INT, 0);
 	}
+
+	// Load mesh function
+	void PBR::setMesh(std::shared_ptr<Mesh> _mesh)
+	{
+		vao = _mesh->vao;
+	}
+
+	// Load texture functions
+	void PBR::setAlbedo(std::shared_ptr<Texture> _albedo)
+	{
+		albedoMap = _albedo->texture;
+		//shader->use();
+		//shader->setInt("albedoMap", 3);
+	}
+
+	void PBR::setNormal(std::shared_ptr<Texture> _normal)
+	{
+		normalMap = _normal->texture;
+		//shader->use();
+		//shader->setInt("normalMap", 4);
+	}
+
+	void PBR::setMetallic(std::shared_ptr<Texture> _metallic)
+	{
+		metallicMap = _metallic->texture;
+		//shader->use();
+		//shader->setInt("metallicMap", 5);
+	}
+
+	void PBR::setRoughness(std::shared_ptr<Texture> _roughness)
+	{
+		roughnessMap = _roughness->texture;
+		//shader->use();
+		//shader->setInt("roughnessMap", 6);
+	}
+
+	void PBR::setAo(std::shared_ptr<Texture> _ao)
+	{
+		aoMap = _ao->texture;
+		//shader->use();
+		//shader->setInt("aoMap", 7);
+	}
+
+	void PBR::setEmissive(std::shared_ptr<Texture> _emissive)
+	{
+		emissiveMap = _emissive->texture;
+/*		shader->use();
+		shader->setInt("emissiveMap", 8)*/
+	}
+
+	void PBR::setShader(const GLchar* _vert, const GLchar* _frag)
+	{
+		shader = std::make_shared<myrenderer::ShaderProgram>();
+		shader->CreateShader(_vert, _frag);
+
+		shader->use();
+		shader->setInt("irradianceMap", 0);
+		shader->setInt("prefilterMap", 1);
+		shader->setInt("brdfLUT", 2);
+		shader->setInt("albedoMap", 3);
+		shader->setInt("normalMap", 4);
+		shader->setInt("metallicMap", 5);
+		shader->setInt("roughnessMap", 6);
+		shader->setInt("aoMap", 7);
+		shader->setInt("emissiveMap", 8);
+
+		//shader->use();
+		shader->setMat4("projection", projection);
+	}
+
+	//void PBR::setCubemapShader(const GLchar* _vert, const GLchar* _frag)
+	//{
+	//	cubemapShader = std::make_shared<myrenderer::ShaderProgram>();
+	//	cubemapShader->CreateShader(_vert, _frag);
+
+	//	// CONVERT HDR EQUIRECTANGULAR ENVIRONMENT MAP TO CUBEMAP ENVIRONMENT
+	//	//-------------------------------------------------------------------
+	//	cubemapShader->use();
+	//	cubemapShader->setInt("equirectangularMap", 0);
+	//	cubemapShader->setMat4("projection", captureProjection);
+	//	glActiveTexture(GL_TEXTURE0);
+	//	glBindTexture(GL_TEXTURE_2D, hdrTexture);
+
+	//	glViewport(0, 0, 512, 512);	// don't forget to configure the viewport to capture dimensions
+	//	glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+	//	for (unsigned int i = 0; i < 6; ++i)
+	//	{
+	//		cubemapShader->setMat4("view", captureViews[i]);
+	//		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, envCubeMap, 0);
+	//		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//		renderCube();
+	//	}
+	//	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	//}
+
+	//void PBR::setIrradianceShader(std::string _vert, std::string _frag)
+	//{
+
+	//}
+
+	//void PBR::setPrefilterShader(std::string _vert, std::string _frag)
+	//{
+
+	//}
+
+	//void PBR::setBRDF(std::string _vert, std::string _frag)
+	//{
+
+	//}
+
+	//void PBR::setBackgroundShader(std::string _vert, std::string _frag)
+	//{
+
+	//}
+
 }
 
 

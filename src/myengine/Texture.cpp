@@ -4,7 +4,8 @@ namespace myengine
 {
 	void Texture::onInitialize()
 	{
-		int w, h = 0;
+		int w = 0;
+		int h = 0;
 		texture = std::make_shared<myrenderer::Texture>(GetPath() + ".png", w, h);
 		
 		// Try for other extensions

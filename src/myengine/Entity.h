@@ -90,5 +90,7 @@ namespace myengine
 
 			void tick(float _deltaTime);
 			void display();
+
+			bool hasBegun;
 	};
 }

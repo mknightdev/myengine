@@ -423,7 +423,7 @@ namespace myengine
 
 	void MeshRenderer::setTexture(std::shared_ptr<Texture> _texture)
 	{
-		int w, h = 0;
+		//int w, h = 0;
 		albedoMap = _texture->texture;
 	}
 }

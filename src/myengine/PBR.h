@@ -5,8 +5,12 @@
 
 namespace myengine
 {
+	struct Mesh;
+	struct Texture;
+
 	struct PBR : Component
 	{
+		void onAwake();
 		void onInitialize();
 		void onDisplay();
 		void onTick(float _deltaTime);
@@ -16,6 +20,19 @@ namespace myengine
 		void renderCube();
 		void renderQuad();
 		void renderSphere();
+
+		void setMesh(std::shared_ptr<Mesh> _mesh);
+
+		void setAlbedo(std::shared_ptr<Texture> _albedo);
+		void setNormal(std::shared_ptr<Texture> _normal);
+		void setMetallic(std::shared_ptr<Texture> _metallic);
+		void setRoughness(std::shared_ptr<Texture> _roughness);
+		void setAo(std::shared_ptr<Texture> _ao);
+		void setEmissive(std::shared_ptr<Texture> _emissive);
+
+		// Load shader functions
+		void setShader(const GLchar* _vert, const GLchar* _frag);
+		void PBR::setCubemapShader(const GLchar* _vert, const GLchar* _frag);
 
 	private:
 		friend struct myengine::Core;
@@ -97,6 +114,13 @@ namespace myengine
 		unsigned int irradianceMap;
 		unsigned int prefilterMap;
 		unsigned int brdfLUTTexture;
+
+		mat4 captureProjection;
+		unsigned int hdrTexture;
+		unsigned int captureFBO;
+		unsigned int captureRBO;
+
+		mat4 projection;
 	
 
 		mat4 captureViews[6] =
