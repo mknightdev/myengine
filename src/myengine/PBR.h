@@ -32,7 +32,7 @@ namespace myengine
 
 		// Load shader functions
 		void setShader(const GLchar* _vert, const GLchar* _frag);
-		void PBR::setCubemapShader(const GLchar* _vert, const GLchar* _frag);
+		void setCubemapShader(const GLchar* _vert, const GLchar* _frag);
 
 	private:
 		friend struct myengine::Core;

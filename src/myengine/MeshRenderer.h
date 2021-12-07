@@ -16,6 +16,7 @@ namespace myengine
 		
 		void setMesh(std::shared_ptr<Mesh> _mesh);
 		void setTexture(std::shared_ptr<Texture> _texture);
+		void setShader(const GLchar* _vert, const GLchar* _frag);
 
 	private:
 		friend struct myengine::Core;

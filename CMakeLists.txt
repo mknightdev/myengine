@@ -83,6 +83,8 @@ add_library(myengine
 	src/myengine/Mesh.h
 	src/myengine/Texture.cpp
 	src/myengine/Texture.h
+	src/myengine/Shader.cpp
+	src/myengine/Shader.h
 
 	# GCP
 	src/myengine/PBR.cpp
