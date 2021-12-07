@@ -54,11 +54,11 @@ namespace myengine
 		//--------
 		//vao = std::make_shared<myrenderer::VertexArray>("../resources/models/grenade/grenade.obj");
 		//albedoMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
-		normalMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_normal.png", w, h);
-		metallicMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
-		roughnessMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
-		aoMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
-		emissiveMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
+		//normalMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_normal.png", w, h);
+		//metallicMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_metallic.png", w, h);
+		//roughnessMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_roughness.png", w, h);
+		//aoMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_mixed_ao.png", w, h);
+		//emissiveMap = std::make_shared<myrenderer::Texture>("../resources/models/grenade/grenade_emissive.png", w, h);
 
 		// Create Shader
 		//shader = std::make_shared<myrenderer::ShaderProgram>();
@@ -133,6 +133,10 @@ namespace myengine
 		{
 			std::cout << "Failed to load HDR image" << std::endl;
 		}
+
+
+		// Unflip so model texture displays correctly
+		stbi_set_flip_vertically_on_load(false);
 
 		// SETUP CUBEMAP TO RENDER TO AND ATTACH TO FRAMEBUFFER
 		//-----------------------------------------------------

@@ -11,11 +11,11 @@ int main()
 
 	//std::shared_ptr<Entity> entity = core->addEntity();
 	//std::shared_ptr<MeshRenderer> mr = entity->addComponent<MeshRenderer>();
-	//mr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/grenade/grenade"));
+	//mr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
 	////// texture
-	//mr->setTexture(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_albedo"));
+	//mr->setTexture(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
 	//// shader
-	//mr->setShader("resources/shaders/pbrTexVert.txt", "resources/shaders/pbrTexFrag.txt");
+	//mr->setShader("../resources/shaders/pbrTexVert.txt", "../resources/shaders/pbrTexFrag.txt");
 
 	// ENTITY & COMPONENTS
 	//====================
@@ -24,22 +24,22 @@ int main()
 
 	// MODEL & TEXTURES
 	//=================
-	pbr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/grenade/grenade"));
-	pbr->setAlbedo(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_albedo"));
-	//pbr->setNormal(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_normal"));
-	//pbr->setMetallic(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_metallic"));
-	//pbr->setRoughness(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_roughness"));
-	//pbr->setAo(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_ao"));
-	//pbr->setEmissive(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_emissive"));
+	pbr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
+	pbr->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
+	pbr->setNormal(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_normal"));
+	pbr->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_metallic"));
+	pbr->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_roughness"));
+	pbr->setAo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_ao"));
+	pbr->setEmissive(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_emissive"));
 
 	// SHADERS
 	//========
-	pbr->setShader("resources/shaders/pbr/pbrTexVert.txt", "resources/shaders/pbr/pbrTexFrag.txt");
-	pbr->setCubemapShader("resources/shaders/pbr/cubemapVert.txt", "resources/shaders/pbr/equirectangular_to_cubemapFrag.txt");
-	pbr->setIrradianceShader("resources/shaders/pbr/cubemapVert.txt", "resources/shaders/pbr/irradianceFrag.txt");
-	pbr->setPrefilterShader("resources/shaders/pbr/cubemapVert.txt", "resources/shaders/pbr/prefilterFrag.txt");
-	pbr->setBRDFShader("resources/shaders/pbr/brdfVert.txt", "resources/shaders/pbr/brdfFrag.txt");
-	pbr->setBackgroundShader("resources/shaders/pbr/backgroundVert.txt", "resources/shaders/pbr/backgroundFrag.txt");
+	pbr->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+	pbr->setCubemapShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/equirectangular_to_cubemapFrag.txt");
+	pbr->setIrradianceShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/irradianceFrag.txt");
+	pbr->setPrefilterShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/prefilterFrag.txt");
+	pbr->setBRDFShader("../resources/shaders/pbr/brdfVert.txt", "../resources/shaders/pbr/brdfFrag.txt");
+	pbr->setBackgroundShader("../resources/shaders/pbr/backgroundVert.txt", "../resources/shaders/pbr/backgroundFrag.txt");
 	
 	//std::shared_ptr<AudioClip> s = core->getResourceManager()->load<AudioClip>("doorbell");
 
