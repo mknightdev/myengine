@@ -54,22 +54,22 @@ namespace myengine
 		emissiveMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_emissive.png", w, h);
 
 		// Create Shader
-		//shader = std::make_shared<myrenderer::ShaderProgram>();
+		shader = std::make_shared<myrenderer::ShaderProgram>();
 		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
 		//shader->CreateShader("../resources/shaders/diffuseVert.txt", "../resources/shaders/diffuseFrag.txt");
 		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
 		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
 		//shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
 		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
-		//shader->CreateShader("resources/shaders/pbrTexVert.txt", "resources/shaders/pbrTexFrag.txt");
+		shader->CreateShader("resources/shaders/pbr/pbrTexVert.txt", "resources/shaders/pbr/pbrTexFrag.txt");
 
-		//shader->use();
-		//shader->setInt("albedoMap", 0);
-		//shader->setInt("normalMap", 1);
-		//shader->setInt("metallicMap", 2);
-		//shader->setInt("roughnessMap", 3);
-		//shader->setInt("aoMap", 4);
-		//shader->setInt("emissiveMap", 5);
+		shader->use();
+		shader->setInt("albedoMap", 0);
+		shader->setInt("normalMap", 1);
+		shader->setInt("metallicMap", 2);
+		shader->setInt("roughnessMap", 3);
+		shader->setInt("aoMap", 4);
+		shader->setInt("emissiveMap", 5);
 
 
 		//shader->setInt("material.diffuse", 0);
@@ -423,25 +423,7 @@ namespace myengine
 
 	void MeshRenderer::setTexture(std::shared_ptr<Texture> _texture)
 	{
-		//int w, h = 0;
+		int w, h = 0;
 		albedoMap = _texture->texture;
-	}
-
-	void MeshRenderer::setShader(const GLchar* _vert, const GLchar* _frag)
-	{
-		// Initialise shader
-		shader = std::make_shared<myrenderer::ShaderProgram>();
-
-		// Create shader with vert and frag
-		shader->CreateShader(_vert, _frag);
-
-		// Use and setup shader
-		shader->use();
-		shader->setInt("albedoMap", 0);
-		shader->setInt("normalMap", 1);
-		shader->setInt("metallicMap", 2);
-		shader->setInt("roughnessMap", 3);
-		shader->setInt("aoMap", 4);
-		shader->setInt("emissiveMap", 5);
 	}
 }
