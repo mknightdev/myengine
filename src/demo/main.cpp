@@ -24,13 +24,13 @@ int main()
 
 	//// MODEL & TEXTURES
 	////=================
-	pbr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/grenade/grenade"));
-	pbr->setAlbedo(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_albedo"));
-	////pbr->setNormal(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_normal"));
-	////pbr->setMetallic(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_metallic"));
-	////pbr->setRoughness(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_roughness"));
-	////pbr->setAo(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_ao"));
-	////pbr->setEmissive(core->getResourceManager()->load<Texture>("resources/models/grenade/grenade_emissive"));
+	pbr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
+	pbr->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
+	pbr->setNormal(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_normal"));
+	pbr->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_metallic"));
+	pbr->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_roughness"));
+	pbr->setAo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_ao"));
+	pbr->setEmissive(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_emissive"));
 
 	//// SHADERS
 	////========
