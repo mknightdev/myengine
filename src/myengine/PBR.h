@@ -138,10 +138,10 @@ namespace myengine
 		};
 
 		vec3 pointLightPositions[4] = {
-			vec3(0.7f,  0.2f,  2.0f),
-			vec3(2.3f, -3.3f, -4.0f),
-			vec3(-4.0f,  2.0f, -12.0f),
-			vec3(0.0f,  0.0f, -3.0f)
+			vec3(-2.5f,  2.5f,  2.5f),
+			vec3(2.5f, 2.5f, 2.5f),
+			vec3(-2.5f,  -2.5f, 2.5f),
+			vec3(2.5f,  -2.5f, 2.5f)
 		};
 	};
 }

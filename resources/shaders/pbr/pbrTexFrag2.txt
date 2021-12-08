@@ -25,37 +25,74 @@ out vec4 FragColour;
 
 const float PI = 3.14159265359;
 
-float DistributionGGX(vec3 _N, vec3 _H, float _roughness)
+float BeckmannGGX(vec3 _N, vec3 _H, float _roughness)
 {
-	float a = _roughness * _roughness;
-	float a2 = a * a;
+	// PART ONE
+	//=========
+	float roughnessSqrd = _roughness * _roughness;
 	float NdotH = max(dot(_N, _H), 0.0);
-	float NdotH2 = NdotH * NdotH;
+	float NdotHSqrd = NdotH * NdotH;
+	float NdotH4 = NdotHSqrd * NdotHSqrd;
+	float denom = PI * roughnessSqrd * NdotH4;
 
-	float nom = a2;
-	float denom = (NdotH2 * (a2 - 1.0) + 1.0);
-	denom = PI * denom * denom;
+	float partOne = 1.0 / denom;
 
-	return nom / denom;
+	// PART TWO
+	//=========
+	float P2Nom = NdotHSqrd - 1.0;
+	float P2denom = roughnessSqrd * NdotHSqrd;
+
+	float partTwo = P2Nom / P2denom;
+
+	// POWER
+	//======
+	float result = partOne * exp(partTwo);
+
+	// RESULT
+	//=======
+	return result;
 }
 
-float GeometrySchlickGGX(float _NdotV, float _roughness)
+float GeometryBeckmann(float _NdotV, float _roughness)
 {
-    float r = (_roughness + 1.0);
-    float k = (r*r) / 8.0;
+	float roughnessSqrd = _roughness * _roughness;
+	float NdotVSqrd = _NdotV * _NdotV;
+	float sqrtVal = 1.0 - NdotVSqrd;
+	float denom = roughnessSqrd * sqrtVal;
 
-    float nom   = _NdotV;
-    float denom = _NdotV * (1.0 - k) + k;
+	float C = _NdotV / denom;
 
-    return nom / denom;
+	// 1.6 CHECK
+	if (C < 1.6)
+	{
+		// Do something
+		float nomP1 = 3.535 * C;
+		float nomP2 = 2.181 * C;
+		float nomP2Sqrd = nomP2 * nomP2;
+		float finalNom = nomP1 + nomP2Sqrd;
+
+		float denomP1 = 1.0 + 2.276 * C;
+		float denomP2 = 2.577 * C;
+		float denomP2Sqrd = denomP2 * denomP2;
+		float finalDenom = denomP1 + denomP2Sqrd;
+
+		return finalNom / finalDenom;
+		
+	}
+	else if (C >= 1.6)
+	{
+		return 1.0;
+	}
+
+	return 1.0;
 }
 
 float GeometrySmith(vec3 _N, vec3 _V, vec3 _L, float _roughness)
 {
     float NdotV = max(dot(_N, _V), 0.0);
     float NdotL = max(dot(_N, _L), 0.0);
-    float ggx2 = GeometrySchlickGGX(NdotV, _roughness);
-    float ggx1 = GeometrySchlickGGX(NdotL, _roughness);
+    float ggx2 = GeometryBeckmann(NdotV, _roughness);
+    float ggx1 = GeometryBeckmann(NdotL, _roughness);
 
     return ggx1 * ggx2;
 }
@@ -94,7 +131,6 @@ void main()
 	float roughness = texture(roughnessMap, v_TexCoord).r;
 	float ao = texture(aoMap, v_TexCoord).r;
 	vec3 emissive = pow(texture(emissiveMap, v_TexCoord).rgb, vec3(2.2));
-	
 
 	vec3 N = getNormalFromMap();
 	//vec3 N = normalize(v_Normal);
@@ -118,7 +154,7 @@ void main()
 		vec3 radiance = lightColours[i] * attenuation;
 
 		// Cook-Torrance BRDF
-		float NDF = DistributionGGX(N, H, roughness);
+		float NDF = BeckmannGGX(N, H, roughness);
 		float G = GeometrySmith(N, V, L, roughness);
 		vec3 F = fresnelSchlick(max(dot(H, V), 0.0), F0);
 
