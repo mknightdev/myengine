@@ -39,6 +39,18 @@ float DistributionGGX(vec3 _N, vec3 _H, float _roughness)
 	return nom / denom;
 }
 
+float BlinnPhong(vec3 _N, vec3 _H, float _roughness)
+{
+	float NdotH = max(dot(_N, _H), 0.0);
+	float roughnessSqrd = _roughness * _roughness;
+	
+	float partOne = 1 / (PI * roughnessSqrd);
+	float partTwo = pow(NdotH, (2 / roughnessSqrd) * -2);
+	
+	return partOne * partTwo;
+	
+}
+
 float Kelemen(float _NdotV, float _roughness)
 {
 	float C = sqrt(2 / PI);
@@ -115,7 +127,7 @@ void main()
 		vec3 radiance = lightColours[i] * attenuation;
 
 		// Cook-Torrance BRDF
-		float NDF = DistributionGGX(N, H, roughness);
+		float NDF = BlinnPhong(N, H, roughness);
 		float G = GeometrySmith(N, V, L, roughness);
 		vec3 F = fresnelSchlick(max(dot(H, V), 0.0), F0);
 
