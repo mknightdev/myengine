@@ -29,9 +29,10 @@ float BlinnPhong(vec3 _N, vec3 _H, float _roughness)
 {
 	float NdotH = max(dot(_N, _H), 0.0);
 	float roughnessSqrd = _roughness * _roughness;
+	float finalRoughness = roughnessSqrd * roughnessSqrd;
 	
-	float partOne = 1 / (PI * roughnessSqrd);
-	float partTwo = pow(NdotH, (2 / roughnessSqrd) - 2);
+	float partOne = 1 / (PI * finalRoughness);
+	float partTwo = pow(NdotH, (2 / finalRoughness) - 2);
 	
 	return partOne * partTwo;
 }

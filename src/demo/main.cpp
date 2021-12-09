@@ -24,22 +24,24 @@ int main()
 
 	// MODEL & TEXTURES
 	//=================
-	pbr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
-	pbr->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
-	pbr->setNormal(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_normal"));
-	pbr->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_metallic"));
-	pbr->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_roughness"));
-	pbr->setAo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_ao"));
-	pbr->setEmissive(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_emissive"));
+	pbr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+	pbr->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/sphere/beaten_metal/beatenmetal_albedo"));
+	pbr->setNormal(core->getResourceManager()->load<Texture>("../resources/models/sphere/beaten_metal/beatenmetal_normal"));
+	pbr->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/sphere/beaten_metal/beatenmetal_metallic"));
+	pbr->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/sphere/beaten_metal/beatenmetal_roughness"));
+	pbr->setAo(core->getResourceManager()->load<Texture>("../resources/models/sphere/beaten_metal/beatenmetal_ao"));
+	pbr->setEmissive(core->getResourceManager()->load<Texture>(""));
 
 	// SHADERS
 	//========
-	pbr->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+	pbr->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag2.txt");
 	pbr->setCubemapShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/equirectangular_to_cubemapFrag.txt");
 	pbr->setIrradianceShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/irradianceFrag.txt");
 	pbr->setPrefilterShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/prefilterFrag.txt");
-	pbr->setBRDFShader("../resources/shaders/pbr/brdfVert.txt", "../resources/shaders/pbr/brdfFrag.txt");
+	pbr->setBRDFShader("../resources/shaders/pbr/brdfVert.txt", "../resources/shaders/pbr/brdfFrag2.txt");
 	pbr->setBackgroundShader("../resources/shaders/pbr/backgroundVert.txt", "../resources/shaders/pbr/backgroundFrag.txt");
+
+	pbr->getTransform()->setPosition(vec3(0, 0, -2.5f));
 
 	//// ENTITY & COMPONENTS
 	////====================
@@ -48,13 +50,13 @@ int main()
 
 	// MODEL & TEXTURES
 	//=================
-	pbr2->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
-	pbr2->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
-	pbr2->setNormal(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_normal"));
-	pbr2->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_metallic"));
-	pbr2->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_roughness"));
-	pbr2->setAo(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_ao"));
-	pbr2->setEmissive(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_emissive"));
+	pbr2->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+	pbr2->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/sphere/metal/metal_albedo"));
+	pbr2->setNormal(core->getResourceManager()->load<Texture>("../resources/models/sphere/metal/metal_normal"));
+	pbr2->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/sphere/metal/metal_metallic"));
+	pbr2->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/sphere/metal/metal_roughness"));
+	pbr2->setAo(core->getResourceManager()->load<Texture>("../resources/models/sphere/metal/metal_ao"));
+	pbr2->setEmissive(core->getResourceManager()->load<Texture>(""));
 
 	// SHADERS
 	//========
@@ -65,7 +67,33 @@ int main()
 	pbr2->setBRDFShader("../resources/shaders/pbr/brdfVert.txt", "../resources/shaders/pbr/brdfFrag2.txt");
 	pbr2->setBackgroundShader("../resources/shaders/pbr/backgroundVert.txt", "../resources/shaders/pbr/backgroundFrag.txt");
 
-	pbr2->getTransform()->setPosition(vec3(-1, 0, -2.5f));
+	pbr2->getTransform()->setPosition(vec3(-2, 0, -2.5f));
+
+	//// ENTITY & COMPONENTS
+	////====================
+	std::shared_ptr<Entity> pbrEntity3 = core->addEntity();
+	std::shared_ptr<PBR> pbr3 = pbrEntity3->addComponent<PBR>();
+
+	// MODEL & TEXTURES
+	//=================
+	pbr3->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+	pbr3->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/sphere/tile/tile_albedo"));
+	pbr3->setNormal(core->getResourceManager()->load<Texture>("../resources/models/sphere/tile/tile_normal"));
+	pbr3->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/sphere/tile/tile_metallic"));
+	pbr3->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/sphere/tile/tile_roughness"));
+	pbr3->setAo(core->getResourceManager()->load<Texture>("../resources/models/sphere/tile/tile_ao"));
+	pbr3->setEmissive(core->getResourceManager()->load<Texture>(""));
+
+	// SHADERS
+	//========
+	pbr3->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag2.txt");
+	pbr3->setCubemapShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/equirectangular_to_cubemapFrag.txt");
+	pbr3->setIrradianceShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/irradianceFrag.txt");
+	pbr3->setPrefilterShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/prefilterFrag.txt");
+	pbr3->setBRDFShader("../resources/shaders/pbr/brdfVert.txt", "../resources/shaders/pbr/brdfFrag2.txt");
+	pbr3->setBackgroundShader("../resources/shaders/pbr/backgroundVert.txt", "../resources/shaders/pbr/backgroundFrag.txt");
+
+	pbr3->getTransform()->setPosition(vec3(-4, 0, -2.5f));
 
 	//// STEAM SPHERE
 	////=============
