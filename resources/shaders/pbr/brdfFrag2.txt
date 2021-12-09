@@ -41,23 +41,15 @@ vec3 ImportanceSampleGGX(vec2 _Xi, vec3 _N, float _roughness)
 	return normalize(sampleVec);
 }
 
-float Kelemen(float _NdotV, float _roughness)
+float Neumann(vec3 _N, vec3 _V, vec3 _L)
 {
-	float C = sqrt(2 / PI);
-	float K = _roughness * _roughness * C;
-	float gH = _NdotV * K + (1 - K);
+	float NdotV = max(dot(_N, _V), 0.0);
+	float NdotL = max(dot(_N, _V), 0.0);
 
-	return (gH * gH * _NdotV);
-}
+	float nom = NdotV * NdotL;
+	float denom = max(NdotL, NdotV);
 
-float GeometrySmith(vec3 _N, vec3 _V, vec3 _L, float _roughness)
-{
-    float NdotV = max(dot(_N, _V), 0.0);
-    float NdotL = max(dot(_N, _L), 0.0);
-    float ggx2 = Kelemen(NdotV, _roughness);
-    float ggx1 = Kelemen(NdotL, _roughness);
-
-    return ggx1 * ggx2;
+	return nom / denom;
 }
 
 vec2 IntegrateBRDF(float _NdotV, float _roughness)
@@ -85,7 +77,7 @@ vec2 IntegrateBRDF(float _NdotV, float _roughness)
 
         if (NdotL > 0.0)
         {
-            float G = GeometrySmith(N, V, L, _roughness);
+            float G = Neumann(N, V, L);
             float G_Vis = (G * VdotH) / (NdotH * _NdotV);
             float Fc = pow(1.0 - VdotH, 5.0);
 
