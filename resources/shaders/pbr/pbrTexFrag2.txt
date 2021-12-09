@@ -25,44 +25,37 @@ out vec4 FragColour;
 
 const float PI = 3.14159265359;
 
-float Beckmann(vec3 _N, vec3 _H, float _roughness)
+float DistributionGGX(vec3 _N, vec3 _H, float _roughness)
 {
-	// PART ONE
-	//=========
-	float roughnessSqrd = _roughness * _roughness;
+	float a = _roughness * _roughness;
+	float a2 = a * a;
 	float NdotH = max(dot(_N, _H), 0.0);
-	float NdotHSqrd = NdotH * NdotH;
-	float NdotH4 = NdotHSqrd * NdotHSqrd;
-	float denom = PI * roughnessSqrd * NdotH4;
+	float NdotH2 = NdotH * NdotH;
 
-	float partOne = 1.0 / denom;
+	float nom = a2;
+	float denom = (NdotH2 * (a2 - 1.0) + 1.0);
+	denom = PI * denom * denom;
 
-	// PART TWO
-	//=========
-	float P2Nom = NdotHSqrd - 1.0;
-	float P2denom = roughnessSqrd * NdotHSqrd;
-
-	float partTwo = P2Nom / P2denom;
-
-	// POWER
-	//======
-	float result = partOne * exp(partTwo);
-
-	// RESULT
-	//=======
-	return result;
+	return nom / denom;
 }
 
-float Kelemen(vec3 _N, vec3 _V, vec3 _L, float _roughness)
+float Kelemen(float _NdotV, float _roughness)
 {
 	float C = sqrt(2 / PI);
 	float K = _roughness * _roughness * C;
+	float gH = _NdotV * K + (1 - K);
 
-	float NdotV = max(dot(_N, _V), 0.0);
-	float NdotL = max(dot(_N, _L), 0.0);
-	float gH = NdotV * K + (1 - K);
+	return (gH * gH * _NdotV);
+}
 
-	return (gH * gH * NdotL);
+float GeometrySmith(vec3 _N, vec3 _V, vec3 _L, float _roughness)
+{
+    float NdotV = max(dot(_N, _V), 0.0);
+    float NdotL = max(dot(_N, _L), 0.0);
+    float ggx2 = Kelemen(NdotV, _roughness);
+    float ggx1 = Kelemen(NdotL, _roughness);
+
+    return ggx1 * ggx2;
 }
 
 vec3 fresnelSchlick(float _cosTheta, vec3 _F0)
@@ -122,8 +115,8 @@ void main()
 		vec3 radiance = lightColours[i] * attenuation;
 
 		// Cook-Torrance BRDF
-		float NDF = Beckmann(N, H, roughness);
-		float G = Kelemen(N, V, L, roughness);
+		float NDF = DistributionGGX(N, H, roughness);
+		float G = GeometrySmith(N, V, L, roughness);
 		vec3 F = fresnelSchlick(max(dot(H, V), 0.0), F0);
 
 		vec3 numerator = NDF * G * F;
