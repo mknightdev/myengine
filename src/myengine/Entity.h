@@ -93,6 +93,6 @@ namespace myengine
 
 			bool hasBegun;
 
-			bool destroy;
+			bool destroy = false;
 	};
 }

@@ -168,7 +168,7 @@ namespace myengine
 			// If entities are flagged to destroy, remove them
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
-				if (entities.at(ei)->destroy)
+				if (entities.at(ei)->destroy == true)
 				{
 					entities.erase(entities.begin() + ei);
 					ei--;	// Prevents skipping one that's shuffled to its place

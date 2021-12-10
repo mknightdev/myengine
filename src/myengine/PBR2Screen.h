@@ -9,7 +9,7 @@ namespace myengine
 	struct Mesh;
 	struct Texture;
 
-	struct PBRScreen : Component
+	struct PBR2Screen : Component
 	{
 		/* TODO:
 			(look at 3DGP for reference)
@@ -40,6 +40,7 @@ namespace myengine
 
 		void onInitialize();
 		void onTick(float _deltaTime);
+
 	private:
 		friend struct myengine::Core;
 
