@@ -86,4 +86,30 @@ namespace myengine
 	{
 		return getCore()->getEnvironment()->getDeltaTime();
 	}
+
+	bool Component::intersect(vec2 _mouse, vec4 _rectangle)
+	{
+		if (_mouse.x < _rectangle.x)
+		{
+			return false;
+		}
+
+		if (_mouse.x > _rectangle.x + _rectangle.z)
+		{
+			return false;
+		}
+
+		if (_mouse.y < _rectangle.y)
+		{
+			return false;
+		}
+
+		// W is for vec4 height
+		if (_mouse.y > _rectangle.y + _rectangle.w)
+		{
+			return false;
+		}
+
+		return true;
+	}
 }

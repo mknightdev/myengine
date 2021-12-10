@@ -155,16 +155,6 @@ namespace myengine
 				{
 					keyboard->removeKey(event.key.keysym.sym);
 				}
-				
-				//switch (event.key.keysym.sym)
-				//{
-				//	case SDLK_ESCAPE: 
-				//		std::cout << "Quit program with ESC!" << std::endl;
-				//		running = false;
-				//		SDL_DestroyWindow(window);
-				//		SDL_Quit();
-				//		break;
-				//}
 			}
 
 			environment->tick();
@@ -173,6 +163,16 @@ namespace myengine
 			for (size_t ei = 0; ei < entities.size(); ++ei)
 			{
 				entities.at(ei)->tick(environment->getDeltaTime());
+			}
+
+			// If entities are flagged to destroy, remove them
+			for (size_t ei = 0; ei < entities.size(); ++ei)
+			{
+				if (entities.at(ei)->destroy)
+				{
+					entities.erase(entities.begin() + ei);
+					ei--;	// Prevents skipping one that's shuffled to its place
+				}
 			}
 
 			glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
@@ -212,6 +212,28 @@ namespace myengine
 
 		// Stop the engine
 		running = false;
+	}
+
+	/**
+	*  \brief Resets all entities.
+	*
+	*  Resets all entities, deleting them so the new screen can create new ones without
+	*  seeing the old still on screen.
+	*
+	*  \see MenuScreen
+	*  \see PBRScreen
+	*/
+	void Core::clear()
+	{
+		for (int i = 0; i < entities.size(); i++)
+		{
+			//entities.at(i).reset();
+			entities.at(i)->destroy = true;
+		}
+
+		//entities.clear();
+
+		//entities.at(i)->destroy = true
 	}
 
 	/**

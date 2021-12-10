@@ -92,5 +92,7 @@ namespace myengine
 			void display();
 
 			bool hasBegun;
+
+			bool destroy;
 	};
 }

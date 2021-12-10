@@ -30,6 +30,10 @@ namespace myengine
 		void start();
 		void stop();
 
+		// Add clear function
+		// Add get entities function
+		void clear();
+
 		std::shared_ptr<Entity> addEntity();
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Mouse> getMouse();

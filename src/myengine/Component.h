@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <SDL2/SDL.h>
+#include "mymath.h"
 
 namespace myengine
 {
@@ -22,6 +23,8 @@ namespace myengine
 		virtual void onInitialize();
 		virtual void onDisplay();
 		virtual void onTick(float _deltaTime);
+
+		bool intersect(vec2 _mouse, vec4 _rectangle);
 
 	private:
 		friend struct myengine::Entity;

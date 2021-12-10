@@ -1,3 +1,5 @@
+//#include "Enemy.h"
+
 #include <myengine/myengine.h>
 #include <myrenderer/myrenderer.h>
 
@@ -13,7 +15,7 @@ void rowOne(std::shared_ptr<Core> _core)
 	std::shared_ptr<PBR> pbr = pbrEntity->addComponent<PBR>();
 
 	// BEATEN METAL SPHERE
-	//=================
+	//====================
 	pbr->setMesh(_core->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
 	pbr->setAlbedo(_core->getResourceManager()->load<Texture>("../resources/models/sphere/beaten_metal/beatenmetal_albedo"));
 	pbr->setNormal(_core->getResourceManager()->load<Texture>("../resources/models/sphere/beaten_metal/beatenmetal_normal"));
@@ -39,7 +41,7 @@ void rowOne(std::shared_ptr<Core> _core)
 	std::shared_ptr<PBR> pbr2 = pbrEntity2->addComponent<PBR>();
 
 	// METAL SPHERE
-	//=================
+	//=============
 	pbr2->setMesh(_core->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
 	pbr2->setAlbedo(_core->getResourceManager()->load<Texture>("../resources/models/sphere/metal/metal_albedo"));
 	pbr2->setNormal(_core->getResourceManager()->load<Texture>("../resources/models/sphere/metal/metal_normal"));
@@ -65,7 +67,7 @@ void rowOne(std::shared_ptr<Core> _core)
 	std::shared_ptr<PBR> pbr3 = pbrEntity3->addComponent<PBR>();
 
 	// BRICK SPHERE
-	//=================
+	//=============
 	pbr3->setMesh(_core->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
 	pbr3->setAlbedo(_core->getResourceManager()->load<Texture>("../resources/models/sphere/brick/brick_albedo"));
 	pbr3->setNormal(_core->getResourceManager()->load<Texture>("../resources/models/sphere/brick/brick_normal"));
@@ -91,7 +93,7 @@ void rowOne(std::shared_ptr<Core> _core)
 	std::shared_ptr<PBR> pbr4 = pbrEntity4->addComponent<PBR>();
 
 	// LAVA SPHERE
-	//=================
+	//============
 	pbr4->setMesh(_core->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
 	pbr4->setAlbedo(_core->getResourceManager()->load<Texture>("../resources/models/sphere/lava/lava_albedo"));
 	pbr4->setNormal(_core->getResourceManager()->load<Texture>("../resources/models/sphere/lava/lava_normal"));
@@ -223,45 +225,15 @@ int main()
 {
 	std::shared_ptr<Core> core = Core::initialize();
 
-	rowOne(core);
-	rowTwo(core);
+	std::shared_ptr<Entity> pbrEntity = core->addEntity();
+	std::shared_ptr<PBRScreen> pbrScreen = pbrEntity->addComponent<PBRScreen>();
 
-	//std::shared_ptr<Entity> entity = core->addEntity();
-	//std::shared_ptr<MeshRenderer> mr = entity->addComponent<MeshRenderer>();
-	//mr->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/grenade/grenade"));
-	////// texture
-	//mr->setTexture(core->getResourceManager()->load<Texture>("../resources/models/grenade/grenade_albedo"));
-	//// shader
-	//mr->setShader("../resources/shaders/pbrTexVert.txt", "../resources/shaders/pbrTexFrag.txt");
+	//std::shared_ptr<Entity> ee = core->addEntity();
+	//std::shared_ptr<Enemy> ec = ee->addComponent<Enemy>();
 
-
-	//// STEAM SPHERE
-	////=============
-	//std::shared_ptr<Entity> pbrEntity2 = core->addEntity();
-	//std::shared_ptr<PBR> pbr2 = pbrEntity2->addComponent<PBR>();
-
-	//// MODEL & TEXTURES
-	////=================
-	//pbr2->setMesh(core->getResourceManager()->load<Mesh>("../resources/models/pbrsphere/pbrsphere"));
-	//pbr2->setAlbedo(core->getResourceManager()->load<Texture>("../resources/models/pbrsphere/pbrsphere_albedo"));
-	//pbr2->setNormal(core->getResourceManager()->load<Texture>("../resources/models/pbrsphere/pbrsphere_normal"));
-	//pbr2->setMetallic(core->getResourceManager()->load<Texture>("../resources/models/pbrsphere/pbrsphere_metallic"));
-	//pbr2->setRoughness(core->getResourceManager()->load<Texture>("../resources/models/pbrsphere/pbrsphere_roughness"));
-	//pbr2->setAo(core->getResourceManager()->load<Texture>("../resources/models/pbrsphere/pbrsphere_ao"));
-	//pbr2->setEmissive(core->getResourceManager()->load<Texture>(""));
-
-	//// SHADERS
-	////========
-	//pbr2->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag2.txt");
-	//pbr2->setCubemapShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/equirectangular_to_cubemapFrag.txt");
-	//pbr2->setIrradianceShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/irradianceFrag.txt");
-	//pbr2->setPrefilterShader("../resources/shaders/pbr/cubemapVert.txt", "../resources/shaders/pbr/prefilterFrag.txt");
-	//pbr2->setBRDFShader("../resources/shaders/pbr/brdfVert.txt", "../resources/shaders/pbr/brdfFrag.txt");
-	//pbr2->setBackgroundShader("../resources/shaders/pbr/backgroundVert.txt", "../resources/shaders/pbr/backgroundFrag.txt");
-
-	//pbr2->getTransform()->setPosition(vec3(-1, 0, -2.5f));
-
-	//std::shared_ptr<AudioClip> s = core->getResourceManager()->load<AudioClip>("doorbell");
+	// PBR stuff 
+	//rowOne(core);
+	//rowTwo(core);
 
 	// TODO
 	// Create an engine texture that creates a myrenderer::Texture simiilar to Mesh
@@ -273,3 +245,5 @@ int main()
 
 	return 0;
 }
+
+
