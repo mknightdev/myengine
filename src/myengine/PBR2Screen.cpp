@@ -129,9 +129,9 @@ namespace myengine
 	{
 		//std::cout << "PBR2Screen TICK" << std::endl;
 
-		if (getKeyboard()->getKeyDown(SDLK_2))
+		if (getKeyboard()->getKeyDown(SDLK_LEFT))
 		{
-			std::cout << "1 has been pressed" << std::endl;
+			std::cout << "Press RIGHT ARROW to return to previous screen" << std::endl;
 
 			// Clear the entiies ready for new screen
 			getCore()->clear();

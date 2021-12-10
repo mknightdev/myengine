@@ -20,11 +20,6 @@ namespace myengine
 		// Load icons and models
 		std::cout << "PBRScreen Initialised" << std::endl;
 
-		// Load GUI
-
-
-
-
 		// ENTITY & COMPONENTS
 		//====================
 		sphereOne = getCore()->addEntity();
@@ -134,9 +129,9 @@ namespace myengine
 	{
 		//std::cout << "PBRScreen TICK" << std::endl;
 
-		if (getKeyboard()->getKeyDown(SDLK_1))
+		if (getKeyboard()->getKeyDown(SDLK_RIGHT))
 		{
-			std::cout << "1 has been pressed" << std::endl;
+			std::cout << "Press LEFT ARROW to return to previous screen" << std::endl;
 
 			// Clear the entiies ready for new screen
 			getCore()->clear();
