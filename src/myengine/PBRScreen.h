@@ -39,7 +39,7 @@ namespace myengine
 		*/
 
 		void onInitialize();
-		void onTick(float _deltaTime);
+		void onTick(float _deltaTime); 
 	private:
 		friend struct myengine::Core;
 

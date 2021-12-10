@@ -15,11 +15,6 @@
 
 namespace myengine
 {
-	bool intersect(vec2 _mouse, vec4 _rectangle)
-	{
-
-	}
-
 	void PBRScreen::onInitialize()
 	{
 		// Load icons and models
