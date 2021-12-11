@@ -17,26 +17,15 @@ namespace myengine
 
 		void mouseUpdate();
 
-		void renderCube();
-		void renderQuad();
-		void renderSphere();
-
 		void setMesh(std::shared_ptr<Mesh> _mesh);
 
-		void setAlbedo(std::shared_ptr<Texture> _albedo);
-		void setNormal(std::shared_ptr<Texture> _normal);
-		void setMetallic(std::shared_ptr<Texture> _metallic);
-		void setRoughness(std::shared_ptr<Texture> _roughness);
-		void setAo(std::shared_ptr<Texture> _ao);
-		void setEmissive(std::shared_ptr<Texture> _emissive);
+		void setAlbedo(vec3 _albedo);
+		void setMetallic(float _metallic);
+		void setRoughness(float _roughness);
+		void setAo(float _ao);
 
 		// Load shader functions
 		void setShader(const GLchar* _vert, const GLchar* _frag);
-		void setCubemapShader(const GLchar* _vert, const GLchar* _frag);
-		void setIrradianceShader(const GLchar* _vert, const GLchar* _frag);
-		void setPrefilterShader(const GLchar* _vert, const GLchar* _frag);
-		void setBRDFShader(const GLchar* _vert, const GLchar* _frag);
-		void setBackgroundShader(const GLchar* _vert, const GLchar* _frag);
 
 	private:
 		friend struct myengine::Core;
@@ -112,30 +101,6 @@ namespace myengine
 		std::shared_ptr<myrenderer::Texture> roughnessMap;
 		std::shared_ptr<myrenderer::Texture> aoMap;
 		std::shared_ptr<myrenderer::Texture> emissiveMap;
-
-		// PBR
-		unsigned int envCubeMap;
-		unsigned int irradianceMap;
-		unsigned int prefilterMap;
-		unsigned int brdfLUTTexture;
-
-		mat4 captureProjection;
-		unsigned int hdrTexture;
-		unsigned int captureFBO;
-		unsigned int captureRBO;
-
-		mat4 projection;
-	
-
-		mat4 captureViews[6] =
-		{
-			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)),
-			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(-1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)),
-			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f,  0.0f,  1.0f)),
-			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f,  0.0f, -1.0f)),
-			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  0.0f,  1.0f), glm::vec3(0.0f, -1.0f,  0.0f)),
-			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  0.0f, -1.0f), glm::vec3(0.0f, -1.0f,  0.0f))
-		};
 
 		vec3 pointLightPositions[4] = {
 			vec3(-2.5f,  2.5f,  2.5f),
