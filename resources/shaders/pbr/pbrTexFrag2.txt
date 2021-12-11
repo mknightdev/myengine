@@ -27,12 +27,14 @@ const float PI = 3.14159265359;
 
 float BlinnPhong(vec3 _N, vec3 _H, float _roughness)
 {
+	// PREREQUISITES
+	//==============
 	float NdotH = max(dot(_N, _H), 0.0);
-	float roughnessSqrd = _roughness * _roughness;
-	float finalRoughness = roughnessSqrd * roughnessSqrd;
+	float alpha = _roughness * _roughness;
+	float alphaSqrd = alpha * alpha;
 	
-	float partOne = 1 / (PI * finalRoughness);
-	float partTwo = pow(NdotH, (2 / finalRoughness) - 2);
+	float partOne = 1 / (PI * alphaSqrd);
+	float partTwo = max(pow(NdotH, (2 / alphaSqrd) - 2), 0.0);
 	
 	return partOne * partTwo;
 }
@@ -48,30 +50,68 @@ vec3 fresnelSchlickRoughness(float _cosTheta, vec3 _F0, float _roughness)
     return _F0 + (max(vec3(1.0 - _roughness), _F0) - _F0) * pow(clamp(1.0 - _cosTheta, 0.0, 1.0), 5.0);
 } 
 
-float GGXGSF(float _NdotV, float _roughness)
+float GeometryBeckmann(float _NdotV, float _roughness)
 {
-	// NOMINATOR
+	// PREREQUISITES
+	//==============
+	float alpha = _roughness * _roughness;
+	float NdotVSqrd = _NdotV * _NdotV;
+
+	// NUMERATOR
 	//==========
-	float nom = 2 * _NdotV;
-	
+	float num = NdotVSqrd;
+
 	// DENOMINATOR
 	//============
-	float roughnessSqrd = _roughness * _roughness;
-	float rootResult = sqrt(roughnessSqrd + (1 - roughnessSqrd) * (_NdotV * _NdotV));
+	float sqrtVal = 1.0 - NdotVSqrd;
+	float denom = alpha * sqrtVal;
 
-	float denom = _NdotV + rootResult;
+	float C = NdotVSqrd / denom;
 
-	return nom / denom;
+	// 1.6 CHECK
+	if (C < 1.6)
+	{
+		// NUMERATOR #2
+		//=============
+		float numP1 = 3.535 * C;
+		float numP2 = 2.181 * C;
+		float numP2Sqrd = numP2 * numP2;
+		float finalNum = numP1 + numP2Sqrd;
+
+		// DENOMINATOR #2
+		//===============
+		float denomP1 = 1.0 + 2.276 * C;
+		float denomP2 = 2.577 * C;
+		float denomP2Sqrd = denomP2 * denomP2;
+		float finalDenom = denomP1 + denomP2Sqrd;
+
+		return finalNum / finalDenom;
+	}
+	else if (C >= 1.6)
+	{
+		return 1.0;
+	}
+
+	return 0.0;
 }
 
-float GeometrySmith(vec3 _N, vec3 _V, vec3 _L, float _roughness)
+// Smith breaks the GGX down into two parts; lightDir and viewDir.
+// They both execute the same equations.
+float GeometrySmith(vec3 _normVec, vec3 _viewDir, vec3 _lightDir, float _roughness)
 {
-    float NdotV = max(dot(_N, _V), 0.0);
-    float NdotL = max(dot(_N, _L), 0.0);
-    float ggx2 = GGXGSF(NdotV, _roughness);
-    float ggx1 = GGXGSF(NdotL, _roughness);
+	// PART ONE
+	//=========
+    float NdotL = max(dot(_normVec, _lightDir), 0.0);
+	float ggxPartOne = GeometryBeckmann(NdotL, _roughness);
 
-    return ggx1 * ggx2;
+	// PART TWO
+	//=========
+	float NdotV = max(dot(_normVec, _viewDir), 0.0);
+    float ggxPartTwo = GeometryBeckmann(NdotV, _roughness);
+	
+	// RESULT
+	//=======
+    return ggxPartOne * ggxPartTwo;
 }
 
 void main()											 
