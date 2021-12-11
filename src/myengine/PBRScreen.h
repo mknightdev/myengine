@@ -42,11 +42,5 @@ namespace myengine
 		void onTick(float _deltaTime);	
 	private:
 		friend struct myengine::Core;
-
-		// store entities needed here
-		std::shared_ptr<Entity> sphereOne;
-		std::shared_ptr<Entity> sphereTwo;
-		std::shared_ptr<Entity> sphereThree;
-		std::shared_ptr<Entity> sphereFour;
 	};
 }

@@ -336,7 +336,8 @@ namespace myengine
 	void PBR::setRoughness(float _roughness)
 	{
 		shader->use();
-		shader->setFloat("roughness", _roughness);
+		shader->setFloat("roughness", clamp(_roughness, 0.05f, 1.0f));	// Roughness of 0.0 looks off with direct lights
+
 	}
 
 	void PBR::setAo(float _ao)

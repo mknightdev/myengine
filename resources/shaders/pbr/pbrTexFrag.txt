@@ -17,11 +17,6 @@ in vec3 v_WorldPos;
 in vec2 v_TexCoord;
 in vec3 v_Normal;
 
-// IBL
-uniform samplerCube irradianceMap;
-uniform samplerCube prefilterMap;
-uniform sampler2D brdfLUT;
-
 uniform vec3 lightPositions[4];
 uniform vec3 lightColours[4];
 uniform vec3 camPos;

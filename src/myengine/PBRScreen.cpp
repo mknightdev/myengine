@@ -22,42 +22,136 @@ namespace myengine
 
 		// ENTITY & COMPONENTS
 		//====================
-		sphereOne = getCore()->addEntity();
+		std::shared_ptr<Entity> sphereOne = getCore()->addEntity();
 		std::shared_ptr<PBR> pbr = sphereOne->addComponent<PBR>();
 
 		// BEATEN METAL SPHERE
 		//====================
 		pbr->setMesh(getCore()->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
-		
-		// SHADERS
-		//========
-		pbr->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbrFrag.txt");
+		pbr->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
 
 		// MATERIAL VALUE
 		//===============
 		pbr->setAlbedo(vec3(1.0f, 0.0f, 0.0f));
-		pbr->setMetallic(1.0f);
-		pbr->setRoughness(0.1f);
+		pbr->setMetallic(0.5f);
+		pbr->setRoughness(0.0f);
 		pbr->setAo(1.0f);
 
-
-
 		pbr->getTransform()->setPosition(vec3(0, 0, -2.5f));
+
+		// ENTITY & COMPONENTS
+		//====================
+		std::shared_ptr<Entity> sphereTwo = getCore()->addEntity();
+		std::shared_ptr<PBR> pbr2 = sphereTwo->addComponent<PBR>();
+
+		// SECOND SPHERE
+		//====================
+		pbr2->setMesh(getCore()->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+		pbr2->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+
+		// MATERIAL VALUE
+		//===============
+		pbr2->setAlbedo(vec3(1.0f, 0.0f, 0.0f));
+		pbr2->setMetallic(1.0f);
+		pbr2->setRoughness(0.0f);
+		pbr2->setAo(1.0f);
+
+		pbr2->getTransform()->setPosition(vec3(2, 0, -2.5f));
+
+		// ENTITY & COMPONENTS
+		//====================
+		std::shared_ptr<Entity> sphereThree = getCore()->addEntity();
+		std::shared_ptr<PBR> pbr3 = sphereThree->addComponent<PBR>();
+
+		// SECOND SPHERE
+		//====================
+		pbr3->setMesh(getCore()->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+		pbr3->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+
+		// MATERIAL VALUE
+		//===============
+		pbr3->setAlbedo(vec3(1.0f, 0.0f, 0.0f));
+		pbr3->setMetallic(0.25f);
+		pbr3->setRoughness(0.0f);
+		pbr3->setAo(1.0f);
+
+		pbr3->getTransform()->setPosition(vec3(-2, 0, -2.5f));
+
+		//===========
+		// SECOND ROW
+		//===========
+
+		// ENTITY & COMPONENTS
+		//====================
+		std::shared_ptr<Entity> sphereFour = getCore()->addEntity();
+		std::shared_ptr<PBR> pbr4 = sphereFour->addComponent<PBR>();
+
+		// BEATEN METAL SPHERE
+		//====================
+		pbr4->setMesh(getCore()->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+		pbr4->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+
+		// MATERIAL VALUE
+		//===============
+		pbr4->setAlbedo(vec3(1.0f, 0.0f, 0.0f));
+		pbr4->setMetallic(0.0f);
+		pbr4->setRoughness(0.5f);
+		pbr4->setAo(1.0f);
+
+		pbr4->getTransform()->setPosition(vec3(0, 2, -2.5f));
+
+		// ENTITY & COMPONENTS
+		//====================
+		std::shared_ptr<Entity> sphereFive = getCore()->addEntity();
+		std::shared_ptr<PBR> pbr5 = sphereFive->addComponent<PBR>();
+
+		// SECOND SPHERE
+		//====================
+		pbr5->setMesh(getCore()->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+		pbr5->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+
+		// MATERIAL VALUE
+		//===============
+		pbr5->setAlbedo(vec3(1.0f, 0.0f, 0.0f));
+		pbr5->setMetallic(0.0f);
+		pbr5->setRoughness(1.0f);
+		pbr5->setAo(1.0f);
+
+		pbr5->getTransform()->setPosition(vec3(2, 2, -2.5f));
+
+		// ENTITY & COMPONENTS
+		//====================
+		std::shared_ptr<Entity> sphereSix = getCore()->addEntity();
+		std::shared_ptr<PBR> pbr6 = sphereSix->addComponent<PBR>();
+
+		// SECOND SPHERE
+		//====================
+		pbr6->setMesh(getCore()->getResourceManager()->load<Mesh>("../resources/models/sphere/sphere"));
+		pbr6->setShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
+
+		// MATERIAL VALUE
+		//===============
+		pbr6->setAlbedo(vec3(1.0f, 0.0f, 0.0f));
+		pbr6->setMetallic(0.0f);
+		pbr6->setRoughness(0.25f);
+		pbr6->setAo(1.0f);
+
+		pbr6->getTransform()->setPosition(vec3(-2, 2, -2.5f));
 	}
 
 	void PBRScreen::onTick(float _deltaTime)
 	{
-		////std::cout << "PBRScreen TICK" << std::endl;
+		//std::cout << "PBRScreen TICK" << std::endl;
 
-		//if (getKeyboard()->getKeyDown(SDLK_RIGHT))
-		//{
-		//	std::cout << "Press LEFT ARROW to return to previous screen" << std::endl;
+		if (getKeyboard()->getKeyDown(SDLK_RIGHT))
+		{
+			std::cout << "Press LEFT ARROW to return to previous screen" << std::endl;
 
-		//	// Clear the entiies ready for new screen
-		//	getCore()->clear();
+			// Clear the entiies ready for new screen
+			getCore()->clear();
 
-		//	std::shared_ptr<Entity> pbrEntity2 = getCore()->addEntity();
-		//	std::shared_ptr<PBR2Screen> pbrScreen2 = pbrEntity2->addComponent<PBR2Screen>();
-		//}
+			std::shared_ptr<Entity> pbrEntity2 = getCore()->addEntity();
+			std::shared_ptr<PBR2Screen> pbrScreen2 = pbrEntity2->addComponent<PBR2Screen>();
+		}
 	}
 }
