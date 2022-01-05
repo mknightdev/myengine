@@ -100,6 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f1818b9d6fbf66e8c3b246fa1f2d965"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965">stop</a> ()</td></tr>
 <tr class="memdesc:a4f1818b9d6fbf66e8c3b246fa1f2d965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the engine.  <a href="structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965">More...</a><br /></td></tr>
 <tr class="separator:a4f1818b9d6fbf66e8c3b246fa1f2d965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28babe54255a2cfe4b8b642b9a889be9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a28babe54255a2cfe4b8b642b9a889be9">clear</a> ()</td></tr>
+<tr class="memdesc:a28babe54255a2cfe4b8b642b9a889be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all entities.  <a href="structmyengine_1_1_core.html#a28babe54255a2cfe4b8b642b9a889be9">More...</a><br /></td></tr>
+<tr class="separator:a28babe54255a2cfe4b8b642b9a889be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf2eea4d6b0d3788761ea11f34c4981d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#abf2eea4d6b0d3788761ea11f34c4981d">addEntity</a> ()</td></tr>
 <tr class="memdesc:abf2eea4d6b0d3788761ea11f34c4981d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an entity.  <a href="structmyengine_1_1_core.html#abf2eea4d6b0d3788761ea11f34c4981d">More...</a><br /></td></tr>
 <tr class="separator:abf2eea4d6b0d3788761ea11f34c4981d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +172,29 @@ Private Attributes</h2></td></tr>
 
 <p>Adds an entity. </p>
 <p >Adds an entity to the game engine. Components can then be attached to these entities. Adds a transform component on creation. </p>
+
+</div>
+</div>
+<a id="a28babe54255a2cfe4b8b642b9a889be9" name="a28babe54255a2cfe4b8b642b9a889be9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28babe54255a2cfe4b8b642b9a889be9">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::Core::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets all entities. </p>
+<p >Resets all entities, deleting them so the new screen can create new ones without seeing the old still on screen.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_menu_screen.html">MenuScreen</a> </dd>
+<dd>
+<a class="el" href="structmyengine_1_1_p_b_r_screen.html">PBRScreen</a> </dd></dl>
 
 </div>
 </div>

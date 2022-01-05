@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classmyengine_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Unable to get component&quot;</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">throw</span> <a class="code hl_struct" href="structmyengine_1_1_exception.html">Exception</a>(<span class="stringliteral">&quot;Unable to get component&quot;</span>);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
@@ -130,9 +130,12 @@ $(function() {
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">tick</a>(<span class="keywordtype">float</span> _deltaTime);</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_entity.html#a314cad9c9602f79c668048ec7e544d44">display</a>();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    };</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
-<div class="ttc" id="aclassmyengine_1_1_exception_html"><div class="ttname"><a href="classmyengine_1_1_exception.html">myengine::Exception</a></div><div class="ttdef"><b>Definition:</b> Exception.h:10</div></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordtype">bool</span> hasBegun;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordtype">bool</span> destroy = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    };</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
 <div class="ttc" id="astructmyengine_1_1_core_html"><div class="ttname"><a href="structmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdoc">This is the brief description.</div><div class="ttdef"><b>Definition:</b> Core.h:23</div></div>
 <div class="ttc" id="astructmyengine_1_1_entity_html"><div class="ttname"><a href="structmyengine_1_1_entity.html">myengine::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:14</div></div>
 <div class="ttc" id="astructmyengine_1_1_entity_html_a0e7865f377dc9e18118979eec3b3e1d8"><div class="ttname"><a href="structmyengine_1_1_entity.html#a0e7865f377dc9e18118979eec3b3e1d8">myengine::Entity::core</a></div><div class="ttdeci">std::weak_ptr&lt; Core &gt; core</div><div class="ttdef"><b>Definition:</b> Entity.h:84</div></div>
@@ -144,6 +147,7 @@ $(function() {
 <div class="ttc" id="astructmyengine_1_1_entity_html_a931cb57377c5b43b8d4e02b32892a5dc"><div class="ttname"><a href="structmyengine_1_1_entity.html#a931cb57377c5b43b8d4e02b32892a5dc">myengine::Entity::getTransform</a></div><div class="ttdeci">std::shared_ptr&lt; Transform &gt; getTransform()</div><div class="ttdef"><b>Definition:</b> Entity.cpp:52</div></div>
 <div class="ttc" id="astructmyengine_1_1_entity_html_aab2ab90c99210d74da41e50eb2c5fc27"><div class="ttname"><a href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">myengine::Entity::tick</a></div><div class="ttdeci">void tick(float _deltaTime)</div><div class="ttdoc">Updating the entity.</div><div class="ttdef"><b>Definition:</b> Entity.cpp:39</div></div>
 <div class="ttc" id="astructmyengine_1_1_entity_html_aac560a409ce099393a59b7fb8435980d"><div class="ttname"><a href="structmyengine_1_1_entity.html#aac560a409ce099393a59b7fb8435980d">myengine::Entity::transform</a></div><div class="ttdeci">std::weak_ptr&lt; Transform &gt; transform</div><div class="ttdef"><b>Definition:</b> Entity.h:89</div></div>
+<div class="ttc" id="astructmyengine_1_1_exception_html"><div class="ttname"><a href="structmyengine_1_1_exception.html">myengine::Exception</a></div><div class="ttdef"><b>Definition:</b> Exception.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

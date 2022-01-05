@@ -126,16 +126,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">deltaTime</a> ()</td></tr>
 <tr class="memdesc:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the deltaTime.  <a href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">More...</a><br /></td></tr>
 <tr class="separator:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a5964bf923abb26b889336fa3c12639f2" name="a5964bf923abb26b889336fa3c12639f2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (vec2 _mouse, vec4 _rectangle)</td></tr>
+<tr class="separator:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a43de62afae30f76d6a9d4d4ad10dc5f6"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="structmyengine_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#a43de62afae30f76d6a9d4d4ad10dc5f6">core</a></td></tr>
 <tr class="separator:a43de62afae30f76d6a9d4d4ad10dc5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa552729c2222f61a357db0957ab36020"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_shader_program.html">myrenderer::ShaderProgram</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#aa552729c2222f61a357db0957ab36020">shader</a></td></tr>
-<tr class="memdesc:aa552729c2222f61a357db0957ab36020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shader to create and use.  <a href="structmyengine_1_1_model_renderer.html#aa552729c2222f61a357db0957ab36020">More...</a><br /></td></tr>
+<tr class="memdesc:aa552729c2222f61a357db0957ab36020"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structmyengine_1_1_shader.html">Shader</a> to create and use.  <a href="structmyengine_1_1_model_renderer.html#aa552729c2222f61a357db0957ab36020">More...</a><br /></td></tr>
 <tr class="separator:aa552729c2222f61a357db0957ab36020"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06f519727c6b5e49a7b023e5b6d6f7da"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_shader_program.html">myrenderer::ShaderProgram</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#a06f519727c6b5e49a7b023e5b6d6f7da">lightShader</a></td></tr>
-<tr class="memdesc:a06f519727c6b5e49a7b023e5b6d6f7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shader to create and use.  <a href="structmyengine_1_1_model_renderer.html#a06f519727c6b5e49a7b023e5b6d6f7da">More...</a><br /></td></tr>
+<tr class="memdesc:a06f519727c6b5e49a7b023e5b6d6f7da"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structmyengine_1_1_shader.html">Shader</a> to create and use.  <a href="structmyengine_1_1_model_renderer.html#a06f519727c6b5e49a7b023e5b6d6f7da">More...</a><br /></td></tr>
 <tr class="separator:a06f519727c6b5e49a7b023e5b6d6f7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a294c1c24c268fbc2601d9eeda8c0e372"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_vertex_array.html">myrenderer::VertexArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#a294c1c24c268fbc2601d9eeda8c0e372">vao</a></td></tr>
 <tr class="memdesc:a294c1c24c268fbc2601d9eeda8c0e372"><td class="mdescLeft">&#160;</td><td class="mdescRight">The VAO to load the model with.  <a href="structmyengine_1_1_model_renderer.html#a294c1c24c268fbc2601d9eeda8c0e372">More...</a><br /></td></tr>
@@ -149,9 +152,26 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aaa3015484e7a295e25b628612fc20d7c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_vertex_buffer.html">myrenderer::VertexBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#aaa3015484e7a295e25b628612fc20d7c">texturesVbo</a></td></tr>
 <tr class="memdesc:aaa3015484e7a295e25b628612fc20d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The textures VBO.  <a href="structmyengine_1_1_model_renderer.html#aaa3015484e7a295e25b628612fc20d7c">More...</a><br /></td></tr>
 <tr class="separator:aaa3015484e7a295e25b628612fc20d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7453c8fe1a45ca979f68d9701e565311"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#a7453c8fe1a45ca979f68d9701e565311">texture</a></td></tr>
-<tr class="memdesc:a7453c8fe1a45ca979f68d9701e565311"><td class="mdescLeft">&#160;</td><td class="mdescRight">The model's texture.  <a href="structmyengine_1_1_model_renderer.html#a7453c8fe1a45ca979f68d9701e565311">More...</a><br /></td></tr>
-<tr class="separator:a7453c8fe1a45ca979f68d9701e565311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a187b5bb97a5f869847445e64cc12263d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#a187b5bb97a5f869847445e64cc12263d">albedoMap</a></td></tr>
+<tr class="memdesc:a187b5bb97a5f869847445e64cc12263d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The model's texture.  <a href="structmyengine_1_1_model_renderer.html#a187b5bb97a5f869847445e64cc12263d">More...</a><br /></td></tr>
+<tr class="separator:a187b5bb97a5f869847445e64cc12263d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced90d5ddfbc95c10dbee66c25cf48cb"><td class="memItemLeft" align="right" valign="top"><a id="aced90d5ddfbc95c10dbee66c25cf48cb" name="aced90d5ddfbc95c10dbee66c25cf48cb"></a>
+std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>normalMap</b></td></tr>
+<tr class="separator:aced90d5ddfbc95c10dbee66c25cf48cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380bd1f155f2a2780672398a3d1e2638"><td class="memItemLeft" align="right" valign="top"><a id="a380bd1f155f2a2780672398a3d1e2638" name="a380bd1f155f2a2780672398a3d1e2638"></a>
+std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>metallicMap</b></td></tr>
+<tr class="separator:a380bd1f155f2a2780672398a3d1e2638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb1386ce2f73cb596fe9a5c14346e9a7"><td class="memItemLeft" align="right" valign="top"><a id="adb1386ce2f73cb596fe9a5c14346e9a7" name="adb1386ce2f73cb596fe9a5c14346e9a7"></a>
+std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>roughnessMap</b></td></tr>
+<tr class="separator:adb1386ce2f73cb596fe9a5c14346e9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb55578debabf844d0ddad874bc7d96e"><td class="memItemLeft" align="right" valign="top"><a id="adb55578debabf844d0ddad874bc7d96e" name="adb55578debabf844d0ddad874bc7d96e"></a>
+std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>aoMap</b></td></tr>
+<tr class="separator:adb55578debabf844d0ddad874bc7d96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f94a50c9d29ec5c8b3d5a368df1b0c7"><td class="memItemLeft" align="right" valign="top"><a id="a0f94a50c9d29ec5c8b3d5a368df1b0c7" name="a0f94a50c9d29ec5c8b3d5a368df1b0c7"></a>
+std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>emissiveMap</b></td></tr>
+<tr class="separator:a0f94a50c9d29ec5c8b3d5a368df1b0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af36533526c262ae3e0d75ca79e409e50"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_model_renderer.html#af36533526c262ae3e0d75ca79e409e50">pointLightPositions</a> [4]</td></tr>
+<tr class="separator:af36533526c262ae3e0d75ca79e409e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -335,6 +355,31 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a187b5bb97a5f869847445e64cc12263d" name="a187b5bb97a5f869847445e64cc12263d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a187b5bb97a5f869847445e64cc12263d">&#9670;&nbsp;</a></span>albedoMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a>&gt; myengine::ModelRenderer::albedoMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The model's texture. </p>
+<p >Stores texture and gets used to bind with the VAO when drawing it. </p>
+
+</div>
+</div>
 <a id="a43de62afae30f76d6a9d4d4ad10dc5f6" name="a43de62afae30f76d6a9d4d4ad10dc5f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43de62afae30f76d6a9d4d4ad10dc5f6">&#9670;&nbsp;</a></span>core</h2>
 
@@ -378,7 +423,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Shader to create and use. </p>
+<p><a class="el" href="structmyengine_1_1_shader.html">Shader</a> to create and use. </p>
 <p >Creates a shader program using the linked paths for the vertex and fragment shaders. </p><dl class="section attention"><dt>Attention</dt><dd>This one is used for the light box that is within the scene. </dd></dl>
 
 </div>
@@ -406,6 +451,34 @@ Here is the call graph for this function:</div>
 <p>The VAO for the light. </p>
 <p >Creates a VertexArray object for the light box. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyrenderer_1_1_vertex_array.html">myrenderer::VertexArray</a> </dd></dl>
 
+</div>
+</div>
+<a id="af36533526c262ae3e0d75ca79e409e50" name="af36533526c262ae3e0d75ca79e409e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36533526c262ae3e0d75ca79e409e50">&#9670;&nbsp;</a></span>pointLightPositions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 myengine::ModelRenderer::pointLightPositions[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">            glm::vec3(0.7f,  0.2f,  2.0f),</div>
+<div class="line">            glm::vec3(2.3f, -3.3f, -4.0f),</div>
+<div class="line">            glm::vec3(-4.0f,  2.0f, -12.0f),</div>
+<div class="line">            glm::vec3(0.0f,  0.0f, -3.0f)</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a07918228aba46fa436b27926c7fc45d2" name="a07918228aba46fa436b27926c7fc45d2"></a>
@@ -453,33 +526,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Shader to create and use. </p>
+<p><a class="el" href="structmyengine_1_1_shader.html">Shader</a> to create and use. </p>
 <p >Creates a shader program using the linked paths for the vertex and fragment shaders. </p><dl class="section attention"><dt>Attention</dt><dd>This one is used for the model. </dd></dl>
-
-</div>
-</div>
-<a id="a7453c8fe1a45ca979f68d9701e565311" name="a7453c8fe1a45ca979f68d9701e565311"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7453c8fe1a45ca979f68d9701e565311">&#9670;&nbsp;</a></span>texture</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a>&gt; myengine::ModelRenderer::texture</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The model's texture. </p>
-<p >Stores texture and gets used to bind with the VAO when drawing it. </p>
 
 </div>
 </div>
