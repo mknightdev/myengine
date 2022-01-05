@@ -413,6 +413,11 @@ namespace myengine
 		cameraFront3 = normalize(front);
 	}
 
+	/**
+	* \brief Sets the Mesh
+	* 
+	* Used for defining the mesh to load and stores it.
+	*/
 	void MeshRenderer::setMesh(std::shared_ptr<Mesh> _mesh)
 	{
 		vao = _mesh->vao;
@@ -421,6 +426,11 @@ namespace myengine
 		// whereever vao use _mesh->vao
 	}
 
+	/**
+	* \brief Sets the texture
+	* 
+	* Used for setting the albedo map of the model.
+	*/
 	void MeshRenderer::setTexture(std::shared_ptr<Texture> _texture)
 	{
 		int w, h = 0;

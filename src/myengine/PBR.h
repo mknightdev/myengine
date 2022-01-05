@@ -96,12 +96,47 @@ namespace myengine
 		* Stores texture and gets used to bind with the VAO when drawing it.
 		*/
 		std::shared_ptr<myrenderer::Texture> albedoMap;
+
+		/**
+		* Stores the normal map of the texture.
+		* 
+		* \attention PBR only.
+		*/
 		std::shared_ptr<myrenderer::Texture> normalMap;
+
+		/**
+		* Stores the metallic map of the texture.
+		*
+		* \attention PBR only.
+		*/
 		std::shared_ptr<myrenderer::Texture> metallicMap;
+
+		/**
+		* Stores the roughness map of the texture.
+		*
+		* \attention PBR only.
+		*/
 		std::shared_ptr<myrenderer::Texture> roughnessMap;
+
+		/**
+		* Stores the ao map of the texture.
+		*
+		* \attention PBR only.
+		*/
 		std::shared_ptr<myrenderer::Texture> aoMap;
+
+		/**
+		* Stores the emissive map of the texture.
+		*
+		* \attention PBR only.
+		*/
 		std::shared_ptr<myrenderer::Texture> emissiveMap;
 
+		/**
+		* \brief Positions of Lights
+		* 
+		* Sets the positions of four lights within the scene.
+		*/
 		vec3 pointLightPositions[4] = {
 			vec3(-2.5f,  2.5f,  2.5f),
 			vec3(2.5f, 2.5f, 2.5f),

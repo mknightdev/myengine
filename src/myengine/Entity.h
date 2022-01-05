@@ -88,11 +88,22 @@ namespace myengine
 			*/
 			std::weak_ptr<Transform> transform;
 
-			void tick(float _deltaTime);
+			/**
+			* Used for updating the display of the component.
+			*/
 			void display();
 
-			bool hasBegun;
+			/**
+			* Used for updating the position of the component.
+			*/
+			void tick(float _deltaTime);
 
+			/**
+			* \brief Destroy flag
+			* 
+			* Used to set the destroy flag, ready for the next loop. When set to true, it will delete
+			* the entity, along with any components attached.
+			*/
 			bool destroy = false;
 	};
 }

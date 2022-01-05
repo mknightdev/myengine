@@ -17,12 +17,19 @@ namespace myengine
 		vec3 cameraFront;
 		vec3 cameraUp;
 
+		/**
+		* Used to check if first mouse movement.
+		*/
 		bool firstMouse;
 		float yaw;
 		float pitch;
 		float lastX; 
 		float lastY;
-		float fov; 
+		float fov;
+
+		/**
+		* Determines how fast the Camera moves, i.e., sensitivity.
+		*/
 		float cameraSpeed;
 	};
 }

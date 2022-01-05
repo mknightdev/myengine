@@ -88,8 +88,10 @@ Collaboration diagram for myengine::PBR2Screen:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ec551364dcded0adb868d64594775e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_p_b_r2_screen.html#a9ec551364dcded0adb868d64594775e6">onInitialize</a> ()</td></tr>
+<tr class="memdesc:a9ec551364dcded0adb868d64594775e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the Screen.  <a href="structmyengine_1_1_p_b_r2_screen.html#a9ec551364dcded0adb868d64594775e6">More...</a><br /></td></tr>
 <tr class="separator:a9ec551364dcded0adb868d64594775e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af516398eee87a41129a2995677c443e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1">onTick</a> (float _deltaTime)</td></tr>
+<tr class="memdesc:af516398eee87a41129a2995677c443e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates Screen.  <a href="structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1">More...</a><br /></td></tr>
 <tr class="separator:af516398eee87a41129a2995677c443e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmyengine_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmyengine_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a></td></tr>
 <tr class="memitem:a2b80c2d91dac8f429f6b6f6305d7c5be inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be">getCore</a> ()</td></tr>
@@ -161,7 +163,26 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::Core</b><
 </table>
 </div><div class="memdoc">
 
+<p>Initialises the Screen. </p>
+<p >Sets all of the textures and shaders to display within the screen.</p>
+<dl class="section see"><dt>See also</dt><dd>PBR::setShader </dd>
+<dd>
+PBR::setMesh </dd>
+<dd>
+PBR::setAlbedo </dd>
+<dd>
+PBR::setMetallic </dd>
+<dd>
+PBR::setRoughness </dd>
+<dd>
+PBR::setAo </dd></dl>
+
 <p>Reimplemented from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_p_b_r2_screen_a9ec551364dcded0adb868d64594775e6_cgraph.png" border="0" usemap="#astructmyengine_1_1_p_b_r2_screen_a9ec551364dcded0adb868d64594775e6_cgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -189,7 +210,16 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::Core</b><
 </table>
 </div><div class="memdoc">
 
+<p>Updates Screen. </p>
+<p >Waits for button press to swap screens. When button is pressed, it flags all entities to be destroyed. Then it creates the new screen and sets it up the same way.</p>
+<dl class="section warning"><dt>Warning</dt><dd>If you spam between the screens, it causes a loop and wil make it become unresponsive. </dd></dl>
+
 <p>Reimplemented from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_p_b_r2_screen_af516398eee87a41129a2995677c443e1_cgraph.png" border="0" usemap="#astructmyengine_1_1_p_b_r2_screen_af516398eee87a41129a2995677c443e1_cgraph" alt=""/></div>
+</div>
 
 </div>
 </div>

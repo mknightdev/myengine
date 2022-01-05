@@ -93,12 +93,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">tick</a> (float _deltaTime)</td></tr>
-<tr class="memdesc:aab2ab90c99210d74da41e50eb2c5fc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updating the entity.  <a href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">More...</a><br /></td></tr>
-<tr class="separator:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a314cad9c9602f79c668048ec7e544d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#a314cad9c9602f79c668048ec7e544d44">display</a> ()</td></tr>
 <tr class="memdesc:a314cad9c9602f79c668048ec7e544d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws OpenGL each loop.  <a href="structmyengine_1_1_entity.html#a314cad9c9602f79c668048ec7e544d44">More...</a><br /></td></tr>
 <tr class="separator:a314cad9c9602f79c668048ec7e544d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">tick</a> (float _deltaTime)</td></tr>
+<tr class="memdesc:aab2ab90c99210d74da41e50eb2c5fc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updating the entity.  <a href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">More...</a><br /></td></tr>
+<tr class="separator:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -110,11 +110,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a0e7865f377dc9e18118979eec3b3e1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac560a409ce099393a59b7fb8435980d"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="structmyengine_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#aac560a409ce099393a59b7fb8435980d">transform</a></td></tr>
 <tr class="separator:aac560a409ce099393a59b7fb8435980d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad279bcc0132482dc8426420d87f40d4e"><td class="memItemLeft" align="right" valign="top"><a id="ad279bcc0132482dc8426420d87f40d4e" name="ad279bcc0132482dc8426420d87f40d4e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasBegun</b></td></tr>
-<tr class="separator:ad279bcc0132482dc8426420d87f40d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2a03f31858f483598630a74711b99f0"><td class="memItemLeft" align="right" valign="top"><a id="ad2a03f31858f483598630a74711b99f0" name="ad2a03f31858f483598630a74711b99f0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>destroy</b> = false</td></tr>
+<tr class="memitem:ad2a03f31858f483598630a74711b99f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#ad2a03f31858f483598630a74711b99f0">destroy</a> = false</td></tr>
+<tr class="memdesc:ad2a03f31858f483598630a74711b99f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy flag.  <a href="structmyengine_1_1_entity.html#ad2a03f31858f483598630a74711b99f0">More...</a><br /></td></tr>
 <tr class="separator:ad2a03f31858f483598630a74711b99f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -179,6 +176,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Draws OpenGL each loop. </p>
+<p >Used for updating the display of the component.</p>
 <p >Calls each display function within the entities in the game engine and updates the OpenGL drawing. </p>
 
 </div>
@@ -278,6 +276,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Updating the entity. </p>
+<p >Used for updating the position of the component.</p>
 <p >The tick function within <a class="el" href="structmyengine_1_1_entity.html">Entity</a> iterates through its components and calls the tick function to update themselves.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -332,6 +331,31 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p >Used for storing the core and navigating up the hierarchy. </p>
+
+</div>
+</div>
+<a id="ad2a03f31858f483598630a74711b99f0" name="ad2a03f31858f483598630a74711b99f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a03f31858f483598630a74711b99f0">&#9670;&nbsp;</a></span>destroy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myengine::Entity::destroy = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy flag. </p>
+<p >Used to set the destroy flag, ready for the next loop. When set to true, it will delete the entity, along with any components attached. </p>
 
 </div>
 </div>

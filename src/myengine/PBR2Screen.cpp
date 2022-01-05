@@ -15,6 +15,19 @@
 
 namespace myengine
 {
+
+	/**
+	* \brief Initialises the Screen.
+	* 
+	* Sets all of the textures and shaders to display within the screen.
+	* 
+	* \see PBR::setShader
+	* \see PBR::setMesh
+	* \see PBR::setAlbedo
+	* \see PBR::setMetallic
+	* \see PBR::setRoughness
+	* \see PBR::setAo
+	*/
 	void PBR2Screen::onInitialize()
 	{
 		// Load icons and models
@@ -109,6 +122,14 @@ namespace myengine
 		pbr6->getTransform()->setPosition(vec3(-2, 2, -2.5f));
 	}
 
+	/**
+	* \brief Updates Screen
+	*
+	* Waits for button press to swap screens. When button is pressed, it flags all entities to be destroyed. 
+	* Then it creates the new screen and sets it up the same way.
+	* 
+	* \warning If you spam between the screens, it causes a loop and wil make it become unresponsive. 
+	*/
 	void PBR2Screen::onTick(float _deltaTime)
 	{
 		//std::cout << "PBRScreen TICK" << std::endl;

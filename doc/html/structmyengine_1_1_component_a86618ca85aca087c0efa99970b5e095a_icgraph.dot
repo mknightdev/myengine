@@ -12,5 +12,9 @@ digraph "myengine::Component::getKeyboard"
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="myengine::PBR::onTick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd",tooltip="The position of the model."];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="myengine::TriangleRenderer\l::onTick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce",tooltip="The position of the triangle."];
+  Node5 [label="myengine::PBR2Screen\l::onTick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1",tooltip="Updates Screen."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="myengine::PBRScreen\l::onTick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_p_b_r_screen.html#ad9af1fafe83d5bb4ae5e1fc37d2bc258",tooltip="Updates Screen."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="myengine::TriangleRenderer\l::onTick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce",tooltip="The position of the triangle."];
 }

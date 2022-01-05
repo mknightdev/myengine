@@ -40,7 +40,15 @@ namespace myengine
 		*/
 		std::weak_ptr<Entity> entity;
 
+
+		/**
+		* Used for updating the display of the component.
+		*/
 		void display();
+
+		/**
+		* Used for updating the position of the component.
+		*/
 		void tick(float _deltaTime);
 	};
 }

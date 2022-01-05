@@ -7,6 +7,7 @@
 
 namespace myengine
 {
+	// Removes the need for 'glm::' within the game engine.
 	using namespace glm;
 }
 

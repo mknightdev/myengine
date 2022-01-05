@@ -88,6 +88,7 @@ Collaboration diagram for myengine::Texture:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2c38a803861af9554ea77335780ca2ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_texture.html#a2c38a803861af9554ea77335780ca2ce">onInitialize</a> ()</td></tr>
+<tr class="memdesc:a2c38a803861af9554ea77335780ca2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the <a class="el" href="structmyengine_1_1_texture.html">Texture</a>.  <a href="structmyengine_1_1_texture.html#a2c38a803861af9554ea77335780ca2ce">More...</a><br /></td></tr>
 <tr class="separator:a2c38a803861af9554ea77335780ca2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmyengine_1_1_resource"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmyengine_1_1_resource')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmyengine_1_1_resource.html">myengine::Resource</a></td></tr>
 <tr class="memitem:a3e5a17a33814abb5d591f51d726c8bb2 inherit pub_methods_structmyengine_1_1_resource"><td class="memItemLeft" align="right" valign="top"><a id="a3e5a17a33814abb5d591f51d726c8bb2" name="a3e5a17a33814abb5d591f51d726c8bb2"></a>
@@ -96,8 +97,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetPath</b> ()
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:abbc91186984f54fec6c022a70237fa46"><td class="memItemLeft" align="right" valign="top"><a id="abbc91186984f54fec6c022a70237fa46" name="abbc91186984f54fec6c022a70237fa46"></a>
-std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>texture</b></td></tr>
+<tr class="memitem:abbc91186984f54fec6c022a70237fa46"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_texture.html#abbc91186984f54fec6c022a70237fa46">texture</a></td></tr>
+<tr class="memdesc:abbc91186984f54fec6c022a70237fa46"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Game Engine version of <a class="el" href="structmyengine_1_1_texture.html">Texture</a>.  <a href="structmyengine_1_1_texture.html#abbc91186984f54fec6c022a70237fa46">More...</a><br /></td></tr>
 <tr class="separator:abbc91186984f54fec6c022a70237fa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -132,9 +133,38 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::PBR</b></
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Initialises the reosurce. </p>
+
+<p>Initialises the <a class="el" href="structmyengine_1_1_texture.html">Texture</a>. </p>
+<p >Initialises the texture by getting the path and adding the .png extension. It does try .jpg if no texture was found.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Will throw an exception if no file with the tried extensions can be found. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="structmyengine_1_1_resource.html#a6507c9fa75972d047cfe589e25d7540c">myengine::Resource</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="abbc91186984f54fec6c022a70237fa46" name="abbc91186984f54fec6c022a70237fa46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc91186984f54fec6c022a70237fa46">&#9670;&nbsp;</a></span>texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a>&gt; myengine::Texture::texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Game Engine version of <a class="el" href="structmyengine_1_1_texture.html">Texture</a>. </p>
+<p >Used for storing the texture. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyrenderer_1_1_texture.html">myrenderer::Texture</a> </dd></dl>
 
 </div>
 </div>

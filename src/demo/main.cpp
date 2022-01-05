@@ -26,12 +26,6 @@ int main()
 	// PBR stuff 
 	//rowTwo(core);
 
-	// TODO
-	// Create an engine texture that creates a myrenderer::Texture simiilar to Mesh
-	// In the initialise function, add .png, .bitmap, .jpeg, etc and try for each
-		// Audio would have .ogg in initiliase
-	// take out "using namespace myrenderer" to avoid conflicts
-
 	core->start();
 
 	return 0;

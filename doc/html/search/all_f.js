@@ -1,6 +1,24 @@
 var searchData=
 [
-  ['vao_0',['vao',['../structmyengine_1_1_mesh_renderer.html#acb4014fd1962b2962c450f94a3cad246',1,'myengine::MeshRenderer::vao()'],['../structmyengine_1_1_model_renderer.html#a294c1c24c268fbc2601d9eeda8c0e372',1,'myengine::ModelRenderer::vao()'],['../structmyengine_1_1_p_b_r.html#a1506f82ba11ce06edb266ff221c13a38',1,'myengine::PBR::vao()']]],
-  ['vertexarray_1',['VertexArray',['../structmyrenderer_1_1_vertex_array.html',1,'myrenderer::VertexArray'],['../structmyrenderer_1_1_vertex_array.html#a22875e53bec3d7de92849ffc855840fe',1,'myrenderer::VertexArray::VertexArray()'],['../structmyrenderer_1_1_vertex_array.html#a46bce470d491ae98b90747b2ccb00155',1,'myrenderer::VertexArray::VertexArray(std::string path)']]],
-  ['vertexbuffer_2',['VertexBuffer',['../structmyrenderer_1_1_vertex_buffer.html',1,'myrenderer']]]
+  ['self_0',['self',['../structmyengine_1_1_core.html#ac267d935fde8226d4fe892ee900e6b39',1,'myengine::Core::self()'],['../structmyengine_1_1_entity.html#a2a632e186f0b9a5a8e73bdaf2e6e5016',1,'myengine::Entity::self()'],['../structmyengine_1_1_environment.html#ae140d337fe5345d46fa3909cb1261623',1,'myengine::Environment::self()'],['../structmyengine_1_1_keyboard.html#a169408e8c2a64c915cbfeaefa8a556f1',1,'myengine::Keyboard::self()'],['../structmyengine_1_1_mouse.html#a08e03c5b8f44e70f6c74d9c4f0201d0c',1,'myengine::Mouse::self()'],['../structmyengine_1_1_resource_manager.html#a4366aa390eed756b5eb98fd80d2edb41',1,'myengine::ResourceManager::self()']]],
+  ['setbuffer_1',['setBuffer',['../structmyrenderer_1_1_vertex_array.html#a550972a5fd2dd934463373042ff3213f',1,'myrenderer::VertexArray']]],
+  ['setmesh_2',['setMesh',['../structmyengine_1_1_mesh_renderer.html#ac43b5012fc4c2a3e8baa66e0b2c88acd',1,'myengine::MeshRenderer']]],
+  ['setposition_3',['setPosition',['../structmyengine_1_1_transform.html#aa24a959503912c076237c3e5da45eaf6',1,'myengine::Transform']]],
+  ['setposition_4',['SetPosition',['../structmyrenderer_1_1_model.html#a4df6768fdc5c550535dac1e8bc15ddb5',1,'myrenderer::Model']]],
+  ['setrotation_5',['setRotation',['../structmyengine_1_1_transform.html#a5a0616d4b2fbfaf3c5b1b6cdd960d5f1',1,'myengine::Transform']]],
+  ['setscale_6',['SetScale',['../structmyrenderer_1_1_model.html#a3dcb24806463914181bace1814d828e5',1,'myrenderer::Model']]],
+  ['setscale_7',['setScale',['../structmyengine_1_1_transform.html#af8fef6625978cbaab5e0e99a38c9bd2c',1,'myengine::Transform']]],
+  ['settexture_8',['setTexture',['../structmyengine_1_1_mesh_renderer.html#a65709531ce9eea114ebc93e247c022bb',1,'myengine::MeshRenderer']]],
+  ['setupaudio_9',['setupAudio',['../structmyengine_1_1_core.html#a6681b43b74bad09d8f1c3873f269d683',1,'myengine::Core']]],
+  ['setupengine_10',['setupEngine',['../structmyengine_1_1_core.html#a0de07d096a6c50a27b851bf7603dfa4d',1,'myengine::Core']]],
+  ['setupgraphics_11',['setupGraphics',['../structmyengine_1_1_core.html#adb232743249b5e8b5a7088af36034ff3',1,'myengine::Core']]],
+  ['setupwindow_12',['setupWindow',['../structmyengine_1_1_core.html#af4cc9a845101aee02c864a86b47ceaf1',1,'myengine::Core']]],
+  ['shader_13',['Shader',['../structmyengine_1_1_shader.html',1,'myengine']]],
+  ['shader_14',['shader',['../structmyengine_1_1_mesh_renderer.html#ad353605ca33dc90fa40223268d93c0fb',1,'myengine::MeshRenderer::shader()'],['../structmyengine_1_1_model_renderer.html#aa552729c2222f61a357db0957ab36020',1,'myengine::ModelRenderer::shader()'],['../structmyengine_1_1_p_b_r.html#a7af0281c5941752263c8a3e69b36f7c3',1,'myengine::PBR::shader()'],['../structmyengine_1_1_shader.html#a31d7052c9a3e3591652d24a22118a6f7',1,'myengine::Shader::shader()']]],
+  ['shaderprogram_15',['ShaderProgram',['../structmyrenderer_1_1_shader_program.html',1,'myrenderer']]],
+  ['soundsource_16',['SoundSource',['../structmyengine_1_1_sound_source.html',1,'myengine']]],
+  ['spherecollider_17',['SphereCollider',['../structmyengine_1_1_sphere_collider.html',1,'myengine']]],
+  ['srcid_18',['srcID',['../structmyengine_1_1_sound_source.html#a3ced97ad59a312bed0bf093571fd54f2',1,'myengine::SoundSource']]],
+  ['start_19',['start',['../structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f',1,'myengine::Core']]],
+  ['stop_20',['stop',['../structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965',1,'myengine::Core']]]
 ];
