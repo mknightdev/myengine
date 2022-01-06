@@ -87,6 +87,11 @@ namespace myengine
 		return getCore()->getEnvironment()->getDeltaTime();
 	}
 
+	/**
+	* \brief Check for Intersect
+	* 
+	* Used to check for when the mouse is hovering over a GUI component and returns True or False.
+	*/
 	bool Component::intersect(vec2 _mouse, vec4 _rectangle)
 	{
 		if (_mouse.x < _rectangle.x)

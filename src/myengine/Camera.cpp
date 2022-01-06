@@ -5,6 +5,11 @@
 
 namespace myengine
 {
+	/**
+	* \brief Initialises the Camera
+	* 
+	* Initialises the Camera to default values.
+	*/
 	void Camera::onInitialize()
 	{
 		firstMouse = true;
@@ -18,6 +23,13 @@ namespace myengine
 
 	void Camera::onDisplay() {}
 
+	/**
+	* \brief Updates Camera Position
+	* 
+	* Updates Camera positions and detects for input to move the Camera around
+	* 
+	* \see mouseUpdate
+	*/
 	void Camera::onTick(float _deltaTime)
 	{
 		cameraSpeed *= _deltaTime;
@@ -45,6 +57,13 @@ namespace myengine
 		mouseUpdate();
 	}
 
+	/**
+	* \brief Updates Mouse Coordinates
+	* 
+	* Updates the Mouse coordinates and is used when moving the Camera around the scene.
+	* 
+	* \see myengine::Mouse
+	*/
 	void Camera::mouseUpdate()
 	{
 		if (firstMouse)

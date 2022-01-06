@@ -114,8 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a01950f2661cfe671eca0907590276a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a718ea40d1168a32bde09df3ad28474d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a718ea40d1168a32bde09df3ad28474d3">onTick</a> (float _deltaTime)</td></tr>
 <tr class="separator:a718ea40d1168a32bde09df3ad28474d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5964bf923abb26b889336fa3c12639f2"><td class="memItemLeft" align="right" valign="top"><a id="a5964bf923abb26b889336fa3c12639f2" name="a5964bf923abb26b889336fa3c12639f2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (vec2 _mouse, vec4 _rectangle)</td></tr>
+<tr class="memitem:a5964bf923abb26b889336fa3c12639f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a5964bf923abb26b889336fa3c12639f2">intersect</a> (vec2 _mouse, vec4 _rectangle)</td></tr>
+<tr class="memdesc:a5964bf923abb26b889336fa3c12639f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for Intersect.  <a href="structmyengine_1_1_component.html#a5964bf923abb26b889336fa3c12639f2">More...</a><br /></td></tr>
 <tr class="separator:a5964bf923abb26b889336fa3c12639f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -416,6 +416,37 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a5964bf923abb26b889336fa3c12639f2" name="a5964bf923abb26b889336fa3c12639f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5964bf923abb26b889336fa3c12639f2">&#9670;&nbsp;</a></span>intersect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myengine::Component::intersect </td>
+          <td>(</td>
+          <td class="paramtype">vec2&#160;</td>
+          <td class="paramname"><em>_mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vec4&#160;</td>
+          <td class="paramname"><em>_rectangle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check for Intersect. </p>
+<p >Used to check for when the mouse is hovering over a GUI component and returns True or False. </p>
+
+</div>
+</div>
 <a id="a01950f2661cfe671eca0907590276a81" name="a01950f2661cfe671eca0907590276a81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01950f2661cfe671eca0907590276a81">&#9670;&nbsp;</a></span>onDisplay()</h2>
 
@@ -466,7 +497,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="structmyengine_1_1_mesh_renderer.html#aa581ecf5fd3d126722794350fb7c5956">myengine::MeshRenderer</a>, <a class="el" href="structmyengine_1_1_model_renderer.html#af2af0e770a911d7f035be882b8a33c11">myengine::ModelRenderer</a>, <a class="el" href="structmyengine_1_1_p_b_r.html#abf17aee1aa9081a19ebfba1592e843f5">myengine::PBR</a>, <a class="el" href="structmyengine_1_1_p_b_r2_screen.html#a9ec551364dcded0adb868d64594775e6">myengine::PBR2Screen</a>, <a class="el" href="structmyengine_1_1_p_b_r_screen.html#a0b32c3e3fd47f1e698b09b5233f15ceb">myengine::PBRScreen</a>, <a class="el" href="structmyengine_1_1_sound_source.html#ab82a6b009d8564e933901c69dad0ca66">myengine::SoundSource</a>, <a class="el" href="structmyengine_1_1_transform.html#a44bdd3859213e937d628cc39e5c58e5c">myengine::Transform</a>, and <a class="el" href="structmyengine_1_1_triangle_renderer.html#a0919716627b438f65f358feaeeb8027b">myengine::TriangleRenderer</a>.</p>
+<p>Reimplemented in <a class="el" href="structmyengine_1_1_camera.html#a7692854db964314009f6a497a6e00445">myengine::Camera</a>, <a class="el" href="structmyengine_1_1_mesh_renderer.html#aa581ecf5fd3d126722794350fb7c5956">myengine::MeshRenderer</a>, <a class="el" href="structmyengine_1_1_model_renderer.html#af2af0e770a911d7f035be882b8a33c11">myengine::ModelRenderer</a>, <a class="el" href="structmyengine_1_1_p_b_r.html#abf17aee1aa9081a19ebfba1592e843f5">myengine::PBR</a>, <a class="el" href="structmyengine_1_1_p_b_r2_screen.html#a9ec551364dcded0adb868d64594775e6">myengine::PBR2Screen</a>, <a class="el" href="structmyengine_1_1_p_b_r_screen.html#a0b32c3e3fd47f1e698b09b5233f15ceb">myengine::PBRScreen</a>, <a class="el" href="structmyengine_1_1_sound_source.html#ab82a6b009d8564e933901c69dad0ca66">myengine::SoundSource</a>, <a class="el" href="structmyengine_1_1_transform.html#a44bdd3859213e937d628cc39e5c58e5c">myengine::Transform</a>, and <a class="el" href="structmyengine_1_1_triangle_renderer.html#a0919716627b438f65f358feaeeb8027b">myengine::TriangleRenderer</a>.</p>
 
 </div>
 </div>
@@ -494,7 +525,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="structmyengine_1_1_mesh_renderer.html#a4ccd9617be008305b9b172d9335573a5">myengine::MeshRenderer</a>, <a class="el" href="structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689">myengine::ModelRenderer</a>, <a class="el" href="structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd">myengine::PBR</a>, <a class="el" href="structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1">myengine::PBR2Screen</a>, <a class="el" href="structmyengine_1_1_p_b_r_screen.html#ad9af1fafe83d5bb4ae5e1fc37d2bc258">myengine::PBRScreen</a>, and <a class="el" href="structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce">myengine::TriangleRenderer</a>.</p>
+<p>Reimplemented in <a class="el" href="structmyengine_1_1_camera.html#ab20ef0c683c1e07b8546a3ddf26f262b">myengine::Camera</a>, <a class="el" href="structmyengine_1_1_mesh_renderer.html#a4ccd9617be008305b9b172d9335573a5">myengine::MeshRenderer</a>, <a class="el" href="structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689">myengine::ModelRenderer</a>, <a class="el" href="structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd">myengine::PBR</a>, <a class="el" href="structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1">myengine::PBR2Screen</a>, <a class="el" href="structmyengine_1_1_p_b_r_screen.html#ad9af1fafe83d5bb4ae5e1fc37d2bc258">myengine::PBRScreen</a>, and <a class="el" href="structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce">myengine::TriangleRenderer</a>.</p>
 
 </div>
 </div>

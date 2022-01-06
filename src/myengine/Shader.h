@@ -14,6 +14,7 @@ namespace myengine
 
 		/**
 		* Used for storing the shader and retrieving its ID.
+		* 
 		* \see myrenderer::ShaderProgram
 		*/
 		std::shared_ptr<myrenderer::ShaderProgram> shader;

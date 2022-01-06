@@ -14,9 +14,10 @@ var searchData=
   ['getmodel_11',['GetModel',['../structmyrenderer_1_1_model.html#a031d49c9b28eb4850aa92498741232ab',1,'myrenderer::Model']]],
   ['getmouse_12',['getMouse',['../structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4',1,'myengine::Component::getMouse()'],['../structmyengine_1_1_core.html#ae999e12cd21353bc5da452da6087cdfb',1,'myengine::Core::getMouse()']]],
   ['getmouseposition_13',['getMousePosition',['../structmyengine_1_1_mouse.html#a5a0e214a7ff97f05d82c398ba189d662',1,'myengine::Mouse']]],
-  ['getresourcemanager_14',['getResourceManager',['../structmyengine_1_1_core.html#afa5b920b9a571b91010b3b4d3926dab2',1,'myengine::Core']]],
-  ['getscale_15',['getScale',['../structmyengine_1_1_transform.html#a20b92b8ac927c04f62dcf42ac40ce393',1,'myengine::Transform']]],
-  ['getsource_16',['GetSource',['../structmyrenderer_1_1_shader_program.html#a0bd1d867c9fccacb67aace31477476cb',1,'myrenderer::ShaderProgram']]],
-  ['gettransform_17',['getTransform',['../structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260',1,'myengine::Component::getTransform()'],['../structmyengine_1_1_entity.html#a931cb57377c5b43b8d4e02b32892a5dc',1,'myengine::Entity::getTransform()']]],
-  ['getvertcount_18',['getVertCount',['../structmyrenderer_1_1_vertex_array.html#a4406b0691eba433cbc11222f897992e4',1,'myrenderer::VertexArray']]]
+  ['getpath_14',['GetPath',['../structmyengine_1_1_resource.html#a3e5a17a33814abb5d591f51d726c8bb2',1,'myengine::Resource']]],
+  ['getresourcemanager_15',['getResourceManager',['../structmyengine_1_1_core.html#afa5b920b9a571b91010b3b4d3926dab2',1,'myengine::Core']]],
+  ['getscale_16',['getScale',['../structmyengine_1_1_transform.html#a20b92b8ac927c04f62dcf42ac40ce393',1,'myengine::Transform']]],
+  ['getsource_17',['GetSource',['../structmyrenderer_1_1_shader_program.html#a0bd1d867c9fccacb67aace31477476cb',1,'myrenderer::ShaderProgram']]],
+  ['gettransform_18',['getTransform',['../structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260',1,'myengine::Component::getTransform()'],['../structmyengine_1_1_entity.html#a931cb57377c5b43b8d4e02b32892a5dc',1,'myengine::Entity::getTransform()']]],
+  ['getvertcount_19',['getVertCount',['../structmyrenderer_1_1_vertex_array.html#a4406b0691eba433cbc11222f897992e4',1,'myrenderer::VertexArray']]]
 ];

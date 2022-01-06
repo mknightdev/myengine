@@ -5,13 +5,16 @@
 namespace myengine
 {
 	/**
-	* Initialises the reosurce.
+	* Initialises the Resource.
 	*/
 	void Resource::onInitialize()
 	{
 		std::cout << "Resource initialised" << std::endl;
 	}
 
+	/**
+	* Returns the path of the Resource
+	*/
 	std::string Resource::GetPath()
 	{
 		return path;

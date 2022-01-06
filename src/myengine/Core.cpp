@@ -227,13 +227,8 @@ namespace myengine
 	{
 		for (int i = 0; i < entities.size(); i++)
 		{
-			//entities.at(i).reset();
 			entities.at(i)->destroy = true;
 		}
-
-		//entities.clear();
-
-		//entities.at(i)->destroy = true
 	}
 
 	/**
