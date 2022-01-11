@@ -309,7 +309,7 @@ namespace myengine
 
 		if (getKeyboard()->getKeyDown(SDLK_f))
 		{
-			getTransform()->Move(vec3(-0.5f, 0, 0) * _deltaTime);
+			getTransform()->Move(vec3(-1.5f, 0, 0) * _deltaTime);
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_h))

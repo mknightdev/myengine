@@ -13,8 +13,6 @@ namespace myengine
 
 		virtual ~Exception() throw() {};
 
-		//const char* what();
-
 		virtual const char* what() const throw()
 		{
 			return message.c_str();

@@ -19,10 +19,12 @@ namespace myengine
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Transform> getTransform();
+		vec3 Component::getPosition();
 		float deltaTime();
 		virtual void onInitialize();
 		virtual void onDisplay();
 		virtual void onTick(float _deltaTime);
+		virtual void onTick();
 
 		bool intersect(vec2 _mouse, vec4 _rectangle);
 
@@ -50,5 +52,8 @@ namespace myengine
 		* Used for updating the position of the component.
 		*/
 		void tick(float _deltaTime);
+
+		
+		void tick();
 	};
 }

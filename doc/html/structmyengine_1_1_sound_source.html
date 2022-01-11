@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="structmyengine_1_1_sound_source-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">myengine::SoundSource Struct Reference</div></div>
@@ -97,9 +98,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab82a6b009d8564e933901c69dad0ca66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#ab82a6b009d8564e933901c69dad0ca66">onInitialize</a> ()</td></tr>
 <tr class="memdesc:ab82a6b009d8564e933901c69dad0ca66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intialises the <a class="el" href="structmyengine_1_1_sound_source.html">SoundSource</a>.  <a href="structmyengine_1_1_sound_source.html#ab82a6b009d8564e933901c69dad0ca66">More...</a><br /></td></tr>
 <tr class="separator:ab82a6b009d8564e933901c69dad0ca66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83079178d10a12d34b43d6c1ed636ef1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a83079178d10a12d34b43d6c1ed636ef1">PlaySound</a> ()</td></tr>
-<tr class="memdesc:a83079178d10a12d34b43d6c1ed636ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the loaded sound.  <a href="structmyengine_1_1_sound_source.html#a83079178d10a12d34b43d6c1ed636ef1">More...</a><br /></td></tr>
-<tr class="separator:a83079178d10a12d34b43d6c1ed636ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a85e1de71e6f7f6668033bd1a8938da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a4a85e1de71e6f7f6668033bd1a8938da">onTick</a> ()</td></tr>
+<tr class="memdesc:a4a85e1de71e6f7f6668033bd1a8938da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the sound each frame.  <a href="structmyengine_1_1_sound_source.html#a4a85e1de71e6f7f6668033bd1a8938da">More...</a><br /></td></tr>
+<tr class="separator:a4a85e1de71e6f7f6668033bd1a8938da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe8126a628dd8886521f41cb2f32301"><td class="memItemLeft" align="right" valign="top"><a id="acbe8126a628dd8886521f41cb2f32301" name="acbe8126a628dd8886521f41cb2f32301"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Play</b> ()</td></tr>
+<tr class="memdesc:acbe8126a628dd8886521f41cb2f32301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the loaded audio. <br /></td></tr>
+<tr class="separator:acbe8126a628dd8886521f41cb2f32301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38c3ef7844915e47d13d094d8f8d0f7"><td class="memItemLeft" align="right" valign="top"><a id="aa38c3ef7844915e47d13d094d8f8d0f7" name="aa38c3ef7844915e47d13d094d8f8d0f7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> ()</td></tr>
+<tr class="memdesc:aa38c3ef7844915e47d13d094d8f8d0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the playing audio. <br /></td></tr>
+<tr class="separator:aa38c3ef7844915e47d13d094d8f8d0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c4622bb75522247967ff4014a7ebc78"><td class="memItemLeft" align="right" valign="top"><a id="a8c4622bb75522247967ff4014a7ebc78" name="a8c4622bb75522247967ff4014a7ebc78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Pause</b> ()</td></tr>
+<tr class="memdesc:a8c4622bb75522247967ff4014a7ebc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the playing audio. <br /></td></tr>
+<tr class="separator:a8c4622bb75522247967ff4014a7ebc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b2246dee3d38554e5519e8dfa3c14a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#ad0b2246dee3d38554e5519e8dfa3c14a">SetVolume</a> (ALfloat _volume)</td></tr>
+<tr class="memdesc:ad0b2246dee3d38554e5519e8dfa3c14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the volume.  <a href="structmyengine_1_1_sound_source.html#ad0b2246dee3d38554e5519e8dfa3c14a">More...</a><br /></td></tr>
+<tr class="separator:ad0b2246dee3d38554e5519e8dfa3c14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef338077076609b83a1db5100731ec6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a0ef338077076609b83a1db5100731ec6">SetPitch</a> (ALfloat _pitch)</td></tr>
+<tr class="memdesc:a0ef338077076609b83a1db5100731ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pitch.  <a href="structmyengine_1_1_sound_source.html#a0ef338077076609b83a1db5100731ec6">More...</a><br /></td></tr>
+<tr class="separator:a0ef338077076609b83a1db5100731ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b79c87362c9270d0139d2357c002e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a97b79c87362c9270d0139d2357c002e8">SetPosition</a> (ALfloat _x, ALfloat _y, ALfloat _z)</td></tr>
+<tr class="memdesc:a97b79c87362c9270d0139d2357c002e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position.  <a href="structmyengine_1_1_sound_source.html#a97b79c87362c9270d0139d2357c002e8">More...</a><br /></td></tr>
+<tr class="separator:a97b79c87362c9270d0139d2357c002e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50064feb1938c27c32ee935d6a651606"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a50064feb1938c27c32ee935d6a651606">SetLooping</a> (bool _state)</td></tr>
+<tr class="memdesc:a50064feb1938c27c32ee935d6a651606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the looping.  <a href="structmyengine_1_1_sound_source.html#a50064feb1938c27c32ee935d6a651606">More...</a><br /></td></tr>
+<tr class="separator:a50064feb1938c27c32ee935d6a651606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3a97d5d44994d88ab8d5912f0f4828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a8a3a97d5d44994d88ab8d5912f0f4828">SetListener</a> (ALfloat _x, ALfloat _y, ALfloat _z)</td></tr>
+<tr class="memdesc:a8a3a97d5d44994d88ab8d5912f0f4828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the listener.  <a href="structmyengine_1_1_sound_source.html#a8a3a97d5d44994d88ab8d5912f0f4828">More...</a><br /></td></tr>
+<tr class="separator:a8a3a97d5d44994d88ab8d5912f0f4828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmyengine_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmyengine_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a></td></tr>
 <tr class="memitem:a2b80c2d91dac8f429f6b6f6305d7c5be inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be">getCore</a> ()</td></tr>
 <tr class="memdesc:a2b80c2d91dac8f429f6b6f6305d7c5be inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="structmyengine_1_1_core.html" title="This is the brief description.">Core</a>.  <a href="structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be">More...</a><br /></td></tr>
@@ -116,6 +144,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b5712d1253884531aee523c1d277260 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260">getTransform</a> ()</td></tr>
 <tr class="memdesc:a2b5712d1253884531aee523c1d277260 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="structmyengine_1_1_transform.html">Transform</a>.  <a href="structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260">More...</a><br /></td></tr>
 <tr class="separator:a2b5712d1253884531aee523c1d277260 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3095cd6f7466ad319b605f3e51e615 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="aca3095cd6f7466ad319b605f3e51e615" name="aca3095cd6f7466ad319b605f3e51e615"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>Component::getPosition</b> ()</td></tr>
+<tr class="separator:aca3095cd6f7466ad319b605f3e51e615 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">deltaTime</a> ()</td></tr>
 <tr class="memdesc:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the deltaTime.  <a href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">More...</a><br /></td></tr>
 <tr class="separator:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,15 +158,58 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for Intersect.  <a href="structmyengine_1_1_component.html#a5964bf923abb26b889336fa3c12639f2">More...</a><br /></td></tr>
 <tr class="separator:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ada3259fe44a9b27738e6c4d95b092a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#ada3259fe44a9b27738e6c4d95b092a04">CheckError</a> ()</td></tr>
+<tr class="memdesc:ada3259fe44a9b27738e6c4d95b092a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error checking for audio.  <a href="structmyengine_1_1_sound_source.html#ada3259fe44a9b27738e6c4d95b092a04">More...</a><br /></td></tr>
+<tr class="separator:ada3259fe44a9b27738e6c4d95b092a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a3ced97ad59a312bed0bf093571fd54f2"><td class="memItemLeft" align="right" valign="top">ALuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a3ced97ad59a312bed0bf093571fd54f2">srcID</a></td></tr>
 <tr class="separator:a3ced97ad59a312bed0bf093571fd54f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69bf4e9e3cb8d7b70f9f6cd9867adc87"><td class="memItemLeft" align="right" valign="top">ALCenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a69bf4e9e3cb8d7b70f9f6cd9867adc87">error</a></td></tr>
+<tr class="separator:a69bf4e9e3cb8d7b70f9f6cd9867adc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9efcbac870fc152160c2521863bcda3a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_audio_clip.html">AudioClip</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sound_source.html#a9efcbac870fc152160c2521863bcda3a">audioClip</a></td></tr>
 <tr class="memdesc:a9efcbac870fc152160c2521863bcda3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grants ownership to <a class="el" href="structmyengine_1_1_audio_clip.html">AudioClip</a>.  <a href="structmyengine_1_1_sound_source.html#a9efcbac870fc152160c2521863bcda3a">More...</a><br /></td></tr>
 <tr class="separator:a9efcbac870fc152160c2521863bcda3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ada3259fe44a9b27738e6c4d95b092a04" name="ada3259fe44a9b27738e6c4d95b092a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada3259fe44a9b27738e6c4d95b092a04">&#9670;&nbsp;</a></span>CheckError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::SoundSource::CheckError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error checking for audio. </p>
+<p >Checks for any errors when making changes with audio, or changing the state.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Will throw an exception if an error is detected. A message will be displayed to the console. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_exception.html">Exception</a> </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_ada3259fe44a9b27738e6c4d95b092a04_icgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_ada3259fe44a9b27738e6c4d95b092a04_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="ab82a6b009d8564e933901c69dad0ca66" name="ab82a6b009d8564e933901c69dad0ca66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab82a6b009d8564e933901c69dad0ca66">&#9670;&nbsp;</a></span>onInitialize()</h2>
 
@@ -167,24 +241,235 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a83079178d10a12d34b43d6c1ed636ef1" name="a83079178d10a12d34b43d6c1ed636ef1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83079178d10a12d34b43d6c1ed636ef1">&#9670;&nbsp;</a></span>PlaySound()</h2>
+<a id="a4a85e1de71e6f7f6668033bd1a8938da" name="a4a85e1de71e6f7f6668033bd1a8938da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a85e1de71e6f7f6668033bd1a8938da">&#9670;&nbsp;</a></span>onTick()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void myengine::SoundSource::PlaySound </td>
+          <td class="memname">void myengine::SoundSource::onTick </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Plays the loaded sound. </p>
-<p >Adds a listener into the scene (the ears of the player) and plays the sound stored in <a class="el" href="structmyengine_1_1_audio_clip.html">AudioClip</a> by getting its ID.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Can throw an exception if it fails to add the listener, source, or by playing it. </dd></dl>
+<p>Updates the sound each frame. </p>
+<p >onTick runs every frame and is used to update the data for the sound for positional audio.</p>
+<dl class="section attention"><dt>Attention</dt><dd>This version doesn't require deltaTime, because it doesn't need to multiply it with anything. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_a4a85e1de71e6f7f6668033bd1a8938da_cgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_a4a85e1de71e6f7f6668033bd1a8938da_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a8a3a97d5d44994d88ab8d5912f0f4828" name="a8a3a97d5d44994d88ab8d5912f0f4828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3a97d5d44994d88ab8d5912f0f4828">&#9670;&nbsp;</a></span>SetListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::SoundSource::SetListener </td>
+          <td>(</td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the listener. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_x</td><td>sets the x position of the listener. </td></tr>
+    <tr><td class="paramname">_y</td><td>sets the y position of the listener. </td></tr>
+    <tr><td class="paramname">_z</td><td>sets the z position of the listener. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_a8a3a97d5d44994d88ab8d5912f0f4828_cgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_a8a3a97d5d44994d88ab8d5912f0f4828_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a50064feb1938c27c32ee935d6a651606" name="a50064feb1938c27c32ee935d6a651606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50064feb1938c27c32ee935d6a651606">&#9670;&nbsp;</a></span>SetLooping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::SoundSource::SetLooping </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the looping. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_state</td><td>is used to set if the audio should loop or not. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_a50064feb1938c27c32ee935d6a651606_cgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_a50064feb1938c27c32ee935d6a651606_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0ef338077076609b83a1db5100731ec6" name="a0ef338077076609b83a1db5100731ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef338077076609b83a1db5100731ec6">&#9670;&nbsp;</a></span>SetPitch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::SoundSource::SetPitch </td>
+          <td>(</td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_pitch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the pitch. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pitch</td><td>is used to set the pitch value of the audio. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_a0ef338077076609b83a1db5100731ec6_cgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_a0ef338077076609b83a1db5100731ec6_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a97b79c87362c9270d0139d2357c002e8" name="a97b79c87362c9270d0139d2357c002e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b79c87362c9270d0139d2357c002e8">&#9670;&nbsp;</a></span>SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::SoundSource::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_x</td><td>sets the x position of the audio. </td></tr>
+    <tr><td class="paramname">_y</td><td>sets the y position of the audio. </td></tr>
+    <tr><td class="paramname">_z</td><td>sets the z position of the audio. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_a97b79c87362c9270d0139d2357c002e8_cgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_a97b79c87362c9270d0139d2357c002e8_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_a97b79c87362c9270d0139d2357c002e8_icgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_a97b79c87362c9270d0139d2357c002e8_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ad0b2246dee3d38554e5519e8dfa3c14a" name="ad0b2246dee3d38554e5519e8dfa3c14a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b2246dee3d38554e5519e8dfa3c14a">&#9670;&nbsp;</a></span>SetVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::SoundSource::SetVolume </td>
+          <td>(</td>
+          <td class="paramtype">ALfloat&#160;</td>
+          <td class="paramname"><em>_volume</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the volume. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_volume</td><td>is used to set the level of the audio. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmyengine_1_1_sound_source_ad0b2246dee3d38554e5519e8dfa3c14a_cgraph.png" border="0" usemap="#astructmyengine_1_1_sound_source_ad0b2246dee3d38554e5519e8dfa3c14a_cgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -211,6 +496,29 @@ Private Attributes</h2></td></tr>
 
 <p>Grants ownership to <a class="el" href="structmyengine_1_1_audio_clip.html">AudioClip</a>. </p>
 <p >Used for loading the sound file. </p>
+
+</div>
+</div>
+<a id="a69bf4e9e3cb8d7b70f9f6cd9867adc87" name="a69bf4e9e3cb8d7b70f9f6cd9867adc87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69bf4e9e3cb8d7b70f9f6cd9867adc87">&#9670;&nbsp;</a></span>error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ALCenum myengine::SoundSource::error</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Used to retrieve errors. </p>
 
 </div>
 </div>

@@ -2,10 +2,12 @@
 #include "Entity.h"
 #include "Core.h"
 #include "Environment.h"
+#include "Transform.h"
 
 namespace myengine
 {
 	void Component::onTick(float _deltaTime) {}
+	void Component::onTick() {}
 	void Component::onDisplay() {}
 	void Component::onInitialize() {}
 
@@ -17,6 +19,11 @@ namespace myengine
 	void Component::tick(float _deltaTime)
 	{
 		onTick(_deltaTime);
+	}
+
+	void Component::tick()
+	{
+		onTick();
 	}
 
 	/**
@@ -85,6 +92,11 @@ namespace myengine
 	float Component::deltaTime()
 	{
 		return getCore()->getEnvironment()->getDeltaTime();
+	}
+
+	vec3 Component::getPosition()
+	{
+		return getTransform()->getPosition();
 	}
 
 	/**

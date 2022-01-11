@@ -20,6 +20,7 @@ namespace myengine
 		void Rotate(vec3 _rotValue);
 
 		vec3 getScale();
+		vec3 getPosition();
 
 	private:
 		/**

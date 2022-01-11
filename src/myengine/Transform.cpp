@@ -61,6 +61,16 @@ namespace myengine
 	}
 
 	/**
+	* \brief Gets the position.
+	* 
+	* \return m_position the position of the object.
+	*/
+	vec3 Transform::getPosition()
+	{
+		return m_position;
+	}
+
+	/**
 	* \brief Gets the model. 
 	* 
 	* Gets and returns the model matrix of the object. Includes scale, position and rotation. 

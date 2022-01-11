@@ -41,6 +41,7 @@ namespace myengine
 		for (size_t ei = 0; ei < components.size(); ++ei)
 		{
 			components.at(ei)->tick(_deltaTime);
+			components.at(ei)->tick();
 		}
 	}
 

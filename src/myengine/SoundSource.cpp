@@ -1,4 +1,7 @@
 #include "SoundSource.h"
+#include "Exception.h"
+#include "Entity.h"
+#include "Transform.h"
 
 namespace myengine
 {
@@ -14,7 +17,7 @@ namespace myengine
 	{
 		ALCenum error;
 
-		audioClip = std::make_shared<AudioClip>("../resources/sounds/doorbell");
+		audioClip = std::make_shared<AudioClip>("resources/sounds/doorbell2");
 
 		srcID = 0;
 		alGenSources(1, &srcID);
@@ -26,45 +29,131 @@ namespace myengine
 	}
 
 	/**
-	* \brief Plays the loaded sound.
+	* \brief Updates the sound each frame.
 	* 
-	* Adds a listener into the scene (the ears of the player) and plays the sound
-	* stored in AudioClip by getting its ID.
+	* onTick runs every frame and is used to update the data for the sound for 
+	* positional audio.
 	* 
-	* \warning Can throw an exception if it fails to add the listener, source, or by playing it.
+	* \attention This version doesn't require deltaTime, because it doesn't need to multiply it with anything.
 	*/
-	void SoundSource::PlaySound()
+	void SoundSource::onTick()
 	{
-		ALCenum error;
+		SetPosition(getPosition().x, getPosition().y, getPosition().z);
+		
+		// TODO:
+		// SetListener()
+		//		Get updated position of the player, or other entity in some cases.
+	}
 
-		alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
-		error = alGetError();
-		if (error != AL_NO_ERROR)
-		{
-			std::cout << "Error in Listener3f:" << audioClip->ExceptionCheck(error) << std::endl;
-		}
-
-		alSource3f(srcID, AL_POSITION, 0.0f, 0.0f, 0.0f);
-		error = alGetError();
-		if (error != AL_NO_ERROR)
-		{
-			std::cout << "Error in Source3f: " << audioClip->ExceptionCheck(error) << std::endl;
-		}
-
+	/**
+	* \brief Plays the loaded audio.
+	*/
+	void SoundSource::Play()
+	{
 		alSourcei(srcID, AL_BUFFER, audioClip->GetId());
-		error = alGetError();
-		if (error != AL_NO_ERROR)
-		{
-			std::cout << "Error in Sourcei: " << audioClip->ExceptionCheck(error) << std::endl;
-		}
+		CheckError();
 
-		//alSourcef(sid, AL_PITCH, variance);
-		//alSourcef(srcID, AL_GAIN, 100);
 		alSourcePlay(srcID);
+		CheckError();
+	}
+
+	/**
+	* \brief Pauses the playing audio.
+	*/
+	void SoundSource::Pause()
+	{
+		alSourcePause(srcID);
+		CheckError();
+	}
+
+	/**
+	* \brief Stops the playing audio.
+	*/
+	void SoundSource::Stop()
+	{
+		alSourceStop(srcID);
+		CheckError();
+	}
+
+	/**
+	* \brief Sets the volume.
+	* 
+	* \param _volume is used to set the level of the audio.
+	*/
+	void SoundSource::SetVolume(ALfloat _volume)
+	{
+		alSourcef(srcID, AL_GAIN, _volume);
+		CheckError();
+	}
+
+	/**
+	* \brief Sets the pitch.
+	* 
+	* \param _pitch is used to set the pitch value of the audio. 
+	*/
+	void SoundSource::SetPitch(ALfloat _pitch)
+	{
+		alSourcef(srcID, AL_PITCH, _pitch);
+		CheckError();
+	}
+
+	/**
+	* \brief Sets the position.
+	* 
+	* \param _x sets the x position of the audio. 
+	* \param _y sets the y position of the audio.
+	* \param _z sets the z position of the audio.
+	*/
+	void SoundSource::SetPosition(ALfloat _x, ALfloat _y, ALfloat _z)
+	{
+		alSource3f(srcID, AL_POSITION, _x, _y, _z);
+		CheckError();
+	}
+
+	/**
+	* \brief Sets the looping.
+	* 
+	* \param _state is used to set if the audio should loop or not.
+	*/
+	void SoundSource::SetLooping(bool _state)
+	{
+		alSourcei(srcID, AL_LOOPING, _state);
+		CheckError();
+	}
+
+	/**
+	* \brief Sets the listener.
+	* 
+	* \param _x sets the x position of the listener.
+	* \param _y sets the y position of the listener.
+	* \param _z sets the z position of the listener. 
+	*/
+	void SoundSource::SetListener(ALfloat _x, ALfloat _y, ALfloat _z)
+	{
+		alListener3f(AL_POSITION, _x, _y, _z);
+		CheckError();
+	}
+
+	/**
+	* \brief Error checking for audio
+	* 
+	* Checks for any errors when making changes with audio, or changing the state.
+	* 
+	* \warning Will throw an exception if an error is detected. A message will be displayed to the console. 
+	* \see Exception
+	*/
+	void SoundSource::CheckError()
+	{
 		error = alGetError();
 		if (error != AL_NO_ERROR)
 		{
-			std::cout << "Error in SourcePlay: " << audioClip->ExceptionCheck(error) << std::endl;
+			throw Exception(audioClip->ExceptionCheck(error));
 		}
 	}
+
+
+	// TODO:
+	// position, isPlaying, etc
+	// press p to pause
+
 }
