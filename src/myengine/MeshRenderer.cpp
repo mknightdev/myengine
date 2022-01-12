@@ -5,6 +5,9 @@
 #include "mymath.h"
 #include "Mesh.h"
 #include "Texture.h"
+#include "Camera.h"
+#include "Core.h"
+#include "Entity.h"
 
 #include <memory>
 #include <SDL2/SDL.h>
@@ -41,11 +44,6 @@ namespace myengine
 		int w = 0;
 		int h = 0;
 
-		// Load model and texture
-		//vao = std::make_shared<VertexArray>("../resources/models/skeleton/skeleton.obj");
-		//texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
-
-
 		//albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
 		normalMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_normal.png", w, h);
 		metallicMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_metallic.png", w, h);
@@ -70,14 +68,6 @@ namespace myengine
 		shader->setInt("roughnessMap", 3);
 		shader->setInt("aoMap", 4);
 		shader->setInt("emissiveMap", 5);
-
-
-		//shader->setInt("material.diffuse", 0);
-		//shader->setInt("diffuse", 0);
-		//shader->setVec3("albedo", 0.5f, 0.0f, 0.0f);
-		//shader->setFloat("ao", 1.0f);
-		//shader->setFloat("metallic", 0.0f);
-		//shader->setFloat("roughness", 0.0f);
 
 		/*****************************
 		*
@@ -156,50 +146,7 @@ namespace myengine
 		if (projectionLoc == -1) { throw std::exception(); }
 		if (viewLoc == -1) { throw std::exception(); }
 
-		//shader->setVec3("light.position", lightPos);
-		shader->setVec3("camPos", cameraPos3);
-
-		//shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-		//shader->setFloat("material.shininess", 64.0f);
-
-		//// directional light
-		//shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-		//shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
-		//shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
-		//shader->setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
-
-  //      // point light 1
-  //      shader->setVec3("pointLights[0].position", pointLightPositions[0]);
-  //      shader->setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[0].constant", 1.0f);
-  //      shader->setFloat("pointLights[0].linear", 0.09);
-  //      shader->setFloat("pointLights[0].quadratic", 0.032);
-  //      // point light 2
-  //      shader->setVec3("pointLights[1].position", pointLightPositions[1]);
-  //      shader->setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[1].constant", 1.0f);
-  //      shader->setFloat("pointLights[1].linear", 0.09);
-  //      shader->setFloat("pointLights[1].quadratic", 0.032);
-  //      // point light 3
-  //      shader->setVec3("pointLights[2].position", pointLightPositions[2]);
-  //      shader->setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[2].constant", 1.0f);
-  //      shader->setFloat("pointLights[2].linear", 0.09);
-  //      shader->setFloat("pointLights[2].quadratic", 0.032);
-  //      // point light 4
-  //      shader->setVec3("pointLights[3].position", pointLightPositions[3]);
-  //      shader->setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[3].constant", 1.0f);
-  //      shader->setFloat("pointLights[3].linear", 0.09);
-  //      shader->setFloat("pointLights[3].quadratic", 0.032);
+		shader->setVec3("camPos", getCamera()->getCameraPos());
 
 		// Light
 		vec3 lightColour;
@@ -208,14 +155,6 @@ namespace myengine
 		lightColour.z = 1.0f;
 		vec3 diffuseColour = lightColour * vec3(0.5f);
 		vec3 ambientColour = lightColour * vec3(0.2f);
-
-		//shader->setVec3("pointLight.ambient", ambientColour);
-		//shader->setVec3("pointLight.diffuse", diffuseColour);
-		//shader->setVec3("pointLight.specular", 1.0f, 1.0f, 1.0f);
-
-		// world transformation
-		//glm::mat4 model = glm::mat4(1.0f);
-		//shader->setMat4("model", model);
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, albedoMap->GetId());
@@ -242,7 +181,15 @@ namespace myengine
 		const float radius = 10.0f;
 		float camX = sin(deltaTime() * radius);
 		float camZ = cos(deltaTime() * radius);
-		view = lookAt(cameraPos3, cameraPos3 + cameraFront3, cameraUp3);
+
+		// TODO: 
+		// getCameraPos, getCameraFront, getCameraUp
+
+		//DEBUGGING
+		//std::cout << getCamera()->getCameraPos().x << ", " << getCamera()->getCameraPos().y << ", " << getCamera()->getCameraPos().z << std::endl;
+		//view = lookAt(getCamera()->getCameraPos(), getCamera()->getCameraPos() + getCamera()->getCameraFront(), getCamera()->getCameraUp());
+		
+		view = lookAt(getCamera()->getCameraPos(), getCamera()->getCameraPos() + getCamera()->getCameraFront(), getCamera()->getCameraUp());
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(view));
 
 		// Upload the projection matrix
@@ -317,11 +264,13 @@ namespace myengine
 			getTransform()->Move(vec3(0.5f, 0, 0) * _deltaTime);
 		}
 
+		// Rotate Left
 		if (getKeyboard()->getKeyDown(SDLK_r))
 		{
 			getTransform()->Rotate(vec3(0, 1, 0) * _deltaTime);
 		}
 
+		// Rotate Right
 		if (getKeyboard()->getKeyDown(SDLK_y))
 		{
 			getTransform()->Rotate(vec3(0, -1, 0) * _deltaTime);
@@ -339,78 +288,12 @@ namespace myengine
 			getTransform()->Move(vec3(0, -0.5f, 0) * _deltaTime);
 		}
 
-
-		// Camera
-		const float cameraSpeed = 2.5f * deltaTime();
-
-		if (getKeyboard()->getKeyDown(SDLK_w))
-		{
-			cameraPos3 += cameraSpeed * cameraFront3;
-		}
-
-		if (getKeyboard()->getKeyDown(SDLK_s))
-		{
-			cameraPos3 -= cameraSpeed * cameraFront3;
-		}
-
-		if (getKeyboard()->getKeyDown(SDLK_a))
-		{
-			cameraPos3 -= normalize(cross(cameraFront3, cameraUp3)) * cameraSpeed;
-		}
-
-		if (getKeyboard()->getKeyDown(SDLK_d))
-		{
-			cameraPos3 += normalize(cross(cameraFront3, cameraUp3)) * cameraSpeed;
-		}
-
-		mouseUpdate();
-
 		// TODO:
 		/*
 			1) Get camera
 				a) Go through entity
 			2) Set new positions of camera after moving it
 		*/
-	}
-
-	/**
-	* \brief Update mouse position
-	*
-	* Updates the mouse position to move the camera.
-	*/
-	void MeshRenderer::mouseUpdate()
-	{
-		// Code from learnOpenGL - Camera
-		if (firstMouse3)
-		{
-			lastX3 = getMouse()->getMousePosition().x;
-			lastY3 = getMouse()->getMousePosition().y;
-			firstMouse3 = false;
-		}
-
-		float xoffset = getMouse()->getMousePosition().x - lastX3;
-		float yoffset = lastY3 - getMouse()->getMousePosition().y; // reversed since y-coordinates go from bottom to top
-		lastX3 = getMouse()->getMousePosition().x;
-		lastY3 = getMouse()->getMousePosition().y;
-
-		float sensitivity = 0.1f;; // change this value to your liking
-		xoffset *= sensitivity;
-		yoffset *= sensitivity;
-
-		yaw3 += xoffset;
-		pitch3 += yoffset;
-
-		// make sure that when pitch is out of bounds, screen doesn't get flipped
-		if (pitch3 > 89.0f)
-			pitch3 = 89.0f;
-		if (pitch3 < -89.0f)
-			pitch3 = -89.0f;
-
-		vec3 front;
-		front.x = cos(radians(yaw3)) * cos(radians(pitch3));
-		front.y = sin(radians(pitch3));
-		front.z = sin(radians(yaw3)) * cos(radians(pitch3));
-		cameraFront3 = normalize(front);
 	}
 
 	/**

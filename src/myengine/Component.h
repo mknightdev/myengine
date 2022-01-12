@@ -11,6 +11,7 @@ namespace myengine
 	struct Keyboard;
 	struct Transform;
 	struct Mouse;
+	struct Camera;
 
 	struct Component
 	{
@@ -19,7 +20,14 @@ namespace myengine
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Transform> getTransform();
-		vec3 Component::getPosition();
+		std::shared_ptr<Camera> getCamera();
+		vec3 getPosition();
+
+		vec3 getCameraPos();
+		vec3 getCameraFront();
+		vec3 getCameraUp();
+
+
 		float deltaTime();
 		virtual void onInitialize();
 		virtual void onDisplay();

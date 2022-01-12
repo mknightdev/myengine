@@ -68,7 +68,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="structmyengine_1_1_camera-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">myengine::Camera Struct Reference</div></div>
 </div><!--header-->
@@ -94,6 +96,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab20ef0c683c1e07b8546a3ddf26f262b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_camera.html#ab20ef0c683c1e07b8546a3ddf26f262b">onTick</a> (float _deltaTime)</td></tr>
 <tr class="memdesc:ab20ef0c683c1e07b8546a3ddf26f262b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates <a class="el" href="structmyengine_1_1_camera.html">Camera</a> Position.  <a href="structmyengine_1_1_camera.html#ab20ef0c683c1e07b8546a3ddf26f262b">More...</a><br /></td></tr>
 <tr class="separator:ab20ef0c683c1e07b8546a3ddf26f262b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd6ddb0e00eb61bf09345dfbd70949e"><td class="memItemLeft" align="right" valign="top"><a id="a1fd6ddb0e00eb61bf09345dfbd70949e" name="a1fd6ddb0e00eb61bf09345dfbd70949e"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraPos</b> ()</td></tr>
+<tr class="separator:a1fd6ddb0e00eb61bf09345dfbd70949e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55d7d1d82ba3f04ec07d9aef7b3768f"><td class="memItemLeft" align="right" valign="top"><a id="ab55d7d1d82ba3f04ec07d9aef7b3768f" name="ab55d7d1d82ba3f04ec07d9aef7b3768f"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraFront</b> ()</td></tr>
+<tr class="separator:ab55d7d1d82ba3f04ec07d9aef7b3768f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf7bbf7ee7b6c063150f8dd12970bff"><td class="memItemLeft" align="right" valign="top"><a id="a7cf7bbf7ee7b6c063150f8dd12970bff" name="a7cf7bbf7ee7b6c063150f8dd12970bff"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraUp</b> ()</td></tr>
+<tr class="separator:a7cf7bbf7ee7b6c063150f8dd12970bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49c54915080685ce75a9edcbd8f5aa0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_camera.html#a49c54915080685ce75a9edcbd8f5aa0e">mouseUpdate</a> ()</td></tr>
 <tr class="memdesc:a49c54915080685ce75a9edcbd8f5aa0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates <a class="el" href="structmyengine_1_1_mouse.html">Mouse</a> Coordinates.  <a href="structmyengine_1_1_camera.html#a49c54915080685ce75a9edcbd8f5aa0e">More...</a><br /></td></tr>
 <tr class="separator:a49c54915080685ce75a9edcbd8f5aa0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,9 +124,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b5712d1253884531aee523c1d277260 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260">getTransform</a> ()</td></tr>
 <tr class="memdesc:a2b5712d1253884531aee523c1d277260 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="structmyengine_1_1_transform.html">Transform</a>.  <a href="structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260">More...</a><br /></td></tr>
 <tr class="separator:a2b5712d1253884531aee523c1d277260 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca3095cd6f7466ad319b605f3e51e615 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="aca3095cd6f7466ad319b605f3e51e615" name="aca3095cd6f7466ad319b605f3e51e615"></a>
-vec3&#160;</td><td class="memItemRight" valign="bottom"><b>Component::getPosition</b> ()</td></tr>
-<tr class="separator:aca3095cd6f7466ad319b605f3e51e615 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4a94098f91b2602ce73a81d0bc9570 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a3c4a94098f91b2602ce73a81d0bc9570" name="a3c4a94098f91b2602ce73a81d0bc9570"></a>
+std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getCamera</b> ()</td></tr>
+<tr class="memdesc:a3c4a94098f91b2602ce73a81d0bc9570 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="structmyengine_1_1_camera.html">Camera</a>. <br /></td></tr>
+<tr class="separator:a3c4a94098f91b2602ce73a81d0bc9570 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300df50e10745a97c4d66c9ea1a32d5a inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a300df50e10745a97c4d66c9ea1a32d5a" name="a300df50e10745a97c4d66c9ea1a32d5a"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> ()</td></tr>
+<tr class="separator:a300df50e10745a97c4d66c9ea1a32d5a inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56f37c29f6554bc547544e9b92cc0305 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a56f37c29f6554bc547544e9b92cc0305" name="a56f37c29f6554bc547544e9b92cc0305"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraPos</b> ()</td></tr>
+<tr class="separator:a56f37c29f6554bc547544e9b92cc0305 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0fc1bd587ac5afb9fc94eccad3026f0 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ab0fc1bd587ac5afb9fc94eccad3026f0" name="ab0fc1bd587ac5afb9fc94eccad3026f0"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraFront</b> ()</td></tr>
+<tr class="separator:ab0fc1bd587ac5afb9fc94eccad3026f0 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab871594379af24d9e3130b0b4b4152de inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ab871594379af24d9e3130b0b4b4152de" name="ab871594379af24d9e3130b0b4b4152de"></a>
+vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraUp</b> ()</td></tr>
+<tr class="separator:ab871594379af24d9e3130b0b4b4152de inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">deltaTime</a> ()</td></tr>
 <tr class="memdesc:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the deltaTime.  <a href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">More...</a><br /></td></tr>
 <tr class="separator:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,8 +149,20 @@ vec3&#160;</td><td class="memItemRight" valign="bottom"><b>Component::getPositio
 <tr class="memdesc:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for Intersect.  <a href="structmyengine_1_1_component.html#a5964bf923abb26b889336fa3c12639f2">More...</a><br /></td></tr>
 <tr class="separator:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:afa14c8e6299615e295ae926d729fdd2d"><td class="memItemLeft" align="right" valign="top"><a id="afa14c8e6299615e295ae926d729fdd2d" name="afa14c8e6299615e295ae926d729fdd2d"></a>
+static std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> (std::weak_ptr&lt; <a class="el" href="structmyengine_1_1_core.html">Core</a> &gt; _core)</td></tr>
+<tr class="separator:afa14c8e6299615e295ae926d729fdd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a2c1505bfb5bb6f1238338470aa454d9d"><td class="memItemLeft" align="right" valign="top"><a id="a2c1505bfb5bb6f1238338470aa454d9d" name="a2c1505bfb5bb6f1238338470aa454d9d"></a>
+std::weak_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>self</b></td></tr>
+<tr class="separator:a2c1505bfb5bb6f1238338470aa454d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729dfb56cdf520e4ea2e8bcebe36cade"><td class="memItemLeft" align="right" valign="top"><a id="a729dfb56cdf520e4ea2e8bcebe36cade" name="a729dfb56cdf520e4ea2e8bcebe36cade"></a>
+std::weak_ptr&lt; <a class="el" href="structmyengine_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>core</b></td></tr>
+<tr class="separator:a729dfb56cdf520e4ea2e8bcebe36cade"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a4bd8e5f1edf15c28095167d446b9b9"><td class="memItemLeft" align="right" valign="top"><a id="a3a4bd8e5f1edf15c28095167d446b9b9" name="a3a4bd8e5f1edf15c28095167d446b9b9"></a>
 vec3&#160;</td><td class="memItemRight" valign="bottom"><b>cameraPos</b></td></tr>
 <tr class="separator:a3a4bd8e5f1edf15c28095167d446b9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +191,12 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>fov</b></td></tr>
 <tr class="separator:a04b02bb6e421fbae6a385b9b97e1457c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f8a92c69d08c2480aa26c611bd0a674"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_camera.html#a0f8a92c69d08c2480aa26c611bd0a674">cameraSpeed</a></td></tr>
 <tr class="separator:a0f8a92c69d08c2480aa26c611bd0a674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a38297a01af85f1a404c4f104eb90eceb"><td class="memItemLeft" align="right" valign="top"><a id="a38297a01af85f1a404c4f104eb90eceb" name="a38297a01af85f1a404c4f104eb90eceb"></a>
+struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::Core</b></td></tr>
+<tr class="separator:a38297a01af85f1a404c4f104eb90eceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a49c54915080685ce75a9edcbd8f5aa0e" name="a49c54915080685ce75a9edcbd8f5aa0e"></a>

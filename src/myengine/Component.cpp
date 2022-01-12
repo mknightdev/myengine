@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Environment.h"
 #include "Transform.h"
+#include "Camera.h"
 
 namespace myengine
 {
@@ -82,6 +83,14 @@ namespace myengine
 	std::shared_ptr<Transform> Component::getTransform()
 	{
 		return getEntity()->getTransform();
+	}
+
+	/**
+	* \brief Returns the Camera. 
+	*/
+	std::shared_ptr<Camera> Component::getCamera()
+	{
+		return getEntity()->getComponent<Camera>();
 	}
 
 	/**

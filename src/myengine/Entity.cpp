@@ -54,4 +54,6 @@ namespace myengine
 	{
 		return transform.lock();
 	}
+
+	Entity::~Entity() {}
 }

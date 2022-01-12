@@ -3,8 +3,19 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 
+#include <iostream>
+
 namespace myengine
 {
+	std::shared_ptr<Camera> Camera::create(std::weak_ptr<Core> _core)
+	{
+		std::shared_ptr<Camera> rtn = std::make_shared<Camera>();
+		rtn->self = rtn;
+		rtn->core = _core;
+
+		return rtn;
+	}
+
 	/**
 	* \brief Initialises the Camera
 	* 
@@ -12,6 +23,8 @@ namespace myengine
 	*/
 	void Camera::onInitialize()
 	{
+		std::cout << "Camera Init" << std::endl;
+
 		firstMouse = true;
 		yaw = -90.0f;
 		pitch = 0.0f;
@@ -19,6 +32,10 @@ namespace myengine
 		lastY = 720.0f / 2.0;
 		fov = 45.0f;
 		cameraSpeed = 2.5f;
+
+		cameraPos = vec3(0.0f, 0.0f, 3.0f);
+		cameraFront = vec3(0.0f, 0.0f, -1.0f);
+		cameraUp = vec3(0.0f, 1.0f, 0.0f);
 	}
 
 	void Camera::onDisplay() {}
@@ -32,6 +49,7 @@ namespace myengine
 	*/
 	void Camera::onTick(float _deltaTime)
 	{
+		//std::cout << "Camera tick" << std::endl;
 		cameraSpeed *= _deltaTime;
 
 		if (getKeyboard()->getKeyDown(SDLK_w))
@@ -66,6 +84,7 @@ namespace myengine
 	*/
 	void Camera::mouseUpdate()
 	{
+		std::cout << "CAM: mouseUpdate" << std::endl;
 		if (firstMouse)
 		{
 			lastX = getMouse()->getMousePosition().x;
@@ -83,7 +102,7 @@ namespace myengine
 		yOffset *= sensitivity;
 
 		yaw += xOffset;
-		pitch = yOffset;
+		pitch += yOffset;
 
 		// Make sure that when pitch is out of bounds, screen doesn't get flipped
 		if (pitch > 89.0f)
@@ -101,5 +120,20 @@ namespace myengine
 		front.y = sin(radians(pitch));
 		front.z = sin(radians(yaw)) * cos(radians(pitch));
 		cameraFront = normalize(front);
+	}
+
+	vec3 Camera::getCameraPos()
+	{
+		return cameraPos;
+	}
+
+	vec3 Camera::getCameraFront()
+	{
+		return cameraFront;
+	}
+
+	vec3 Camera::getCameraUp()
+	{
+		return cameraUp;
 	}
 }

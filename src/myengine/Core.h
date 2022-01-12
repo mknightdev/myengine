@@ -1,8 +1,12 @@
+#pragma once
+
 #include <SDL2/SDL.h>
 #include <AL/alc.h>
 
 #include <memory>
 #include <vector>
+
+#include "Exception.h"
 
 namespace myengine
 {
@@ -11,6 +15,7 @@ namespace myengine
 	struct Keyboard;
 	struct Mouse;
 	struct ResourceManager;
+	struct Camera;
 
 	/**
 	* \brief This is the brief description. 
@@ -23,10 +28,6 @@ namespace myengine
 	{
 		static std::shared_ptr<Core> initialize();
 
-		void setupEngine();
-		void setupWindow();
-		void setupGraphics();
-		void setupAudio();
 		void start();
 		void stop();
 
@@ -39,8 +40,41 @@ namespace myengine
 		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<ResourceManager> getResourceManager();
+		std::shared_ptr<Camera> getCamera();
+
+		/**
+		* \brief Gets the Entity
+		* 
+		* Checks if the entity exists, then returns the requested one.
+		* \attention Function will exit early if it doesn't find the component. 
+		* \return std::shared_ptr<T> rtn the entity to return.
+		*/
+		template<typename T>
+		std::shared_ptr<T> getEntity()
+		{
+			for (size_t ei = 0; ei < entities.size(); ei++)
+			{
+				// Check if the entity matches the one we are trying to find
+				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(entities.at(ei));
+
+				// If we found the entity, return it
+				if (rtn)
+				{
+					// Debugging
+					std::cout << "Entity Found!" << std::endl;
+					return rtn;
+				}
+			}
+
+			throw Exception("Unable to get Entity");
+		}
 
 		private:
+
+			void setupEngine();
+			void setupWindow();
+			void setupGraphics();
+			void setupAudio();
 
 			/**
 			* Can start or stop the engine depending on it's state. It gets set to true within the start() function,
@@ -74,6 +108,13 @@ namespace myengine
 			* Used for storing and loading resources within the engine.
 			*/
 			std::shared_ptr<ResourceManager> resourceManager;
+
+			/**
+			* \brief Stores the Camera
+			* 
+			* Used for storing and retrieving the camera positions. 
+			*/
+			std::shared_ptr<Camera> camera;
 
 			/**
 			* Used for storing itself, and granting other classes to retrieve other 

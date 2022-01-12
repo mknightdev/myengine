@@ -53,7 +53,7 @@ namespace myengine
 				// If the component matches, return it 
 				if (rtn)
 				{
-					std::cout << "Component match!" << std::endl;
+					//std::cout << "Component match!" << std::endl;
 					return rtn;
 				}
 			}
@@ -64,6 +64,8 @@ namespace myengine
 
 		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Transform> getTransform();
+
+		virtual ~Entity();
 
 		private:
 			friend struct myengine::Core;

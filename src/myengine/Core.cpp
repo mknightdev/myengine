@@ -5,6 +5,7 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "ResourceManager.h"
+#include "Camera.h"
 
 #include <AL/al.h>
 #include <GL/glew.h>
@@ -242,6 +243,7 @@ namespace myengine
 		keyboard = Keyboard::create(self);
 		mouse = Mouse::create(self);
 		resourceManager = ResourceManager::create(self);
+		//camera = Camera::create(self);
 	}
 
 	/**
@@ -301,5 +303,14 @@ namespace myengine
 	std::shared_ptr<ResourceManager> Core::getResourceManager()
 	{
 		return resourceManager;
+	}
+
+	/**
+	* \brief Returns the Camera.
+	* \return std::shared_ptr<Camera> camera the Camera object created within Core's setup.
+	*/
+	std::shared_ptr<Camera> Core::getCamera()
+	{
+		return camera;
 	}
 }

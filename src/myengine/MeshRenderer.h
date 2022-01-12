@@ -21,8 +21,6 @@ namespace myengine
 	private:
 		friend struct myengine::Core;
 
-		void mouseUpdate();
-
 		/**
 		* Used for storing the Core and navigating up the hierarchy.
 		*/
