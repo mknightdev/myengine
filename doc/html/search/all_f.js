@@ -10,8 +10,8 @@ var searchData=
   ['setposition_7',['setPosition',['../structmyengine_1_1_transform.html#aa24a959503912c076237c3e5da45eaf6',1,'myengine::Transform']]],
   ['setposition_8',['SetPosition',['../structmyengine_1_1_sound_source.html#a97b79c87362c9270d0139d2357c002e8',1,'myengine::SoundSource']]],
   ['setrotation_9',['setRotation',['../structmyengine_1_1_transform.html#a5a0616d4b2fbfaf3c5b1b6cdd960d5f1',1,'myengine::Transform']]],
-  ['setscale_10',['setScale',['../structmyengine_1_1_transform.html#af8fef6625978cbaab5e0e99a38c9bd2c',1,'myengine::Transform']]],
-  ['setscale_11',['SetScale',['../structmyrenderer_1_1_model.html#a3dcb24806463914181bace1814d828e5',1,'myrenderer::Model']]],
+  ['setscale_10',['SetScale',['../structmyrenderer_1_1_model.html#a3dcb24806463914181bace1814d828e5',1,'myrenderer::Model']]],
+  ['setscale_11',['setScale',['../structmyengine_1_1_transform.html#af8fef6625978cbaab5e0e99a38c9bd2c',1,'myengine::Transform']]],
   ['settexture_12',['setTexture',['../structmyengine_1_1_mesh_renderer.html#a65709531ce9eea114ebc93e247c022bb',1,'myengine::MeshRenderer']]],
   ['setupaudio_13',['setupAudio',['../structmyengine_1_1_core.html#a6681b43b74bad09d8f1c3873f269d683',1,'myengine::Core']]],
   ['setupengine_14',['setupEngine',['../structmyengine_1_1_core.html#a0de07d096a6c50a27b851bf7603dfa4d',1,'myengine::Core']]],
@@ -25,6 +25,6 @@ var searchData=
   ['spherecollider_22',['SphereCollider',['../structmyengine_1_1_sphere_collider.html',1,'myengine']]],
   ['srcid_23',['srcID',['../structmyengine_1_1_sound_source.html#a3ced97ad59a312bed0bf093571fd54f2',1,'myengine::SoundSource']]],
   ['start_24',['start',['../structmyengine_1_1_core.html#ad30b81f4e6ca3cc018e6c529904fdb3f',1,'myengine::Core']]],
-  ['stop_25',['stop',['../structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965',1,'myengine::Core']]],
-  ['stop_26',['Stop',['../structmyengine_1_1_sound_source.html#aa38c3ef7844915e47d13d094d8f8d0f7',1,'myengine::SoundSource']]]
+  ['stop_25',['Stop',['../structmyengine_1_1_sound_source.html#aa38c3ef7844915e47d13d094d8f8d0f7',1,'myengine::SoundSource']]],
+  ['stop_26',['stop',['../structmyengine_1_1_core.html#a4f1818b9d6fbf66e8c3b246fa1f2d965',1,'myengine::Core']]]
 ];

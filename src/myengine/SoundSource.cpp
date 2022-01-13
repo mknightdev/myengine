@@ -2,6 +2,9 @@
 #include "Exception.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Core.h"
+#include "Entity.h"
+#include "Camera.h"
 
 namespace myengine
 {
@@ -39,10 +42,7 @@ namespace myengine
 	void SoundSource::onTick()
 	{
 		SetPosition(getPosition().x, getPosition().y, getPosition().z);
-		
-		// TODO:
-		// SetListener()
-		//		Get updated position of the player, or other entity in some cases.
+		SetListener(getCamera()->getCameraPos().x, getCamera()->getCameraPos().y, getCamera()->getCameraPos().z);
 	}
 
 	/**
@@ -151,9 +151,7 @@ namespace myengine
 		}
 	}
 
-
 	// TODO:
 	// position, isPlaying, etc
 	// press p to pause
-
 }

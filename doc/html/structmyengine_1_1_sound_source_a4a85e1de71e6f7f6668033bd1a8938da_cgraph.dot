@@ -6,7 +6,16 @@ digraph "myengine::SoundSource::onTick"
   rankdir="LR";
   Node1 [label="myengine::SoundSource\l::onTick",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Updates the sound each frame."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="myengine::SoundSource\l::SetPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_sound_source.html#a97b79c87362c9270d0139d2357c002e8",tooltip="Sets the position."];
+  Node2 [label="myengine::Component\l::getCamera",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_component.html#a3c4a94098f91b2602ce73a81d0bc9570",tooltip="Returns the Camera."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="myengine::SoundSource\l::CheckError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_sound_source.html#ada3259fe44a9b27738e6c4d95b092a04",tooltip="Error checking for audio."];
+  Node3 [label="myengine::Component\l::getCore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be",tooltip="Returns the Core."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="myengine::Component\l::getEntity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161",tooltip="Returns the Entity."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="myengine::SoundSource\l::SetListener",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_sound_source.html#a8a3a97d5d44994d88ab8d5912f0f4828",tooltip="Sets the listener."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="myengine::SoundSource\l::CheckError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_sound_source.html#ada3259fe44a9b27738e6c4d95b092a04",tooltip="Error checking for audio."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="myengine::SoundSource\l::SetPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_sound_source.html#a97b79c87362c9270d0139d2357c002e8",tooltip="Sets the position."];
+  Node7 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

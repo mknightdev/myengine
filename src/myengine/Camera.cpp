@@ -7,15 +7,6 @@
 
 namespace myengine
 {
-	std::shared_ptr<Camera> Camera::create(std::weak_ptr<Core> _core)
-	{
-		std::shared_ptr<Camera> rtn = std::make_shared<Camera>();
-		rtn->self = rtn;
-		rtn->core = _core;
-
-		return rtn;
-	}
-
 	/**
 	* \brief Initialises the Camera
 	* 
@@ -30,16 +21,11 @@ namespace myengine
 		pitch = 0.0f;
 		lastX = 1280.0f / 2.0;
 		lastY = 720.0f / 2.0;
-		fov = 45.0f;
 		cameraSpeed = 2.5f;
 
 		cameraPos = vec3(0.0f, 0.0f, 3.0f);
 		cameraFront = vec3(0.0f, 0.0f, -1.0f);
 		cameraUp = vec3(0.0f, 1.0f, 0.0f);
-	}
-
-	void Camera::onDisplay() 
-	{
 	}
 
 	/**
@@ -121,16 +107,31 @@ namespace myengine
 		cameraFront = normalize(front);
 	}
 
+	/**
+	* \brief Returns the Camera Position.
+	* 
+	* \see cameraPos
+	*/
 	vec3 Camera::getCameraPos()
 	{
 		return cameraPos;
 	}
 
+	/**
+	* \brief Returns the Camera Front Position.
+	* 
+	* \see cameraFront
+	*/
 	vec3 Camera::getCameraFront()
 	{
 		return cameraFront;
 	}
 
+	/**
+	* \brief Returns the Camera Up Position.
+	* 
+	* \see cameraUp
+	*/
 	vec3 Camera::getCameraUp()
 	{
 		return cameraUp;
