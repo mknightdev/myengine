@@ -36,6 +36,7 @@ namespace myengine
 		void clear();
 
 		std::shared_ptr<Entity> addEntity();
+		std::shared_ptr<Entity> addEntity(const std::string _name);
 		std::shared_ptr<Keyboard> getKeyboard();
 		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Environment> getEnvironment();
@@ -68,6 +69,8 @@ namespace myengine
 
 			throw Exception("Unable to get Entity");
 		}
+
+		std::shared_ptr<Entity> getEntityByName(const std::string _name);
 
 		private:
 

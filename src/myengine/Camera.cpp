@@ -38,7 +38,9 @@ namespace myengine
 		cameraUp = vec3(0.0f, 1.0f, 0.0f);
 	}
 
-	void Camera::onDisplay() {}
+	void Camera::onDisplay() 
+	{
+	}
 
 	/**
 	* \brief Updates Camera Position
@@ -49,27 +51,24 @@ namespace myengine
 	*/
 	void Camera::onTick(float _deltaTime)
 	{
-		//std::cout << "Camera tick" << std::endl;
-		cameraSpeed *= _deltaTime;
-
 		if (getKeyboard()->getKeyDown(SDLK_w))
 		{
-			cameraPos += cameraSpeed * cameraFront;
+			cameraPos += cameraSpeed * cameraFront * _deltaTime;
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_s))
 		{
-			cameraPos -= cameraSpeed * cameraFront;
+			cameraPos -= cameraSpeed * cameraFront * _deltaTime;
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_a))
 		{
-			cameraPos -= normalize(cross(cameraFront, cameraUp)) * cameraSpeed;
+			cameraPos -= normalize(cross(cameraFront, cameraUp)) * cameraSpeed * _deltaTime;
 		}
 
 		if (getKeyboard()->getKeyDown(SDLK_d))
 		{
-			cameraPos += normalize(cross(cameraFront, cameraUp)) * cameraSpeed;
+			cameraPos += normalize(cross(cameraFront, cameraUp)) * cameraSpeed * _deltaTime;
 		}
 
 		mouseUpdate();
@@ -84,7 +83,7 @@ namespace myengine
 	*/
 	void Camera::mouseUpdate()
 	{
-		std::cout << "CAM: mouseUpdate" << std::endl;
+		//std::cout << "CAM: mouseUpdate" << std::endl;
 		if (firstMouse)
 		{
 			lastX = getMouse()->getMousePosition().x;

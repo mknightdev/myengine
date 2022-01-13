@@ -90,7 +90,7 @@ namespace myengine
 	*/
 	std::shared_ptr<Camera> Component::getCamera()
 	{
-		return getEntity()->getComponent<Camera>();
+		return getCore()->getEntityByName("Camera")->getComponent<Camera>();
 	}
 
 	/**

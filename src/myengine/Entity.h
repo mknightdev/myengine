@@ -70,6 +70,8 @@ namespace myengine
 		private:
 			friend struct myengine::Core;
 
+			std::string name;
+
 			/**
 			* Stores all components attached to entities.
 			*/

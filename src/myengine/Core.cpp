@@ -266,6 +266,51 @@ namespace myengine
 	}
 
 	/**
+	* \brief Adds an entity with name.
+	*
+	* Adds an entity to the game engine with a given name. Components can then be attached to these entities.
+	* Adds a transform component on creation.
+	* 
+	* \param _name the name to give the entity.
+	* \see addEntity() 
+	*/
+	std::shared_ptr<Entity> Core::addEntity(const std::string _name)
+	{
+		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
+		rtn->core = self;
+		rtn->self = rtn;
+		rtn->name = _name;
+		rtn->transform = rtn->addComponent<Transform>();	// Form of caching and is faster than getComponent<T>
+
+
+		entities.push_back(rtn);
+
+		return rtn;
+	}
+
+	/**
+	* \brief Gets an Entity by name
+	* 
+	* Finds an entity with the given name and returns it.
+	* 
+	* \param _name the name to check for.
+	* \return entities.at(ei) the entity with the same name.
+	*/
+	std::shared_ptr<Entity> Core::getEntityByName(const std::string _name)
+	{
+		for (size_t ei = 0; ei < entities.size(); ei++)
+		{
+			if (entities.at(ei)->name == _name)
+			{
+				//std::cout << "Entity found by name" << std::endl;
+				return entities.at(ei);
+			}
+
+			throw Exception("Unable to get Entity");
+		}
+	}
+
+	/**
 	* Gets and returns the keyboard created within the core's setup.
 	*
 	* \return std::shared_ptr<Keyboard> keyboard
