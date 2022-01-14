@@ -39,6 +39,7 @@ int main()
 	pmr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/croc/croc"));
 	pmr->setTexture(core->getResourceManager()->load<Texture>("resources/models/croc/croc_diffuse"));
 	std::shared_ptr<SphereCollider> psc = pe->addComponent<SphereCollider>();
+	std::shared_ptr<Trigger> t = pe->addComponent<Trigger>();
 
 	// Start the engine
 	core->start();

@@ -73,6 +73,8 @@ add_library(myengine
 	src/myengine/TriangleRenderer.h
 	src/myengine/ModelRenderer.cpp
 	src/myengine/ModelRenderer.h
+	src/myengine/Trigger.cpp
+	src/myengine/Trigger.h
 
 	src/myengine/MenuScreen.cpp
 	src/myengine/MenuScreen.h

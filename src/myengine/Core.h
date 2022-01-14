@@ -17,6 +17,7 @@ namespace myengine
 	struct ResourceManager;
 	struct Camera;
 	struct SphereCollider;
+	struct Trigger;
 
 	/**
 	* \brief This is the brief description. 
@@ -76,6 +77,7 @@ namespace myengine
 		void unregisterCollider(std::shared_ptr<SphereCollider> _collider);
 
 		private:
+			friend struct myengine::Trigger;
 
 			void setupEngine();
 			void setupWindow();
