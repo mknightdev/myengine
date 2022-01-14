@@ -6,6 +6,8 @@ namespace myengine
 {
 	struct Camera : Component
 	{
+		void onInitialize();
+		void onTick(float _deltaTime);
 
 		vec3 getCameraPos();
 		vec3 getCameraFront();
@@ -16,8 +18,7 @@ namespace myengine
 	private:
 		friend struct myengine::Core;
 
-		void onInitialize();
-		void onTick(float _deltaTime);
+
 
 		std::weak_ptr<Camera> self;
 		std::weak_ptr<Core> core;

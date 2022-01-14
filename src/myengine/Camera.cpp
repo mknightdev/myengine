@@ -4,6 +4,8 @@
 #include "Mouse.h"
 
 #include <iostream>
+#include <AL/al.h>
+#include <AL/alc.h>
 
 namespace myengine
 {
@@ -37,6 +39,8 @@ namespace myengine
 	*/
 	void Camera::onTick(float _deltaTime)
 	{
+		alListener3f(AL_POSITION, cameraPos.x, cameraPos.y, cameraPos.z);
+
 		if (getKeyboard()->getKeyDown(SDLK_w))
 		{
 			cameraPos += cameraSpeed * cameraFront * _deltaTime;

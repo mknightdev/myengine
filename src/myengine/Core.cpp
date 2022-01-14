@@ -349,13 +349,4 @@ namespace myengine
 	{
 		return resourceManager;
 	}
-
-	/**
-	* \brief Returns the Camera.
-	* \return std::shared_ptr<Camera> camera the Camera object created within Core's setup.
-	*/
-	std::shared_ptr<Camera> Core::getCamera()
-	{
-		return camera;
-	}
 }
