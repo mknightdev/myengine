@@ -113,13 +113,6 @@ namespace myengine
 			std::shared_ptr<ResourceManager> resourceManager;
 
 			/**
-			* \brief Stores the Camera
-			* 
-			* Used for storing and retrieving the camera positions. 
-			*/
-			std::shared_ptr<Camera> camera;
-
-			/**
 			* Used for storing itself, and granting other classes to retrieve other 
 			* components of the engine. 
 			*/

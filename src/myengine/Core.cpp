@@ -305,9 +305,9 @@ namespace myengine
 				//std::cout << "Entity found by name" << std::endl;
 				return entities.at(ei);
 			}
-
-			throw Exception("Unable to get Entity");
 		}
+
+		throw Exception("Unable to get Entity");
 	}
 
 	/**
