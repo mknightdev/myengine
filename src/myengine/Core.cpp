@@ -349,4 +349,23 @@ namespace myengine
 	{
 		return resourceManager;
 	}
+
+	void Core::registerCollider(std::shared_ptr<SphereCollider> _collider)
+	{
+		std::cout << "# of Colliders: " << colliders.size() << std::endl;
+		std::cout << "Collider Registered." << std::endl;
+		colliders.push_back(_collider);
+		std::cout << "# of Colliders: " << colliders.size() << std::endl;
+	}
+
+	void Core::unregisterCollider(std::shared_ptr<SphereCollider> _collider)
+	{
+		for (size_t ci = 0; ci < colliders.size(); ci++)
+		{
+			if (_collider == colliders.at(ci))
+			{
+				colliders.erase(colliders.begin() + ci);
+			}
+		}
+	}
 }

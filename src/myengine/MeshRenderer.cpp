@@ -13,18 +13,6 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 
-// TODO: move into own class
-glm::vec3 cameraPos3 = glm::vec3(0.0f, 0.0f, 3.0f);
-glm::vec3 cameraFront3 = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp3 = glm::vec3(0.0f, 1.0f, 0.0f);
-
-bool firstMouse3 = true;
-float yaw3 = -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
-float pitch3 = 0.0f;
-float lastX3 = 1280.0f / 2.0;
-float lastY3 = 720.0f / 2.0;
-float fov3 = 45.0f;
-
 namespace myengine
 {
 	/**

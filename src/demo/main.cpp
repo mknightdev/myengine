@@ -18,16 +18,17 @@ int main()
 	std::shared_ptr<Entity> camEntity = core->addEntity("Camera");
 	std::shared_ptr<Camera> camComp = camEntity->addComponent<Camera>();
 
-	std::shared_ptr<Entity> mrEntity = core->addEntity();
-	std::shared_ptr<MeshRenderer> mr = mrEntity->addComponent<MeshRenderer>();
+	std::shared_ptr<Entity> entity = core->addEntity();
+	std::shared_ptr<MeshRenderer> mr = entity->addComponent<MeshRenderer>();
 	mr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/skeleton/skeleton"));
 	mr->setTexture(core->getResourceManager()->load<Texture>("resources/models/skeleton/skeleton_diffuse"));
-	std::shared_ptr<SoundSource> ss = mrEntity->addComponent<SoundSource>();
+	std::shared_ptr<SoundSource> ss = entity->addComponent<SoundSource>();
 	ss->SetVolume(0.25);
 	ss->SetLooping(true);
 	ss->Play();
 
 	core->getEntityByName("Camera");
+	std::shared_ptr<SphereCollider> sc = entity->addComponent<SphereCollider>();
 
 	// TODO:
 	// Sound loading, similar to mesh and texture

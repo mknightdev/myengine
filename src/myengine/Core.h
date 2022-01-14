@@ -16,6 +16,7 @@ namespace myengine
 	struct Mouse;
 	struct ResourceManager;
 	struct Camera;
+	struct SphereCollider;
 
 	/**
 	* \brief This is the brief description. 
@@ -41,7 +42,6 @@ namespace myengine
 		std::shared_ptr<Mouse> getMouse();
 		std::shared_ptr<Environment> getEnvironment();
 		std::shared_ptr<ResourceManager> getResourceManager();
-		std::shared_ptr<Camera> getCamera();
 
 		/**
 		* \brief Gets the Entity
@@ -72,6 +72,9 @@ namespace myengine
 
 		std::shared_ptr<Entity> getEntityByName(const std::string _name);
 
+		void registerCollider(std::shared_ptr<SphereCollider> _collider);
+		void unregisterCollider(std::shared_ptr<SphereCollider> _collider);
+
 		private:
 
 			void setupEngine();
@@ -91,6 +94,15 @@ namespace myengine
 			* Each entity that is created gets stored within entities.
 			*/
 			std::vector<std::shared_ptr<Entity>> entities;
+
+			/**
+			* \brief Stores all the colliders.
+			* 
+			* Contains all of the colliders that have been registered in the engine
+			* and is used to detect collisions.
+			* \see myengine::SphereCollider
+			*/
+			std::vector<std::shared_ptr<SphereCollider>> colliders;
 
 			/**
 			* Used for storing and updating deltaTime and retreiving delta time.
