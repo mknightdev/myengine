@@ -23,6 +23,8 @@ namespace myengine
 		//void SetVelocity();
 		void SetListener(ALfloat _x, ALfloat _y, ALfloat _z);
 
+		~SoundSource();
+
 	private:
 		
 		void CheckError();

@@ -154,6 +154,13 @@ namespace myengine
 		}
 	}
 
+	/// Makes sure the sound stops playing once destroyed
+	SoundSource::~SoundSource()
+	{
+		alSourceStop(srcID);
+		CheckError();
+	}
+
 	// TODO:
 	// position, isPlaying, etc
 	// press p to pause

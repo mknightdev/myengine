@@ -35,29 +35,7 @@ int main()
 	// TODO:
 	// Sound loading, similar to mesh and texture
 
-	//// Player
-	//std::shared_ptr<Entity> pe = core->addEntity();
-	//std::shared_ptr<Player> pc = pe->addComponent<Player>();
-	//std::shared_ptr<SphereCollider> psc = pe->addComponent<SphereCollider>();
-	//std::shared_ptr<Trigger> pt = pe->addComponent<Trigger>();
-	//std::shared_ptr<MeshRenderer> pmr = pe->addComponent<MeshRenderer>();
-	//pmr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/croc/croc"));
-	//pmr->setTexture(core->getResourceManager()->load<Texture>("resources/models/croc/croc_diffuse"));
-	//std::shared_ptr<SoundSource> ss = pe->addComponent<SoundSource>();
-	//// Load in file
-	//ss->setSound(core->getResourceManager()->load<Sound>("resources/sounds/doorbell2"));
-	//ss->SetVolume(0.25);
-	//ss->SetLooping(true);
-	//ss->Play();
 
-	//// Coin
-	//std::shared_ptr<Entity> ce = core->addEntity();
-	//std::shared_ptr<SphereCollider> sc = ce->addComponent<SphereCollider>();
-	//std::shared_ptr<Trigger> ct = ce->addComponent<Trigger>();
-	//std::shared_ptr<Coin> cc = ce->addComponent<Coin>();
-	//std::shared_ptr<MeshRenderer> cmr = ce->addComponent<MeshRenderer>();
-	//cmr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/coin/coin"));
-	//cmr->setTexture(core->getResourceManager()->load<Texture>("resources/models/coin/coin_albedo"));
 
 	// Start the engine
 	core->start();

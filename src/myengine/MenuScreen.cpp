@@ -37,6 +37,13 @@ namespace myengine
 		cText->setTexture(getCore()->getResourceManager()->load<Texture>(""));
 		cText->getTransform()->setPosition(vec3(-3.75, -1, -3));
 		cText->getTransform()->setScale(vec3(0.35f, 0.35f, 0.35f));
+
+		// Menu Music
+		std::shared_ptr<SoundSource> ss = eTitle->addComponent<SoundSource>();
+		ss->setSound(getCore()->getResourceManager()->load<Sound>("resources/sounds/menu"));
+		ss->SetVolume(0.15);
+		ss->SetLooping(true);
+		ss->Play();
 	}
 
 	void MenuScreen::onDisplay()
