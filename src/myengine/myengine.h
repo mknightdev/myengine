@@ -18,3 +18,4 @@
 #include "PBR2Screen.h"
 #include "SphereCollider.h"
 #include "Trigger.h"
+#include "Sound.h"

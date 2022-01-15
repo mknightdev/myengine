@@ -42,6 +42,12 @@ int main()
 	std::shared_ptr<MeshRenderer> pmr = pe->addComponent<MeshRenderer>();
 	pmr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/croc/croc"));
 	pmr->setTexture(core->getResourceManager()->load<Texture>("resources/models/croc/croc_diffuse"));
+	std::shared_ptr<SoundSource> ss = pe->addComponent<SoundSource>();
+	// Load in file
+	ss->setSound(core->getResourceManager()->load<Sound>("resources/sounds/doorbell2"));
+	ss->SetVolume(0.25);
+	ss->SetLooping(true);
+	ss->Play();
 
 	// Coin
 	std::shared_ptr<Entity> ce = core->addEntity();

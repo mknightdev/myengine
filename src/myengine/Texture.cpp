@@ -8,9 +8,9 @@ namespace myengine
 	/**
 	* \brief Initialises the Texture
 	* 
-	* Initialises the texture by getting the path and adding the .png extension. 
-	* It does try .jpg if no texture was found.
+	* Initialises the texture by getting the path and adding the .png extension.
 	* 
+	* \attention Can support .png and .jpg files, other formats not supported.
 	* \warning Will throw an exception if no file with the tried extensions can be found.
 	*/
 	void Texture::onInitialize()

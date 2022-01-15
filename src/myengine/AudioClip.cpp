@@ -36,7 +36,7 @@ namespace myengine
 			std::cout << "Exception in GenBuffers: " << ExceptionCheck(error) << std::endl;
 		}
 
-		loadOgg(_fileName + ".ogg", bufferData, format, freq);
+		loadOgg(_fileName, bufferData, format, freq);
 
 		alBufferData(id, format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), freq);
 		error = alGetError();

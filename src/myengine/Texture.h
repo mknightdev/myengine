@@ -1,5 +1,5 @@
 #include "Resource.h"
-#include "myrenderer/myrenderer.h"
+#include <myrenderer/myrenderer.h>
 
 namespace myengine
 {

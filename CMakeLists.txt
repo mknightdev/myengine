@@ -94,6 +94,8 @@ add_library(myengine
 	src/myengine/Texture.h
 	src/myengine/Shader.cpp
 	src/myengine/Shader.h
+	src/myengine/Sound.cpp
+	src/myengine/Sound.h
 
 	# GCP
 	src/myengine/PBR.cpp

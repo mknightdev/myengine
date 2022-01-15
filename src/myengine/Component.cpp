@@ -4,6 +4,7 @@
 #include "Environment.h"
 #include "Transform.h"
 #include "Camera.h"
+#include "Keyboard.h"
 
 #include <iostream>
 
@@ -78,6 +79,11 @@ namespace myengine
 	std::shared_ptr<Keyboard> Component::getKeyboard()
 	{
 		return getCore()->getKeyboard();
+	}
+
+	bool Component::getKeyDown(int _keyCode)
+	{
+		return getKeyboard()->getKeyDown(_keyCode);
 	}
 
 	/**

@@ -21,7 +21,7 @@ namespace myengine
 
 	void Player::onTick(float _deltaTime)
 	{
-		if (getKeyboard()->getKeyDown(SDLK_k))
+		if (getKeyDown(SDLK_k))
 		{
 			getTransform()->Move(vec3(0, 0, -5) * _deltaTime);
 		}

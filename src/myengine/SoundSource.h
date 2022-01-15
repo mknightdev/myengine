@@ -3,6 +3,8 @@
 
 namespace myengine
 {
+	struct Sound;
+
 	struct SoundSource : Component
 	{
 		void onInitialize();
@@ -12,6 +14,7 @@ namespace myengine
 		void Stop();
 		void Pause();
 
+		void setSound(std::shared_ptr<Sound> _sound);
 
 		void SetVolume(ALfloat _volume);
 		void SetPitch(ALfloat _pitch);

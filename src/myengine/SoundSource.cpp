@@ -5,6 +5,7 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Camera.h"
+#include "Sound.h"
 
 namespace myengine
 {
@@ -20,15 +21,11 @@ namespace myengine
 	{
 		ALCenum error;
 
-		audioClip = std::make_shared<AudioClip>("resources/sounds/doorbell2");
+		//audioClip = std::make_shared<AudioClip>("resources/sounds/doorbell2");
 
 		srcID = 0;
 		alGenSources(1, &srcID);
-		error = alGetError();
-		if (error != AL_NO_ERROR)
-		{
-			std::cout << "Error in GenSources:" << audioClip->ExceptionCheck(error) << std::endl;
-		}
+		CheckError();
 	}
 
 	/**
@@ -73,6 +70,12 @@ namespace myengine
 	{
 		alSourceStop(srcID);
 		CheckError();
+	}
+
+
+	void SoundSource::setSound(std::shared_ptr<Sound> _sound)
+	{
+		audioClip = _sound->audioClip;
 	}
 
 	/**

@@ -22,6 +22,7 @@ namespace myengine
 		std::shared_ptr<Transform> getTransform();
 		std::shared_ptr<Camera> getCamera();
 		vec3 getPosition();
+		bool getKeyDown(int _keyCode);
 
 		float deltaTime();
 		virtual void onInitialize();
