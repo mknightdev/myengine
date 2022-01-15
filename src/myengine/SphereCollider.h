@@ -6,7 +6,10 @@ namespace myengine
 	{
 		void onInitialize();
 		void onDestroy();
+		
 		bool isColliding(std::shared_ptr<SphereCollider> _collider);
+		void collisionResponse(std::shared_ptr<SphereCollider> _collider);
+
 		float getRadius();
 
 	private:

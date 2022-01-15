@@ -27,7 +27,6 @@ namespace myengine
 		// Get the distance between this sphere and the other sphere
 		// If the distance is less than the radius combined, then there is a collision
 		float distance = length(getTransform()->getPosition() - _collider->getTransform()->getPosition());
-		vec3 normalDirection;
 
 		if (distance <= (m_radius + _collider->getRadius()))
 		{
@@ -42,5 +41,14 @@ namespace myengine
 	float SphereCollider::getRadius()
 	{
 		return m_radius;
+	}
+
+	void SphereCollider::collisionResponse(std::shared_ptr<SphereCollider> _collider)
+	{
+		//std::cout << "Response" << std::endl;
+
+		// Normalize of A and B. Unit Vector for Direction only
+		vec3 normalDir = normalize(getTransform()->getPosition() - _collider->getTransform()->getPosition());
+		vec3 v1Temp, v1, v2, v1x, v2x, v1y, v2y, v1z, v2z; 
 	}
 }

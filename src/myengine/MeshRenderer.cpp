@@ -37,7 +37,6 @@ namespace myengine
 		metallicMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_metallic.png", w, h);
 		roughnessMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_roughness.png", w, h);
 		aoMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_mixed_ao.png", w, h);
-		emissiveMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_emissive.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<myrenderer::ShaderProgram>();
@@ -55,7 +54,6 @@ namespace myengine
 		shader->setInt("metallicMap", 2);
 		shader->setInt("roughnessMap", 3);
 		shader->setInt("aoMap", 4);
-		shader->setInt("emissiveMap", 5);
 
 		/*****************************
 		*
@@ -154,8 +152,6 @@ namespace myengine
 		glBindTexture(GL_TEXTURE_2D, roughnessMap->GetId());
 		glActiveTexture(GL_TEXTURE4);
 		glBindTexture(GL_TEXTURE_2D, aoMap->GetId());
-		glActiveTexture(GL_TEXTURE5);
-		glBindTexture(GL_TEXTURE_2D, emissiveMap->GetId());
 		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix
