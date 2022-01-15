@@ -2,8 +2,6 @@
 
 #include "Component.h"
 
-#include <myrenderer/myrenderer.h>
-
 namespace myengine
 {
 	struct Mesh;

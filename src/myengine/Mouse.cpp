@@ -28,4 +28,9 @@ namespace myengine
 	{
 		return mousePosition;
 	}
+
+	bool Mouse::isButtonDown()
+	{
+		return isDown;
+	}
 }

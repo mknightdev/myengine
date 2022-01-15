@@ -100,6 +100,9 @@ add_library(myengine
 	# GCP
 	src/myengine/PBR.cpp
 	src/myengine/PBR.h
+
+	src/myengine/Button.cpp
+	src/myengine/Button.h
 )
 
 add_library(myrenderer

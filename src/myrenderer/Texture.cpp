@@ -7,7 +7,6 @@
 
 namespace myrenderer
 {
-
 	Texture::Texture(unsigned char* image, int x, int y)
 	{
 		width = x;

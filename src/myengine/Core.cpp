@@ -143,6 +143,14 @@ namespace myengine
 
 					//std::cout << "Mouse = (" << mouse->mousePosition.x << ", " << mouse->mousePosition.y << ")" << std::endl;
 				}
+				else if (event.type == SDL_MOUSEBUTTONDOWN)
+				{
+					mouse->isDown = true;
+				}
+				else if (event.type == SDL_MOUSEBUTTONUP)
+				{
+					mouse->isDown = false;
+				}
 				else if (event.type == SDL_KEYDOWN)
 				{
 					keyboard->keyCodes.push_back(event.key.keysym.sym);

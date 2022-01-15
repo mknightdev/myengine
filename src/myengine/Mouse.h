@@ -9,6 +9,7 @@ namespace myengine
 	{
 		static std::shared_ptr<Mouse> create(std::weak_ptr<Core> _core);
 		vec2 getMousePosition();
+		bool isButtonDown();
 
 	private:
 		friend struct myengine::Core;
@@ -28,5 +29,7 @@ namespace myengine
 		* Stores the position of the mouse.
 		*/
 		vec2 mousePosition;
+
+		bool isDown;
 	};
 }
