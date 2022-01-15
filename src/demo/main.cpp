@@ -34,13 +34,13 @@ int main()
 	// TODO:
 	// Sound loading, similar to mesh and texture
 
-	//std::shared_ptr<Entity> pe = core->addEntity();
-	//std::shared_ptr<Player> pc = pe->addComponent<Player>();
-	//std::shared_ptr<MeshRenderer> pmr = pe->addComponent<MeshRenderer>();
-	//pmr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/croc/croc"));
-	//pmr->setTexture(core->getResourceManager()->load<Texture>("resources/models/croc/croc_diffuse"));
-	//std::shared_ptr<SphereCollider> psc = pe->addComponent<SphereCollider>();
-	//std::shared_ptr<Trigger> pt = pe->addComponent<Trigger>();
+	std::shared_ptr<Entity> pe = core->addEntity();
+	std::shared_ptr<Player> pc = pe->addComponent<Player>();
+	std::shared_ptr<MeshRenderer> pmr = pe->addComponent<MeshRenderer>();
+	pmr->setMesh(core->getResourceManager()->load<Mesh>("resources/models/croc/croc"));
+	pmr->setTexture(core->getResourceManager()->load<Texture>("resources/models/croc/croc_diffuse"));
+	std::shared_ptr<SphereCollider> psc = pe->addComponent<SphereCollider>();
+	std::shared_ptr<Trigger> pt = pe->addComponent<Trigger>();
 
 	std::shared_ptr<Entity> ce = core->addEntity();
 	std::shared_ptr<Coin> cc = ce->addComponent<Coin>();

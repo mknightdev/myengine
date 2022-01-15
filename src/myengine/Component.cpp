@@ -5,12 +5,18 @@
 #include "Transform.h"
 #include "Camera.h"
 
+#include <iostream>
+
 namespace myengine
 {
+	void Component::onInitialize() {}
+	void Component::onDisplay() {}
 	void Component::onTick(float _deltaTime) {}
 	void Component::onTick() {}
-	void Component::onDisplay() {}
-	void Component::onInitialize() {}
+
+	void Component::onTrigger() {}
+
+	void Component::onDestroy() {}
 
 	/**
 	* Calls the onTick() function on all derived classes.
@@ -33,6 +39,19 @@ namespace myengine
 	void Component::display()
 	{
 		onDisplay();
+	}
+
+
+	void Component::trigger()
+	{
+		std::cout << "[Component] trigger" << std::endl;
+		onTrigger();
+	}
+
+	void Component::destroy()
+	{
+		std::cout << "Destroying" << std::endl;
+		onDestroy();
 	}
 	
 	/**

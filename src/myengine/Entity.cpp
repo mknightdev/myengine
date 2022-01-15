@@ -1,5 +1,6 @@
 #include "Entity.h"
 #include "Component.h"
+#include "SphereCollider.h"
 
 namespace myengine
 {
@@ -43,6 +44,12 @@ namespace myengine
 			components.at(ei)->tick(_deltaTime);
 			components.at(ei)->tick();
 		}
+	}
+
+	void Entity::colliding(std::shared_ptr<SphereCollider> _collider)
+	{
+		std::cout << "[Entity] colliding" << std::endl;
+		_collider->trigger();
 	}
 
 	/**

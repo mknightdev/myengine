@@ -22,9 +22,9 @@ namespace myengine
 			// If we collide, notify both parties
 			if (sc->isColliding(colliders.at(ci)))
 			{
-				std::cout << "Colliding" << std::endl;
-				getEntity()->getComponent<SphereCollider>()->collisionResponse(colliders.at(ci));
-				colliders.at(ci)->getEntity()->getComponent<SphereCollider>()->collisionResponse(sc);
+				//std::cout << "Colliding" << std::endl;
+				getEntity()->colliding(colliders.at(ci));
+				colliders.at(ci)->getEntity()->colliding(sc);
 			}
 		}
 	}

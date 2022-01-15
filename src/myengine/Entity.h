@@ -11,6 +11,8 @@ namespace myengine
 	struct Core;
 	struct Component;
 	struct Transform;
+	struct SphereCollider;
+	struct Trigger;
 
 	struct Entity
 	{
@@ -71,6 +73,7 @@ namespace myengine
 
 		private:
 			friend struct myengine::Core;
+			friend struct myengine::Trigger;
 
 			std::string name;
 
@@ -103,6 +106,10 @@ namespace myengine
 			* Used for updating the position of the component.
 			*/
 			void tick(float _deltaTime);
+
+
+			void colliding(std::shared_ptr<SphereCollider> _collider);
+
 
 			/**
 			* \brief Destroy flag

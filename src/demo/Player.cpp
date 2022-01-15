@@ -26,4 +26,13 @@ namespace myengine
 			getTransform()->Move(vec3(0, 0, -5) * _deltaTime);
 		}
 	}
+
+	void Player::onTick() {}
+
+	void Player::onTrigger()
+	{
+		std::cout << "Player Collision Triggered" << std::endl;
+	}
+
+	void Player::onDestroy() {}
 }

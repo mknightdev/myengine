@@ -23,16 +23,16 @@ namespace myengine
 		std::shared_ptr<Camera> getCamera();
 		vec3 getPosition();
 
-		vec3 getCameraPos();
-		vec3 getCameraFront();
-		vec3 getCameraUp();
-
-
 		float deltaTime();
 		virtual void onInitialize();
 		virtual void onDisplay();
 		virtual void onTick(float _deltaTime);
 		virtual void onTick();
+		
+		virtual void onTrigger();
+
+		// Called before entity is removed and before component is removed 
+		virtual void onDestroy();
 
 		bool intersect(vec2 _mouse, vec4 _rectangle);
 
@@ -63,5 +63,9 @@ namespace myengine
 
 		
 		void tick();
+
+		void trigger();
+
+		void destroy();
 	};
 }

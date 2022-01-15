@@ -1,5 +1,5 @@
-#pragma once
-#include "myengine/Component.h"
+#include <myengine/Component.h>
+#include <myengine/Trigger.h>
 
 namespace myengine
 {
@@ -8,5 +8,8 @@ namespace myengine
 		void onInitialize();
 		void onDisplay();
 		void onTick(float _deltaTime);
+		void onTick();
+		void onTrigger();
+		void onDestroy();
 	};
 }
