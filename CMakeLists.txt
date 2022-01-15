@@ -103,6 +103,8 @@ add_library(myengine
 
 	src/myengine/Button.cpp
 	src/myengine/Button.h
+	src/myengine/SceneOne.cpp
+	src/myengine/SceneOne.h
 )
 
 add_library(myrenderer

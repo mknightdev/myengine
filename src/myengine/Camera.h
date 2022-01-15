@@ -14,6 +14,7 @@ namespace myengine
 		vec3 getCameraUp();
 
 		void mouseUpdate();
+		void setMove(bool state);
 
 	private:
 		friend struct myengine::Core;
@@ -81,5 +82,7 @@ namespace myengine
 		* Determines how fast the Camera moves, i.e., sensitivity.
 		*/
 		float cameraSpeed;
+
+		bool canMove;
 	};
 }

@@ -12,18 +12,13 @@ int main()
 {
 	std::shared_ptr<Core> core = Core::initialize();
 
-
 	// Main Menu
 	std::shared_ptr<Entity> eMenu = core->addEntity("MainMenu");
 	std::shared_ptr<MenuScreen> cMenu = eMenu->addComponent<MenuScreen>();
 
-
 	// PBR Screen #1
 	//std::shared_ptr<Entity> pbrEntity = core->addEntity();
 	//std::shared_ptr<PBRScreen> pbrScreen = pbrEntity->addComponent<PBRScreen>();
-
-	std::shared_ptr<Entity> camEntity = core->addEntity("Camera");
-	std::shared_ptr<Camera> camComp = camEntity->addComponent<Camera>();
 
 	//std::shared_ptr<Entity> entity = core->addEntity();
 	//std::shared_ptr<MeshRenderer> mr = entity->addComponent<MeshRenderer>();

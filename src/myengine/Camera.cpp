@@ -40,28 +40,31 @@ namespace myengine
 	void Camera::onTick(float _deltaTime)
 	{
 		alListener3f(AL_POSITION, cameraPos.x, cameraPos.y, cameraPos.z);
-
-		if (getKeyboard()->getKeyDown(SDLK_w))
+		
+		if (canMove)
 		{
-			cameraPos += cameraSpeed * cameraFront * _deltaTime;
-		}
+			if (getKeyboard()->getKeyDown(SDLK_w))
+			{
+				cameraPos += cameraSpeed * cameraFront * _deltaTime;
+			}
 
-		if (getKeyboard()->getKeyDown(SDLK_s))
-		{
-			cameraPos -= cameraSpeed * cameraFront * _deltaTime;
-		}
+			if (getKeyboard()->getKeyDown(SDLK_s))
+			{
+				cameraPos -= cameraSpeed * cameraFront * _deltaTime;
+			}
 
-		if (getKeyboard()->getKeyDown(SDLK_a))
-		{
-			cameraPos -= normalize(cross(cameraFront, cameraUp)) * cameraSpeed * _deltaTime;
-		}
+			if (getKeyboard()->getKeyDown(SDLK_a))
+			{
+				cameraPos -= normalize(cross(cameraFront, cameraUp)) * cameraSpeed * _deltaTime;
+			}
 
-		if (getKeyboard()->getKeyDown(SDLK_d))
-		{
-			cameraPos += normalize(cross(cameraFront, cameraUp)) * cameraSpeed * _deltaTime;
-		}
+			if (getKeyboard()->getKeyDown(SDLK_d))
+			{
+				cameraPos += normalize(cross(cameraFront, cameraUp)) * cameraSpeed * _deltaTime;
+			}
 
-		mouseUpdate();
+			mouseUpdate();
+		}
 	}
 
 	/**
@@ -139,5 +142,10 @@ namespace myengine
 	vec3 Camera::getCameraUp()
 	{
 		return cameraUp;
+	}
+
+	void Camera::setMove(bool state)
+	{
+		canMove = state;
 	}
 }
