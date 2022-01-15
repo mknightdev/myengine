@@ -13,47 +13,43 @@ namespace myengine
 	void Component::onDisplay() {}
 	void Component::onTick(float _deltaTime) {}
 	void Component::onTick() {}
-
 	void Component::onTrigger() {}
 
-	void Component::onDestroy() {}
 
 	/**
-	* Calls the onTick() function on all derived classes.
+	* \brief Calls the onTick() function on all derived classes.
 	* 
 	* \param _deltaTime Passses through delta time to the derived classes.
+	* \see tick()
 	*/
 	void Component::tick(float _deltaTime)
 	{
 		onTick(_deltaTime);
 	}
 
+	/**
+	* \brief Calls the onTick() function on all derived classes.
+	* 
+	* \see tick(float _deltaTime)
+	*/
 	void Component::tick()
 	{
 		onTick();
 	}
 
-	/**
-	* Calls the onDisplay() function on all derived classes.
-	*/
+	/// Calls the onDisplay() function on all derived classes. 
 	void Component::display()
 	{
 		onDisplay();
 	}
 
-
+	/// Calls the onTrigger() function on all derived classes. 
 	void Component::trigger()
 	{
 		std::cout << "[Component] trigger" << std::endl;
 		onTrigger();
 	}
 
-	void Component::destroy()
-	{
-		std::cout << "Destroying" << std::endl;
-		onDestroy();
-	}
-	
 	/**
 	* \brief Returns the Core.
 	* 

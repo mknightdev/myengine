@@ -25,12 +25,6 @@ namespace myengine
 		getCore()->unregisterCollider(getEntity()->getComponent<SphereCollider>());
 	}
 
-	void SphereCollider::onTrigger()
-	{
-		std::cout << "[SphereCollider] onTrigger" << std::endl;
-		
-	}
-
 	bool SphereCollider::isColliding(std::shared_ptr<SphereCollider> _collider)
 	{
 		// Get the distance between this sphere and the other sphere

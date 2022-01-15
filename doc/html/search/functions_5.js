@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getcamera_0',['getCamera',['../structmyengine_1_1_component.html#a3c4a94098f91b2602ce73a81d0bc9570',1,'myengine::Component::getCamera()'],['../structmyengine_1_1_core.html#ade0a9332e189c2afa521604c3db791c3',1,'myengine::Core::getCamera()']]],
+  ['getcamera_0',['getCamera',['../structmyengine_1_1_component.html#a3c4a94098f91b2602ce73a81d0bc9570',1,'myengine::Component']]],
   ['getcamerafront_1',['getCameraFront',['../structmyengine_1_1_camera.html#ab55d7d1d82ba3f04ec07d9aef7b3768f',1,'myengine::Camera']]],
   ['getcamerapos_2',['getCameraPos',['../structmyengine_1_1_camera.html#a1fd6ddb0e00eb61bf09345dfbd70949e',1,'myengine::Camera']]],
   ['getcameraup_3',['getCameraUp',['../structmyengine_1_1_camera.html#a7cf7bbf7ee7b6c063150f8dd12970bff',1,'myengine::Camera']]],
@@ -15,8 +15,8 @@ var searchData=
   ['getid_12',['GetId',['../structmyengine_1_1_audio_clip.html#a610b54df59c755bbb7a4e2f5723da8a8',1,'myengine::AudioClip::GetId()'],['../structmyrenderer_1_1_texture.html#af4579aee69eea8ad808e53e6f89d69ce',1,'myrenderer::Texture::GetId()']]],
   ['getkeyboard_13',['getKeyboard',['../structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a',1,'myengine::Component::getKeyboard()'],['../structmyengine_1_1_core.html#a22ca571e0c193c5710a6a4432273131f',1,'myengine::Core::getKeyboard()']]],
   ['getkeydown_14',['getKeyDown',['../structmyengine_1_1_keyboard.html#aa62c37dc6ff320fe3aaa16939a1c5aa8',1,'myengine::Keyboard']]],
-  ['getmodel_15',['GetModel',['../structmyrenderer_1_1_model.html#a031d49c9b28eb4850aa92498741232ab',1,'myrenderer::Model']]],
-  ['getmodel_16',['getModel',['../structmyengine_1_1_transform.html#a39aa8184d5a5d98725a100f28a81afca',1,'myengine::Transform']]],
+  ['getmodel_15',['getModel',['../structmyengine_1_1_transform.html#a39aa8184d5a5d98725a100f28a81afca',1,'myengine::Transform']]],
+  ['getmodel_16',['GetModel',['../structmyrenderer_1_1_model.html#a031d49c9b28eb4850aa92498741232ab',1,'myrenderer::Model']]],
   ['getmouse_17',['getMouse',['../structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4',1,'myengine::Component::getMouse()'],['../structmyengine_1_1_core.html#ae999e12cd21353bc5da452da6087cdfb',1,'myengine::Core::getMouse()']]],
   ['getmouseposition_18',['getMousePosition',['../structmyengine_1_1_mouse.html#a5a0e214a7ff97f05d82c398ba189d662',1,'myengine::Mouse']]],
   ['getpath_19',['GetPath',['../structmyengine_1_1_resource.html#a3e5a17a33814abb5d591f51d726c8bb2',1,'myengine::Resource']]],

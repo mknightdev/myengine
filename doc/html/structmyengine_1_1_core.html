@@ -71,6 +71,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="structmyengine_1_1_core-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">myengine::Core Struct Reference</div></div>
 </div><!--header-->
@@ -106,9 +107,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a24c44abbba15cf736ed13c72923863e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa5b920b9a571b91010b3b4d3926dab2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_resource_manager.html">ResourceManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#afa5b920b9a571b91010b3b4d3926dab2">getResourceManager</a> ()</td></tr>
 <tr class="separator:afa5b920b9a571b91010b3b4d3926dab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade0a9332e189c2afa521604c3db791c3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#ade0a9332e189c2afa521604c3db791c3">getCamera</a> ()</td></tr>
-<tr class="memdesc:ade0a9332e189c2afa521604c3db791c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="structmyengine_1_1_camera.html">Camera</a>.  <a href="structmyengine_1_1_core.html#ade0a9332e189c2afa521604c3db791c3">More...</a><br /></td></tr>
-<tr class="separator:ade0a9332e189c2afa521604c3db791c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b7840f000bde2272a94d11e14366f21"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a8b7840f000bde2272a94d11e14366f21"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a8b7840f000bde2272a94d11e14366f21">getEntity</a> ()</td></tr>
 <tr class="memdesc:a8b7840f000bde2272a94d11e14366f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="structmyengine_1_1_entity.html">Entity</a>.  <a href="structmyengine_1_1_core.html#a8b7840f000bde2272a94d11e14366f21">More...</a><br /></td></tr>
@@ -116,6 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20c181bf8c1dc9834e20e650ec049fc2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a20c181bf8c1dc9834e20e650ec049fc2">getEntityByName</a> (const std::string _name)</td></tr>
 <tr class="memdesc:a20c181bf8c1dc9834e20e650ec049fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="structmyengine_1_1_entity.html">Entity</a> by name.  <a href="structmyengine_1_1_core.html#a20c181bf8c1dc9834e20e650ec049fc2">More...</a><br /></td></tr>
 <tr class="separator:a20c181bf8c1dc9834e20e650ec049fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c179c86f993b79d71d57527eed50b0f"><td class="memItemLeft" align="right" valign="top"><a id="a1c179c86f993b79d71d57527eed50b0f" name="a1c179c86f993b79d71d57527eed50b0f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>registerCollider</b> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="separator:a1c179c86f993b79d71d57527eed50b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64c5e969aee7e6c433fe8fbd60d0bd4b"><td class="memItemLeft" align="right" valign="top"><a id="a64c5e969aee7e6c433fe8fbd60d0bd4b" name="a64c5e969aee7e6c433fe8fbd60d0bd4b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>unregisterCollider</b> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="separator:a64c5e969aee7e6c433fe8fbd60d0bd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -145,6 +149,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a5127d35ab2c189e66b884d7c1e105db3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_entity.html">Entity</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a5127d35ab2c189e66b884d7c1e105db3">entities</a></td></tr>
 <tr class="memdesc:a5127d35ab2c189e66b884d7c1e105db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores entities.  <a href="structmyengine_1_1_core.html#a5127d35ab2c189e66b884d7c1e105db3">More...</a><br /></td></tr>
 <tr class="separator:a5127d35ab2c189e66b884d7c1e105db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9991507a34ec1c38fc3667f8c6538e23"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a9991507a34ec1c38fc3667f8c6538e23">colliders</a></td></tr>
+<tr class="memdesc:a9991507a34ec1c38fc3667f8c6538e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores all the colliders.  <a href="structmyengine_1_1_core.html#a9991507a34ec1c38fc3667f8c6538e23">More...</a><br /></td></tr>
+<tr class="separator:a9991507a34ec1c38fc3667f8c6538e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aec6fb8529bbe280e7a0b75c4132398"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_environment.html">Environment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a6aec6fb8529bbe280e7a0b75c4132398">environment</a></td></tr>
 <tr class="separator:a6aec6fb8529bbe280e7a0b75c4132398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76f50315bd2b40bfd1668d998855be22"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_keyboard.html">Keyboard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a76f50315bd2b40bfd1668d998855be22">keyboard</a></td></tr>
@@ -153,9 +160,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4f2db9fc02d3ab402c3b89d01e6f8feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7005ccb6d5f4827a8d94a2b7790f5b4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_resource_manager.html">ResourceManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#aa7005ccb6d5f4827a8d94a2b7790f5b4">resourceManager</a></td></tr>
 <tr class="separator:aa7005ccb6d5f4827a8d94a2b7790f5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cfb6785ba1f2871909a2f586d0dbd0a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a2cfb6785ba1f2871909a2f586d0dbd0a">camera</a></td></tr>
-<tr class="memdesc:a2cfb6785ba1f2871909a2f586d0dbd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the <a class="el" href="structmyengine_1_1_camera.html">Camera</a>.  <a href="structmyengine_1_1_core.html#a2cfb6785ba1f2871909a2f586d0dbd0a">More...</a><br /></td></tr>
-<tr class="separator:a2cfb6785ba1f2871909a2f586d0dbd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac267d935fde8226d4fe892ee900e6b39"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="structmyengine_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#ac267d935fde8226d4fe892ee900e6b39">self</a></td></tr>
 <tr class="separator:ac267d935fde8226d4fe892ee900e6b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6b009002cbb4244feb95ecb1b091aca"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#ab6b009002cbb4244feb95ecb1b091aca">window</a></td></tr>
@@ -164,6 +168,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5cf05efa0aa9d07b29d9043ab37ac62a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97116f404d94000b831b85ecd76bdf94"><td class="memItemLeft" align="right" valign="top">ALCcontext *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a97116f404d94000b831b85ecd76bdf94">context</a></td></tr>
 <tr class="separator:a97116f404d94000b831b85ecd76bdf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a2454b6bf46a01d2f9f9017b2289937de"><td class="memItemLeft" align="right" valign="top"><a id="a2454b6bf46a01d2f9f9017b2289937de" name="a2454b6bf46a01d2f9f9017b2289937de"></a>
+struct&#160;</td><td class="memItemRight" valign="bottom"><b>myengine::Trigger</b></td></tr>
+<tr class="separator:a2454b6bf46a01d2f9f9017b2289937de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is the brief description. </p>
@@ -243,26 +253,6 @@ Private Attributes</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_menu_screen.html">MenuScreen</a> </dd>
 <dd>
 <a class="el" href="structmyengine_1_1_p_b_r_screen.html">PBRScreen</a> </dd></dl>
-
-</div>
-</div>
-<a id="ade0a9332e189c2afa521604c3db791c3" name="ade0a9332e189c2afa521604c3db791c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade0a9332e189c2afa521604c3db791c3">&#9670;&nbsp;</a></span>getCamera()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</a> &gt; myengine::Core::getCamera </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the <a class="el" href="structmyengine_1_1_camera.html">Camera</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;Camera&gt; camera the <a class="el" href="structmyengine_1_1_camera.html">Camera</a> object created within <a class="el" href="structmyengine_1_1_core.html" title="This is the brief description.">Core</a>'s setup. </dd></dl>
 
 </div>
 </div>
@@ -598,8 +588,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2cfb6785ba1f2871909a2f586d0dbd0a" name="a2cfb6785ba1f2871909a2f586d0dbd0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cfb6785ba1f2871909a2f586d0dbd0a">&#9670;&nbsp;</a></span>camera</h2>
+<a id="a9991507a34ec1c38fc3667f8c6538e23" name="a9991507a34ec1c38fc3667f8c6538e23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9991507a34ec1c38fc3667f8c6538e23">&#9670;&nbsp;</a></span>colliders</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -608,7 +598,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="structmyengine_1_1_camera.html">Camera</a>&gt; myengine::Core::camera</td>
+          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a>&gt; &gt; myengine::Core::colliders</td>
         </tr>
       </table>
   </td>
@@ -618,8 +608,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Stores the <a class="el" href="structmyengine_1_1_camera.html">Camera</a>. </p>
-<p >Used for storing and retrieving the camera positions. </p>
+<p>Stores all the colliders. </p>
+<p >Contains all of the colliders that have been registered in the engine and is used to detect collisions. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_sphere_collider.html">myengine::SphereCollider</a> </dd></dl>
 
 </div>
 </div>

@@ -28,11 +28,7 @@ namespace myengine
 		virtual void onDisplay();
 		virtual void onTick(float _deltaTime);
 		virtual void onTick();
-		
 		virtual void onTrigger();
-
-		// Called before entity is removed and before component is removed 
-		virtual void onDestroy();
 
 		bool intersect(vec2 _mouse, vec4 _rectangle);
 
