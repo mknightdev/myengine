@@ -1,0 +1,4 @@
+<map id="myengine::SoundSource::onInitialize" name="myengine::SoundSource::onInitialize">
+<area shape="rect" id="node1" title="Intialises the SoundSource." alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_sound_source.html#ada3259fe44a9b27738e6c4d95b092a04" title="Error checking for audio." alt="" coords="217,5,381,47"/>
+</map>

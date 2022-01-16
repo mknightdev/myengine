@@ -1,0 +1,4 @@
+<map id="myengine::Component::getTransform" name="myengine::Component::getTransform">
+<area shape="rect" id="node1" title="Returns the Transform." alt="" coords="5,5,157,47"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="205,5,357,47"/>
+</map>

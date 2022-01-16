@@ -1,0 +1,9 @@
+<map id="myengine::Component::getKeyboard" name="myengine::Component::getKeyboard">
+<area shape="rect" id="node1" title="Returns the Keyboard." alt="" coords="236,145,388,186"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_camera.html#ab20ef0c683c1e07b8546a3ddf26f262b" title="Updates Camera Position." alt="" coords="8,5,185,32"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="10,57,183,98"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd" title="The position of the model." alt="" coords="17,123,176,149"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1" title="Updates Screen." alt="" coords="16,174,177,215"/>
+<area shape="rect" id="node6" href="$structmyengine_1_1_p_b_r_screen.html#ad9af1fafe83d5bb4ae5e1fc37d2bc258" title="Updates Screen." alt="" coords="19,239,174,281"/>
+<area shape="rect" id="node7" href="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce" title="The position of the triangle." alt="" coords="5,305,188,346"/>
+</map>

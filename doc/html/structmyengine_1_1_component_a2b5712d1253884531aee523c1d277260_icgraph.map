@@ -1,0 +1,10 @@
+<map id="myengine::Component::getTransform" name="myengine::Component::getTransform">
+<area shape="rect" id="node1" title="Returns the Transform." alt="" coords="236,188,388,229"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_mesh_renderer.html#a3096e07211e99206afc00ef9c867abd3" title="Draws the model." alt="" coords="11,5,182,47"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_model_renderer.html#a2dab68b27698175ed5deff280184aeba" title="Draws the model." alt="" coords="10,71,183,112"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_p_b_r.html#a0316ec5798db766d49c8b18237f07878" title="Draws the model." alt="" coords="7,137,186,163"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_triangle_renderer.html#a6cb4252e76b0c719d3819cc5b6ca86a8" title="Draws the triangle." alt="" coords="5,188,188,229"/>
+<area shape="rect" id="node6" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="10,253,183,295"/>
+<area shape="rect" id="node7" href="$structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd" title="The position of the model." alt="" coords="17,319,176,346"/>
+<area shape="rect" id="node8" href="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce" title="The position of the triangle." alt="" coords="5,371,188,412"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="myengine::Component" name="myengine::Component">
+<area shape="rect" id="node1" title=" " alt="" coords="5,385,157,412"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_button.html" title=" " alt="" coords="235,5,359,32"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_camera.html" title=" " alt="" coords="231,56,362,83"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_coin.html" title=" " alt="" coords="241,107,353,133"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_menu_screen.html" title=" " alt="" coords="217,157,376,184"/>
+<area shape="rect" id="node6" href="$structmyengine_1_1_mesh_renderer.html" title=" " alt="" coords="211,208,382,235"/>
+<area shape="rect" id="node7" href="$structmyengine_1_1_model_renderer.html" title=" " alt="" coords="210,259,383,285"/>
+<area shape="rect" id="node8" href="$structmyengine_1_1_p_b_r.html" title=" " alt="" coords="240,309,353,336"/>
+<area shape="rect" id="node9" href="$structmyengine_1_1_p_b_r2_screen.html" title=" " alt="" coords="216,360,377,387"/>
+<area shape="rect" id="node10" href="$structmyengine_1_1_p_b_r_screen.html" title=" " alt="" coords="219,411,374,437"/>
+<area shape="rect" id="node11" href="$structmyengine_1_1_player.html" title=" " alt="" coords="235,461,358,488"/>
+<area shape="rect" id="node12" href="$structmyengine_1_1_scene_one.html" title=" " alt="" coords="223,512,370,539"/>
+<area shape="rect" id="node13" href="$structmyengine_1_1_sound_source.html" title=" " alt="" coords="215,563,379,589"/>
+<area shape="rect" id="node14" href="$structmyengine_1_1_sphere_collider.html" title=" " alt="" coords="211,613,382,640"/>
+<area shape="rect" id="node15" href="$structmyengine_1_1_transform.html" title=" " alt="" coords="225,664,368,691"/>
+<area shape="rect" id="node16" href="$structmyengine_1_1_triangle_renderer.html" title=" " alt="" coords="205,715,388,741"/>
+<area shape="rect" id="node17" href="$structmyengine_1_1_trigger.html" title=" " alt="" coords="234,765,359,792"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="myengine::PBR::mouseUpdate" name="myengine::PBR::mouseUpdate">
+<area shape="rect" id="node1" title="Update mouse position." alt="" coords="5,13,207,39"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4" title="Returns the Mouse." alt="" coords="255,5,407,47"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="455,5,607,47"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="655,5,807,47"/>
+</map>

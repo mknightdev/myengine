@@ -1,0 +1,8 @@
+<map id="myengine::Resource" name="myengine::Resource">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,147,133"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_audio_clip.html" title=" " alt="" coords="195,5,336,32"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_mesh.html" title=" " alt="" coords="206,56,325,83"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_shader.html" title=" " alt="" coords="202,107,329,133"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_sound.html" title=" " alt="" coords="204,157,327,184"/>
+<area shape="rect" id="node6" href="$structmyengine_1_1_texture.html" title=" " alt="" coords="201,208,330,235"/>
+</map>
