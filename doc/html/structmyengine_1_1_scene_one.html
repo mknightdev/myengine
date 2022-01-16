@@ -96,10 +96,6 @@ Collaboration diagram for myengine::SceneOne:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a030753613ae9c6a9666c0a18798623bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_scene_one.html#a030753613ae9c6a9666c0a18798623bf">onInitialize</a> ()</td></tr>
 <tr class="separator:a030753613ae9c6a9666c0a18798623bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f4073504509d7d469aed6f1b291f938"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_scene_one.html#a2f4073504509d7d469aed6f1b291f938">onDisplay</a> ()</td></tr>
-<tr class="separator:a2f4073504509d7d469aed6f1b291f938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cebb03659dbec30a7c3020adaf08e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_scene_one.html#a0cebb03659dbec30a7c3020adaf08e97">onTick</a> ()</td></tr>
-<tr class="separator:a0cebb03659dbec30a7c3020adaf08e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structmyengine_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structmyengine_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a></td></tr>
 <tr class="memitem:a2b80c2d91dac8f429f6b6f6305d7c5be inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_core.html">Core</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be">getCore</a> ()</td></tr>
 <tr class="memdesc:a2b80c2d91dac8f429f6b6f6305d7c5be inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="structmyengine_1_1_core.html" title="This is the brief description.">Core</a>.  <a href="structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be">More...</a><br /></td></tr>
@@ -129,6 +125,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getKeyDown</b> (int _
 <tr class="memitem:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">deltaTime</a> ()</td></tr>
 <tr class="memdesc:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the deltaTime.  <a href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">More...</a><br /></td></tr>
 <tr class="separator:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01950f2661cfe671eca0907590276a81 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a01950f2661cfe671eca0907590276a81">onDisplay</a> ()</td></tr>
+<tr class="separator:a01950f2661cfe671eca0907590276a81 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a718ea40d1168a32bde09df3ad28474d3 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a718ea40d1168a32bde09df3ad28474d3">onTick</a> (float _deltaTime)</td></tr>
 <tr class="separator:a718ea40d1168a32bde09df3ad28474d3 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa21c1d139b281bbf29cf4fbc7696b82 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="afa21c1d139b281bbf29cf4fbc7696b82" name="afa21c1d139b281bbf29cf4fbc7696b82"></a>
@@ -157,33 +155,6 @@ std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myren
 <tr class="separator:ae2ff57414a040c597b2f8d8c6f2202d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2f4073504509d7d469aed6f1b291f938" name="a2f4073504509d7d469aed6f1b291f938"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f4073504509d7d469aed6f1b291f938">&#9670;&nbsp;</a></span>onDisplay()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void myengine::SceneOne::onDisplay </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a>.</p>
-
-</div>
-</div>
 <a id="a030753613ae9c6a9666c0a18798623bf" name="a030753613ae9c6a9666c0a18798623bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a030753613ae9c6a9666c0a18798623bf">&#9670;&nbsp;</a></span>onInitialize()</h2>
 
@@ -195,33 +166,6 @@ std::shared_ptr&lt; <a class="el" href="structmyrenderer_1_1_texture.html">myren
       <table class="memname">
         <tr>
           <td class="memname">void myengine::SceneOne::onInitialize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a>.</p>
-
-</div>
-</div>
-<a id="a0cebb03659dbec30a7c3020adaf08e97" name="a0cebb03659dbec30a7c3020adaf08e97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cebb03659dbec30a7c3020adaf08e97">&#9670;&nbsp;</a></span>onTick()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void myengine::SceneOne::onTick </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
