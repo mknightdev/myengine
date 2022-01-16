@@ -1,7 +1,0 @@
-<map id="myengine::TriangleRenderer::onDisplay" name="myengine::TriangleRenderer::onDisplay">
-<area shape="rect" id="node1" title="Draws the triangle." alt="" coords="5,39,188,80"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136" title="Returns the deltaTime." alt="" coords="236,8,388,49"/>
-<area shape="rect" id="node5" href="$structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260" title="Returns the Transform." alt="" coords="436,71,588,112"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="436,5,588,47"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="636,39,788,80"/>
-</map>

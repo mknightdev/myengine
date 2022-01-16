@@ -8,5 +8,7 @@ digraph "myengine::Resource::GetPath"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="myengine::Mesh::onInitialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_mesh.html#a9f660312b8a9f4277f49a403393494c6",tooltip="Initialises the Mesh."];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="myengine::Texture::\lonInitialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_texture.html#a2c38a803861af9554ea77335780ca2ce",tooltip="Initialises the Texture."];
+  Node3 [label="myengine::Sound::onInitialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_sound.html#add4b9aa512a08bb025a917c51f91a0d8",tooltip="Initialises the Sound."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="myengine::Texture::\lonInitialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structmyengine_1_1_texture.html#a2c38a803861af9554ea77335780ca2ce",tooltip="Initialises the Texture."];
 }

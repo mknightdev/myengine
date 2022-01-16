@@ -1,5 +1,0 @@
-<map id="myengine::Component::getKeyboard" name="myengine::Component::getKeyboard">
-<area shape="rect" id="node1" title="Returns the Keyboard." alt="" coords="236,39,388,80"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="10,5,183,47"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce" title="The position of the triangle." alt="" coords="5,71,188,112"/>
-</map>

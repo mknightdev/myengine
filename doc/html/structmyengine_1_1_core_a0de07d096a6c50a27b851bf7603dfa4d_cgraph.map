@@ -1,7 +1,0 @@
-<map id="myengine::Core::setupEngine" name="myengine::Core::setupEngine">
-<area shape="rect" id="node1" title="Sets up the engine." alt="" coords="5,107,199,134"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_environment.html#a2eec7ae6dae192b31e7801134814497b" title="Creates the environment." alt="" coords="263,5,421,47"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_keyboard.html#aa40ec20eb114d14a8a7f3259da761c3a" title="Creates the keyboard." alt="" coords="271,71,413,112"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_mouse.html#a1ea4703d63edd211342db008bb6cfbef" title="Creates the mouse." alt="" coords="257,137,427,163"/>
-<area shape="rect" id="node5" href="$structmyengine_1_1_resource_manager.html#a106a4f5480e978c61e4065c6a4195651" title="Creates the resource manager." alt="" coords="247,188,437,229"/>
-</map>

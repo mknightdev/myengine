@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['entity_0',['Entity',['../structmyengine_1_1_entity.html',1,'myengine']]],
-  ['environment_1',['Environment',['../structmyengine_1_1_environment.html',1,'myengine']]],
-  ['exception_2',['Exception',['../structmyengine_1_1_exception.html',1,'myengine']]]
+  ['camera_0',['Camera',['../structmyengine_1_1_camera.html',1,'myengine']]],
+  ['coin_1',['Coin',['../structmyengine_1_1_coin.html',1,'myengine']]],
+  ['collider_2',['Collider',['../structmyengine_1_1_collider.html',1,'myengine']]],
+  ['component_3',['Component',['../structmyengine_1_1_component.html',1,'myengine']]],
+  ['core_4',['Core',['../structmyengine_1_1_core.html',1,'myengine']]]
 ];

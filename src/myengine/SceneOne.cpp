@@ -42,14 +42,4 @@ namespace myengine
 		cmr->setRadius(1.0f);
 		std::shared_ptr<SphereCollider> sc = ce->addComponent<SphereCollider>();
 	}
-
-	void SceneOne::onDisplay()
-	{
-
-	}
-
-	void SceneOne::onTick()
-	{
-
-	}
 }

@@ -1,5 +1,0 @@
-<map id="myengine::AudioClip::AudioClip" name="myengine::AudioClip::AudioClip">
-<area shape="rect" id="node1" title="Initialises the AudioClip." alt="" coords="5,39,147,80"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_audio_clip.html#a7d5a018889b5aef7a93a72ff6578d933" title="OpenAL Soft exception checking." alt="" coords="195,5,336,47"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_audio_clip.html#a7489100a477a9adb62c8d47e271067b4" title="Loads an .ogg audio file." alt="" coords="195,71,336,112"/>
-</map>

@@ -80,23 +80,26 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">static</span> std::shared_ptr&lt;Mouse&gt; <a class="code hl_function" href="structmyengine_1_1_mouse.html#a1ea4703d63edd211342db008bb6cfbef">create</a>(std::weak_ptr&lt;Core&gt; _core);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        vec2 <a class="code hl_function" href="structmyengine_1_1_mouse.html#a5a0e214a7ff97f05d82c398ba189d662">getMousePosition</a>();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_core.html">myengine::Core</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structmyengine_1_1_mouse.html#a08e03c5b8f44e70f6c74d9c4f0201d0c">   20</a></span>        std::weak_ptr&lt;Mouse&gt; <span class="keyword">self</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structmyengine_1_1_mouse.html#ad614e24b484539551aaa4ec04c75ed4a">   25</a></span>        std::weak_ptr&lt;Core&gt; <a class="code hl_variable" href="structmyengine_1_1_mouse.html#ad614e24b484539551aaa4ec04c75ed4a">core</a>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structmyengine_1_1_mouse.html#a302391361cf263fe24f4c1a61e54cf54">   30</a></span>        vec2 <a class="code hl_variable" href="structmyengine_1_1_mouse.html#a302391361cf263fe24f4c1a61e54cf54">mousePosition</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    };</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">bool</span> isButtonDown();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_core.html">myengine::Core</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structmyengine_1_1_mouse.html#a08e03c5b8f44e70f6c74d9c4f0201d0c">   21</a></span>        std::weak_ptr&lt;Mouse&gt; <span class="keyword">self</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structmyengine_1_1_mouse.html#ad614e24b484539551aaa4ec04c75ed4a">   26</a></span>        std::weak_ptr&lt;Core&gt; <a class="code hl_variable" href="structmyengine_1_1_mouse.html#ad614e24b484539551aaa4ec04c75ed4a">core</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structmyengine_1_1_mouse.html#a302391361cf263fe24f4c1a61e54cf54">   31</a></span>        vec2 <a class="code hl_variable" href="structmyengine_1_1_mouse.html#a302391361cf263fe24f4c1a61e54cf54">mousePosition</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">bool</span> isDown;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 <div class="ttc" id="astructmyengine_1_1_core_html"><div class="ttname"><a href="structmyengine_1_1_core.html">myengine::Core</a></div><div class="ttdoc">This is the brief description.</div><div class="ttdef"><b>Definition:</b> Core.h:30</div></div>
 <div class="ttc" id="astructmyengine_1_1_mouse_html"><div class="ttname"><a href="structmyengine_1_1_mouse.html">myengine::Mouse</a></div><div class="ttdef"><b>Definition:</b> Mouse.h:9</div></div>
 <div class="ttc" id="astructmyengine_1_1_mouse_html_a1ea4703d63edd211342db008bb6cfbef"><div class="ttname"><a href="structmyengine_1_1_mouse.html#a1ea4703d63edd211342db008bb6cfbef">myengine::Mouse::create</a></div><div class="ttdeci">static std::shared_ptr&lt; Mouse &gt; create(std::weak_ptr&lt; Core &gt; _core)</div><div class="ttdoc">Creates the mouse.</div><div class="ttdef"><b>Definition:</b> Mouse.cpp:12</div></div>
-<div class="ttc" id="astructmyengine_1_1_mouse_html_a302391361cf263fe24f4c1a61e54cf54"><div class="ttname"><a href="structmyengine_1_1_mouse.html#a302391361cf263fe24f4c1a61e54cf54">myengine::Mouse::mousePosition</a></div><div class="ttdeci">vec2 mousePosition</div><div class="ttdef"><b>Definition:</b> Mouse.h:30</div></div>
+<div class="ttc" id="astructmyengine_1_1_mouse_html_a302391361cf263fe24f4c1a61e54cf54"><div class="ttname"><a href="structmyengine_1_1_mouse.html#a302391361cf263fe24f4c1a61e54cf54">myengine::Mouse::mousePosition</a></div><div class="ttdeci">vec2 mousePosition</div><div class="ttdef"><b>Definition:</b> Mouse.h:31</div></div>
 <div class="ttc" id="astructmyengine_1_1_mouse_html_a5a0e214a7ff97f05d82c398ba189d662"><div class="ttname"><a href="structmyengine_1_1_mouse.html#a5a0e214a7ff97f05d82c398ba189d662">myengine::Mouse::getMousePosition</a></div><div class="ttdeci">vec2 getMousePosition()</div><div class="ttdoc">Returns the mouse position.</div><div class="ttdef"><b>Definition:</b> Mouse.cpp:27</div></div>
-<div class="ttc" id="astructmyengine_1_1_mouse_html_ad614e24b484539551aaa4ec04c75ed4a"><div class="ttname"><a href="structmyengine_1_1_mouse.html#ad614e24b484539551aaa4ec04c75ed4a">myengine::Mouse::core</a></div><div class="ttdeci">std::weak_ptr&lt; Core &gt; core</div><div class="ttdef"><b>Definition:</b> Mouse.h:25</div></div>
+<div class="ttc" id="astructmyengine_1_1_mouse_html_ad614e24b484539551aaa4ec04c75ed4a"><div class="ttname"><a href="structmyengine_1_1_mouse.html#ad614e24b484539551aaa4ec04c75ed4a">myengine::Mouse::core</a></div><div class="ttdeci">std::weak_ptr&lt; Core &gt; core</div><div class="ttdef"><b>Definition:</b> Mouse.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,7 +1,0 @@
-<map id="myengine::ModelRenderer::onDisplay" name="myengine::ModelRenderer::onDisplay">
-<area shape="rect" id="node1" title="Draws the model." alt="" coords="5,39,179,80"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136" title="Returns the deltaTime." alt="" coords="227,8,379,49"/>
-<area shape="rect" id="node5" href="$structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260" title="Returns the Transform." alt="" coords="427,71,579,112"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="427,5,579,47"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="627,39,779,80"/>
-</map>

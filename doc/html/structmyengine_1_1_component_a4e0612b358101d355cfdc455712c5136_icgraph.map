@@ -1,7 +1,0 @@
-<map id="myengine::Component::deltaTime" name="myengine::Component::deltaTime">
-<area shape="rect" id="node1" title="Returns the deltaTime." alt="" coords="236,104,388,145"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_model_renderer.html#a2dab68b27698175ed5deff280184aeba" title="Draws the model." alt="" coords="10,5,183,47"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_triangle_renderer.html#a6cb4252e76b0c719d3819cc5b6ca86a8" title="Draws the triangle." alt="" coords="5,71,188,112"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="10,136,183,177"/>
-<area shape="rect" id="node5" href="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce" title="The position of the triangle." alt="" coords="5,201,188,243"/>
-</map>

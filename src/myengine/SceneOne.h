@@ -12,8 +12,6 @@ namespace myengine
 		void onTick();
 
 	private:
-		friend struct myengine::Core;
-
 		std::shared_ptr<myrenderer::ShaderProgram> shader;
 		std::shared_ptr<myrenderer::VertexArray> vao;
 		std::shared_ptr<myrenderer::VertexBuffer> positionsVbo;

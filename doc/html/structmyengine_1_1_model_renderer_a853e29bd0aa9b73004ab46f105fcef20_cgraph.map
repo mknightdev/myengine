@@ -1,6 +1,0 @@
-<map id="myengine::ModelRenderer::mouseUpdate" name="myengine::ModelRenderer::mouseUpdate">
-<area shape="rect" id="node1" title="Update mouse position." alt="" coords="5,5,179,47"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4" title="Returns the Mouse." alt="" coords="227,5,379,47"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="427,5,579,47"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="627,5,779,47"/>
-</map>

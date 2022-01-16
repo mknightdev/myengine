@@ -88,6 +88,8 @@ Collaboration diagram for myengine::SphereCollider:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab31530b07bb6f5cb69a9bf70e3d8bc63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sphere_collider.html#ab31530b07bb6f5cb69a9bf70e3d8bc63">onInitialize</a> ()</td></tr>
 <tr class="separator:ab31530b07bb6f5cb69a9bf70e3d8bc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0f2a9024f38b2d1ec8136f7dd6993e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_sphere_collider.html#a4e0f2a9024f38b2d1ec8136f7dd6993e">onTrigger</a> ()</td></tr>
+<tr class="separator:a4e0f2a9024f38b2d1ec8136f7dd6993e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae647b0a4bd6a92a219f8cc5ccab831c6"><td class="memItemLeft" align="right" valign="top"><a id="ae647b0a4bd6a92a219f8cc5ccab831c6" name="ae647b0a4bd6a92a219f8cc5ccab831c6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onDestroy</b> ()</td></tr>
 <tr class="separator:ae647b0a4bd6a92a219f8cc5ccab831c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,6 +122,9 @@ std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_camera.html">Camera</
 <tr class="memitem:a300df50e10745a97c4d66c9ea1a32d5a inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a300df50e10745a97c4d66c9ea1a32d5a" name="a300df50e10745a97c4d66c9ea1a32d5a"></a>
 vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> ()</td></tr>
 <tr class="separator:a300df50e10745a97c4d66c9ea1a32d5a inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74fa1ed3e7da3aa31716804d73ee72b1 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a74fa1ed3e7da3aa31716804d73ee72b1" name="a74fa1ed3e7da3aa31716804d73ee72b1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getKeyDown</b> (int _keyCode)</td></tr>
+<tr class="separator:a74fa1ed3e7da3aa31716804d73ee72b1 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">deltaTime</a> ()</td></tr>
 <tr class="memdesc:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the deltaTime.  <a href="structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136">More...</a><br /></td></tr>
 <tr class="separator:a4e0612b358101d355cfdc455712c5136 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,18 +134,15 @@ vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> ()</t
 <tr class="separator:a718ea40d1168a32bde09df3ad28474d3 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabd0406bbbb7a66b123a54e92727d245 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#aabd0406bbbb7a66b123a54e92727d245">onTick</a> ()</td></tr>
 <tr class="separator:aabd0406bbbb7a66b123a54e92727d245 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa21c1d139b281bbf29cf4fbc7696b82 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="afa21c1d139b281bbf29cf4fbc7696b82" name="afa21c1d139b281bbf29cf4fbc7696b82"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onTrigger</b> ()</td></tr>
-<tr class="separator:afa21c1d139b281bbf29cf4fbc7696b82 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_component.html#a5964bf923abb26b889336fa3c12639f2">intersect</a> (vec2 _mouse, vec4 _rectangle)</td></tr>
 <tr class="memdesc:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for Intersect.  <a href="structmyengine_1_1_component.html#a5964bf923abb26b889336fa3c12639f2">More...</a><br /></td></tr>
 <tr class="separator:a5964bf923abb26b889336fa3c12639f2 inherit pub_methods_structmyengine_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a673ee2d6a8b2f789d5b4e2f9e51cf984"><td class="memItemLeft" align="right" valign="top"><a id="a673ee2d6a8b2f789d5b4e2f9e51cf984" name="a673ee2d6a8b2f789d5b4e2f9e51cf984"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></tr>
-<tr class="separator:a673ee2d6a8b2f789d5b4e2f9e51cf984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab9ce65d548080963beefbdf75e63da"><td class="memItemLeft" align="right" valign="top"><a id="aeab9ce65d548080963beefbdf75e63da" name="aeab9ce65d548080963beefbdf75e63da"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>radius</b></td></tr>
+<tr class="separator:aeab9ce65d548080963beefbdf75e63da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab31530b07bb6f5cb69a9bf70e3d8bc63" name="ab31530b07bb6f5cb69a9bf70e3d8bc63"></a>
@@ -154,6 +156,33 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_radius</b></td></t
       <table class="memname">
         <tr>
           <td class="memname">void myengine::SphereCollider::onInitialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="structmyengine_1_1_component.html">myengine::Component</a>.</p>
+
+</div>
+</div>
+<a id="a4e0f2a9024f38b2d1ec8136f7dd6993e" name="a4e0f2a9024f38b2d1ec8136f7dd6993e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0f2a9024f38b2d1ec8136f7dd6993e">&#9670;&nbsp;</a></span>onTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::SphereCollider::onTrigger </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

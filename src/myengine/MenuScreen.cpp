@@ -46,11 +46,6 @@ namespace myengine
 		ss->Play();
 	}
 
-	void MenuScreen::onDisplay()
-	{
-
-	}
-
 	void MenuScreen::onTick()
 	{
 		if (getKeyDown(SDLK_s))
