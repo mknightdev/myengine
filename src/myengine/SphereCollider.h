@@ -5,6 +5,7 @@ namespace myengine
 	struct SphereCollider : Component
 	{
 		void onInitialize();
+		void onTrigger();
 		void onDestroy();
 		
 		bool isColliding(std::shared_ptr<SphereCollider> _collider);
@@ -12,6 +13,6 @@ namespace myengine
 		float getRadius();
 
 	private:
-		float m_radius;
+		float radius;
 	};
 }

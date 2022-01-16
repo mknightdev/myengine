@@ -39,6 +39,7 @@ namespace myengine
 	*/
 	void Camera::onTick(float _deltaTime)
 	{
+		// Update the listener position to where we are in the scene
 		alListener3f(AL_POSITION, cameraPos.x, cameraPos.y, cameraPos.z);
 		
 		if (canMove)

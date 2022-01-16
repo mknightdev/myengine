@@ -13,13 +13,24 @@ namespace myengine
 		void onDisplay();
 		void onTick(float _deltaTime);
 
-		
 		void setMesh(std::shared_ptr<Mesh> _mesh);
 		void setTexture(std::shared_ptr<Texture> _texture);
-		void setShader(const GLchar* _vert, const GLchar* _frag);
+		void setRadius(float _radius);
+		float getRadius();
 
 	private:
 		friend struct myengine::Core;
+
+		/**
+		* \brief Radius of the Mesh. 
+		* 
+		* Stores the radius of the mesh and is used for determining 
+		* collisions with other objects.
+		* 
+		* \see setRadius(float _radius)
+		* \see getRadius()
+		*/
+		float radius;
 
 		/**
 		* Used for storing the Core and navigating up the hierarchy.
@@ -87,7 +98,7 @@ namespace myengine
 		std::shared_ptr<myrenderer::Texture> aoMap;
 		std::shared_ptr<myrenderer::Texture> emissiveMap;
 
-
+		/// Used to determine the location of the point lights within the scene.
 		glm::vec3 pointLightPositions[4] = {
 			glm::vec3(0.7f,  0.2f,  2.0f),
 			glm::vec3(2.3f, -3.3f, -4.0f),

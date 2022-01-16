@@ -27,40 +27,17 @@ namespace myengine
 	*/
 	void MeshRenderer::onInitialize()
 	{
-		std::cout << "Model Renderer Initialised" << std::endl;
-
-		int w = 0;
-		int h = 0;
-
-		//albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
-		normalMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_normal.png", w, h);
-		metallicMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_metallic.png", w, h);
-		roughnessMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_roughness.png", w, h);
-		aoMap = std::make_shared<myrenderer::Texture>("resources/models/grenade/grenade_mixed_ao.png", w, h);
 
 		// Create Shader
 		shader = std::make_shared<myrenderer::ShaderProgram>();
-		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
-		//shader->CreateShader("../resources/shaders/diffuseVert.txt", "../resources/shaders/diffuseFrag.txt");
-		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
-		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
-		//shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
-		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
-		shader->CreateShader("resources/shaders/pbr/pbrTexVert.txt", "resources/shaders/pbr/pbrTexFrag.txt");
+		shader->CreateShader("resources/shaders/multiLightVert.txt", "resources/shaders/multiLightFrag.txt");
 
 		shader->use();
-		shader->setInt("albedoMap", 0);
-		shader->setInt("normalMap", 1);
-		shader->setInt("metallicMap", 2);
-		shader->setInt("roughnessMap", 3);
-		shader->setInt("aoMap", 4);
+		shader->setInt("material.diffuse", 0);
 
-		/*****************************
-		*
-		*	LIGHT CUBE
-		*
-		******************************/
-
+		//============
+		// LIGHT CUBE
+		//============
 		// Vertex Buffer
 		positionsVbo = std::make_shared<myrenderer::VertexBuffer>();
 		positionsVbo->add(vec3(-0.5f, -0.5f, -0.5f));
@@ -123,6 +100,7 @@ namespace myengine
 	void MeshRenderer::onDisplay()
 	{
 		shader->use();
+
 		// Set uniforms
 		GLint modelLoc = glGetUniformLocation(shader->getId(), "model");
 		GLint projectionLoc = glGetUniformLocation(shader->getId(), "projection");
@@ -132,7 +110,48 @@ namespace myengine
 		if (projectionLoc == -1) { throw std::exception(); }
 		if (viewLoc == -1) { throw std::exception(); }
 
-		shader->setVec3("camPos", getCamera()->getCameraPos());
+		shader->setVec3("viewPos", getCamera()->getCameraPos());
+		shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
+		shader->setFloat("material.shininess", 64.0f);
+
+		// directional light
+		shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
+		shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+		shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
+		shader->setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+
+		// point light 1
+		shader->setVec3("pointLights[0].position", pointLightPositions[0]);
+		shader->setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
+		shader->setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
+		shader->setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
+		shader->setFloat("pointLights[0].constant", 1.0f);
+		shader->setFloat("pointLights[0].linear", 0.09);
+		shader->setFloat("pointLights[0].quadratic", 0.032);
+		// point light 2
+		shader->setVec3("pointLights[1].position", pointLightPositions[1]);
+		shader->setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
+		shader->setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
+		shader->setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
+		shader->setFloat("pointLights[1].constant", 1.0f);
+		shader->setFloat("pointLights[1].linear", 0.09);
+		shader->setFloat("pointLights[1].quadratic", 0.032);
+		// point light 3
+		shader->setVec3("pointLights[2].position", pointLightPositions[2]);
+		shader->setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
+		shader->setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
+		shader->setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
+		shader->setFloat("pointLights[2].constant", 1.0f);
+		shader->setFloat("pointLights[2].linear", 0.09);
+		shader->setFloat("pointLights[2].quadratic", 0.032);
+		// point light 4
+		shader->setVec3("pointLights[3].position", pointLightPositions[3]);
+		shader->setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
+		shader->setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
+		shader->setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
+		shader->setFloat("pointLights[3].constant", 1.0f);
+		shader->setFloat("pointLights[3].linear", 0.09);
+		shader->setFloat("pointLights[3].quadratic", 0.032);
 
 		// Light
 		vec3 lightColour;
@@ -144,14 +163,6 @@ namespace myengine
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, albedoMap->GetId());
-		glActiveTexture(GL_TEXTURE1);
-		glBindTexture(GL_TEXTURE_2D, normalMap->GetId());
-		glActiveTexture(GL_TEXTURE2);
-		glBindTexture(GL_TEXTURE_2D, metallicMap->GetId());
-		glActiveTexture(GL_TEXTURE3);
-		glBindTexture(GL_TEXTURE_2D, roughnessMap->GetId());
-		glActiveTexture(GL_TEXTURE4);
-		glBindTexture(GL_TEXTURE_2D, aoMap->GetId());
 		glBindVertexArray(vao->getId());
 
 		// Prepare perspective projection matrix
@@ -166,13 +177,6 @@ namespace myengine
 		float camX = sin(deltaTime() * radius);
 		float camZ = cos(deltaTime() * radius);
 
-		// TODO: 
-		// getCameraPos, getCameraFront, getCameraUp
-
-		//DEBUGGING
-		//std::cout << getCamera()->getCameraPos().x << ", " << getCamera()->getCameraPos().y << ", " << getCamera()->getCameraPos().z << std::endl;
-		//view = lookAt(getCamera()->getCameraPos(), getCamera()->getCameraPos() + getCamera()->getCameraFront(), getCamera()->getCameraUp());
-		
 		view = lookAt(getCamera()->getCameraPos(), getCamera()->getCameraPos() + getCamera()->getCameraFront(), getCamera()->getCameraUp());
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, value_ptr(view));
 
@@ -203,10 +207,6 @@ namespace myengine
 			lightModel = translate(lightModel, pointLightPositions[i]);
 			lightModel = scale(lightModel, vec3(0.2f));
 
-			shader->use();
-			shader->setVec3("lightPositions[" + std::to_string(i) + "]", pointLightPositions[i]);
-			shader->setVec3("lightColours[" + std::to_string(i) + "]", lightColour);
-
 			lightShader->use();
 			glUniformMatrix4fv(glGetUniformLocation(lightShader->getId(), "model"), 1, GL_FALSE, value_ptr(lightModel));
 			glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -228,56 +228,6 @@ namespace myengine
 	*/
 	void MeshRenderer::onTick(float _deltaTime)
 	{
-		if (getKeyboard()->getKeyDown(SDLK_t))
-		{
-			getTransform()->Move(vec3(0, 0, 0.5f) * _deltaTime);
-		}
-
-		if (getKeyboard()->getKeyDown(SDLK_g))
-		{
-			getTransform()->Move(vec3(0, 0, -0.5f) * _deltaTime);
-		}
-
-		if (getKeyboard()->getKeyDown(SDLK_f))
-		{
-			getTransform()->Move(vec3(-1.5f, 0, 0) * _deltaTime);
-		}
-
-		if (getKeyboard()->getKeyDown(SDLK_h))
-		{
-			getTransform()->Move(vec3(0.5f, 0, 0) * _deltaTime);
-		}
-
-		// Rotate Left
-		if (getKeyboard()->getKeyDown(SDLK_r))
-		{
-			getTransform()->Rotate(vec3(0, 1, 0) * _deltaTime);
-		}
-
-		// Rotate Right
-		if (getKeyboard()->getKeyDown(SDLK_y))
-		{
-			getTransform()->Rotate(vec3(0, -1, 0) * _deltaTime);
-		}
-
-		// Move upwards
-		if (getKeyboard()->getKeyDown(SDLK_LSHIFT))
-		{
-			getTransform()->Move(vec3(0, 0.5f, 0) * _deltaTime);
-		}
-
-		// Move downwards
-		if (getKeyboard()->getKeyDown(SDLK_LCTRL))
-		{
-			getTransform()->Move(vec3(0, -0.5f, 0) * _deltaTime);
-		}
-
-		// TODO:
-		/*
-			1) Get camera
-				a) Go through entity
-			2) Set new positions of camera after moving it
-		*/
 	}
 
 	/**
@@ -302,5 +252,15 @@ namespace myengine
 	{
 		int w, h = 0;
 		albedoMap = _texture->texture;
+	}
+
+	void MeshRenderer::setRadius(float _radius)
+	{
+		radius = _radius;
+	}
+
+	float MeshRenderer::getRadius()
+	{
+		return radius;
 	}
 }

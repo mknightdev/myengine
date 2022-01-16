@@ -53,12 +53,12 @@ namespace myengine
 
 	void MenuScreen::onTick()
 	{
-		// TODO:
-		// Add key check to swap to game scene
 		if (getKeyDown(SDLK_s))
 		{
+			// Clear all entities
 			getCore()->clear();
 
+			// Create Scene One
 			std::shared_ptr<Entity> eSceneOne = getCore()->addEntity();
 			std::shared_ptr<SceneOne> cSceneOne = eSceneOne->addComponent<SceneOne>();
 		}

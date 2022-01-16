@@ -6,6 +6,10 @@
 #include "Camera.h"
 #include "Keyboard.h"
 
+#include "SoundSource.h"
+#include "Sound.h"
+#include "ResourceManager.h"
+
 #include <iostream>
 
 namespace myengine

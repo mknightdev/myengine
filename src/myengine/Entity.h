@@ -69,7 +69,7 @@ namespace myengine
 		std::shared_ptr<Core> getCore();
 		std::shared_ptr<Transform> getTransform();
 
-		virtual ~Entity();
+		//virtual ~Entity();
 
 		private:
 			friend struct myengine::Core;
@@ -109,7 +109,6 @@ namespace myengine
 
 
 			void colliding(std::shared_ptr<SphereCollider> _collider);
-
 
 			/**
 			* \brief Destroy flag

@@ -27,6 +27,11 @@ namespace myengine
 
 		if (!texture)
 		{
+			texture = std::make_shared<myrenderer::Texture>(GetPath() + ".jpeg", w, h);
+		}
+
+		if (!texture)
+		{
 			throw Exception("Failed to load '" + GetPath() + "'");
 		}
 	}

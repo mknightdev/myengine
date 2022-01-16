@@ -1,5 +1,4 @@
 #include <myengine/Component.h>
-#include <myengine/Trigger.h>
 
 namespace myengine
 {

@@ -12,6 +12,7 @@ namespace myengine
 	struct Transform;
 	struct Mouse;
 	struct Camera;
+	struct Coin;
 
 	struct Component
 	{

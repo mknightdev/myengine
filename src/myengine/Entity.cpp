@@ -2,6 +2,8 @@
 #include "Component.h"
 #include "SphereCollider.h"
 
+#include "demo/Coin.h"
+
 namespace myengine
 {
 	/**
@@ -62,5 +64,5 @@ namespace myengine
 		return transform.lock();
 	}
 
-	Entity::~Entity() {}
+	//Entity::~Entity() {}
 }

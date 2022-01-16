@@ -21,9 +21,36 @@ namespace myengine
 
 	void Player::onTick(float _deltaTime)
 	{
-		if (getKeyDown(SDLK_k))
+		if (getKeyDown(SDLK_UP))
+		{
+			getTransform()->Move(vec3(0, 0, 5) * _deltaTime);
+		}
+
+		if (getKeyDown(SDLK_DOWN))
 		{
 			getTransform()->Move(vec3(0, 0, -5) * _deltaTime);
+		}
+
+		//if (getKeyDown(SDLK_a))
+		//{
+		//	getTransform()->Move(vec3(5, 0, 0) * _deltaTime);
+		//}
+
+		//if (getKeyDown(SDLK_d))
+		//{
+		//	getTransform()->Move(vec3(-5, 0, 0) * _deltaTime);
+		//}
+
+		// Rotate Left
+		if (getKeyDown(SDLK_LEFT))
+		{
+			getTransform()->Rotate(vec3(0, 1, 0) * _deltaTime);
+		}
+
+		// Rotate Right
+		if (getKeyDown(SDLK_RIGHT))
+		{
+			getTransform()->Rotate(vec3(0, -1, 0) * _deltaTime);
 		}
 	}
 
