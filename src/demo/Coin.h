@@ -10,5 +10,8 @@ namespace myengine
 		void onTick();
 		void onTrigger();
 		void onDestroy();
+
+	private:
+		bool hasPlayed;
 	};
 }

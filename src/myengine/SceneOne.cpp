@@ -41,5 +41,6 @@ namespace myengine
 		cmr->setTexture(getCore()->getResourceManager()->load<Texture>("resources/models/coin/coin_diffuse"));
 		cmr->setRadius(1.0f);
 		std::shared_ptr<SphereCollider> sc = ce->addComponent<SphereCollider>();
+		cmr->getTransform()->setPosition(vec3(0, 0, -5));
 	}
 }

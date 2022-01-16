@@ -9,6 +9,8 @@ namespace myengine
 {
 	void Coin::onInitialize()
 	{
+		
+		hasPlayed = false;
 	}
 
 	void Coin::onDisplay()
@@ -26,14 +28,23 @@ namespace myengine
 	{
 		std::cout << "[Coin] onTrigger" << std::endl;
 
-		// If onTrigger was working as intended, a coin sound would play when there
-		// is a collision with the coin indicating it has been picked up.
-
 		std::shared_ptr<SoundSource> ss = getEntity()->addComponent<SoundSource>();
 		ss->setSound(getCore()->getResourceManager()->load<Sound>("resources/sounds/coin"));
 		ss->SetVolume(0.25);
 		ss->SetLooping(false);
-		ss->Play();
+		
+		// Ensures the audio only plays once 
+		if (!hasPlayed)
+		{
+			ss->Play();
+			hasPlayed = true;
+		}
+
+		// Destroy
+		//getEntity()->getComponent<SphereCollider>()->onDestroy();
+
+		//onDestroy();
+		//getEntity()->destroy = true;
 	}
 
 

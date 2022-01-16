@@ -8,8 +8,6 @@ namespace myengine
 	struct SceneOne : Component
 	{
 		void onInitialize();
-		void onDisplay();
-		void onTick();
 
 	private:
 		std::shared_ptr<myrenderer::ShaderProgram> shader;

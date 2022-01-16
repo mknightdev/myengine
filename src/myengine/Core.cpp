@@ -373,6 +373,7 @@ namespace myengine
 			if (_collider == colliders.at(ci))
 			{
 				colliders.erase(colliders.begin() + ci);
+				ci--;
 			}
 		}
 	}

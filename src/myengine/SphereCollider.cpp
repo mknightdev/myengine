@@ -28,6 +28,10 @@ namespace myengine
 
 	void SphereCollider::onTrigger()
 	{
+		//if (getEntity()->getComponent<Coin>())
+		//{
+		//	std::cout << "test" << std::endl;
+		//}
 	}
 
 	bool SphereCollider::isColliding(std::shared_ptr<SphereCollider> _collider)

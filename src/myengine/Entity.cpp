@@ -48,10 +48,18 @@ namespace myengine
 		}
 	}
 
+	void Entity::trigger()
+	{
+		for (size_t ei = 0; ei < components.size(); ++ei)
+		{
+			components.at(ei)->trigger();
+		}
+	}
+
 	void Entity::colliding(std::shared_ptr<SphereCollider> _collider)
 	{
-		std::cout << "[Entity] colliding" << std::endl;
-		_collider->trigger();
+		//std::cout << "[Entity] colliding" << std::endl;
+		_collider->getEntity()->trigger();
 	}
 
 	/**

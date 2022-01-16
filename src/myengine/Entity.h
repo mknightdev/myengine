@@ -71,6 +71,14 @@ namespace myengine
 
 		//virtual ~Entity();
 
+		/**
+		* \brief Destroy flag
+		*
+		* Used to set the destroy flag, ready for the next loop. When set to true, it will delete
+		* the entity, along with any components attached.
+		*/
+		bool destroy = false;
+
 		private:
 			friend struct myengine::Core;
 			friend struct myengine::Trigger;
@@ -107,15 +115,10 @@ namespace myengine
 			*/
 			void tick(float _deltaTime);
 
+			void trigger();
 
 			void colliding(std::shared_ptr<SphereCollider> _collider);
 
-			/**
-			* \brief Destroy flag
-			* 
-			* Used to set the destroy flag, ready for the next loop. When set to true, it will delete
-			* the entity, along with any components attached.
-			*/
-			bool destroy = false;
+
 	};
 }
