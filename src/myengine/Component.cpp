@@ -99,16 +99,40 @@ namespace myengine
 		return getEntity()->getTransform();
 	}
 
+	/**
+	* \brief setPosition shortcut.
+	* 
+	* Gets the transform and calls the setPosition member function.
+	* 
+	* \param _position the vec3 to update the position with.
+	* \see myengine::Transform
+	*/
 	void Component::setPosition(vec3 _position)
 	{
 		getTransform()->setPosition(_position);
 	}
 
+	/**
+	* \brief setScale shortcut.
+	*
+	* Gets the transform and calls the setScale member function.
+	*
+	* \param _scale the vec3 to update the scale with.
+	* \see myengine::Transform
+	*/
 	void Component::setScale(vec3 _scale)
 	{
 		getTransform()->setScale(_scale);
 	}
 
+	/**
+	* \brief setRotation shortcut.
+	*
+	* Gets the transform and calls the setRotation member function.
+	*
+	* \param _rotation the vec3 to update the rotation with.
+	* \see myengine::Transform
+	*/
 	void Component::setRotation(vec3 _rotation)
 	{
 		getTransform()->setRotation(_rotation);

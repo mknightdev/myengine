@@ -114,11 +114,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20c181bf8c1dc9834e20e650ec049fc2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a20c181bf8c1dc9834e20e650ec049fc2">getEntityByName</a> (const std::string _name)</td></tr>
 <tr class="memdesc:a20c181bf8c1dc9834e20e650ec049fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="structmyengine_1_1_entity.html">Entity</a> by name.  <a href="structmyengine_1_1_core.html#a20c181bf8c1dc9834e20e650ec049fc2">More...</a><br /></td></tr>
 <tr class="separator:a20c181bf8c1dc9834e20e650ec049fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c179c86f993b79d71d57527eed50b0f"><td class="memItemLeft" align="right" valign="top"><a id="a1c179c86f993b79d71d57527eed50b0f" name="a1c179c86f993b79d71d57527eed50b0f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>registerCollider</b> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="memitem:a1c179c86f993b79d71d57527eed50b0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a1c179c86f993b79d71d57527eed50b0f">registerCollider</a> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="memdesc:a1c179c86f993b79d71d57527eed50b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a <a class="el" href="structmyengine_1_1_collider.html">Collider</a>.  <a href="structmyengine_1_1_core.html#a1c179c86f993b79d71d57527eed50b0f">More...</a><br /></td></tr>
 <tr class="separator:a1c179c86f993b79d71d57527eed50b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c5e969aee7e6c433fe8fbd60d0bd4b"><td class="memItemLeft" align="right" valign="top"><a id="a64c5e969aee7e6c433fe8fbd60d0bd4b" name="a64c5e969aee7e6c433fe8fbd60d0bd4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>unregisterCollider</b> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="memitem:a64c5e969aee7e6c433fe8fbd60d0bd4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_core.html#a64c5e969aee7e6c433fe8fbd60d0bd4b">unregisterCollider</a> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="memdesc:a64c5e969aee7e6c433fe8fbd60d0bd4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the <a class="el" href="structmyengine_1_1_collider.html">Collider</a>.  <a href="structmyengine_1_1_core.html#a64c5e969aee7e6c433fe8fbd60d0bd4b">More...</a><br /></td></tr>
 <tr class="separator:a64c5e969aee7e6c433fe8fbd60d0bd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -419,6 +419,34 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a1c179c86f993b79d71d57527eed50b0f" name="a1c179c86f993b79d71d57527eed50b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c179c86f993b79d71d57527eed50b0f">&#9670;&nbsp;</a></span>registerCollider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::Core::registerCollider </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collider</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers a <a class="el" href="structmyengine_1_1_collider.html">Collider</a>. </p>
+<p >Registers a collider within the engine and stores it in a list. This is used to determine if there are any collisions with other colliders.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_collider</td><td>the collider to register </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_sphere_collider.html">myengine::SphereCollider</a> </dd></dl>
+
+</div>
+</div>
 <a id="a6681b43b74bad09d8f1c3873f269d683" name="a6681b43b74bad09d8f1c3873f269d683"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6681b43b74bad09d8f1c3873f269d683">&#9670;&nbsp;</a></span>setupAudio()</h2>
 
@@ -584,6 +612,36 @@ Here is the call graph for this function:</div>
 
 <p>Stops the engine. </p>
 <p >Stops the engine by setting the running boolean to false. </p>
+
+</div>
+</div>
+<a id="a64c5e969aee7e6c433fe8fbd60d0bd4b" name="a64c5e969aee7e6c433fe8fbd60d0bd4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c5e969aee7e6c433fe8fbd60d0bd4b">&#9670;&nbsp;</a></span>unregisterCollider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::Core::unregisterCollider </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collider</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unregisters the <a class="el" href="structmyengine_1_1_collider.html">Collider</a>. </p>
+<p >Unregisters the collider within the engine by removing it from the list. This then prevents it from being checked against when determining collisions.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_collider</td><td>the collider to unregister </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_sphere_collider.html">myengine::SphereCollider</a> </dd>
+<dd>
+<a class="el" href="structmyengine_1_1_core.html#a1c179c86f993b79d71d57527eed50b0f" title="Registers a Collider.">registerCollider()</a> </dd></dl>
 
 </div>
 </div>

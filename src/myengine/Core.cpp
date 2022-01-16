@@ -358,6 +358,15 @@ namespace myengine
 		return resourceManager;
 	}
 
+	/**
+	* \brief Registers a Collider.
+	* 
+	* Registers a collider within the engine and stores it in a list. 
+	* This is used to determine if there are any collisions with other colliders.
+	* 
+	* \param _collider the collider to register
+	* \see myengine::SphereCollider
+	*/
 	void Core::registerCollider(std::shared_ptr<SphereCollider> _collider)
 	{
 		std::cout << "# of Colliders: " << colliders.size() << std::endl;
@@ -366,6 +375,16 @@ namespace myengine
 		std::cout << "# of Colliders: " << colliders.size() << std::endl;
 	}
 
+	/**
+	* \brief Unregisters the Collider.
+	* 
+	* Unregisters the collider within the engine by removing it from the list. 
+	* This then prevents it from being checked against when determining collisions. 
+	* 
+	* \param _collider the collider to unregister
+	* \see myengine::SphereCollider
+	* \see registerCollider()
+	*/
 	void Core::unregisterCollider(std::shared_ptr<SphereCollider> _collider)
 	{
 		for (size_t ci = 0; ci < colliders.size(); ci++)
