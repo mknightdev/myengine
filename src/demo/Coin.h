@@ -7,7 +7,6 @@ namespace myengine
 		void onInitialize();
 		void onDisplay();
 		void onTick(float _deltaTime);
-		void onTick();
 		void onTrigger();
 		void onDestroy();
 

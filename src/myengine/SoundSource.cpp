@@ -36,7 +36,7 @@ namespace myengine
 	* 
 	* \attention This version doesn't require deltaTime, because it doesn't need to multiply it with anything.
 	*/
-	void SoundSource::onTick()
+	void SoundSource::onTick(float _deltaTime)
 	{
 		SetPosition(getPosition().x, getPosition().y, getPosition().z);
 		SetListener(getCamera()->getCameraPos().x, getCamera()->getCameraPos().y, getCamera()->getCameraPos().z);

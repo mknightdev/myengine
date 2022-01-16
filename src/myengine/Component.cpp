@@ -17,7 +17,6 @@ namespace myengine
 	void Component::onInitialize() {}
 	void Component::onDisplay() {}
 	void Component::onTick(float _deltaTime) {}
-	void Component::onTick() {}
 	void Component::onTrigger() {}
 
 
@@ -32,16 +31,6 @@ namespace myengine
 		onTick(_deltaTime);
 	}
 
-	/**
-	* \brief Calls the onTick() function on all derived classes.
-	* 
-	* \see tick(float _deltaTime)
-	*/
-	void Component::tick()
-	{
-		onTick();
-	}
-
 	/// Calls the onDisplay() function on all derived classes. 
 	void Component::display()
 	{
@@ -51,7 +40,6 @@ namespace myengine
 	/// Calls the onTrigger() function on all derived classes. 
 	void Component::trigger()
 	{
-		std::cout << "[Component] trigger" << std::endl;
 		onTrigger();
 	}
 

@@ -22,15 +22,13 @@ namespace myengine
 		getTransform()->Rotate(vec3(0, 0.5f, 0) * _deltaTime);
 	}
 
-	void Coin::onTick() {}
-
 	void Coin::onTrigger()
 	{
 		std::cout << "[Coin] onTrigger" << std::endl;
 
 		std::shared_ptr<SoundSource> ss = getEntity()->addComponent<SoundSource>();
 		ss->setSound(getCore()->getResourceManager()->load<Sound>("resources/sounds/coin"));
-		ss->SetVolume(0.25);
+		ss->SetVolume(0.1);
 		ss->SetLooping(false);
 		
 		// Ensures the audio only plays once 
@@ -38,13 +36,9 @@ namespace myengine
 		{
 			ss->Play();
 			hasPlayed = true;
+			// Destroy
+			//getEntity()->destroy = true;	// causes read access violation
 		}
-
-		// Destroy
-		//getEntity()->getComponent<SphereCollider>()->onDestroy();
-
-		//onDestroy();
-		//getEntity()->destroy = true;
 	}
 
 

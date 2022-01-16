@@ -29,7 +29,6 @@ namespace myengine
 		virtual void onInitialize();
 		virtual void onDisplay();
 		virtual void onTick(float _deltaTime);
-		virtual void onTick();
 		virtual void onTrigger();
 
 		bool intersect(vec2 _mouse, vec4 _rectangle);
@@ -58,9 +57,6 @@ namespace myengine
 		* Used for updating the position of the component.
 		*/
 		void tick(float _deltaTime);
-
-		
-		void tick();
 
 		void trigger();
 

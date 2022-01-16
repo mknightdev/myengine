@@ -8,7 +8,7 @@ namespace myengine
 	struct SoundSource : Component
 	{
 		void onInitialize();
-		void onTick();
+		void onTick(float _deltaTime);
 
 		void Play();
 		void Stop();

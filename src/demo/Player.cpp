@@ -54,8 +54,6 @@ namespace myengine
 		}
 	}
 
-	void Player::onTick() {}
-
 	void Player::onTrigger()
 	{
 		std::cout << "Player Collision Triggered" << std::endl;

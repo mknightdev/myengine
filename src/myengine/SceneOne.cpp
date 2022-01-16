@@ -42,5 +42,16 @@ namespace myengine
 		cmr->setRadius(1.0f);
 		std::shared_ptr<SphereCollider> sc = ce->addComponent<SphereCollider>();
 		cmr->getTransform()->setPosition(vec3(0, 0, -5));
+
+		// Coin 2
+		std::shared_ptr<Entity> ce2 = getCore()->addEntity();
+		std::shared_ptr<Trigger> ct2 = ce2->addComponent<Trigger>();
+		std::shared_ptr<Coin> cc2 = ce2->addComponent<Coin>();
+		std::shared_ptr<MeshRenderer> cmr2 = ce2->addComponent<MeshRenderer>();
+		cmr2->setMesh(getCore()->getResourceManager()->load<Mesh>("resources/models/coin/coin"));
+		cmr2->setTexture(getCore()->getResourceManager()->load<Texture>("resources/models/coin/coin_diffuse"));
+		cmr2->setRadius(1.0f);
+		std::shared_ptr<SphereCollider> sc2 = ce2->addComponent<SphereCollider>();
+		cmr2->getTransform()->setPosition(vec3(0, 0, -10));
 	}
 }
