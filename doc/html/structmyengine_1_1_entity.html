@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -91,6 +92,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a931cb57377c5b43b8d4e02b32892a5dc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#a931cb57377c5b43b8d4e02b32892a5dc">getTransform</a> ()</td></tr>
 <tr class="separator:a931cb57377c5b43b8d4e02b32892a5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad2a03f31858f483598630a74711b99f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#ad2a03f31858f483598630a74711b99f0">destroy</a> = false</td></tr>
+<tr class="memdesc:ad2a03f31858f483598630a74711b99f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy flag.  <a href="structmyengine_1_1_entity.html#ad2a03f31858f483598630a74711b99f0">More...</a><br /></td></tr>
+<tr class="separator:ad2a03f31858f483598630a74711b99f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a314cad9c9602f79c668048ec7e544d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#a314cad9c9602f79c668048ec7e544d44">display</a> ()</td></tr>
@@ -99,6 +106,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">tick</a> (float _deltaTime)</td></tr>
 <tr class="memdesc:aab2ab90c99210d74da41e50eb2c5fc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updating the entity.  <a href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">More...</a><br /></td></tr>
 <tr class="separator:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54113ece8f8c1f23dd55427106aeae78"><td class="memItemLeft" align="right" valign="top"><a id="a54113ece8f8c1f23dd55427106aeae78" name="a54113ece8f8c1f23dd55427106aeae78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>trigger</b> ()</td></tr>
+<tr class="separator:a54113ece8f8c1f23dd55427106aeae78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad318af37f614b7d1c2802190baa1ac4a"><td class="memItemLeft" align="right" valign="top"><a id="ad318af37f614b7d1c2802190baa1ac4a" name="ad318af37f614b7d1c2802190baa1ac4a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>colliding</b> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
 <tr class="separator:ad318af37f614b7d1c2802190baa1ac4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,9 +126,6 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td><
 <tr class="separator:a0e7865f377dc9e18118979eec3b3e1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac560a409ce099393a59b7fb8435980d"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="structmyengine_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#aac560a409ce099393a59b7fb8435980d">transform</a></td></tr>
 <tr class="separator:aac560a409ce099393a59b7fb8435980d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2a03f31858f483598630a74711b99f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#ad2a03f31858f483598630a74711b99f0">destroy</a> = false</td></tr>
-<tr class="memdesc:ad2a03f31858f483598630a74711b99f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy flag.  <a href="structmyengine_1_1_entity.html#ad2a03f31858f483598630a74711b99f0">More...</a><br /></td></tr>
-<tr class="separator:ad2a03f31858f483598630a74711b99f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -348,19 +355,11 @@ template&lt;typename T &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool myengine::Entity::destroy = false</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Destroy flag. </p>
