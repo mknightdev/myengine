@@ -29,6 +29,14 @@ namespace myengine
 		return mousePosition;
 	}
 
+	/**
+	* \brief Checks for Button Down.
+	* 
+	* Checks if the button is down for interaction capabilities. 
+	* 
+	* \return true if it is. 
+	* \return false if it isn't.
+	*/
 	bool Mouse::isButtonDown()
 	{
 		return isDown;

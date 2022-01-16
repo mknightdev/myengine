@@ -106,17 +106,17 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">tick</a> (float _deltaTime)</td></tr>
 <tr class="memdesc:aab2ab90c99210d74da41e50eb2c5fc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updating the entity.  <a href="structmyengine_1_1_entity.html#aab2ab90c99210d74da41e50eb2c5fc27">More...</a><br /></td></tr>
 <tr class="separator:aab2ab90c99210d74da41e50eb2c5fc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54113ece8f8c1f23dd55427106aeae78"><td class="memItemLeft" align="right" valign="top"><a id="a54113ece8f8c1f23dd55427106aeae78" name="a54113ece8f8c1f23dd55427106aeae78"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>trigger</b> ()</td></tr>
+<tr class="memitem:a54113ece8f8c1f23dd55427106aeae78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#a54113ece8f8c1f23dd55427106aeae78">trigger</a> ()</td></tr>
+<tr class="memdesc:a54113ece8f8c1f23dd55427106aeae78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the <a class="el" href="structmyengine_1_1_trigger.html">Trigger</a>.  <a href="structmyengine_1_1_entity.html#a54113ece8f8c1f23dd55427106aeae78">More...</a><br /></td></tr>
 <tr class="separator:a54113ece8f8c1f23dd55427106aeae78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad318af37f614b7d1c2802190baa1ac4a"><td class="memItemLeft" align="right" valign="top"><a id="ad318af37f614b7d1c2802190baa1ac4a" name="ad318af37f614b7d1c2802190baa1ac4a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>colliding</b> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="memitem:ad318af37f614b7d1c2802190baa1ac4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#ad318af37f614b7d1c2802190baa1ac4a">colliding</a> (std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt; _collider)</td></tr>
+<tr class="memdesc:ad318af37f614b7d1c2802190baa1ac4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colliding Notifier.  <a href="structmyengine_1_1_entity.html#ad318af37f614b7d1c2802190baa1ac4a">More...</a><br /></td></tr>
 <tr class="separator:ad318af37f614b7d1c2802190baa1ac4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a41b71d1ab5952cc1fd1252ba44fffdfd"><td class="memItemLeft" align="right" valign="top"><a id="a41b71d1ab5952cc1fd1252ba44fffdfd" name="a41b71d1ab5952cc1fd1252ba44fffdfd"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memitem:a41b71d1ab5952cc1fd1252ba44fffdfd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#a41b71d1ab5952cc1fd1252ba44fffdfd">name</a></td></tr>
+<tr class="memdesc:a41b71d1ab5952cc1fd1252ba44fffdfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the <a class="el" href="structmyengine_1_1_entity.html">Entity</a>.  <a href="structmyengine_1_1_entity.html#a41b71d1ab5952cc1fd1252ba44fffdfd">More...</a><br /></td></tr>
 <tr class="separator:a41b71d1ab5952cc1fd1252ba44fffdfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d9cd67d1253b3f6320db5818d2b94e8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_component.html">Component</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmyengine_1_1_entity.html#a8d9cd67d1253b3f6320db5818d2b94e8">components</a></td></tr>
 <tr class="separator:a8d9cd67d1253b3f6320db5818d2b94e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,6 +165,44 @@ template&lt;typename T &gt; </div>
 <p>Adds a component. </p>
 <p >Template function for adding a component to the entity. Sets the entity of the component as itself, adds the component to a relative list, then initialises the component.</p>
 <dl class="section warning"><dt>Warning</dt><dd><a class="el" href="structmyengine_1_1_component.html">Component</a> must be a part of the engine for it to work. Adding a custom one will show an error. </dd></dl>
+
+</div>
+</div>
+<a id="ad318af37f614b7d1c2802190baa1ac4a" name="ad318af37f614b7d1c2802190baa1ac4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad318af37f614b7d1c2802190baa1ac4a">&#9670;&nbsp;</a></span>colliding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::Entity::colliding </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structmyengine_1_1_sphere_collider.html">SphereCollider</a> &gt;&#160;</td>
+          <td class="paramname"><em>_collider</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Colliding Notifier. </p>
+<p >Notifies the entity of the collision and then calls the required components to execute the response.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_collider</td><td>the collider that is colliding. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_sphere_collider.html">myengine::SphereCollider</a> </dd>
+<dd>
+<a class="el" href="structmyengine_1_1_entity.html#a54113ece8f8c1f23dd55427106aeae78" title="Calls the Trigger.">trigger()</a> </dd></dl>
 
 </div>
 </div>
@@ -303,6 +341,35 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a54113ece8f8c1f23dd55427106aeae78" name="a54113ece8f8c1f23dd55427106aeae78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54113ece8f8c1f23dd55427106aeae78">&#9670;&nbsp;</a></span>trigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myengine::Entity::trigger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calls the <a class="el" href="structmyengine_1_1_trigger.html">Trigger</a>. </p>
+<p >Calls the trigger function within the component, to execute the collision response.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structmyengine_1_1_component.html">myengine::Component</a> </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a8d9cd67d1253b3f6320db5818d2b94e8" name="a8d9cd67d1253b3f6320db5818d2b94e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d9cd67d1253b3f6320db5818d2b94e8">&#9670;&nbsp;</a></span>components</h2>
@@ -364,6 +431,32 @@ template&lt;typename T &gt; </div>
 
 <p>Destroy flag. </p>
 <p >Used to set the destroy flag, ready for the next loop. When set to true, it will delete the entity, along with any components attached. </p>
+
+</div>
+</div>
+<a id="a41b71d1ab5952cc1fd1252ba44fffdfd" name="a41b71d1ab5952cc1fd1252ba44fffdfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b71d1ab5952cc1fd1252ba44fffdfd">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string myengine::Entity::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Name of the <a class="el" href="structmyengine_1_1_entity.html">Entity</a>. </p>
+<p >Used for returning the <a class="el" href="structmyengine_1_1_entity.html">Entity</a> by name.</p>
+<dl class="section see"><dt>See also</dt><dd>getEntityByName() </dd></dl>
 
 </div>
 </div>

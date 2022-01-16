@@ -1,0 +1,4 @@
+<map id="myengine::SoundSource::setVolume" name="myengine::SoundSource::setVolume">
+<area shape="rect" id="node1" title="Sets the volume." alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_sound_source.html#a3373da7f5c94d402063b93c1484e3a46" title="Error checking for audio." alt="" coords="217,5,381,47"/>
+</map>

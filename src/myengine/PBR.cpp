@@ -13,13 +13,13 @@
 #include "stb_image.h"
 #include "GL\glew.h"
 
-// TODO: move into own class
+// TODO: Move into own class
 glm::vec3 cameraPos2 = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront2 = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp2 = glm::vec3(0.0f, 1.0f, 0.0f);
 
 bool firstMouse2 = true;
-float yaw2 = -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
+float yaw2 = -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially Rotate a bit to the left.
 float pitch2 = 0.0f;
 float lastX2 = 1280.0f / 2.0;
 float lastY2 = 720.0f / 2.0;
@@ -277,7 +277,7 @@ namespace myengine
 	/**
 	* \brief Update mouse position
 	*
-	* Updates the mouse position to move the camera.
+	* Updates the mouse position to Move the camera.
 	*/
 	void PBR::mouseUpdate()
 	{

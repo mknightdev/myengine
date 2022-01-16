@@ -83,6 +83,13 @@ namespace myengine
 			friend struct myengine::Core;
 			friend struct myengine::Trigger;
 
+			/**
+			* \brief Name of the Entity. 
+			* 
+			* Used for returning the Entity by name. 
+			* 
+			* \see getEntityByName()
+			*/
 			std::string name;
 
 			/**

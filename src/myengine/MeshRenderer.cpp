@@ -254,11 +254,13 @@ namespace myengine
 		albedoMap = _texture->texture;
 	}
 
+	/// Sets the mesh's radius. 
 	void MeshRenderer::setRadius(float _radius)
 	{
 		radius = _radius;
 	}
 
+	/// Returns the mesh's radius. 
 	float MeshRenderer::getRadius()
 	{
 		return radius;

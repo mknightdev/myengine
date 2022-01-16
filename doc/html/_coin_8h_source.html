@@ -77,18 +77,22 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="structmyengine_1_1_coin.html">    7</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structmyengine_1_1_coin.html">Coin</a> : <a class="code hl_struct" href="structmyengine_1_1_component.html">Component</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordtype">void</span> onInitialize();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordtype">void</span> onDisplay();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">void</span> onTick(<span class="keywordtype">float</span> _deltaTime);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">void</span> onTrigger();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">void</span> onDestroy();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">bool</span> hasPlayed;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        std::shared_ptr&lt;SoundSource&gt; audio;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    };</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_coin.html#a2a7836564a151356d518fd69fc4a1600">onInitialize</a>();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_coin.html#a9825ca276fb0a51766c013808a4c9dae">onTick</a>(<span class="keywordtype">float</span> _deltaTime);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="structmyengine_1_1_coin.html#a63acbaab1691da91c7b02e9e14226ade">onTrigger</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structmyengine_1_1_coin.html#a978a9e478e4919cf8e1bf5436ac576b7">   15</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="structmyengine_1_1_coin.html#a978a9e478e4919cf8e1bf5436ac576b7">hasPlayed</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structmyengine_1_1_coin.html#ad15ca43b190fc9387ce19e8206006dc5">   24</a></span>        std::shared_ptr&lt;SoundSource&gt; <a class="code hl_variable" href="structmyengine_1_1_coin.html#ad15ca43b190fc9387ce19e8206006dc5">audio</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="ttc" id="astructmyengine_1_1_coin_html"><div class="ttname"><a href="structmyengine_1_1_coin.html">myengine::Coin</a></div><div class="ttdef"><b>Definition:</b> Coin.h:8</div></div>
+<div class="ttc" id="astructmyengine_1_1_coin_html_a2a7836564a151356d518fd69fc4a1600"><div class="ttname"><a href="structmyengine_1_1_coin.html#a2a7836564a151356d518fd69fc4a1600">myengine::Coin::onInitialize</a></div><div class="ttdeci">void onInitialize()</div><div class="ttdoc">Initialises the coin object.</div><div class="ttdef"><b>Definition:</b> Coin.cpp:11</div></div>
+<div class="ttc" id="astructmyengine_1_1_coin_html_a63acbaab1691da91c7b02e9e14226ade"><div class="ttname"><a href="structmyengine_1_1_coin.html#a63acbaab1691da91c7b02e9e14226ade">myengine::Coin::onTrigger</a></div><div class="ttdeci">void onTrigger()</div><div class="ttdoc">Trigger from Collision.</div><div class="ttdef"><b>Definition:</b> Coin.cpp:35</div></div>
+<div class="ttc" id="astructmyengine_1_1_coin_html_a978a9e478e4919cf8e1bf5436ac576b7"><div class="ttname"><a href="structmyengine_1_1_coin.html#a978a9e478e4919cf8e1bf5436ac576b7">myengine::Coin::hasPlayed</a></div><div class="ttdeci">bool hasPlayed</div><div class="ttdoc">Boolean to prevent from multiple plays of the audio.</div><div class="ttdef"><b>Definition:</b> Coin.h:15</div></div>
+<div class="ttc" id="astructmyengine_1_1_coin_html_a9825ca276fb0a51766c013808a4c9dae"><div class="ttname"><a href="structmyengine_1_1_coin.html#a9825ca276fb0a51766c013808a4c9dae">myengine::Coin::onTick</a></div><div class="ttdeci">void onTick(float _deltaTime)</div><div class="ttdoc">Called each frame; Rotates the coin object.</div><div class="ttdef"><b>Definition:</b> Coin.cpp:22</div></div>
+<div class="ttc" id="astructmyengine_1_1_coin_html_ad15ca43b190fc9387ce19e8206006dc5"><div class="ttname"><a href="structmyengine_1_1_coin.html#ad15ca43b190fc9387ce19e8206006dc5">myengine::Coin::audio</a></div><div class="ttdeci">std::shared_ptr&lt; SoundSource &gt; audio</div><div class="ttdoc">Stores the Audio.</div><div class="ttdef"><b>Definition:</b> Coin.h:24</div></div>
 <div class="ttc" id="astructmyengine_1_1_component_html"><div class="ttname"><a href="structmyengine_1_1_component.html">myengine::Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

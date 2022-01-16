@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['lasttime_0',['lastTime',['../structmyengine_1_1_environment.html#a18910c98d2efb3f688fae71bda1fd5f1',1,'myengine::Environment']]],
-  ['lastx_1',['lastX',['../structmyengine_1_1_camera.html#aa995581eccd7d4b7c7e0bfd096dedbf3',1,'myengine::Camera']]],
-  ['lasty_2',['lastY',['../structmyengine_1_1_camera.html#aca6da73fefbe2a51c4a300d7cf0686db',1,'myengine::Camera']]],
-  ['lightshader_3',['lightShader',['../structmyengine_1_1_mesh_renderer.html#a5065b651be05e079ab013d28ae550ff1',1,'myengine::MeshRenderer::lightShader()'],['../structmyengine_1_1_model_renderer.html#a06f519727c6b5e49a7b023e5b6d6f7da',1,'myengine::ModelRenderer::lightShader()'],['../structmyengine_1_1_p_b_r.html#a835d86df4f1316405ea06cd42b8d1858',1,'myengine::PBR::lightShader()']]],
-  ['lightvao_4',['lightVao',['../structmyengine_1_1_mesh_renderer.html#afe217f2a923be03d5143d629f72301e9',1,'myengine::MeshRenderer::lightVao()'],['../structmyengine_1_1_model_renderer.html#a6cd409793c344850ce3990f5fd97748f',1,'myengine::ModelRenderer::lightVao()'],['../structmyengine_1_1_p_b_r.html#a40a61302786ba452407f91a6c653b217',1,'myengine::PBR::lightVao()']]]
+  ['keyboard_0',['keyboard',['../structmyengine_1_1_core.html#a76f50315bd2b40bfd1668d998855be22',1,'myengine::Core']]],
+  ['keycodes_1',['keyCodes',['../structmyengine_1_1_keyboard.html#af75c7e844e95eeeea4ac6b5133cf0368',1,'myengine::Keyboard']]]
 ];

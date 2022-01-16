@@ -20,16 +20,13 @@ namespace myengine
 		*/
 		std::weak_ptr<Mouse> self;
 
-		/**
-		* Stores the core and is used for navigating up the hierarchy.
-		*/
+		/// Stores the core and is used for navigating up the hierarchy.
 		std::weak_ptr<Core> core;
 
-		/**
-		* Stores the position of the mouse.
-		*/
+		/// Stores the position of the mouse.
 		vec2 mousePosition;
 
+		/// Stores button pressed state. 
 		bool isDown;
 	};
 }

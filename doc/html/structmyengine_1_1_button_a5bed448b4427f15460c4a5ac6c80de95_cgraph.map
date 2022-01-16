@@ -1,0 +1,7 @@
+<map id="myengine::Button::onTick" name="myengine::Button::onTick">
+<area shape="rect" id="node1" title="Updates the Position &amp; Interaction." alt="" coords="5,42,176,69"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4" title="Returns the Mouse." alt="" coords="239,5,391,47"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_button.html#a43c9fd5574415205cc42c2dabe2290de" title="Button Interaction." alt="" coords="224,71,407,98"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="455,5,607,47"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="655,5,807,47"/>
+</map>

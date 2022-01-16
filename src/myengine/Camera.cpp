@@ -145,6 +145,13 @@ namespace myengine
 		return cameraUp;
 	}
 
+
+	/**
+	* \brief Updates the canMove bool
+	* 
+	* Changes the state of the canMove boolean to prevent or allow movement
+	* of the camera. 
+	*/
 	void Camera::setMove(bool state)
 	{
 		canMove = state;

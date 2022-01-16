@@ -1,28 +1,38 @@
 <map id="myengine::Component::getEntity" name="myengine::Component::getEntity">
-<area shape="rect" id="node1" title="Returns the Entity." alt="" coords="912,436,1064,477"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="712,556,864,597"/>
-<area shape="rect" id="node23" href="$structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260" title="Returns the Transform." alt="" coords="269,315,421,356"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136" title="Returns the deltaTime." alt="" coords="269,380,421,421"/>
-<area shape="rect" id="node11" href="$structmyengine_1_1_component.html#a3c4a94098f91b2602ce73a81d0bc9570" title="Returns the Camera." alt="" coords="507,373,659,415"/>
-<area shape="rect" id="node12" href="$structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a" title="Returns the Keyboard." alt="" coords="269,680,421,721"/>
-<area shape="rect" id="node14" href="$structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1" title="Updates Screen." alt="" coords="16,768,177,809"/>
-<area shape="rect" id="node15" href="$structmyengine_1_1_p_b_r_screen.html#ad9af1fafe83d5bb4ae5e1fc37d2bc258" title="Updates Screen." alt="" coords="19,692,174,733"/>
-<area shape="rect" id="node16" href="$structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4" title="Returns the Mouse." alt="" coords="507,556,659,597"/>
-<area shape="rect" id="node21" href="$structmyengine_1_1_p_b_r2_screen.html#a9ec551364dcded0adb868d64594775e6" title="Initialises the Screen." alt="" coords="503,491,664,532"/>
-<area shape="rect" id="node22" href="$structmyengine_1_1_p_b_r_screen.html#a0b32c3e3fd47f1e698b09b5233f15ceb" title="Initialises the Screen." alt="" coords="506,621,661,663"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_mesh_renderer.html#a3096e07211e99206afc00ef9c867abd3" title="Draws the model." alt="" coords="11,5,182,47"/>
-<area shape="rect" id="node5" href="$structmyengine_1_1_model_renderer.html#a2dab68b27698175ed5deff280184aeba" title="Draws the model." alt="" coords="10,267,183,308"/>
-<area shape="rect" id="node6" href="$structmyengine_1_1_p_b_r.html#a0316ec5798db766d49c8b18237f07878" title="Draws the model." alt="" coords="7,333,186,359"/>
-<area shape="rect" id="node7" href="$structmyengine_1_1_triangle_renderer.html#a6cb4252e76b0c719d3819cc5b6ca86a8" title="Draws the triangle." alt="" coords="5,384,188,425"/>
-<area shape="rect" id="node8" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="10,449,183,491"/>
-<area shape="rect" id="node9" href="$structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd" title="The position of the model." alt="" coords="17,515,176,542"/>
-<area shape="rect" id="node10" href="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce" title="The position of the triangle." alt="" coords="5,567,188,608"/>
-<area shape="rect" id="node13" href="$structmyengine_1_1_camera.html#ab20ef0c683c1e07b8546a3ddf26f262b" title="Updates Camera Position." alt="" coords="8,635,185,662"/>
-<area shape="rect" id="node17" href="$structmyengine_1_1_camera.html#a49c54915080685ce75a9edcbd8f5aa0e" title="Updates Mouse Coordinates." alt="" coords="236,629,455,655"/>
-<area shape="rect" id="node18" href="$structmyengine_1_1_model_renderer.html#a853e29bd0aa9b73004ab46f105fcef20" title="Update mouse position." alt="" coords="259,445,432,487"/>
-<area shape="rect" id="node19" href="$structmyengine_1_1_p_b_r.html#afb06a60ab5f263b8caa91efd1f1285f7" title="Update mouse position." alt="" coords="245,511,446,538"/>
-<area shape="rect" id="node20" href="$structmyengine_1_1_triangle_renderer.html#a3ac2c021a5a1b280a7ef84056049b45a" title="Update mouse position." alt="" coords="254,563,437,604"/>
-<area shape="rect" id="node24" href="$structmyengine_1_1_component.html#ad34d8d6dcfdb61c3e7b8f5377cd8154a" title="setPosition shortcut." alt="" coords="21,71,173,112"/>
-<area shape="rect" id="node25" href="$structmyengine_1_1_component.html#ad883f6b0dd559b87a2fa8f9ccc784f68" title="setRotation shortcut." alt="" coords="21,136,173,177"/>
-<area shape="rect" id="node26" href="$structmyengine_1_1_component.html#a55eb245c95e1f92e23dd6658da4d2976" title="setScale shortcut." alt="" coords="21,201,173,243"/>
+<area shape="rect" id="node1" title="Returns the Entity." alt="" coords="1151,1254,1303,1295"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="951,1071,1103,1112"/>
+<area shape="rect" id="node23" href="$structmyengine_1_1_sphere_collider.html#ae647b0a4bd6a92a219f8cc5ccab831c6" title="Destroys the Collider." alt="" coords="727,1254,897,1295"/>
+<area shape="rect" id="node24" href="$structmyengine_1_1_coin.html#a2a7836564a151356d518fd69fc4a1600" title="Initialises the coin object." alt="" coords="721,1320,903,1346"/>
+<area shape="rect" id="node28" href="$structmyengine_1_1_sphere_collider.html#ab31530b07bb6f5cb69a9bf70e3d8bc63" title="Initialises the Sphere Collider." alt="" coords="727,1371,897,1412"/>
+<area shape="rect" id="node29" href="$structmyengine_1_1_component.html#a2b5712d1253884531aee523c1d277260" title="Returns the Transform." alt="" coords="488,407,640,448"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a4e0612b358101d355cfdc455712c5136" title="Returns the deltaTime." alt="" coords="488,472,640,514"/>
+<area shape="rect" id="node11" href="$structmyengine_1_1_component.html#a3c4a94098f91b2602ce73a81d0bc9570" title="Shortcut for getCamera." alt="" coords="736,751,888,792"/>
+<area shape="rect" id="node12" href="$structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a" title="Returns the Keyboard." alt="" coords="736,1136,888,1178"/>
+<area shape="rect" id="node15" href="$structmyengine_1_1_p_b_r2_screen.html#af516398eee87a41129a2995677c443e1" title="Updates Screen." alt="" coords="235,1086,396,1127"/>
+<area shape="rect" id="node16" href="$structmyengine_1_1_p_b_r_screen.html#ad9af1fafe83d5bb4ae5e1fc37d2bc258" title="Updates Screen." alt="" coords="238,1238,393,1279"/>
+<area shape="rect" id="node17" href="$structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4" title="Returns the Mouse." alt="" coords="736,816,888,858"/>
+<area shape="rect" id="node25" href="$structmyengine_1_1_p_b_r2_screen.html#a9ec551364dcded0adb868d64594775e6" title="Initialises the Screen." alt="" coords="731,1071,893,1112"/>
+<area shape="rect" id="node26" href="$structmyengine_1_1_p_b_r_screen.html#a0b32c3e3fd47f1e698b09b5233f15ceb" title="Initialises the Screen." alt="" coords="735,634,889,675"/>
+<area shape="rect" id="node27" href="$structmyengine_1_1_scene_one.html#a030753613ae9c6a9666c0a18798623bf" title="Initialises the Scene." alt="" coords="17,315,164,356"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_mesh_renderer.html#a3096e07211e99206afc00ef9c867abd3" title="Draws the model." alt="" coords="230,590,401,631"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_model_renderer.html#a2dab68b27698175ed5deff280184aeba" title="Draws the model." alt="" coords="229,472,402,514"/>
+<area shape="rect" id="node6" href="$structmyengine_1_1_p_b_r.html#a0316ec5798db766d49c8b18237f07878" title="Draws the model." alt="" coords="226,538,405,565"/>
+<area shape="rect" id="node7" href="$structmyengine_1_1_triangle_renderer.html#a6cb4252e76b0c719d3819cc5b6ca86a8" title="Draws the triangle." alt="" coords="224,407,407,448"/>
+<area shape="rect" id="node8" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="229,720,402,762"/>
+<area shape="rect" id="node9" href="$structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd" title="The position of the model." alt="" coords="236,824,395,850"/>
+<area shape="rect" id="node10" href="$structmyengine_1_1_triangle_renderer.html#a8772473eb0f65d036220b3f48f45f8ce" title="The position of the triangle." alt="" coords="224,655,407,696"/>
+<area shape="rect" id="node13" href="$structmyengine_1_1_component.html#a74fa1ed3e7da3aa31716804d73ee72b1" title="Shortcut for getKeyDown." alt="" coords="488,1027,640,1068"/>
+<area shape="rect" id="node14" href="$structmyengine_1_1_camera.html#ab20ef0c683c1e07b8546a3ddf26f262b" title="Updates Camera Position." alt="" coords="227,1034,404,1061"/>
+<area shape="rect" id="node18" href="$structmyengine_1_1_camera.html#a49c54915080685ce75a9edcbd8f5aa0e" title="Updates Mouse Coordinates." alt="" coords="455,925,673,952"/>
+<area shape="rect" id="node19" href="$structmyengine_1_1_model_renderer.html#a853e29bd0aa9b73004ab46f105fcef20" title="Update mouse position." alt="" coords="477,707,651,748"/>
+<area shape="rect" id="node20" href="$structmyengine_1_1_p_b_r.html#afb06a60ab5f263b8caa91efd1f1285f7" title="Update mouse position." alt="" coords="463,824,665,850"/>
+<area shape="rect" id="node21" href="$structmyengine_1_1_triangle_renderer.html#a3ac2c021a5a1b280a7ef84056049b45a" title="Update mouse position." alt="" coords="473,590,655,631"/>
+<area shape="rect" id="node22" href="$structmyengine_1_1_button.html#a5bed448b4427f15460c4a5ac6c80de95" title="Updates the Position &amp; Interaction." alt="" coords="479,656,649,682"/>
+<area shape="rect" id="node30" href="$structmyengine_1_1_component.html#a300df50e10745a97c4d66c9ea1a32d5a" title="Shortcut for getPosition." alt="" coords="239,224,391,266"/>
+<area shape="rect" id="node31" href="$structmyengine_1_1_sphere_collider.html#a8a8bbeb44d45609cd5572685b3b82cdd" title="Checks for Collisions." alt="" coords="5,72,176,114"/>
+<area shape="rect" id="node33" href="$structmyengine_1_1_coin.html#a9825ca276fb0a51766c013808a4c9dae" title="Called each frame; Rotates the coin object." alt="" coords="236,42,395,69"/>
+<area shape="rect" id="node34" href="$structmyengine_1_1_component.html#ad34d8d6dcfdb61c3e7b8f5377cd8154a" title="setPosition shortcut." alt="" coords="239,342,391,383"/>
+<area shape="rect" id="node35" href="$structmyengine_1_1_component.html#ad883f6b0dd559b87a2fa8f9ccc784f68" title="setRotation shortcut." alt="" coords="239,94,391,135"/>
+<area shape="rect" id="node36" href="$structmyengine_1_1_component.html#a55eb245c95e1f92e23dd6658da4d2976" title="setScale shortcut." alt="" coords="239,159,391,200"/>
+<area shape="rect" id="node32" href="$structmyengine_1_1_sound_source.html#aa989aaadb1f186847e4700f5a1c62e8f" title="Updates the sound each frame." alt="" coords="9,224,173,266"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="myengine::Camera::setMove" name="myengine::Camera::setMove">
+<area shape="rect" id="node1" title="Updates the canMove bool." alt="" coords="200,13,387,39"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_scene_one.html#a030753613ae9c6a9666c0a18798623bf" title="Initialises the Scene." alt="" coords="5,5,152,47"/>
+</map>

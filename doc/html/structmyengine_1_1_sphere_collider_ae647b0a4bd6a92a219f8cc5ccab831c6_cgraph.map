@@ -1,0 +1,5 @@
+<map id="myengine::SphereCollider::onDestroy" name="myengine::SphereCollider::onDestroy">
+<area shape="rect" id="node1" title="Destroys the Collider." alt="" coords="5,35,176,76"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="224,5,376,47"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="424,35,576,76"/>
+</map>

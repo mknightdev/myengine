@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yaw_0',['yaw',['../structmyengine_1_1_camera.html#a43bcaed01cdba218a48a37ce532011d9',1,'myengine::Camera']]]
+  ['window_0',['window',['../structmyengine_1_1_core.html#ab6b009002cbb4244feb95ecb1b091aca',1,'myengine::Core']]]
 ];

@@ -10,24 +10,22 @@ namespace myengine
 		void onInitialize();
 		void onTick(float _deltaTime);
 
-		void Play();
-		void Stop();
-		void Pause();
+		void play();
+		void stop();
+		void pause();
 
 		void setSound(std::shared_ptr<Sound> _sound);
-
-		void SetVolume(ALfloat _volume);
-		void SetPitch(ALfloat _pitch);
-		void SetPosition(ALfloat _x, ALfloat _y, ALfloat _z);
-		void SetLooping(bool _state);
-		//void SetVelocity();
-		void SetListener(ALfloat _x, ALfloat _y, ALfloat _z);
+		void setVolume(ALfloat _volume);
+		void setPitch(ALfloat _pitch);
+		void setPosition(ALfloat _x, ALfloat _y, ALfloat _z);
+		void setLooping(bool _state);
+		void setListener(ALfloat _x, ALfloat _y, ALfloat _z);
 
 		~SoundSource();
 
 	private:
 		
-		void CheckError();
+		void checkError();
 
 		/**
 		* Used to play the clip loading from AudioClip.

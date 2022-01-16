@@ -1,8 +1,9 @@
 <map id="myengine::Camera::onTick" name="myengine::Camera::onTick">
-<area shape="rect" id="node1" title="Updates Camera Position." alt="" coords="5,46,183,73"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a" title="Returns the Keyboard." alt="" coords="497,5,649,47"/>
-<area shape="rect" id="node5" href="$structmyengine_1_1_camera.html#a49c54915080685ce75a9edcbd8f5aa0e" title="Updates Mouse Coordinates." alt="" coords="231,71,449,98"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="697,39,849,80"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="897,39,1049,80"/>
-<area shape="rect" id="node6" href="$structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4" title="Returns the Mouse." alt="" coords="497,71,649,112"/>
+<area shape="rect" id="node1" title="Updates Camera Position." alt="" coords="5,34,183,60"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a" title="Returns the Keyboard." alt="" coords="497,20,649,61"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_component.html#a74fa1ed3e7da3aa31716804d73ee72b1" title="Shortcut for getKeyDown." alt="" coords="264,26,416,68"/>
+<area shape="rect" id="node6" href="$structmyengine_1_1_camera.html#a49c54915080685ce75a9edcbd8f5aa0e" title="Updates Mouse Coordinates." alt="" coords="231,92,449,119"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="697,53,849,94"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="897,53,1049,94"/>
+<area shape="rect" id="node7" href="$structmyengine_1_1_component.html#a6e32e07622ba5c510af149403b2176a4" title="Returns the Mouse." alt="" coords="497,85,649,126"/>
 </map>

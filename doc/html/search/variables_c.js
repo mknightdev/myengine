@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['self_0',['self',['../structmyengine_1_1_core.html#ac267d935fde8226d4fe892ee900e6b39',1,'myengine::Core::self()'],['../structmyengine_1_1_entity.html#a2a632e186f0b9a5a8e73bdaf2e6e5016',1,'myengine::Entity::self()'],['../structmyengine_1_1_environment.html#ae140d337fe5345d46fa3909cb1261623',1,'myengine::Environment::self()'],['../structmyengine_1_1_keyboard.html#a169408e8c2a64c915cbfeaefa8a556f1',1,'myengine::Keyboard::self()'],['../structmyengine_1_1_mouse.html#a08e03c5b8f44e70f6c74d9c4f0201d0c',1,'myengine::Mouse::self()'],['../structmyengine_1_1_resource_manager.html#a4366aa390eed756b5eb98fd80d2edb41',1,'myengine::ResourceManager::self()']]],
-  ['shader_1',['shader',['../structmyengine_1_1_mesh_renderer.html#ad353605ca33dc90fa40223268d93c0fb',1,'myengine::MeshRenderer::shader()'],['../structmyengine_1_1_model_renderer.html#aa552729c2222f61a357db0957ab36020',1,'myengine::ModelRenderer::shader()'],['../structmyengine_1_1_p_b_r.html#a7af0281c5941752263c8a3e69b36f7c3',1,'myengine::PBR::shader()'],['../structmyengine_1_1_shader.html#a31d7052c9a3e3591652d24a22118a6f7',1,'myengine::Shader::shader()']]],
-  ['srcid_2',['srcID',['../structmyengine_1_1_sound_source.html#a3ced97ad59a312bed0bf093571fd54f2',1,'myengine::SoundSource']]]
+  ['radius_0',['radius',['../structmyengine_1_1_mesh_renderer.html#a6cd4f6bdc9f4c08d7d0906ddbf23de9e',1,'myengine::MeshRenderer::radius()'],['../structmyengine_1_1_sphere_collider.html#aeab9ce65d548080963beefbdf75e63da',1,'myengine::SphereCollider::radius()']]],
+  ['resourcemanager_1',['resourceManager',['../structmyengine_1_1_core.html#aa7005ccb6d5f4827a8d94a2b7790f5b4',1,'myengine::Core']]],
+  ['resources_2',['resources',['../structmyengine_1_1_resource_manager.html#a5c126c58c6bc0e68c60d2c1aa5668022',1,'myengine::ResourceManager']]],
+  ['roughnessmap_3',['roughnessMap',['../structmyengine_1_1_p_b_r.html#a130dfda9647e7733d6ff2e0a21512b05',1,'myengine::PBR']]],
+  ['running_4',['running',['../structmyengine_1_1_core.html#aa1034f698d15e4115272c7d8f7fa73ae',1,'myengine::Core']]]
 ];

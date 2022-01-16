@@ -1,6 +1,7 @@
 <map id="myengine::PBR2Screen::onTick" name="myengine::PBR2Screen::onTick">
-<area shape="rect" id="node1" title="Updates Screen." alt="" coords="5,5,167,47"/>
-<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="415,5,567,47"/>
-<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a" title="Returns the Keyboard." alt="" coords="215,35,367,76"/>
-<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="615,5,767,47"/>
+<area shape="rect" id="node1" title="Updates Screen." alt="" coords="5,27,167,68"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="615,5,767,47"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_component.html#a86618ca85aca087c0efa99970b5e095a" title="Returns the Keyboard." alt="" coords="415,35,567,76"/>
+<area shape="rect" id="node5" href="$structmyengine_1_1_component.html#a74fa1ed3e7da3aa31716804d73ee72b1" title="Shortcut for getKeyDown." alt="" coords="215,85,367,127"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="815,5,967,47"/>
 </map>

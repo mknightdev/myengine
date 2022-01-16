@@ -1,0 +1,5 @@
+<map id="myengine::Component::getPosition" name="myengine::Component::getPosition">
+<area shape="rect" id="node1" title="Shortcut for getPosition." alt="" coords="224,39,376,80"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_sphere_collider.html#a8a8bbeb44d45609cd5572685b3b82cdd" title="Checks for Collisions." alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_sound_source.html#aa989aaadb1f186847e4700f5a1c62e8f" title="Updates the sound each frame." alt="" coords="9,71,173,112"/>
+</map>

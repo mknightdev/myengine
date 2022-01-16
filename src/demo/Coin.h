@@ -7,13 +7,20 @@ namespace myengine
 	struct Coin : Component
 	{
 		void onInitialize();
-		void onDisplay();
 		void onTick(float _deltaTime);
 		void onTrigger();
-		void onDestroy();
 
 	private:
+		/// Boolean to prevent from multiple plays of the audio 
 		bool hasPlayed;
+
+		/**
+		* \brief Stores the Audio.
+		* 
+		* Used when playing the audio source provided.
+		* 
+		* \see myengine::SoundSource
+		*/
 		std::shared_ptr<SoundSource> audio;
 	};
 }

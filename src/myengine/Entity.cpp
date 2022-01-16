@@ -47,6 +47,14 @@ namespace myengine
 		}
 	}
 
+	/**
+	* \brief Calls the Trigger. 
+	* 
+	* Calls the trigger function within the component, to execute
+	* the collision response.
+	* 
+	* \see myengine::Component
+	*/ 
 	void Entity::trigger()
 	{
 		for (size_t ei = 0; ei < components.size(); ++ei)
@@ -55,6 +63,16 @@ namespace myengine
 		}
 	}
 
+	/**
+	* \brief Colliding Notifier
+	* 
+	* Notifies the entity of the collision and then calls the required 
+	* components to execute the response. 
+	* 
+	* \param _collider the collider that is colliding.
+	* \see myengine::SphereCollider
+	* \see trigger()
+	*/
 	void Entity::colliding(std::shared_ptr<SphereCollider> _collider)
 	{
 		_collider->getEntity()->trigger();

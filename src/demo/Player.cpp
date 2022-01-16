@@ -7,18 +7,6 @@
 
 namespace myengine
 {
-	void Player::onInitialize()
-	{
-		std::cout << "Custom Player Init" << std::endl;
-
-
-	}
-
-	void Player::onDisplay()
-	{
-		
-	}
-
 	void Player::onTick(float _deltaTime)
 	{
 		if (getKeyDown(SDLK_UP))
@@ -43,8 +31,4 @@ namespace myengine
 			getTransform()->Rotate(vec3(0, -2.5f, 0) * _deltaTime);
 		}
 	}
-
-	void Player::onTrigger() {}
-
-	void Player::onDestroy() {}
 }

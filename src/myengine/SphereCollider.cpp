@@ -11,6 +11,14 @@
 
 namespace myengine
 {
+	/**
+	* \brief Initialises the Sphere Collider.
+	* 
+	* Initialises the Sphere Collider by getting the radius 
+	* and registering the collider with the engine. 
+	* 
+	* \see Core::registerCollider()
+	*/
 	void SphereCollider::onInitialize()
 	{
 		radius = getEntity()->getComponent<MeshRenderer>()->getRadius();
@@ -19,21 +27,26 @@ namespace myengine
 		getCore()->registerCollider(getEntity()->getComponent<SphereCollider>());
 	}
 
+	/**
+	* \brief Destroys the Collider.
+	* 
+	* When called, it will unregister the collider from the engine, preventing
+	* future collisions with other colliders.
+	*/
 	void SphereCollider::onDestroy()
 	{
 		// Unregister collider
-		std::cout << "Unregistered collider" << std::endl;
 		getCore()->unregisterCollider(getEntity()->getComponent<SphereCollider>());
 	}
 
-	void SphereCollider::onTrigger()
-	{
-		//if (getEntity()->getComponent<Coin>())
-		//{
-		//	std::cout << "test" << std::endl;
-		//}
-	}
-
+	/**
+	* \brief Checks for Collisions.
+	* 
+	* Determines if two or more objects are colliding by getting the distance and checking if it collides. 
+	* 
+	* \return true if there is a collision.
+	* \return false if there isn't a collision.
+	*/
 	bool SphereCollider::isColliding(std::shared_ptr<SphereCollider> _collider)
 	{
 		// Get the distance between this sphere and the other sphere
@@ -50,6 +63,7 @@ namespace myengine
 		return false;
 	}
 
+	/// Returns the Sphere Collider's radius.
 	float SphereCollider::getRadius()
 	{
 		return radius;

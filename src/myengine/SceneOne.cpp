@@ -8,6 +8,7 @@
 
 namespace myengine
 {
+	/// Initialises the Scene.
 	void SceneOne::onInitialize()
 	{
 		std::cout << "SceneOne init" << std::endl;
@@ -61,8 +62,8 @@ namespace myengine
 		catMr->setPosition(vec3(5, 0, 0));
 		catMr->setRadius(3.0f);
 		catSs->setSound(getCore()->getResourceManager()->load<Sound>("resources/sounds/cat"));
-		catSs->SetVolume(0.25f);
-		catSs->SetLooping(true);
-		catSs->Play();
+		catSs->setVolume(0.25f);
+		catSs->setLooping(true);
+		catSs->play();
 	}
 }

@@ -74,6 +74,14 @@ namespace myengine
 		return getCore()->getKeyboard();
 	}
 
+	/**
+	* \brief Shortcut for getKeyDown
+	* 
+	* Checks if the provided key has been pressed. 
+	* 
+	* \return true if it has.
+	* \return false if it hasn't.
+	*/
 	bool Component::getKeyDown(int _keyCode)
 	{
 		return getKeyboard()->getKeyDown(_keyCode);
@@ -139,7 +147,11 @@ namespace myengine
 	}
 
 	/**
-	* \brief Returns the Camera. 
+	* \brief Shortcut for getCamera.
+	* 
+	* Goes through core and returns the camera by name. 
+	* 
+	* \return myengine::Camera
 	*/
 	std::shared_ptr<Camera> Component::getCamera()
 	{
@@ -156,6 +168,13 @@ namespace myengine
 		return getCore()->getEnvironment()->getDeltaTime();
 	}
 
+	/**
+	* \brief Shortcut for getPosition. 
+	* 
+	* Gets the transform and then gets the position.
+	* 
+	* \return m_position the position of the object.
+	*/
 	vec3 Component::getPosition()
 	{
 		return getTransform()->getPosition();

@@ -1,0 +1,6 @@
+<map id="myengine::SphereCollider::onInitialize" name="myengine::SphereCollider::onInitialize">
+<area shape="rect" id="node1" title="Initialises the Sphere Collider." alt="" coords="5,64,176,105"/>
+<area shape="rect" id="node2" href="$structmyengine_1_1_component.html#a2b80c2d91dac8f429f6b6f6305d7c5be" title="Returns the Core." alt="" coords="233,5,385,47"/>
+<area shape="rect" id="node3" href="$structmyengine_1_1_component.html#af409385720cc0c533e8812e8857ba161" title="Returns the Entity." alt="" coords="443,35,595,76"/>
+<area shape="rect" id="node4" href="$structmyengine_1_1_sphere_collider.html#a43ba03acc92eaf27b3a3cefe6a65d8e3" title="Returns the Sphere Collider&#39;s radius." alt="" coords="224,123,395,164"/>
+</map>

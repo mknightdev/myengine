@@ -12,7 +12,7 @@ namespace myengine
 	/**
 	* \brief Intialises the SoundSource. 
 	* 
-	* Loads in the sound file and generates the sources to play it with srcID. 
+	* Initialises the loaded sound source and generates the sources to play it with srcID. 
 	* 
 	* \warning Can throw an exception if it fails to generate the sources.
 	* It will print to the console if it does. 
@@ -21,11 +21,9 @@ namespace myengine
 	{
 		ALCenum error;
 
-		//audioClip = std::make_shared<AudioClip>("resources/sounds/doorbell2");
-
 		srcID = 0;
 		alGenSources(1, &srcID);
-		CheckError();
+		checkError();
 	}
 
 	/**
@@ -38,41 +36,56 @@ namespace myengine
 	*/
 	void SoundSource::onTick(float _deltaTime)
 	{
-		SetPosition(getPosition().x, getPosition().y, getPosition().z);
-		//SetListener(getCamera()->getCameraPos().x, getCamera()->getCameraPos().y, getCamera()->getCameraPos().z);
+		setPosition(getPosition().x, getPosition().y, getPosition().z);
 	}
 
 	/**
 	* \brief Plays the loaded audio.
+	* 
+	* Retrieves the source and plays it. 
+	* 
+	* \see myengine::AudioClip
 	*/
-	void SoundSource::Play()
+	void SoundSource::play()
 	{
 		alSourcei(srcID, AL_BUFFER, audioClip->GetId());
-		CheckError();
+		checkError();
 
 		alSourcePlay(srcID);
-		CheckError();
+		checkError();
 	}
 
 	/**
-	* \brief Pauses the playing audio.
+	* \brief Pauses the audio.
+	* 
+	* Pauses the audio using the id of it.
 	*/
-	void SoundSource::Pause()
+	void SoundSource::pause()
 	{
 		alSourcePause(srcID);
-		CheckError();
+		checkError();
 	}
 
 	/**
-	* \brief Stops the playing audio.
+	* \brief Stops the audio.
+	* 
+	* Stops the audio using the id of it.
 	*/
-	void SoundSource::Stop()
+	void SoundSource::stop()
 	{
 		alSourceStop(srcID);
-		CheckError();
+		checkError();
 	}
 
-
+	/**
+	* \brief Sets the Audio.
+	* 
+	* Loads in the audio using the resource manager and 
+	* sets the audioClip as the loaded file. 
+	* 
+	* \see myengine::AudioClip
+	* \see myengine::ResourceManager
+	*/
 	void SoundSource::setSound(std::shared_ptr<Sound> _sound)
 	{
 		audioClip = _sound->audioClip;
@@ -83,10 +96,10 @@ namespace myengine
 	* 
 	* \param _volume is used to set the level of the audio.
 	*/
-	void SoundSource::SetVolume(ALfloat _volume)
+	void SoundSource::setVolume(ALfloat _volume)
 	{
 		alSourcef(srcID, AL_GAIN, _volume);
-		CheckError();
+		checkError();
 	}
 
 	/**
@@ -94,10 +107,10 @@ namespace myengine
 	* 
 	* \param _pitch is used to set the pitch value of the audio. 
 	*/
-	void SoundSource::SetPitch(ALfloat _pitch)
+	void SoundSource::setPitch(ALfloat _pitch)
 	{
 		alSourcef(srcID, AL_PITCH, _pitch);
-		CheckError();
+		checkError();
 	}
 
 	/**
@@ -107,10 +120,10 @@ namespace myengine
 	* \param _y sets the y position of the audio.
 	* \param _z sets the z position of the audio.
 	*/
-	void SoundSource::SetPosition(ALfloat _x, ALfloat _y, ALfloat _z)
+	void SoundSource::setPosition(ALfloat _x, ALfloat _y, ALfloat _z)
 	{
 		alSource3f(srcID, AL_POSITION, _x, _y, _z);
-		CheckError();
+		checkError();
 	}
 
 	/**
@@ -118,10 +131,10 @@ namespace myengine
 	* 
 	* \param _state is used to set if the audio should loop or not.
 	*/
-	void SoundSource::SetLooping(bool _state)
+	void SoundSource::setLooping(bool _state)
 	{
 		alSourcei(srcID, AL_LOOPING, _state);
-		CheckError();
+		checkError();
 	}
 
 	/**
@@ -131,10 +144,10 @@ namespace myengine
 	* \param _y sets the y position of the listener.
 	* \param _z sets the z position of the listener. 
 	*/
-	void SoundSource::SetListener(ALfloat _x, ALfloat _y, ALfloat _z)
+	void SoundSource::setListener(ALfloat _x, ALfloat _y, ALfloat _z)
 	{
 		alListener3f(AL_POSITION, _x, _y, _z);
-		CheckError();
+		checkError();
 	}
 
 	/**
@@ -145,7 +158,7 @@ namespace myengine
 	* \warning Will throw an exception if an error is detected. A message will be displayed to the console. 
 	* \see Exception
 	*/
-	void SoundSource::CheckError()
+	void SoundSource::checkError()
 	{
 		error = alGetError();
 		if (error != AL_NO_ERROR)
@@ -158,10 +171,6 @@ namespace myengine
 	SoundSource::~SoundSource()
 	{
 		alSourceStop(srcID);
-		CheckError();
+		checkError();
 	}
-
-	// TODO:
-	// position, isPlaying, etc
-	// press p to pause
 }

@@ -1,9 +1,10 @@
 <map id="myengine::Component::getMouse" name="myengine::Component::getMouse">
-<area shape="rect" id="node1" title="Returns the Mouse." alt="" coords="503,86,655,127"/>
+<area shape="rect" id="node1" title="Returns the Mouse." alt="" coords="503,115,655,157"/>
 <area shape="rect" id="node2" href="$structmyengine_1_1_camera.html#a49c54915080685ce75a9edcbd8f5aa0e" title="Updates Mouse Coordinates." alt="" coords="236,5,455,32"/>
 <area shape="rect" id="node4" href="$structmyengine_1_1_model_renderer.html#a853e29bd0aa9b73004ab46f105fcef20" title="Update mouse position." alt="" coords="259,57,432,98"/>
 <area shape="rect" id="node6" href="$structmyengine_1_1_p_b_r.html#afb06a60ab5f263b8caa91efd1f1285f7" title="Update mouse position." alt="" coords="245,123,446,149"/>
 <area shape="rect" id="node8" href="$structmyengine_1_1_triangle_renderer.html#a3ac2c021a5a1b280a7ef84056049b45a" title="Update mouse position." alt="" coords="254,174,437,215"/>
+<area shape="rect" id="node10" href="$structmyengine_1_1_button.html#a5bed448b4427f15460c4a5ac6c80de95" title="Updates the Position &amp; Interaction." alt="" coords="260,240,431,267"/>
 <area shape="rect" id="node3" href="$structmyengine_1_1_camera.html#ab20ef0c683c1e07b8546a3ddf26f262b" title="Updates Camera Position." alt="" coords="8,5,185,32"/>
 <area shape="rect" id="node5" href="$structmyengine_1_1_model_renderer.html#ac1a09170155c3fddfe23ac24334fb689" title="The position of the model." alt="" coords="10,57,183,98"/>
 <area shape="rect" id="node7" href="$structmyengine_1_1_p_b_r.html#ac960a36c2b186613e28284ede02004bd" title="The position of the model." alt="" coords="17,123,176,149"/>

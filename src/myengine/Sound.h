@@ -11,6 +11,8 @@ namespace myengine
 
 	private:
 		friend struct myengine::SoundSource;
+		
+		/// Stores the audio clip.
 		std::shared_ptr<AudioClip> audioClip; 
 	};
 }

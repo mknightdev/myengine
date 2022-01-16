@@ -88,8 +88,16 @@ namespace myengine
 		//button->SetScale(50, 50, 1);
 		//button->Draw(modelLocUI, projectionLocUI, projection, 6);
 	}
-
-	void Button::onTick() 
+	
+	/**
+	* \brief Updates the Position & Interaction
+	* 
+	* Allows for the button to move, or to be interacted with based on mouse interaction. 
+	* \param _deltaTime passed through from Core and is used to multiply the updated position with.
+	* \warning Multiplying without _deltaTime may result in some unexpected behaviours.
+	* \see Transform
+	*/
+	void Button::onTick(float _deltaTime) 
 	{
 		// X and Y needs to have 25 subtracted from it
 		if (intersect(getMouse()->getMousePosition(), vec4(615, 335, 50, 50)) && getMouse()->isButtonDown())
@@ -97,8 +105,8 @@ namespace myengine
 			std::cout << "Intersecting" << std::endl;
 		}
 	}
-	void Button::onTick(float _deltaTime) {}
 
+	/// Sets the texture of the button.
 	void Button::setTexture(std::string _fileName)
 	{
 		int w, h = 0;
@@ -106,6 +114,7 @@ namespace myengine
 		texture = std::make_shared<myrenderer::Texture>(stbi_load(_fileName.c_str(), &w, &h, NULL, 4), w, h);
 	}
 
+	/// Sets the shader to use for the button. 
 	void Button::setShader(const GLchar* _vert, const GLchar* _frag)
 	{
 		shader = std::make_shared<myrenderer::ShaderProgram>();
@@ -113,6 +122,15 @@ namespace myengine
 		shader->CreateShader(_vert, _frag);
 	}
 
+	/**
+	* \brief Button Interaction 
+	* 
+	* Determines if there is an intersection with the mouse 
+	* and the button.
+	* 
+	* \return true if there is.
+	* \return false if there isn't. 
+	*/
 	bool Button::intersect(vec2 _mouse, vec4 _rectangle)
 	{
 		if (_mouse.x < _rectangle.x)

@@ -12,13 +12,13 @@
 
 using namespace myrenderer;
 
-// TODO: move into own class
+// TODO: Move into own class
 glm::vec3 cameraPos2 = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront2 = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp2 = glm::vec3(0.0f, 1.0f, 0.0f);
 
 bool firstMouse2 = true;
-float yaw2 = -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially rotate a bit to the left.
+float yaw2 = -90.0f;	// yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right so we initially Rotate a bit to the left.
 float pitch2 = 0.0f;
 float lastX2 = 1280.0f / 2.0;
 float lastY2 = 720.0f / 2.0;
@@ -45,10 +45,6 @@ namespace myengine
 		int w = 0;
 		int h = 0;
 
-		// Load model and texture
-		//vao = std::make_shared<VertexArray>("../resources/models/skeleton/skeleton.obj");
-		//texture = std::make_shared<Texture>("../resources/models/skeleton/skeleton_diffuse.png", w, h);
-
 		vao = std::make_shared<VertexArray>("../resources/models/grenade/grenade.obj");
 		albedoMap = std::make_shared<Texture>("../resources/models/grenade/grenade_albedo.png", w, h);
 		normalMap = std::make_shared<Texture>("../resources/models/grenade/grenade_normal.png", w, h);
@@ -59,12 +55,6 @@ namespace myengine
 
 		// Create Shader
 		shader = std::make_shared<ShaderProgram>();
-		//shader->CreateShader("../resources/shaders/ambientVert.txt", "../resources/shaders/ambientFrag.txt");
-		//shader->CreateShader("../resources/shaders/diffuseVert.txt", "../resources/shaders/diffuseFrag.txt");
-		//shader->CreateShader("../resources/shaders/specularVert.txt", "../resources/shaders/specularFrag.txt");
-		//shader->CreateShader("../resources/shaders/materialVert.txt", "../resources/shaders/materialFrag.txt");
-		//shader->CreateShader("../resources/shaders/multiLightVert.txt", "../resources/shaders/multiLightFrag.txt");
-		//shader->CreateShader("../resources/shaders/pbrVert.txt", "../resources/shaders/pbrFrag.txt");
 		shader->CreateShader("../resources/shaders/pbr/pbrTexVert.txt", "../resources/shaders/pbr/pbrTexFrag.txt");
 
 		shader->use();
@@ -74,13 +64,6 @@ namespace myengine
 		shader->setInt("roughnessMap", 3);
 		shader->setInt("aoMap", 4);
 		shader->setInt("emissiveMap", 5);
-
-		//shader->setInt("material.diffuse", 0);
-		//shader->setInt("diffuse", 0);
-		//shader->setVec3("albedo", 0.5f, 0.0f, 0.0f);
-		//shader->setFloat("ao", 1.0f);
-		//shader->setFloat("metallic", 0.0f);
-		//shader->setFloat("roughness", 0.0f);
 
 		/*****************************
 		*
@@ -159,50 +142,7 @@ namespace myengine
 		if (projectionLoc == -1) { throw std::exception(); }
 		if (viewLoc == -1) { throw std::exception(); }
 
-		//shader->setVec3("light.position", lightPos);
 		shader->setVec3("camPos", cameraPos2);
-
-		//shader->setVec3("material.specular", 0.5f, 0.5f, 0.5f);
-		//shader->setFloat("material.shininess", 64.0f);
-
-		//// directional light
-		//shader->setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-		//shader->setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
-		//shader->setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
-		//shader->setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
-
-  //      // point light 1
-  //      shader->setVec3("pointLights[0].position", pointLightPositions[0]);
-  //      shader->setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[0].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[0].constant", 1.0f);
-  //      shader->setFloat("pointLights[0].linear", 0.09);
-  //      shader->setFloat("pointLights[0].quadratic", 0.032);
-  //      // point light 2
-  //      shader->setVec3("pointLights[1].position", pointLightPositions[1]);
-  //      shader->setVec3("pointLights[1].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[1].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[1].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[1].constant", 1.0f);
-  //      shader->setFloat("pointLights[1].linear", 0.09);
-  //      shader->setFloat("pointLights[1].quadratic", 0.032);
-  //      // point light 3
-  //      shader->setVec3("pointLights[2].position", pointLightPositions[2]);
-  //      shader->setVec3("pointLights[2].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[2].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[2].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[2].constant", 1.0f);
-  //      shader->setFloat("pointLights[2].linear", 0.09);
-  //      shader->setFloat("pointLights[2].quadratic", 0.032);
-  //      // point light 4
-  //      shader->setVec3("pointLights[3].position", pointLightPositions[3]);
-  //      shader->setVec3("pointLights[3].ambient", 0.05f, 0.05f, 0.05f);
-  //      shader->setVec3("pointLights[3].diffuse", 0.8f, 0.8f, 0.8f);
-  //      shader->setVec3("pointLights[3].specular", 1.0f, 1.0f, 1.0f);
-  //      shader->setFloat("pointLights[3].constant", 1.0f);
-  //      shader->setFloat("pointLights[3].linear", 0.09);
-  //      shader->setFloat("pointLights[3].quadratic", 0.032);
 
 		// Light
 		vec3 lightColour;
@@ -211,14 +151,6 @@ namespace myengine
 		lightColour.z = 1.0f;
 		vec3 diffuseColour = lightColour * vec3(0.5f);
 		vec3 ambientColour = lightColour * vec3(0.2f);
-
-		//shader->setVec3("pointLight.ambient", ambientColour);
-		//shader->setVec3("pointLight.diffuse", diffuseColour);
-		//shader->setVec3("pointLight.specular", 1.0f, 1.0f, 1.0f);
-
-		// world transformation
-		//glm::mat4 model = glm::mat4(1.0f);
-		//shader->setMat4("model", model);
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, albedoMap->GetId());
@@ -379,7 +311,7 @@ namespace myengine
 	/**
 	* \brief Update mouse position
 	* 
-	* Updates the mouse position to move the camera.
+	* Updates the mouse position to Move the camera.
 	*/
 	void ModelRenderer::mouseUpdate()
 	{

@@ -41,9 +41,9 @@ namespace myengine
 		// Menu Music
 		std::shared_ptr<SoundSource> ss = eTitle->addComponent<SoundSource>();
 		ss->setSound(getCore()->getResourceManager()->load<Sound>("resources/sounds/menu"));
-		ss->SetVolume(0.15);
-		ss->SetLooping(true);
-		ss->Play();
+		ss->setVolume(0.15);
+		ss->setLooping(true);
+		ss->play();
 	}
 
 	void MenuScreen::onTick(float _deltaTime)

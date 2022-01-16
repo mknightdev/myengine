@@ -19,9 +19,6 @@ namespace myengine
 	private:
 		friend struct myengine::Core;
 
-
-
-		std::weak_ptr<Camera> self;
 		std::weak_ptr<Core> core;
 
 		/**
@@ -79,10 +76,13 @@ namespace myengine
 		float lastY;
 
 		/**
-		* Determines how fast the Camera moves, i.e., sensitivity.
+		* \brief Determines how fast the Camera moves, i.e., sensitivity.
 		*/
 		float cameraSpeed;
 
+		/**
+		* \brief Determines movement
+		*/
 		bool canMove;
 	};
 }
