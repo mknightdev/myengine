@@ -39,7 +39,7 @@ namespace myengine
 	void SoundSource::onTick(float _deltaTime)
 	{
 		SetPosition(getPosition().x, getPosition().y, getPosition().z);
-		SetListener(getCamera()->getCameraPos().x, getCamera()->getCameraPos().y, getCamera()->getCameraPos().z);
+		//SetListener(getCamera()->getCameraPos().x, getCamera()->getCameraPos().y, getCamera()->getCameraPos().z);
 	}
 
 	/**
