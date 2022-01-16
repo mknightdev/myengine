@@ -11,6 +11,7 @@
 #include "ResourceManager.h"
 
 #include <iostream>
+#include "mymath.h"
 
 namespace myengine
 {
@@ -96,6 +97,21 @@ namespace myengine
 	std::shared_ptr<Transform> Component::getTransform()
 	{
 		return getEntity()->getTransform();
+	}
+
+	void Component::setPosition(vec3 _position)
+	{
+		getTransform()->setPosition(_position);
+	}
+
+	void Component::setScale(vec3 _scale)
+	{
+		getTransform()->setScale(_scale);
+	}
+
+	void Component::setRotation(vec3 _rotation)
+	{
+		getTransform()->setRotation(_rotation);
 	}
 
 	/**

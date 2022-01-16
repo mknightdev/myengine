@@ -8,6 +8,6 @@ namespace myengine
 	struct MenuScreen : Component
 	{
 		void onInitialize();
-		void onTick();
+		void onTick(float _deltaTime);
 	};
 }

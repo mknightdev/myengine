@@ -33,6 +33,10 @@ namespace myengine
 
 		bool intersect(vec2 _mouse, vec4 _rectangle);
 
+		void setPosition(vec3 _position);
+		void setScale(vec3 _scale);
+		void setRotation(vec3 _rotation);
+
 	private:
 		friend struct myengine::Entity;
 

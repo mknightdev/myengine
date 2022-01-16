@@ -31,33 +31,20 @@ namespace myengine
 			getTransform()->Move(vec3(0, 0, -5) * _deltaTime);
 		}
 
-		//if (getKeyDown(SDLK_a))
-		//{
-		//	getTransform()->Move(vec3(5, 0, 0) * _deltaTime);
-		//}
-
-		//if (getKeyDown(SDLK_d))
-		//{
-		//	getTransform()->Move(vec3(-5, 0, 0) * _deltaTime);
-		//}
-
 		// Rotate Left
 		if (getKeyDown(SDLK_LEFT))
 		{
-			getTransform()->Rotate(vec3(0, 1, 0) * _deltaTime);
+			getTransform()->Rotate(vec3(0, 2.5f, 0) * _deltaTime);
 		}
 
 		// Rotate Right
 		if (getKeyDown(SDLK_RIGHT))
 		{
-			getTransform()->Rotate(vec3(0, -1, 0) * _deltaTime);
+			getTransform()->Rotate(vec3(0, -2.5f, 0) * _deltaTime);
 		}
 	}
 
-	void Player::onTrigger()
-	{
-		std::cout << "Player Collision Triggered" << std::endl;
-	}
+	void Player::onTrigger() {}
 
 	void Player::onDestroy() {}
 }

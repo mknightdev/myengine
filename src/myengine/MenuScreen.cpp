@@ -27,7 +27,7 @@ namespace myengine
 		std::shared_ptr<MeshRenderer> cTitle = eTitle->addComponent<MeshRenderer>();
 		cTitle->setMesh(getCore()->getResourceManager()->load<Mesh>("resources/models/icons/menu"));
 		cTitle->setTexture(getCore()->getResourceManager()->load<Texture>(""));
-		cTitle->getTransform()->setPosition(vec3(-3, 1, -3));
+		cTitle->setPosition(vec3(-3, 1, -3));
 
 
 		// Text
@@ -35,8 +35,8 @@ namespace myengine
 		std::shared_ptr<MeshRenderer> cText = eText->addComponent<MeshRenderer>();
 		cText->setMesh(getCore()->getResourceManager()->load<Mesh>("resources/models/icons/start"));
 		cText->setTexture(getCore()->getResourceManager()->load<Texture>(""));
-		cText->getTransform()->setPosition(vec3(-3.75, -1, -3));
-		cText->getTransform()->setScale(vec3(0.35f, 0.35f, 0.35f));
+		cText->setPosition(vec3(-3.75, -1, -3));
+		cText->setScale(vec3(0.35f, 0.35f, 0.35f));
 
 		// Menu Music
 		std::shared_ptr<SoundSource> ss = eTitle->addComponent<SoundSource>();
@@ -46,7 +46,7 @@ namespace myengine
 		ss->Play();
 	}
 
-	void MenuScreen::onTick()
+	void MenuScreen::onTick(float _deltaTime)
 	{
 		if (getKeyDown(SDLK_s))
 		{

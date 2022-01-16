@@ -25,12 +25,8 @@ namespace myengine
 		pmr->setMesh(getCore()->getResourceManager()->load<Mesh>("resources/models/croc/croc"));
 		pmr->setTexture(getCore()->getResourceManager()->load<Texture>("resources/models/croc/croc_diffuse"));
 		std::shared_ptr<SphereCollider> psc = pe->addComponent<SphereCollider>();
-		std::shared_ptr<SoundSource> ss = pe->addComponent<SoundSource>();
-		ss->setSound(getCore()->getResourceManager()->load<Sound>("resources/sounds/doorbell2"));
-		ss->SetVolume(0.25);
-		ss->SetLooping(true);
-		ss->Play();
 		pmr->setRadius(3.0f);
+		pmr->setPosition(vec3(0, 0, -10));
 
 		// Coin
 		std::shared_ptr<Entity> ce = getCore()->addEntity();
@@ -41,7 +37,7 @@ namespace myengine
 		cmr->setTexture(getCore()->getResourceManager()->load<Texture>("resources/models/coin/coin_diffuse"));
 		cmr->setRadius(1.0f);
 		std::shared_ptr<SphereCollider> sc = ce->addComponent<SphereCollider>();
-		cmr->getTransform()->setPosition(vec3(0, 0, -5));
+		cmr->setPosition(vec3(-3, 0, -5));
 
 		// Coin 2
 		std::shared_ptr<Entity> ce2 = getCore()->addEntity();
@@ -52,6 +48,21 @@ namespace myengine
 		cmr2->setTexture(getCore()->getResourceManager()->load<Texture>("resources/models/coin/coin_diffuse"));
 		cmr2->setRadius(1.0f);
 		std::shared_ptr<SphereCollider> sc2 = ce2->addComponent<SphereCollider>();
-		cmr2->getTransform()->setPosition(vec3(0, 0, -10));
+		cmr2->setPosition(vec3(0, 0, -5));
+
+		// Cat
+		std::shared_ptr<Entity> cat = getCore()->addEntity();
+		std::shared_ptr<SoundSource> catSs = cat->addComponent<SoundSource>();
+		std::shared_ptr<Trigger> catTrig = cat->addComponent<Trigger>();
+		std::shared_ptr<MeshRenderer> catMr = cat->addComponent<MeshRenderer>();
+		catMr->setMesh(getCore()->getResourceManager()->load<Mesh>("resources/models/curuthers/curuthers"));
+		catMr->setTexture(getCore()->getResourceManager()->load<Texture>("resources/models/curuthers/Whiskers_diffuse"));
+		std::shared_ptr<SphereCollider> catSc = cat->addComponent<SphereCollider>();
+		catMr->setPosition(vec3(5, 0, 0));
+		catMr->setRadius(3.0f);
+		catSs->setSound(getCore()->getResourceManager()->load<Sound>("resources/sounds/cat"));
+		catSs->SetVolume(0.25f);
+		catSs->SetLooping(true);
+		catSs->Play();
 	}
 }

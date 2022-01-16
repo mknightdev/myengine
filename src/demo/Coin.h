@@ -2,6 +2,8 @@
 
 namespace myengine
 {
+	struct SoundSource;
+
 	struct Coin : Component
 	{
 		void onInitialize();
@@ -12,5 +14,6 @@ namespace myengine
 
 	private:
 		bool hasPlayed;
+		std::shared_ptr<SoundSource> audio;
 	};
 }
